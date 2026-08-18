@@ -84,6 +84,7 @@ Ask the agent: *"Summarize the 10 rules of beautiful advertising from the Meta A
 | `design-rules.md` | The rules — paste into any chat, or read as the canonical charter |
 | `SKILL.md` | Agent operating manual (skill loaders read this) |
 | `INSTALL.md` | This file — setup per host |
+| `references/hospitality-food-services-playbook.md` | Deep rules: food / hotel / services (battle-tested) |
 | `references/prompt-library.md` | Ready-to-use prompt recipes |
 | `references/niche-playbooks.md` | Per-industry depth |
 | `references/anti-slop-registry.md` | Full banned-pattern list + grep gate |

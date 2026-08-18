@@ -69,6 +69,11 @@ Define **5–10 distinct promises and layouts**, not 10 color swaps. Examples: h
 Do **not** jump to the prompt. Run the engine's creative workflow first:
 1. **Identify the product.** 2. **Identify the most important benefit.** 3. **Define the target.** 4. **Choose the marketing angle** (Problem / Effect / Lifestyle). 5. **Invent a simple visual metaphor or situation.** 6. **Choose the creative type** (from the library: hero, packshot, lifestyle, product-in-use, macro, problem/solution, result, UGC, editorial, scroll-stopper). 7. **Design the composition.** 8. **Define light and camera.** 9. **Add constraints.** 10. **Only then write the final prompt** using the 11-part architecture in `visual-advertising-engine.md` §25.
 
+### 3.6 · Route by brief type
+- **Food / restaurant:** two modes (see `design-rules.md` §10.5). If the client has real dish photos → **real-food hero** (photo top ~60–65% + solid panel bottom ~35–40%, zero text on food). If not → **dark studio editorial**. **Native AI text in-scene is the default** (keep strings SHORT: brand + headline + 1 location line; append `CRITICAL: every word spelled PERFECTLY`). Depth: `references/hospitality-food-services-playbook.md`.
+- **Hotel / venue:** prefer **real-photo + deterministic typography/logo** over AI re-generation of the building. Design system: serif headline + clean sans body, coastal palette (navy/teal/cream/white/gold), real photo hero + content card. Produce structurally different styles (heritage poster · travel cover · swiss grid · terrace · dining · direct-booking · events · seaside · offer · brand story).
+- **Services / local biz:** real product/install photos as refs → generate NEW premium scenes (never overlay on the client's raw photo). Angles: Problem→Effect · package tiers · deadline offers · transformation · benefit-led headline ≤40 chars. Use **deterministic composition** when text/logo fidelity matters.
+
 ### 4 · Generation
 - **One finished ad per generation.** Never ask a model to make a batch or contact sheet in one image. Open with: `ONE SINGLE FINISHED AD ONLY — no collage, no grid, no split-screen.`
 - **Use reference images with a clear role** for every subject you must preserve (face, product, logo, building). Name each ref's role: "Image A = subject, Image B = style".
@@ -125,6 +130,7 @@ meta-ads-designer/
 ├── README.pl.md            # Homepage / manual (PL)
 ├── LICENSE                 # MIT
 └── references/
+    ├── hospitality-food-services-playbook.md # Deep rules: food / hotel / services
     ├── anti-slop-registry.md   # Full banned-patterns compendium (visual + copy)
     ├── niche-playbooks.md      # Per-industry ad playbooks
     └── prompt-library.md       # Ready-to-use prompt recipes (any model)

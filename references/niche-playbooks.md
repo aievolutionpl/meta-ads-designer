@@ -2,6 +2,8 @@
 
 > **Zasada:** zanim zaprojektujesz, sprawdź jak prezentują się topowi gracze w tej niszy (Meta Ad Library, IG, konkurenci). Ten plik to punkt startowy — research niszy zawsze go aktualizuje.
 
+> 🍽️ **Głębia dla 3 najczęstszych briefów (food / hotel / serwisy):** zobacz **`hospitality-food-services-playbook.md`** — zwycięskie layouty, tryby produkcji, font sizing, logo, marketing angles. Ten plik to skrót; tamten to sprawdzona w boju pełnia.
+
 ---
 
 ## 🍽️ Restauracja / jedzenie
@@ -44,12 +46,14 @@
 
 ### Co działa
 - **Realne zdjęcia produktu/instalacji jako ref** → generuj nowe sceny premium (inne światło, pora dnia, lifestyle). NIE overlay na oryginale.
+- **Angles, które sprzedają usługi:** Problem → Efekt (przed/po gdy natychmiast pokazuje wartość) · Package tiers ("Instalacja w cenie", "£0 zaliczki, 0%") · Deadline offers ("Zainstaluj przed 31.10 — cena lock") · Transformation (bałagan → porządek, ciemno → jasno).
+- **Headline benefit-led ≤40 znaków**, body ≤125.
 - Czytelne CTA + logo fidelity + lokalizacja/telefon.
-- Realistyczne i funkcjonalne — zero abstrakcji/artystycznego szaleństwa.
 
 ### Czego unikać
 - ❌ Naklejanie ramek/gradientów na surowe zdjęcia klienta.
 - ❌ AI przekręcające markę produktu / sprzęt.
+- ❌ Before/after bez natychmiastowej wartości — tylko dla efektu (popularny format).
 
 ### Typowe CTA
 `Umów wizytę` · `Zadzwoń` · `Zobacz realizacje` · `Sprawdź ofertę`

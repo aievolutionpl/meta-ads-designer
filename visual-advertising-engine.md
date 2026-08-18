@@ -191,6 +191,8 @@ Good directions: cinematic hero food · dark premium food photography · ingredi
 
 For dynamic scenes you can use **Frozen-Time / Bullet-Time** — ingredients, sauce, crumbs and drops frozen at the peak of motion. Food must still look physically credible.
 
+**Layout & authenticity:** if the client has real dish photos, use them as the hero (top ~60–65%) + a solid dark/colored panel at the bottom with headline/subline/CTA/logo. **Zero text on the food.** AI stylization (dark studio) only when there are no real photos. Native AI text in-scene is the default. Depth: `references/hospitality-food-services-playbook.md`.
+
 ---
 
 ## 16 · PEOPLE SHOULD SUPPORT THE PRODUCT

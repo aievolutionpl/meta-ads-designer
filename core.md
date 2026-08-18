@@ -34,6 +34,12 @@ A great ad reads in **one second**, from a **thumbnail**, and looks like a **pro
 ## Banned words
 `delve · seamless · empower · elevate · robust · tapestry · revolutionary · game-changer · 🚀 on a headline · "Powered by AI" · fake logos`
 
+## Food · Hotel · Services
+- **Food:** if the client has real dish photos → use them as the hero (top ~60–65%) + a **solid** dark/colored panel with headline/subline/CTA/logo. **Zero text on the food.** No real photos → dark studio editorial (black bg, single spotlight, Hasselblad). Never invent dishes the venue doesn't serve.
+- **Hotel/venue:** real-photo + deterministic typography/logo beats AI re-generation of the building. Serif headline + clean sans body; coastal palette (navy/teal/cream/white/gold); real photo hero + content card. Produce structurally different styles, not colour swaps.
+- **Services:** real install/product photos as refs → generate NEW premium scenes (never overlay on the client's raw photo). Angles: Problem→Effect · package tiers · deadline offers · transformation. Headline ≤40 chars, benefit-led.
+- **Text baked into the AI render is the default** (keep strings SHORT: brand + headline + 1 location line; append `CRITICAL: every word spelled PERFECTLY`). Deterministic overlay is a fallback for tiny/garbled footers.
+
 ## Hard fail — reject if
 product changed · logo wrong · lettering fake · hands deformed · physics wrong · product too small · image chaotic · too much UI · background outshines product · looks like stock AI · ad tries to say too much.
 

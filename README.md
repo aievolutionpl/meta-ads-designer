@@ -151,6 +151,7 @@ meta-ads-designer/
 ├── README.pl.md                    # This manual (PL)
 ├── LICENSE                         # MIT
 └── references/
+    ├── hospitality-food-services-playbook.md  # Deep: food / hotel / services (battle-tested)
     ├── anti-slop-registry.md       # Full banned-pattern compendium (visual + copy)
     ├── niche-playbooks.md          # Per-industry ad playbooks (restaurant, hotel, …)
     └── prompt-library.md           # Ready-to-use prompt recipes for any model
@@ -167,6 +168,7 @@ meta-ads-designer/
 | `design-rules(.en).md` | The charter — the taste |
 | `SKILL.md` | Agent operating manual (skill loaders read this) |
 | `INSTALL.md` | Setup per host |
+| `references/hospitality-food-services-playbook.md` | Deep rules for food / hotel / services ads |
 | `references/prompt-library.md` | Ready-to-use prompt recipes |
 | `references/niche-playbooks.md` | Per-industry depth |
 | `references/anti-slop-registry.md` | Full banned-pattern list + grep gate |

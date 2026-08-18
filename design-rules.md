@@ -128,6 +128,18 @@
 - **Winning layout:** real photo (top ~60–65%) + a solid dark/colored panel (bottom ~35–40%) holding headline/subline/CTA/logo. **Clean separation — no text on the food.**
 - Dark-studio editorial only when the client has no usable food photos and accepts stylization.
 - Native text in scene (where the model renders it well): brand small at top, big bold headline, short location line.
+- → **Głębia (layouty, font sizing, legibility, logo): `references/hospitality-food-services-playbook.md`**
+
+---
+
+## 10.5 · Two production modes — decide before you generate
+
+| Mode | What it is | When |
+|------|-----------|------|
+| **A · Native AI text** | Copy **baked into** the AI render, in-scene, end-to-end. Best text spelling: gpt-image-2 (Codex). Keep strings SHORT (brand + headline + 1 location line); append `CRITICAL: every word spelled PERFECTLY`. | Restaurant/venue/food ads, when the user wants a fully-generated visual ("całość wygenerowana", "nie składaj w HTML"). **Default since 2026-08.** |
+| **B · Deterministic composition** | Generate a **clean background only** (`ONE SINGLE ... BACKGROUND ONLY — no text/logo/collage`), then compose the final ad with PIL/HTML/Figma: official logo + exact headline/subline/CTA + brand panels + safe margins. | When readable text/logo fidelity outweighs generative novelty (services, venues, offers, tiny footer cleanup). |
+
+**Both can coexist in one batch** (e.g. 5 native + 5 deterministic). Deliver a combined contact sheet; QA text spelling either way.
 
 ### 🏨 Hotel / venue / accommodation
 - **Coastal editorial:** golden hour, travel-magazine quality, lens language.
