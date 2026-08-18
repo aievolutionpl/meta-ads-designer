@@ -31,17 +31,30 @@
 
 ## 🧩 Problem — dlaczego AI adsy wyglądają tak samo
 
-Modele obrazowe **nie mają gustu**. Pozostawione same sobie zbiegają do looku, który każdy rozpozna jako AI-slop:
+Modele obrazowe **nie mają gustu**. Pozostawione same sobie zbiegają do jednego „AI looku" — i ten look **zawsze wygląda tak samo**, niezależnie czy robisz reklamę restauracji, hotelu czy serwisu naprawczego. Oto co realnie produkują, gdy nie damy im zasad:
 
-| 🐘 Co widzi użytkownik | ➡️ Co produkuje model |
-|------------------------|----------------------|
-| Prawdziwy biznes z prawdziwymi zdjęciami | Małe ikonki clip-art, brak kompozycji |
-| Ich prawdziwe jedzenie / lokal / produkt | AI-**wymyślone** dania, fake fasady |
-| Ich prawdziwe logo | Zniekształcone AI-**redrawn** logo |
-| Premium lokalna restauracja | Generyczny purple-blue gradient + Inter font |
-| Zapadająca w pamięć oferta | Tekst naklejony na zdjęcie (Canva), bez komunikatu |
+| 🐘 Co robi „goły" model | ➡️ Jak to wygląda w praktyce |
+|------------------------|------------------------------|
+| **Słaba typografia** | Czcionki bez nazwy, „renderowane" zamiast dobranych; literówki i bełkot zamiast słów; Inter jako domyślna fonta wszędzie. |
+| **Każdy obrazek ten sam** | Ten sam purple-blue gradient, te same pozy, te same twarze — reklama pizzerii i reklama kancelarii wyglądają identycznie. |
+| **Małe ikonki clip-art** | Zawsze źle osadzone, pikselozowate, bez stylu — psują każdą generację. |
+| **Za dużo tekstu** | Akapity naklejone na zdjęcie, nieczytelne z telefonu; nic nie jest komunikatem. |
+| **Wszystko pachnie AI-slopem** | Neonowe glow, pseudo-interfejsy, hologramy, generyczne gradienty — „obrazek od ChatGPT", nie kampania. |
+| **Zmienia Twoje zdjęcia** | Twarze ludzi, wnętrza lokalu i fasady nie przypominają prawdziwych — klient nie rozpoznaje własnego biznesu. |
+| **Wymyśla / halucynuje** | Danie, którego nie ma w menu; logo „AI-redrawn"; fikcyjne napisy na szyldach i cenówki, które nie istnieją. |
+| **Brak hierarchii** | Z miniaturki telefonu nie widać ani produktu, ani CTA — ad ginie w feedzie. |
 
-Efekt brzmi jak *"obrazek od ChatGPT"* — nie jak profesjonalna kampania. **Meta Ads Designer to naprawia.**
+**Efekt brzmi jak „obrazek od ChatGPT" — nie jak profesjonalna kampania.**
+
+### ✅ Co Meta Ads Designer zmienia
+
+Skill **zastępuje ten brak gustu regułami operacyjnymi** — tak jak zrobiłby to art director, fotograf reklamowy i media buyer, gdybyś wynajął ich do jednej kampanii:
+
+- **Produkt jest bohaterem** — rozpoznawalny w ~1 s, dobrze oświetlony, pierwszy plan.
+- **Twoje zdjęcia to Święta Prawda** — skill **nie pozwala** zmieniać twarzy, wnętrz, dań ani logo. Używa ich, nie przerabia.
+- **Realna typografia** — nazwane fonty, max 3 rodziny, kontrast wagą i skalą; żadnych literówek.
+- **Jedna idea na kreatywę** — przekaz czytelny z miniaturki telefonu.
+- **Jakość jak od zespołu** — produkt, źródło, realizm komercyjny, hierarchia, anti-slop, QA przed wysyłką.
 
 ---
 
@@ -49,7 +62,7 @@ Efekt brzmi jak *"obrazek od ChatGPT"* — nie jak profesjonalna kampania. **Met
 
 **Opcja A — jedna wklejka.** Wklej zawartość **[`core.md`](core.md)** do ChatGPT / Claude / Gemini jako custom instruction, a potem wpisz:
 
-> *"Zrób 4:5 social ad dla mojej kawiarni. Oto moje zdjęcia referencyjne: [logo + napoje]. Trzymaj się zasad — produkt na pierwszym planie, prawdziwe jedzenie z moich zdjęć, moje logo bez zmian, jeden headline czytelny z miniaturki, zero text-on-photo slopu. Pokaż 3 strukturalnie różne koncepty."*
+> *„Zrób 4:5 social ad dla mojej kawiarni. Oto moje zdjęcia referencyjne: [logo + napoje]. Trzymaj się zasad — produkt na pierwszym planie, prawdziwe jedzenie z moich zdjęć, moje logo bez zmian, jeden headline czytelny z miniaturki, zero text-on-photo slopu. Pokaż 3 strukturalnie różne koncepty."*
 
 **Opcja B — jako skill** (Hermes / Claude Code / Codex / Cursor):
 ```bash
@@ -57,7 +70,7 @@ git clone https://github.com/aievolutionpl/meta-ads-designer.git
 cp -r meta-ads-designer ~/.hermes/skills/marketing/   # lub ~/.claude/skills/ ~/.codex/skills/ ~/.cursor/skills/
 ```
 
-**Weryfikacja** — poproś agenta: *"podsumuj zasady"*. Powinien wymienić product-first, source of truth, commercial realism, hierarchię, negatywną przestrzeń, anti-slop, hard fails. Jeśli recytuje generyczne "make it premium" — nie wczytał; wklej ponownie.
+**Weryfikacja** — poproś agenta: *„podsumuj zasady"*. Powinien wymienić product-first, source of truth, commercial realism, hierarchię, negatywną przestrzeń, anti-slop, hard fails. Jeśli recytuje generyczne „make it premium" — nie wczytał; wklej ponownie.
 
 Pełne kroki per host: **[`INSTALL.md`](INSTALL.md)**.
 
@@ -65,7 +78,7 @@ Pełne kroki per host: **[`INSTALL.md`](INSTALL.md)**.
 
 ## ⚙️ Jak działa skill
 
-`Meta Ads Designer` jest **framework-agnostic** — te same zasady działają na każdym agencie. Zbudowany jest **warstwowo**, każda ma jedno zadanie:
+`Meta Ads Designer` jest **framework-agnostic** — te same zasady działają na każdym agencie (ChatGPT, Claude, Codex, Hermes, Cursor, dowolny API). Zbudowany jest **warstwowo** — każda warstwa ma jedno zadanie i jedną drogę wejścia:
 
 ```
 ┌────────────────────────────────────────────┐
@@ -91,11 +104,11 @@ Pełne kroki per host: **[`INSTALL.md`](INSTALL.md)**.
                         └──────────────────┘
 ```
 
-- **`visual-advertising-engine.md`** — *standard* (34 zasady). Co agent stosuje **przed** każdym komercyjnym visualem: Product First, Reference = Source of Truth, Prompt Architecture, Hard Fails, QA.
+- **`visual-advertising-engine.md`** — *standard* (34 zasady). Co agent stosuje **przed** każdym komercyjnym visualem: Product First, Reference = Source of Truth, Prompt Architecture, Hard Fails, QA. **To jest źródło kanoniczne** — nowe reguły trafiają tu najpierw.
 - **`design-rules.md`** — *charter* (gust). Angielski kanon. Samowystarczalny — wklejasz do dowolnego czatu lub wstrzykujesz do system promptu.
 - **`core.md`** — *wklejka 1-stronicowa*. Esencja zasad + przykład słabego/mocnego promptu — najszybszy setup.
-- **`SKILL.md`** — *procedura*. Brief → research → angles → creative → generate → QA → deliver. Loader skilli czyta frontmatter.
-- **`references/`** — *głębia*: sprawdzony playbook food/hotel/serwisy, playbooki per nisza, gotowe prompty, pełny rejestr anti-slop.
+- **`SKILL.md`** — *procedura* (agent manual). Brief → research → angles → creative → generate → QA → deliver. Loader skilli czyta frontmatter.
+- **`references/`** — *głębia*: sprawdzony playbook food/hotel/serwisy, layout system, headline system, QA gate, gotowe prompty, pełny rejestr anti-slop.
 
 ### Dwa tryby produkcji (decyzja przed generacją)
 | Tryb | Co to | Kiedy |
@@ -117,12 +130,48 @@ Pełne kroki per host: **[`INSTALL.md`](INSTALL.md)**.
 
 ---
 
+## 🧭 Instrukcja dla agenta (dostałeś to repo? czytaj to)
+
+To repo jest **skillem dla agentów** — dostaje je albo człowiek (żeby wkleić zasadę), albo sam agent (żeby działać). Jeśli jesteś agentem, który ma teraz **wygenerować ady**, oto jak się poruszać — od zera do gotowych plików:
+
+**1. Wejdź w flow w tej kolejności (nie pomijaj):**
+```text
+core.md  →  SKILL.md  →  (szczegóły)  →  references/
+ (1 min)     (pełna        reguły        (głębia tylko
+             procedura)    standardu     gdy brief pasuje)
+```
+
+**2. Zasada „Source of Truth" działa na Ciebie:** zdjęcia od klienta = dokument techniczny. **Nie zmieniasz** twarzy, wnętrz, dań, logo, proporcji ani napisów. Możesz zmienić światło, kadr, perspektywę, scenografię, mood.
+
+**3. Zanim wygenerujesz cokolwiek, odpowiedz na 4 pytania:**
+- **Format?** Domyślny **4:5 (1080×1350)** — chyba że user jawnie prosi o inny (9:16 Reels, 1:1 marketplace, 16:9).
+- **Refs?** Zebrałem wszystkie zdjęcia referencyjne klienta (produkt, lokal, dania, logo)? → wklej je, nie opisuj.
+- **Tryb?** A (natywny tekst AI w scenie) czy B (deterministyczna kompozycja — czyste tło + skład w code)? Decyzja według tabeli wyżej.
+- **Routing?** Który obszar repo dotyczy tego briefu:
+
+| Brief | Czytaj |
+|-------|--------|
+| Restauracja / jedzenie / venue | `references/hospitality-food-services-playbook.md` + `layout-system.md` §3 |
+| Hotel / lokal / obiekt | `references/hospitality-food-services-playbook.md` (real-photo + deterministyczna typografia) |
+| Serwis / usługa | `references/hospitality-food-services-playbook.md` (serwisy) + tryb B (fidelity) |
+| Retail / produkt | `examples/04-retail-product-in-use.md` + `layout-system.md` |
+| Konkretna nisza | `references/niche-playbooks.md` |
+| Nie wiem / coś nowego | `design-rules.md` + `visual-advertising-engine.md` |
+
+**4. Pisz prompt jak fotograf reklamowy** — produkt → benefit → odbiorca → kąt → metafora → typ → kompozycja → światło/kamera → constraints. **Zakazane słowa** i anti-slop patterns: `references/anti-slop-registry.md`.
+
+**5. QA przed wysyłką** — `references/qa-gate.md`: czytelność z miniaturki, poprawna pisownia, jeden focal point, logo fidelity, zero wymyślonych dań/fasad. **Nie wiesz, czy przechodzi QA?** Nie wysyłaj.
+
+**6. Deliver** — pliki + contact sheet + krótkie notki co i dlaczego. Pokaż jakość, nie ilość.
+
+---
+
 ## 🏛️ Zasady (skrót — pełny standard w Engine)
 
 > **Product First · Reference = Source of Truth · One creative = One idea · Don't decorate, direct.**
 
 1. **Hierarchia** — jeden dominujący element, czytelny z miniaturki, przekaz w 1s.
-2. **Realna typografia** — nazwane fonty, max 3 rodziny, kontrast wagą i skalą.
+2. **Realna typografia** — nazwane fonty, max 3 rodziny, kontrast wagą i skalą; **nigdy** wyrenderowany bełkot zamiast słów.
 3. **Paleta brandu + jeden akcent** — nigdy purple-blue default.
 4. **Negatywna przestrzeń** — marże, oddech; przestrzeń = luksus.
 5. **Imagery w kontekście** — produkt w realnym użyciu, realne światło, realni ludzie.
@@ -132,7 +181,15 @@ Pełne kroki per host: **[`INSTALL.md`](INSTALL.md)**.
 9. **Zero AI-copy** — zakazane słowa; nazwy i liczby zamiast przymiotników.
 10. **QA przed wysyłką** — czytelność z miniaturki, poprawna pisownia, jeden focal point, logo fidelity.
 
-Plus: **Commercial realism** · **Lighting is part of the product** · **Think like a photographer** · **Build depth** · **Trzy obowiązkowe kąty** (Problem/Efekt/Lifestyle) · **Visual Creative Library** · **Spójność serii** · **Hard Fail Conditions**.
+**Więcej reguł, które robią różnicę:**
+- **Commercial realism** — metal wygląda jak metal, grawitacja działa, cienie są. Fotografia, nie „generyczne 3D".
+- **Lighting is part of the product** — światło jest elementem reklamy, nie przypadkiem.
+- **Think like a photographer** — kadr, głębia, ujęcie zamiast „wygeneruj logo na gradient".
+- **Build depth** — pierwszy plan / środek / tło; scena żyje.
+- **Trzy obowiązkowe kąty** — Problem → Efekt → Lifestyle (dla produktów i usług).
+- **Visual Creative Library** — zbieraj sprawdzone kompozycje; nie zaczynaj od zera za każdym razem.
+- **Spójność serii** — ady w jednej kampanii to jedna rodzina, nie 10 przypadków.
+- **Hard Fail Conditions** — konkretne rzeczy, które dyskwalifikują pracę: złe litery, fake logo, wymyślone dania, tekst nieczytelny z miniaturki.
 
 ---
 
@@ -169,14 +226,17 @@ meta-ads-designer/
 | Plik | Do czego |
 |------|----------|
 | `core.md` | Wklejka 1-stron — wklej do dowolnego czatu/agenta |
-| `visual-advertising-engine.md` | Standard operacyjny — 34 zasady |
+| `visual-advertising-engine.md` | Standard operacyjny — 34 zasady (źródło kanoniczne) |
 | `design-rules.md` | Charter — gust |
 | `SKILL.md` | Manual agenta (czyta loader skilli) |
 | `INSTALL.md` | Setup per host |
 | `references/hospitality-food-services-playbook.md` | Głębokie reguły food / hotel / serwisy |
-| `references/prompt-library.md` | Gotowe prompty |
-| `references/niche-playbooks.md` | Głębia per nisza |
+| `references/layout-system.md` | Layout + panele + gradienty |
+| `references/headline-system.md` | Rozmiary headline i kontrast |
+| `references/qa-gate.md` | Brama QA i kryteria odrzucenia |
 | `references/anti-slop-registry.md` | Lista zakazów + grep gate |
+| `references/niche-playbooks.md` | Głębia per nisza |
+| `references/prompt-library.md` | Gotowe prompty |
 | `README.md` | Ten manual (PL) |
 | `README.en.md` | Ten manual (EN) |
 

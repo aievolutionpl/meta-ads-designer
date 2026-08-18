@@ -69,3 +69,10 @@ The plugin knew what good design *is*. This release makes it executable: numbers
 ## [5.0.1] — README language layout
 - `README.md` is now the **Polish** main manual; English moved to **`README.en.md`** (extra).
 - Updated language-switcher links and all internal references (`SKILL.md`, `INSTALL.md`, `CONTRIBUTING.md`).
+
+## [5.1.0] — README overhaul
+- Expanded **Problem** section: weak typography, same-look AI, clip-art icons, too much text, AI-slop, altered reference photos, hallucinated dishes/facades/logos, no hierarchy + what the skill changes.
+- Added a readable **rules list** (10 core + 8 depth rules: commercial realism, lighting, depth, three angles, series consistency, hard fails).
+- Reworked **How the skill works** (layers + two production modes + workflow).
+- Added **Agent instructions** section — how an agent given the repo should navigate (core → SKILL → references, 4 pre-generation questions, routing table, QA, delivery).
+- PL main (`README.md`) and EN extra (`README.en.md`) kept in sync.
