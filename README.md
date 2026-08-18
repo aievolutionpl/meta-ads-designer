@@ -261,3 +261,10 @@ MIT — używaj, remiksuj, publikuj.
   <sub>Channel Islands</sub><br/>
   <sub><a href="https://github.com/aievolutionpl/meta-ads-designer">github.com/aievolutionpl/meta-ads-designer</a></sub>
 </div>
+
+---
+
+## 🌐 Strony
+
+- [aievolutionlabs.io](http://aievolutionlabs.io/)
+- [aievolutionpolska.pl](https://www.aievolutionpolska.pl/)
