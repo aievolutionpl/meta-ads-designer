@@ -16,7 +16,7 @@
 
 > **A great ad reads in one second, from a thumbnail, and looks like it was art-directed by a human.** If it could be mistaken for a Canva template or "an image from ChatGPT" — it's slop.
 
-> **📐 For the full operating standard, see [`visual-advertising-engine.en.md`](visual-advertising-engine.en.md)** — the 34-rule Visual Advertising Engine (Product First, Reference = Source of Truth, Prompt Architecture, Hard Fails, and more). This charter is the readable summary; the Engine is the authoritative depth.
+> **📐 For the full operating standard, see [`visual-advertising-engine.md`](visual-advertising-engine.md)** — the 34-rule Visual Advertising Engine (Product First, Reference = Source of Truth, Prompt Architecture, Hard Fails, and more). This charter is the readable summary; the Engine is the authoritative depth.
 
 ### The commercial essentials (from the Visual Advertising Engine)
 

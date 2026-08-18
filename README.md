@@ -2,13 +2,13 @@
 
 # 🎬 Meta Ads Designer
 
-### The visual advertising engine for AI agents — design beautiful Meta / Instagram / Facebook ads, and stop generating AI-slop.
+### The visual advertising engine for AI agents — design beautiful Meta / Instagram / Facebook ads, and stop producing AI-slop.
 
 **Meta Ads · Instagram · Facebook · Posters · Flyers · Product photography · E-commerce visuals** — for restaurants, hotels, local businesses and retail.
 
 [🇵🇱 Polski](README.pl.md) · [EN](README.md)
 
-![Version](https://img.shields.io/badge/version-4.0.0-6a5acd)
+![Version](https://img.shields.io/badge/version-4.2.0-6a5acd)
 ![License](https://img.shields.io/badge/license-MIT-brightgreen)
 ![Format](https://img.shields.io/badge/default_format-4:5%20(1080×1350)-informational)
 ![Hosts](https://img.shields.io/badge/runs_on-ChatGPT%20%7C%20Codex%20%7C%20Hermes%20%7C%20Claude%20%7C%20Cursor-blue)
@@ -17,15 +17,11 @@
 
 <br/>
 
-> **„Don't generate objects in a void. Generate ads that look like a campaign — with hierarchy, typography, real light, and a structural message."**
+<img src="assets/meta-ads-designer-banner.png" alt="Meta Ads Designer" width="100%"/>
 
 > **Default format: 4:5 (1080×1350)** — the Instagram/Facebook feed default. The user can request any other ratio; 4:5 is the default.
 
 > **`DON'T DECORATE. DIRECT.`** — One product. One idea. One strong visual.
-
-<br/>
-
-<img src="assets/meta-ads-designer-banner.png" alt="Meta Ads Designer — Don't Decorate. Direct." width="100%"/>
 
 <br/>
 
@@ -53,7 +49,7 @@ The result reads as *"an image from ChatGPT"* — not a professional campaign. *
 
 **Option A — one paste.** Put the contents of **[`core.md`](core.md)** into ChatGPT / Claude / Gemini as a custom instruction, then prompt:
 
-> *"Make a 4:5 social ad for my coffee shop. Here are my reference photos: [attach logo + drinks]. Follow the Meta Ads Designer rules — product first, real food from my photos, my logo unaltered, one headline readable from a thumbnail, no text-on-photo slop. Show me 3 structurally different concepts."*
+> *"Make a 4:5 social ad for my coffee shop. Here are my reference photos: [attach logo + drinks]. Follow the rules — product first, real food from my photos, my logo unaltered, one headline readable from a thumbnail, no text-on-photo slop. Show me 3 structurally different concepts."*
 
 **Option B — as a skill** (Hermes / Claude Code / Codex / Cursor):
 ```bash
@@ -61,19 +57,19 @@ git clone https://github.com/aievolutionpl/meta-ads-designer.git
 cp -r meta-ads-designer ~/.hermes/skills/marketing/   # or ~/.claude/skills/ ~/.codex/skills/ ~/.cursor/skills/
 ```
 
-**Verify it loaded** — ask the agent to *"summarize the Meta Ads Designer rules"*. It should name product-first, source of truth, commercial realism, hierarchy, negative space, anti-slop, hard fails. If it recites generic "make it premium", it didn't load — re-paste.
+**Verify it loaded** — ask the agent to *"summarize the rules"*. It should name product-first, source of truth, commercial realism, hierarchy, negative space, anti-slop, hard fails. If it recites generic "make it premium", it didn't load — re-paste.
 
 Full per-host steps: **[`INSTALL.md`](INSTALL.md)**.
 
 ---
 
-## ✨ Why it works on any agent
+## ⚙️ How the skill works
 
-`Meta Ads Designer` is **framework-agnostic**. The same rules travel everywhere — native skills on Hermes/Claude/Codex/Cursor, custom instructions on ChatGPT, or system-prompt injection on any agent/API.
+`Meta Ads Designer` is **framework-agnostic** — the same rules travel to any agent. It is built in **layers**, each with one job:
 
 ```
 ┌────────────────────────────────────────────┐
-│ visual-advertising-engine(.en).md          │  ← THE standard (34 rules)
+│ visual-advertising-engine.md               │  ← THE standard (34 rules)
 │   Product First · Source of Truth ·        │     Prompt Architecture ·
 │   Hard Fails · Final Quality Check         │     Creative Workflow
 └───────────────┬────────────────────────────┘
@@ -87,52 +83,56 @@ Full per-host steps: **[`INSTALL.md`](INSTALL.md)**.
                 │ loaded by
         ┌───────┼───────┐
         ▼       ▼       ▼
-   ┌────────┐ ┌───────┐ ┌──────────────┐
-   │SKILL.md│ │core.md│ │  references/ │
-   │ manual │ │inject │ │ depth:       │
-   │        │ │me 1-pg│ │ prompts,     │
-   └────────┘ └───────┘ │ niches, slop │
-                        └──────────────┘
+   ┌────────┐ ┌───────┐ ┌──────────────────┐
+   │SKILL.md│ │core.md│ │  references/     │
+   │ manual │ │inject │ │  depth:          │
+   │        │ │1-page │ │  food/hotel/svc, │
+   └────────┘ └───────┘ │  prompts, slop   │
+                        └──────────────────┘
 ```
 
-**The split is intentional:** the *standard* (what an agent follows) → the *charter* (the taste, paste-able) → the *manual* (procedure) → the *core* (one-page inject) → the *references* (depth). Taste travels; procedure adapts.
+- **`visual-advertising-engine.md`** — the *standard* (34 rules). What an agent follows **before** any commercial visual: Product First, Reference = Source of Truth, Prompt Architecture, Hard Fails, QA.
+- **`design-rules(.en).md`** — the *charter* (the taste). Self-contained, so it can be pasted into any chat or injected into any system prompt.
+- **`core.md`** — the *one-page inject*. The essential rules + the weak/strong prompt example, for the fastest possible setup.
+- **`SKILL.md`** — the *procedure*. Brief → research → angles → creative → generate → QA → deliver. Skill loaders read its frontmatter.
+- **`references/`** — the *depth*: a battle-tested food/hotel/services playbook, per-industry niche playbooks, ready prompt recipes, and the full anti-slop registry.
+
+### Two production modes (decide before generating)
+| Mode | What it is | When |
+|------|-----------|------|
+| **A · Native AI text** | Copy **baked into** the AI render, in-scene. Best spelling: gpt-image-2 (Codex). Keep strings SHORT. | Restaurant/venue/food ads — the default. |
+| **B · Deterministic composition** | Generate a clean background only, then compose the final ad (official logo + exact type + panels). | When text/logo fidelity matters most (services, offers). |
+
+### The workflow it drives
+```
+1. BRIEF     — what, for whom, CTA, platforms (default 4:5) + collect refs
+2. RESEARCH  — how do top brands in this niche present themselves?
+3. ANGLES    — 5-10 distinct promises/layouts, not 10 colour swaps
+4. CREATIVE  — product → benefit → target → angle → metaphor → type →
+               composition → light/camera → constraints → then the prompt
+5. GENERATE  — one finished ad per generation
+6. QA        — contact sheet + checklist; scale+pad (never crop) near edges
+7. DELIVER   — files + contact sheet + notes
+```
 
 ---
 
-## 🏛️ The Rules of Beautiful Advertising
-
-Full 34-rule standard in **`visual-advertising-engine.md`**. Headlines:
+## 🏛️ The rules (headlines — full standard in the Engine)
 
 > **Product First · Reference = Source of Truth · One creative = One idea · Don't decorate, direct.**
 
-1. **Hierarchy** — one dominant element (the product / title), readable from a thumbnail, message in 1 second.
-2. **Real typography** — name real typefaces (Playfair, Montserrat…), max 3 families, contrast by weight & scale. Never "modern sans-serif".
-3. **Brand palette + one accent** — never the purple-blue default; no cream/sand "for warmth"; gradient only as a scrim.
-4. **Negative space** — generous margins, breathing room; space is luxury.
-5. **Imagery in context** — product in real use, real light, real people. Never floating on a void.
+1. **Hierarchy** — one dominant element, readable from a thumbnail, message in 1 second.
+2. **Real typography** — name real typefaces, max 3 families, contrast by weight & scale.
+3. **Brand palette + one accent** — never the purple-blue default.
+4. **Negative space** — margins, breathing room; space is luxury.
+5. **Imagery in context** — product in real use, real light, real people.
 6. **Real food from refs** — never let AI invent dishes the venue doesn't serve.
-7. **Logo fidelity** — never AI-redraw an official logo; place the original file.
+7. **Logo fidelity** — never AI-redraw an official logo; place the original.
 8. **Ad spine** — headline → subline → CTA → brand cue. A pretty photo is not an ad.
-9. **No AI copy** — banned words (delve, seamless, empower, elevate, robust, revolutionary, 🚀); names & numbers over adjectives.
-10. **QA before shipping** — thumbnail readability, correct spelling (incl. Polish diacritics), one focal point, contrast, logo fidelity.
+9. **No AI copy** — banned words; names & numbers over adjectives.
+10. **QA before shipping** — thumbnail readability, correct spelling, one focal point, logo fidelity.
 
-Plus, from the Engine: **Commercial realism** (perspective, gravity, shadows, real materials) · **Lighting is part of the product** · **Think like a photographer** · **Build depth** · **Three mandatory angles** (Problem/Effect/Lifestyle) · **The Visual Creative Library** (hero, packshot, lifestyle, product-in-use, macro, problem/solution, result, UGC, editorial, scroll-stopper) · **Series consistency** · **Hard Fail Conditions** · **DON'T DECORATE. DIRECT.**
-
----
-
-## 🧠 The workflow it drives
-
-```
-1. BRIEF     — what we promote, for whom, the CTA, platforms + collect refs
-2. RESEARCH  — how do top brands in this niche present themselves? If the
-               client has ads they like — that IS the style source of truth
-3. ANGLES    — 5-10 distinct promises/layouts, not 10 color swaps
-4. CREATIVE  — product → benefit → target → angle → metaphor → type →
-               composition → light/camera → constraints → then the prompt
-5. GENERATE  — one finished ad per generation; refs with a clear role
-6. QA        — contact sheet + checklist; scale+pad (never crop) near edges
-7. DELIVER   — files + contact sheet + notes; report model/cost
-```
+Plus: **Commercial realism** · **Lighting is part of the product** · **Think like a photographer** · **Build depth** · **Three mandatory angles** (Problem/Effect/Lifestyle) · **The Visual Creative Library** · **Series consistency** · **Hard Fail Conditions**.
 
 ---
 
@@ -142,18 +142,18 @@ Plus, from the Engine: **Commercial realism** (perspective, gravity, shadows, re
 meta-ads-designer/
 ├── SKILL.md                        # Agent operating manual (procedure + routing)
 ├── core.md                         # 1-page injectable rules — paste into any chat
-├── visual-advertising-engine.md    # THE standard — 34 rules (PL)
-├── visual-advertising-engine.en.md # THE standard — 34 rules (EN)
-├── design-rules.md                 # The charter — Rules of Beautiful Advertising (PL)
+├── visual-advertising-engine.md    # THE standard — 34 rules
+├── design-rules.md                 # The charter (PL)
 ├── design-rules.en.md              # The charter (EN)
 ├── INSTALL.md                      # Setup + usage on every agent (incl. ChatGPT)
 ├── README.md                       # This manual (EN)
 ├── README.pl.md                    # This manual (PL)
 ├── LICENSE                         # MIT
+├── assets/meta-ads-designer-banner.png
 └── references/
-    ├── hospitality-food-services-playbook.md  # Deep: food / hotel / services (battle-tested)
+    ├── hospitality-food-services-playbook.md  # Deep rules: food / hotel / services
     ├── anti-slop-registry.md       # Full banned-pattern compendium (visual + copy)
-    ├── niche-playbooks.md          # Per-industry ad playbooks (restaurant, hotel, …)
+    ├── niche-playbooks.md          # Per-industry ad playbooks
     └── prompt-library.md           # Ready-to-use prompt recipes for any model
 ```
 
@@ -163,12 +163,12 @@ meta-ads-designer/
 
 | File | Use it for |
 |------|-----------|
-| `core.md` | **The one-page inject** — paste into any chat/agent |
-| `visual-advertising-engine(.en).md` | **The operating standard** — 34 rules agents follow before any commercial visual |
+| `core.md` | The one-page inject — paste into any chat/agent |
+| `visual-advertising-engine.md` | The operating standard — 34 rules |
 | `design-rules(.en).md` | The charter — the taste |
 | `SKILL.md` | Agent operating manual (skill loaders read this) |
 | `INSTALL.md` | Setup per host |
-| `references/hospitality-food-services-playbook.md` | Deep rules for food / hotel / services ads |
+| `references/hospitality-food-services-playbook.md` | Deep rules for food / hotel / services |
 | `references/prompt-library.md` | Ready-to-use prompt recipes |
 | `references/niche-playbooks.md` | Per-industry depth |
 | `references/anti-slop-registry.md` | Full banned-pattern list + grep gate |
@@ -178,7 +178,7 @@ meta-ads-designer/
 
 ## 🤝 Contributing
 
-Have a rule that would've saved a campaign? Open a PR against `visual-advertising-engine.md` — it's the canonical source; `core.md`, `SKILL.md` and the README summarize it. See [`CONTRIBUTING.md`](CONTRIBUTING.md).
+Have a rule that would've saved a campaign? Open a PR against `visual-advertising-engine.md` — it's the canonical source. See [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ---
 

@@ -121,8 +121,7 @@ Full steps per host: `INSTALL.md`.
 meta-ads-designer/
 ├── SKILL.md                # This file — agent operating manual
 ├── core.md                 # 1-page injectable rules — paste into any chat/agent
-├── visual-advertising-engine.md  # THE 34-rule operating standard (PL)
-├── visual-advertising-engine.en.md # THE 34-rule operating standard (EN)
+├── visual-advertising-engine.md  # THE 34-rule operating standard (canonical, EN)
 ├── design-rules.md         # Readable charter of beautiful advertising (PL)
 ├── design-rules.en.md      # Readable charter of beautiful advertising (EN)
 ├── INSTALL.md              # Setup + usage on every agent (incl. ChatGPT)

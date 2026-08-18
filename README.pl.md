@@ -2,13 +2,13 @@
 
 # 🎬 Meta Ads Designer
 
-### Uniwersalny standard reklamy dla agentów AI — przestań generować AI-slop, zacznij generować kampanie.
+### Uniwersalny standard reklamy dla agentów AI — projektuj piękne Meta / Instagram / Facebook adsy i przestań generować AI-slop.
 
-**Postery · Flyery · Meta Ads · Fotografia produktowa · Grafiki e-commerce** — dla restauracji, hoteli, lokalnych biznesów i retailu.
+**Meta Ads · Instagram · Facebook · Postery · Flyery · Fotografia produktowa · Grafiki e-commerce** — dla restauracji, hoteli, lokalnych biznesów i retailu.
 
 [🇬🇧 English](README.md) · [PL](README.pl.md)
 
-![Version](https://img.shields.io/badge/version-4.0.0-6a5acd)
+![Version](https://img.shields.io/badge/version-4.2.0-6a5acd)
 ![License](https://img.shields.io/badge/license-MIT-brightgreen)
 ![Format](https://img.shields.io/badge/default_format-4:5%20(1080×1350)-informational)
 ![Hosts](https://img.shields.io/badge/runs_on-ChatGPT%20%7C%20Codex%20%7C%20Hermes%20%7C%20Claude%20%7C%20Cursor-blue)
@@ -17,7 +17,7 @@
 
 <br/>
 
-> **„Nie generuj 'obiektów w próżni'. Generuj reklamy, które wyglądają jak kampania — z hierarchią, typografią, realnym światłem i strukturalnym przekazem."**
+<img src="assets/meta-ads-designer-banner.png" alt="Meta Ads Designer" width="100%"/>
 
 > **Domyślny format: 4:5 (1080×1350)** — feed Instagram/Facebook. Użytkownik może poprosić o inny ratio; 4:5 to default.
 
@@ -49,7 +49,7 @@ Efekt brzmi jak *"obrazek od ChatGPT"* — nie jak profesjonalna kampania. **Met
 
 **Opcja A — jedna wklejka.** Wklej zawartość **[`core.md`](core.md)** do ChatGPT / Claude / Gemini jako custom instruction, a potem wpisz:
 
-> *"Zrób 4:5 social ad dla mojej kawiarni. Oto moje zdjęcia referencyjne: [logo + napoje]. Trzymaj się zasad Meta Ads Designer — produkt na pierwszym planie, prawdziwe jedzenie z moich zdjęć, moje logo bez zmian, jeden headline czytelny z miniaturki, zero text-on-photo slopu. Pokaż 3 strukturalnie różne koncepty."*
+> *"Zrób 4:5 social ad dla mojej kawiarni. Oto moje zdjęcia referencyjne: [logo + napoje]. Trzymaj się zasad — produkt na pierwszym planie, prawdziwe jedzenie z moich zdjęć, moje logo bez zmian, jeden headline czytelny z miniaturki, zero text-on-photo slopu. Pokaż 3 strukturalnie różne koncepty."*
 
 **Opcja B — jako skill** (Hermes / Claude Code / Codex / Cursor):
 ```bash
@@ -57,19 +57,19 @@ git clone https://github.com/aievolutionpl/meta-ads-designer.git
 cp -r meta-ads-designer ~/.hermes/skills/marketing/   # lub ~/.claude/skills/ ~/.codex/skills/ ~/.cursor/skills/
 ```
 
-**Weryfikacja** — poproś agenta: *"podsumuj zasady Meta Ads Designer"*. Powinien wymienić product-first, source of truth, commercial realism, hierarchię, negatywną przestrzeń, anti-slop, hard fails. Jeśli recytuje generyczne "make it premium" — nie wczytał; wklej ponownie.
+**Weryfikacja** — poproś agenta: *"podsumuj zasady"*. Powinien wymienić product-first, source of truth, commercial realism, hierarchię, negatywną przestrzeń, anti-slop, hard fails. Jeśli recytuje generyczne "make it premium" — nie wczytał; wklej ponownie.
 
 Pełne kroki per host: **[`INSTALL.md`](INSTALL.md)**.
 
 ---
 
-## ✨ Dlaczego działa na każdym agencie
+## ⚙️ Jak działa skill
 
-`Meta Ads Designer` jest **framework-agnostic**. Te same zasady działają wszędzie — natywne skille na Hermes/Claude/Codex/Cursor, custom instruction w ChatGPT, albo wstrzyknięcie do system promptu dowolnego agenta/API.
+`Meta Ads Designer` jest **framework-agnostic** — te same zasady działają na każdym agencie. Zbudowany jest **warstwowo**, każda ma jedno zadanie:
 
 ```
 ┌────────────────────────────────────────────┐
-│ visual-advertising-engine(.en).md          │  ← THE standard (34 zasady)
+│ visual-advertising-engine.md               │  ← THE standard (34 zasady)
 │   Product First · Source of Truth ·        │     Prompt Architecture ·
 │   Hard Fails · Final Quality Check         │     Creative Workflow
 └───────────────┬────────────────────────────┘
@@ -83,52 +83,56 @@ Pełne kroki per host: **[`INSTALL.md`](INSTALL.md)**.
                 │ ładowany przez
         ┌───────┼───────┐
         ▼       ▼       ▼
-   ┌────────┐ ┌───────┐ ┌──────────────┐
-   │SKILL.md│ │core.md│ │  references/ │
-   │ manual │ │wklejka│ │ głębia:      │
-   │        │ │1 str. │ │ prompty,     │
-   └────────┘ └───────┘ │ nisze, slop  │
-                        └──────────────┘
+   ┌────────┐ ┌───────┐ ┌──────────────────┐
+   │SKILL.md│ │core.md│ │  references/     │
+   │ manual │ │wklejka│ │  głębia:         │
+   │        │ │1 str. │ │  food/hotel/svc, │
+   └────────┘ └───────┘ │  prompty, slop   │
+                        └──────────────────┘
 ```
 
-**Podział jest celowy:** *standard* (co agent stosuje) → *charter* (gust, wklejany) → *manual* (procedura) → *core* (1-stronicowa wklejka) → *references* (głębia). Gust podróżuje; procedura się adaptuje.
+- **`visual-advertising-engine.md`** — *standard* (34 zasady). Co agent stosuje **przed** każdym komercyjnym visualem: Product First, Reference = Source of Truth, Prompt Architecture, Hard Fails, QA.
+- **`design-rules(.en).md`** — *charter* (gust). Samowystarczalny — wklejasz do dowolnego czatu lub wstrzykujesz do system promptu.
+- **`core.md`** — *wklejka 1-stronicowa*. Esencja zasad + przykład słabego/mocnego promptu — najszybszy setup.
+- **`SKILL.md`** — *procedura*. Brief → research → angles → creative → generate → QA → deliver. Loader skilli czyta frontmatter.
+- **`references/`** — *głębia*: sprawdzony playbook food/hotel/serwisy, playbooki per nisza, gotowe prompty, pełny rejestr anti-slop.
 
----
+### Dwa tryby produkcji (decyzja przed generacją)
+| Tryb | Co to | Kiedy |
+|------|-------|-------|
+| **A · Natywny tekst AI** | Tekst **baked into** render AI, w scenie. Najlepsza pisownia: gpt-image-2 (Codex). Krótkie stringi. | Restauracja/venue/food — default. |
+| **B · Kompozycja deterministyczna** | Generuj czyste tło, potem składaj ad (oficjalne logo + dokładna typografia + panele). | Gdy liczy się fidelity tekstu/logo (serwisy, oferty). |
 
-## 🏛️ Zasady Pięknej Reklamy
-
-Pełny standard 34 zasad w **`visual-advertising-engine.md`**. Skrót:
-
-> **Product First · Reference = Source of Truth · One creative = One idea · Don't decorate, direct.**
-
-1. **Hierarchia** — jeden dominujący element (produkt/tytuł), czytelny z miniaturki, przekaz w 1s.
-2. **Realna typografia** — nazwane fonty (Playfair, Montserrat…), max 3 rodziny, kontrast wagą i skalą. Nigdy "modern sans-serif".
-3. **Paleta brandu + jeden akcent** — nigdy purple-blue default; zero cream/sand "dla ciepła"; gradient tylko jako scrim.
-4. **Negatywna przestrzeń** — generozne marże, oddech; przestrzeń = luksus.
-5. **Imagery w kontekście** — produkt w realnym użyciu, realne światło, realni ludzie. Nigdy w próżni.
-6. **Realne jedzenie z refs** — nigdy nie pozwól AI wymyślać dań, których lokal nie serwuje.
-7. **Logo fidelity** — nigdy AI-redraw oficjalnego logo; wstaw oryginał.
-8. **Ad spine** — headline → subline → CTA → brand cue. Piękne zdjęcie ≠ ad.
-9. **Zero AI-copy** — zakazane słowa (delve, seamless, empower, elevate, robust, revolutionary, 🚀); nazwy i liczby zamiast przymiotników.
-10. **QA przed wysyłką** — czytelność z miniaturki, poprawna pisownia (w tym polskie diakrytyki), jeden focal point, kontrast, logo fidelity.
-
-Plus z Engine: **Commercial realism** (perspektywa, grawitacja, cienie, realne materiały) · **Lighting is part of the product** · **Think like a photographer** · **Build depth** · **Trzy obowiązkowe kąty** (Problem/Efekt/Lifestyle) · **Visual Creative Library** (hero, packshot, lifestyle, product-in-use, macro, problem/solution, result, UGC, editorial, scroll-stopper) · **Spójność serii** · **Hard Fail Conditions** · **DON'T DECORATE. DIRECT.**
-
----
-
-## 🧠 Workflow
-
+### Workflow
 ```
-1. BRIEF     — co promujemy, dla kogo, CTA, platformy + zbierz refs
-2. RESEARCH  — jak prezentują się topowe brandy w niszy? Jeśli klient ma
-               adsy, które lubi — to jest źródło prawdy stylu
+1. BRIEF     — co, dla kogo, CTA, platformy (default 4:5) + zbierz refs
+2. RESEARCH  — jak prezentują się topowe brandy w niszy?
 3. ANGLES    — 5-10 różnych obietnic/layoutów, nie 10 color swaps
 4. CREATIVE  — produkt → benefit → target → angle → metaphor → typ →
                kompozycja → światło/kamera → constraints → potem prompt
-5. GENERATE  — jeden skończony ad per generacja; refs z rolą
+5. GENERATE  — jeden skończony ad per generacja
 6. QA        — contact sheet + checklist; scale+pad (nigdy crop) przy krawędziach
-7. DELIVER   — pliki + contact sheet + notki; raport model/koszt
+7. DELIVER   — pliki + contact sheet + notki
 ```
+
+---
+
+## 🏛️ Zasady (skrót — pełny standard w Engine)
+
+> **Product First · Reference = Source of Truth · One creative = One idea · Don't decorate, direct.**
+
+1. **Hierarchia** — jeden dominujący element, czytelny z miniaturki, przekaz w 1s.
+2. **Realna typografia** — nazwane fonty, max 3 rodziny, kontrast wagą i skalą.
+3. **Paleta brandu + jeden akcent** — nigdy purple-blue default.
+4. **Negatywna przestrzeń** — marże, oddech; przestrzeń = luksus.
+5. **Imagery w kontekście** — produkt w realnym użyciu, realne światło, realni ludzie.
+6. **Realne jedzenie z refs** — nigdy nie pozwól AI wymyślać dań, których lokal nie serwuje.
+7. **Logo fidelity** — nigdy AI-redraw oficjalnego logo; wstaw oryginał.
+8. **Ad spine** — headline → subline → CTA → brand cue. Piękne zdjęcie ≠ ad.
+9. **Zero AI-copy** — zakazane słowa; nazwy i liczby zamiast przymiotników.
+10. **QA przed wysyłką** — czytelność z miniaturki, poprawna pisownia, jeden focal point, logo fidelity.
+
+Plus: **Commercial realism** · **Lighting is part of the product** · **Think like a photographer** · **Build depth** · **Trzy obowiązkowe kąty** (Problem/Efekt/Lifestyle) · **Visual Creative Library** · **Spójność serii** · **Hard Fail Conditions**.
 
 ---
 
@@ -136,20 +140,20 @@ Plus z Engine: **Commercial realism** (perspektywa, grawitacja, cienie, realne m
 
 ```
 meta-ads-designer/
-├── SKILL.md                        # Agent operating manual (procedura + routing)
-├── core.md                         # 1-stronicowe zasady do wklejenia
-├── visual-advertising-engine.md    # THE standard — 34 zasady (PL)
-├── visual-advertising-engine.en.md # THE standard — 34 zasady (EN)
-├── design-rules.md                 # Charter — Zasady Pięknej Reklamy (PL)
+├── SKILL.md                        # Manual agenta (procedura + routing)
+├── core.md                         # 1-stronicowe zasady — wklej do dowolnego czatu
+├── visual-advertising-engine.md    # THE standard — 34 zasady
+├── design-rules.md                 # Charter (PL)
 ├── design-rules.en.md              # Charter (EN)
-├── INSTALL.md                      # Setup per host (w tym ChatGPT)
+├── INSTALL.md                      # Setup + użycie na każdym agencie (w tym ChatGPT)
 ├── README.md                       # Ten manual (EN)
 ├── README.pl.md                    # Ten manual (PL)
 ├── LICENSE                         # MIT
+├── assets/meta-ads-designer-banner.png
 └── references/
-    ├── hospitality-food-services-playbook.md  # Głębia: food / hotel / serwisy (sprawdzone)
+    ├── hospitality-food-services-playbook.md  # Głębia: food / hotel / serwisy
     ├── anti-slop-registry.md       # Kompletne kompendium zakazów (visual + copy)
-    ├── niche-playbooks.md          # Playbooki per nisza (restauracja, hotel, …)
+    ├── niche-playbooks.md          # Playbooki per nisza
     └── prompt-library.md           # Gotowe prompty dla dowolnego modelu
 ```
 
@@ -159,8 +163,8 @@ meta-ads-designer/
 
 | Plik | Do czego |
 |------|----------|
-| `core.md` | **1-stronicowa wklejka** — wklej do dowolnego czatu/agenta |
-| `visual-advertising-engine(.en).md` | **Standard operacyjny** — 34 zasady przed każdym komercyjnym visualem |
+| `core.md` | Wklejka 1-stron — wklej do dowolnego czatu/agenta |
+| `visual-advertising-engine.md` | Standard operacyjny — 34 zasady |
 | `design-rules(.en).md` | Charter — gust |
 | `SKILL.md` | Manual agenta (czyta loader skilli) |
 | `INSTALL.md` | Setup per host |
@@ -174,7 +178,7 @@ meta-ads-designer/
 
 ## 🤝 Współpraca
 
-Masz zasadę, która uratowałaby kampanię? Otwórz PR do `visual-advertising-engine.md` — to źródło kanoniczne; `core.md`, `SKILL.md` i README je podsumowują. Zobacz [`CONTRIBUTING.md`](CONTRIBUTING.md).
+Masz zasadę, która uratowałaby kampanię? Otwórz PR do `visual-advertising-engine.md` — to źródło kanoniczne. Zobacz [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ---
 
