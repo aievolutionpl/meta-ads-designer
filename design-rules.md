@@ -16,6 +16,18 @@
 
 > **A great ad reads in one second, from a thumbnail, and looks like it was art-directed by a human.** If it could be mistaken for a Canva template or "an image from ChatGPT" — it's slop.
 
+> **📐 For the full operating standard, see [`visual-advertising-engine.md`](visual-advertising-engine.md)** — the 34-rule Visual Advertising Engine (Product First, Reference = Source of Truth, Prompt Architecture, Hard Fails, and more). This charter is the readable summary; the Engine is the authoritative depth.
+
+### The commercial essentials (from the Visual Advertising Engine)
+
+- **Product First.** The product is the main character — clearly visible, appropriately large, properly lit, sharper than its surroundings, shown at an attractive angle. Never hide it in a huge set.
+- **Reference = Source of Truth.** Treat a supplied product photo like a technical document. NEVER change shape, proportions, color, construction, material, logo, lettering, mechanism. Only environment, light, frame, perspective, styling, mood. Respect the product's physics (a drop-down shelf needs the space it slides from).
+- **Commercial realism.** Professional commercial photography, not "obvious AI ad". Correct perspective, scale, gravity, contact, shadows, reflections, real materials.
+- **Build the scene around the benefit, not a pretty room.** "What should this ad say?" → then the scene. Message first, scene second.
+- **Camera decisions.** Every prompt names camera position, angle, lens, depth of field, foreground/midground/background — the generator shouldn't decide alone.
+- **Hard fail conditions.** Reject if the product changed, logo is wrong, lettering is fake, hands are deformed, physics is wrong, product too small, image chaotic, too much UI, background outshines the product, stock-AI look.
+- **Final principle: DON'T DECORATE. DIRECT.** One product. One idea. One strong visual.
+
 ---
 
 ## 1 · Hierarchy — one dominant element

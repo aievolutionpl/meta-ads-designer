@@ -1,7 +1,7 @@
 ---
 name: premium-ad-design
 description: Universal plugin that teaches agents how to design beautiful posters, flyers, meta ads and promo graphics — and generate them without AI-slop. Framework-agnostic: works on Hermes, Claude Code, Codex, Cursor, ChatGPT and any agent. Load when the user asks for promotional images for a business/restaurant/hotel/local brand, especially when they upload logo, service or food reference photos.
-version: 2.0.0
+version: 3.0.0
 license: MIT
 author: AI Evolution Labs
 url: https://github.com/aievolutionpl/premium-ad-design
@@ -13,16 +13,41 @@ url: https://github.com/aievolutionpl/premium-ad-design
 
 This is a **universal plugin** that runs on any AI agent. It teaches **what beautiful design looks like** (the rules), then guides **how to produce it** (the workflow). It is **framework-agnostic** — the rules are the same whether you run on Hermes, Claude Code, Codex, Cursor, or ChatGPT. Host-specific tool details live in `INSTALL.md` and `references/`, never in the core rules.
 
-**LOAD THIS when:** the user asks for a poster, flyer, meta ad, social ad, or promo graphic for a business/restaurant/hotel/local brand — especially when they upload a logo, service photos, or food photos as references.
+**LOAD THIS when:** the user asks for a poster, flyer, meta ad, social ad, or promo graphic for a business/restaurant/hotel/local brand — especially when they upload a logo, service photos, or food photos as references. Also load for product photography, lifestyle visuals, e-commerce visuals, and image-editing prompts.
 
 ---
 
-## ⚡ Load first
+## ⚡ Load first (in order)
 
-1. **`design-rules.md`** — the canonical rules of beautiful advertising (this is the heart; read it before generating).
-2. Then follow the workflow below.
-3. For host setup (Hermes / Claude / Codex / Cursor / ChatGPT): `INSTALL.md`.
-4. For prompts and niche depth: `references/`.
+1. **`visual-advertising-engine.md`** — the 34-rule operating standard (Product First, Reference = Source of Truth, Prompt Architecture, Hard Fails, QA). **Read this before any commercial visual.**
+2. **`design-rules.md`** — the canonical charter of beautiful advertising (the readable summary of the engine).
+3. Then follow the workflow below.
+4. For host setup (Hermes / Claude / Codex / Cursor / ChatGPT): `INSTALL.md`.
+5. For prompts and niche depth: `references/`.
+
+---
+
+## 🎯 Core rules (non-negotiable)
+
+1. **Product First** — the product is the main character: visible, large, lit, sharper than surroundings, attractive angle. Never hide it in a big set.
+2. **Reference = Source of Truth** — a supplied product photo is a technical document. NEVER change shape/proportions/color/construction/material/logo/lettering/mechanism. Only environment, light, frame, perspective, styling. Respect the product's physics.
+3. **Commercial realism** — professional commercial photography, not "obvious AI ad". Correct perspective, scale, gravity, shadows, real materials.
+4. **One creative = one idea** — one message, one focal point. Don't cram product + 7 benefits + promo + reviews.
+5. **Hierarchy** — PRIMARY (product) → SECONDARY (context) → TERTIARY (subtle atmosphere).
+6. **Negative space** — don't fill the frame. Space = premium + room for the headline.
+7. **Lighting is part of the product** — say exactly what the light does (clean commercial / premium dramatic / natural lifestyle / food commercial).
+8. **Think like a photographer** — decide camera position, angle, lens, depth of field, foreground/midground/background.
+9. **Build depth** — foreground → subject → background. No flat images.
+10. **Show product in use** — packshot alone isn't enough; a hand/gesture/POV gives context.
+11. **Typography after the image** — strong photo first, then headline → support → CTA. Not a dashboard.
+12. **Don't generate important text in-image** — if the model is weak at text, generate a clean visual and add real typography + the real logo later.
+13. **Mobile-first composition** — 4:5 Meta feed, 9:16 Reels/Stories, 1:1 marketplace. Compose for the format; don't rely on cropping.
+14. **Series consistency** — product identical across 5–10 images; only context/frame/mood/light change. Like one shoot.
+15. **Variation, not randomness** — hero · lifestyle · feature · close-up · problem · result · premium · UGC · unexpected angle.
+16. **Food builds appetite** — texture, steam, gloss, juiciness, layers; Frozen-Time/Bullet-Time for dynamic scenes. Physically credible.
+17. **Anti-slop** — no random neon, HUD, icons, gradients, arrows, fake logos, excessive bokeh, plastic surfaces. Every element has a function.
+
+**Final principle: DON'T DECORATE. DIRECT.** One product. One idea. One strong visual.
 
 ---
 
@@ -39,6 +64,10 @@ Before generating, find out how top brands in this niche present themselves (Met
 
 ### 3 · Angle matrix
 Define **5–10 distinct promises and layouts**, not 10 color swaps. Examples: heritage/luxury poster · editorial travel cover · minimal swiss grid · offer/CTA · events/nightlife · lifestyle/product-in-use · brand story · terrace/dining. Each ad tests a different angle.
+
+### 3.5 · Creative generation (before writing any prompt)
+Do **not** jump to the prompt. Run the engine's creative workflow first:
+1. **Identify the product.** 2. **Identify the most important benefit.** 3. **Define the target.** 4. **Choose the marketing angle** (Problem / Effect / Lifestyle). 5. **Invent a simple visual metaphor or situation.** 6. **Choose the creative type** (from the library: hero, packshot, lifestyle, product-in-use, macro, problem/solution, result, UGC, editorial, scroll-stopper). 7. **Design the composition.** 8. **Define light and camera.** 9. **Add constraints.** 10. **Only then write the final prompt** using the 11-part architecture in `visual-advertising-engine.md` §25.
 
 ### 4 · Generation
 - **One finished ad per generation.** Never ask a model to make a batch or contact sheet in one image. Open with: `ONE SINGLE FINISHED AD ONLY — no collage, no grid, no split-screen.`
@@ -86,7 +115,8 @@ Full steps per host: `INSTALL.md`.
 ```
 premium-ad-design/
 ├── SKILL.md                # This file — agent operating manual
-├── design-rules.md         # THE rules of beautiful advertising (paste-able charter)
+├── visual-advertising-engine.md  # THE 34-rule operating standard (Product First, Prompt Architecture, Hard Fails)
+├── design-rules.md         # Readable charter of beautiful advertising
 ├── INSTALL.md              # Setup + usage on every agent (incl. ChatGPT)
 ├── README.md               # Homepage / manual
 ├── LICENSE                 # MIT

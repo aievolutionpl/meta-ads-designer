@@ -80,6 +80,7 @@ Ask the agent: *"Summarize the 10 rules of beautiful advertising from the Premiu
 
 | File | Use it for |
 |------|-----------|
+| `visual-advertising-engine.md` | **The operating standard** — 34 rules (Product First, Prompt Architecture, Hard Fails, QA). Follow before any commercial visual |
 | `design-rules.md` | The rules — paste into any chat, or read as the canonical charter |
 | `SKILL.md` | Agent operating manual (skill loaders read this) |
 | `INSTALL.md` | This file — setup per host |
@@ -87,3 +88,5 @@ Ask the agent: *"Summarize the 10 rules of beautiful advertising from the Premiu
 | `references/niche-playbooks.md` | Per-industry depth |
 | `references/anti-slop-registry.md` | Full banned-pattern list + grep gate |
 | `README.md` | The manual / homepage |
+
+> **For maximum strictness on any agent:** paste or attach **`visual-advertising-engine.md`** (the 34-rule standard) instead of — or in addition to — `design-rules.md`. The Engine is the deeper, more commercial-grade version of the charter.

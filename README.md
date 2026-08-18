@@ -6,7 +6,7 @@
 
 **Postery · Flyery · Meta ads · Promo graphics** — for restaurants, hotels, local businesses and retail.
 
-![Version](https://img.shields.io/badge/version-2.0.0-6a5acd)
+![Version](https://img.shields.io/badge/version-3.0.0-6a5acd)
 ![License](https://img.shields.io/badge/license-MIT-brightgreen)
 ![Language](https://img.shields.io/badge/lang-PL-2ea44f)
 ![Hosts](https://img.shields.io/badge/runs_on-Hermes%20%7C%20Claude%20%7C%20Codex%20%7C%20Cursor%20%7C%20ChatGPT-blue)
@@ -51,11 +51,13 @@ The result reads as *"an image from ChatGPT"* — not a professional campaign. *
 
 ---
 
-## 🏛️ The 10 Rules of Beautiful Advertising
+## 🏛️ The Rules of Beautiful Advertising
 
-The heart of the plugin. **One line each — the full charter is in `design-rules.md`.**
+The heart of the plugin is the **Visual Advertising Engine** (`visual-advertising-engine.md`) — the full 34-rule operating standard. Here are the 10 headline rules; **the complete standard is in the Engine file.**
 
-1. **Hierarchy** — one dominant element (the TITLE), readable from a thumbnail, message in 1 second.
+> **Product First · Reference = Source of Truth · One creative = One idea · Don't decorate, direct.**
+
+1. **Hierarchy** — one dominant element (the TITLE / the product), readable from a thumbnail, message in 1 second.
 2. **Real typography** — name real typefaces (Playfair, Montserrat…), max 3 families, contrast by weight & scale. Never "modern sans-serif".
 3. **Brand palette + one accent** — never the purple-blue default; no cream/sand "for warmth"; gradient only as a scrim.
 4. **Negative space** — generous margins (~8%), breathing room; space is luxury.
@@ -71,6 +73,13 @@ The heart of the plugin. **One line each — the full charter is in `design-rule
 ## ⚙️ How it works — architecture
 
 ```
+                   ┌──────────────────────────────────────────┐
+                   │  visual-advertising-engine.md            │  ← THE standard
+                   │  "Visual Advertising Engine"             │     (34 rules: Product
+                   │   34-rule operating standard             │      First, Prompt
+                   └──────────────┬───────────────────────────┘      Architecture,
+                                  │ summarized as               Hard Fails)
+                                  ▼
                    ┌─────────────────────────────┐
                    │   design-rules.md           │  ← THE charter (paste-able)
                    │   "The Rules of Beautiful   │     Works on ANY agent
@@ -89,8 +98,9 @@ The heart of the plugin. **One line each — the full charter is in `design-rule
 ```
 
 **The split is intentional:**
-- **`design-rules.md`** — the *content* (the taste). Self-contained, so it can be pasted into ChatGPT or injected into any system prompt. This is what changes an agent's taste.
-- **`SKILL.md`** — the *procedure* (what to DO: brief → research → angles → generate → QA → deliver). Skill loaders read its frontmatter.
+- **`visual-advertising-engine.md`** — the *operating standard* (34 rules): Product First, Reference = Source of Truth, Prompt Architecture, Creative Workflow, Hard Fails, Final Quality Check. This is what an agent follows before any commercial visual.
+- **`design-rules.md`** — the *charter* (the taste). Self-contained, so it can be pasted into ChatGPT or injected into any system prompt. This is what changes an agent's taste.
+- **`SKILL.md`** — the *procedure* (what to DO: brief → research → angles → creative → generate → QA → deliver). Skill loaders read its frontmatter.
 - **`references/`** — the *depth* (ready prompts, per-industry playbooks, full slop registry).
 - **`INSTALL.md`** — the *adapters* (how each host loads it).
 
@@ -139,15 +149,16 @@ Full per-host steps: **`INSTALL.md`**.
 
 ```
 premium-ad-design/
-├── SKILL.md                # Agent operating manual (procedure + routing)
-├── design-rules.md         # THE charter — "The Rules of Beautiful Advertising"
-├── INSTALL.md              # Setup + usage on every agent (incl. ChatGPT)
-├── README.md               # This manual
-├── LICENSE                 # MIT
+├── SKILL.md                        # Agent operating manual (procedure + routing)
+├── visual-advertising-engine.md    # THE standard — "Visual Advertising Engine" (34 rules)
+├── design-rules.md                 # THE charter — "The Rules of Beautiful Advertising"
+├── INSTALL.md                      # Setup + usage on every agent (incl. ChatGPT)
+├── README.md                       # This manual
+├── LICENSE                         # MIT
 └── references/
-    ├── anti-slop-registry.md   # Full banned-pattern compendium (visual + copy)
-    ├── niche-playbooks.md      # Per-industry ad playbooks (restaurant, hotel, …)
-    └── prompt-library.md       # Ready-to-use prompt recipes for any model
+    ├── anti-slop-registry.md       # Full banned-pattern compendium (visual + copy)
+    ├── niche-playbooks.md          # Per-industry ad playbooks (restaurant, hotel, …)
+    └── prompt-library.md           # Ready-to-use prompt recipes for any model
 ```
 
 ---
@@ -156,7 +167,8 @@ premium-ad-design/
 
 | File | Use it for |
 |------|-----------|
-| `design-rules.md` | The rules — paste into any chat, or read as the canonical charter |
+| `visual-advertising-engine.md` | **The operating standard** — 34 rules agents follow before any commercial visual |
+| `design-rules.md` | The charter — paste into any chat, or read as the canonical taste |
 | `SKILL.md` | Agent operating manual (skill loaders read this) |
 | `INSTALL.md` | Setup per host |
 | `references/prompt-library.md` | Ready-to-use prompt recipes |
