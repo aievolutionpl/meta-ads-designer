@@ -8,7 +8,7 @@
 
 [🇵🇱 Polski](README.pl.md) · [EN](README.md)
 
-![Version](https://img.shields.io/badge/version-4.0.0-6a5acd)
+![Version](https://img.shields.io/badge/version-5.0.0-6a5acd)
 ![License](https://img.shields.io/badge/license-MIT-brightgreen)
 ![Format](https://img.shields.io/badge/default_format-4:5%20(1080×1350)-informational)
 ![Hosts](https://img.shields.io/badge/runs_on-ChatGPT%20%7C%20Codex%20%7C%20Hermes%20%7C%20Claude%20%7C%20Cursor-blue)
@@ -72,51 +72,62 @@ Full per-host steps: **[`INSTALL.md`](INSTALL.md)**.
 `Meta Ads Designer` is **framework-agnostic**. The same rules travel everywhere — native skills on Hermes/Claude/Codex/Cursor, custom instructions on ChatGPT, or system-prompt injection on any agent/API.
 
 ```
-┌────────────────────────────────────────────┐
-│ visual-advertising-engine(.en).md          │  ← THE standard (34 rules)
-│   Product First · Source of Truth ·        │     Prompt Architecture ·
-│   Hard Fails · Final Quality Check         │     Creative Workflow
-└───────────────┬────────────────────────────┘
-                │ summarized as
-                ▼
-┌─────────────────────────────┐
-│      design-rules(.en).md   │  ← THE charter (paste-able taste)
-│   "The Rules of Beautiful   │     Works on ANY agent
-│    Advertising"             │
-└───────────────┬─────────────┘
-                │ loaded by
-        ┌───────┼───────┐
-        ▼       ▼       ▼
-   ┌────────┐ ┌───────┐ ┌──────────────┐
-   │SKILL.md│ │core.md│ │  references/ │
-   │ manual │ │inject │ │ depth:       │
-   │        │ │me 1-pg│ │ prompts,     │
-   └────────┘ └───────┘ │ niches, slop │
-                        └──────────────┘
+┌──────────────────────────────────────────────────┐
+│  visual-advertising-engine.md                    │  ← THE rules, R01–R34
+│  single source of truth · stable rule IDs        │     cite them in QA
+└───────┬──────────────────────────────────────────┘
+        │ executed with
+        ▼
+┌────────────────────┬────────────────────┬────────────────────┐
+│ layout-system.md   │ headline-system.md │ qa-gate.md         │
+│ grid · type scale  │ archetypes         │ script + vision    │
+│ palettes · layouts │ budgets · CTAs     │ + scored rubric    │
+│ WHAT IT LOOKS LIKE │ WHAT IT SAYS       │ IS IT GOOD ENOUGH  │
+└────────────────────┴─────────┬──────────┴────────────────────┘
+                               │ demonstrated by
+                               ▼
+                      ┌──────────────────┐
+                      │    examples/     │  ← finished briefs → prompts
+                      │  no placeholders │     → QA verdicts → fixes
+                      └────────┬─────────┘
+                               │ loaded by
+                 ┌─────────────┼─────────────┐
+                 ▼             ▼             ▼
+           ┌──────────┐  ┌──────────┐  ┌──────────────┐
+           │ SKILL.md │  │ core.md  │  │ references/  │
+           │ workflow │  │ 1-page   │  │ niche depth  │
+           │          │  │ inject   │  │ + anti-slop  │
+           └──────────┘  └──────────┘  └──────────────┘
 ```
 
-**The split is intentional:** the *standard* (what an agent follows) → the *charter* (the taste, paste-able) → the *manual* (procedure) → the *core* (one-page inject) → the *references* (depth). Taste travels; procedure adapts.
+**The split is intentional.** The rules say *what good means*; the three system files turn that into **numbers, words and a pass mark**; the examples prove it; `SKILL.md` runs it; `core.md` travels anywhere. Taste travels; procedure adapts.
 
 ---
 
-## 🏛️ The Rules of Beautiful Advertising
+## 🏛️ What it actually enforces
 
-Full 34-rule standard in **`visual-advertising-engine.md`**. Headlines:
+Full standard in **[`visual-advertising-engine.md`](visual-advertising-engine.md)** — 34 rules with stable IDs (`R01`–`R34`) you can cite in a QA verdict.
 
 > **Product First · Reference = Source of Truth · One creative = One idea · Don't decorate, direct.**
 
-1. **Hierarchy** — one dominant element (the product / title), readable from a thumbnail, message in 1 second.
-2. **Real typography** — name real typefaces (Playfair, Montserrat…), max 3 families, contrast by weight & scale. Never "modern sans-serif".
-3. **Brand palette + one accent** — never the purple-blue default; no cream/sand "for warmth"; gradient only as a scrim.
-4. **Negative space** — generous margins, breathing room; space is luxury.
-5. **Imagery in context** — product in real use, real light, real people. Never floating on a void.
-6. **Real food from refs** — never let AI invent dishes the venue doesn't serve.
-7. **Logo fidelity** — never AI-redraw an official logo; place the original file.
-8. **Ad spine** — headline → subline → CTA → brand cue. A pretty photo is not an ad.
-9. **No AI copy** — banned words (delve, seamless, empower, elevate, robust, revolutionary, 🚀); names & numbers over adjectives.
-10. **QA before shipping** — thumbnail readability, correct spelling (incl. Polish diacritics), one focal point, contrast, logo fidelity.
+**The rules** — hierarchy readable from a thumbnail · commercial realism (perspective, gravity, shadows, real materials) · lighting described by what it *does* · an explicit camera decision · depth · product in use · three mandatory angles (Problem/Effect/Lifestyle) · series consistency · anti-slop · hard-fail conditions.
 
-Plus, from the Engine: **Commercial realism** (perspective, gravity, shadows, real materials) · **Lighting is part of the product** · **Think like a photographer** · **Build depth** · **Three mandatory angles** (Problem/Effect/Lifestyle) · **The Visual Creative Library** (hero, packshot, lifestyle, product-in-use, macro, problem/solution, result, UGC, editorial, scroll-stopper) · **Series consistency** · **Hard Fail Conditions** · **DON'T DECORATE. DIRECT.**
+**The numbers** ([`layout-system.md`](references/layout-system.md)) — 12-column grid, 86px margins, a type scale in px, named font pairings with fallbacks, starter palettes per category, three canonical layouts with exact panel heights and scrim values, contrast ≥4.5:1.
+
+**The words** ([`headline-system.md`](references/headline-system.md)) — the specificity test, ten headline archetypes, character budgets locked to the type scale, CTAs per category in EN/PL, and a diacritics strategy that stops Polish copy from rendering as `ZOSTAN` with a missing tail.
+
+**The pass mark** ([`qa-gate.md`](references/qa-gate.md)) — `scripts/qa.py` for what a machine measures, a structured-JSON vision prompt that transcribes rather than approves, and a 10-criteria rubric. Ship at **≥16/20 with zero hard fails**.
+
+### The one test that removes most AI copy
+
+> Could a direct competitor paste this headline onto their own ad without changing a word?
+
+| ❌ | ✅ |
+|---|---|
+| Authentic flavours | Souvlaki off the grill |
+| Your perfect escape | Sea view, four minutes from the harbour |
+| Quality you can trust | 1,400 stoves fitted on this island |
+| Experience the difference | Cold house Friday. Warm house Monday. |
 
 ---
 
@@ -129,9 +140,12 @@ Plus, from the Engine: **Commercial realism** (perspective, gravity, shadows, re
 3. ANGLES    — 5-10 distinct promises/layouts, not 10 color swaps
 4. CREATIVE  — product → benefit → target → angle → metaphor → type →
                composition → light/camera → constraints → then the prompt
-5. GENERATE  — one finished ad per generation; refs with a clear role
-6. QA        — contact sheet + checklist; scale+pad (never crop) near edges
-7. DELIVER   — files + contact sheet + notes; report model/cost
+6. MODE      — native in-render text, or deterministic composition?
+               (diacritics, apostrophes, prices, logos → deterministic)
+7. GENERATE  — one finished ad per generation; refs with a labelled role;
+               11-part prompt with NO placeholders left
+8. QA        — scripts/qa.py + vision pass + rubric; ship at >=16/20
+9. DELIVER   — files + contact sheet + per-image scores + notes
 ```
 
 ---
@@ -141,44 +155,51 @@ Plus, from the Engine: **Commercial realism** (perspective, gravity, shadows, re
 ```
 meta-ads-designer/
 ├── SKILL.md                        # Agent operating manual (procedure + routing)
-├── core.md                         # 1-page injectable rules — paste into any chat
-├── visual-advertising-engine.md    # THE standard — 34 rules (PL)
-├── visual-advertising-engine.en.md # THE standard — 34 rules (EN)
-├── design-rules.md                 # The charter — Rules of Beautiful Advertising (PL)
-├── design-rules.en.md              # The charter (EN)
-├── INSTALL.md                      # Setup + usage on every agent (incl. ChatGPT)
-├── README.md                       # This manual (EN)
-├── README.pl.md                    # This manual (PL)
-├── LICENSE                         # MIT
-└── references/
-    ├── hospitality-food-services-playbook.md  # Deep: food / hotel / services (battle-tested)
-    ├── anti-slop-registry.md       # Full banned-pattern compendium (visual + copy)
-    ├── niche-playbooks.md          # Per-industry ad playbooks (restaurant, hotel, …)
-    └── prompt-library.md           # Ready-to-use prompt recipes for any model
+├── visual-advertising-engine.md    # THE rules, R01–R34 — single source of truth
+├── design-rules.md                 # Readable charter + index to everything
+├── core.md                         # 1-page injectable — paste into any chat
+├── INSTALL.md                      # Setup on every host
+├── CHANGELOG.md
+├── examples/                       # Finished briefs → prompts → QA verdicts
+│   ├── 00-anti-examples.md         #   weak vs finished, side by side
+│   ├── 01-restaurant-real-food.md  #   Mode A · real-food hero
+│   ├── 02-hotel-editorial.md       #   Mode B · editorial split
+│   ├── 03-services-problem-effect.md
+│   └── 04-retail-product-in-use.md
+├── references/
+│   ├── layout-system.md            # Grid, type scale, palettes, layouts, modes
+│   ├── headline-system.md          # Archetypes, budgets, diacritics, CTAs
+│   ├── qa-gate.md                  # Scored gate + vision prompt + rubric
+│   ├── hospitality-food-services-playbook.md
+│   ├── niche-playbooks.md
+│   ├── prompt-library.md
+│   └── anti-slop-registry.md
+├── scripts/
+│   ├── qa.py                       # Deterministic QA layer
+│   └── extract_wordmark.py         # White wordmark from a solid-colour logo
+└── LICENSE
 ```
 
 ---
 
 ## 🧭 File map
 
-| File | Use it for |
-|------|-----------|
-| `core.md` | **The one-page inject** — paste into any chat/agent |
-| `visual-advertising-engine(.en).md` | **The operating standard** — 34 rules agents follow before any commercial visual |
-| `design-rules(.en).md` | The charter — the taste |
-| `SKILL.md` | Agent operating manual (skill loaders read this) |
-| `INSTALL.md` | Setup per host |
-| `references/hospitality-food-services-playbook.md` | Deep rules for food / hotel / services ads |
-| `references/prompt-library.md` | Ready-to-use prompt recipes |
-| `references/niche-playbooks.md` | Per-industry depth |
-| `references/anti-slop-registry.md` | Full banned-pattern list + grep gate |
-| `README.md` | This manual |
+| I want to… | Open |
+|-----------|------|
+| paste one page into a chat | `core.md` |
+| know the rules | `visual-advertising-engine.md` |
+| know how big the headline is | `references/layout-system.md` |
+| know what the headline should say | `references/headline-system.md` |
+| decide whether to ship it | `references/qa-gate.md` + `scripts/qa.py` |
+| see a finished prompt | `examples/` |
+| handle a restaurant / hotel / services brief | `references/hospitality-food-services-playbook.md` |
+| install it on my agent | `INSTALL.md` |
 
 ---
 
 ## 🤝 Contributing
 
-Have a rule that would've saved a campaign? Open a PR against `visual-advertising-engine.md` — it's the canonical source; `core.md`, `SKILL.md` and the README summarize it. See [`CONTRIBUTING.md`](CONTRIBUTING.md).
+Have a rule that would've saved a campaign? Open a PR against `visual-advertising-engine.md` — it's the canonical source, and everything else summarizes it. New rules get the next free `R` id and never renumber an existing one. See [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ---
 
