@@ -2,18 +2,19 @@
 
 # 🎨 Premium Ad Design
 
-### Doctrina pięknego designu dla agentów AI — postery, flyery, meta ads i promocyjne grafiki
+### The universal plugin that teaches AI agents how to design beautiful ads — and stop producing AI-slop
 
-**Uczy agenta, jak wygląda piękny design — i jak go wygenerować bez AI-slopu.**
+**Postery · Flyery · Meta ads · Promo graphics** — for restaurants, hotels, local businesses and retail.
 
-![Version](https://img.shields.io/badge/version-1.0.0-6a5acd)
+![Version](https://img.shields.io/badge/version-2.0.0-6a5acd)
 ![License](https://img.shields.io/badge/license-MIT-brightgreen)
 ![Language](https://img.shields.io/badge/lang-PL-2ea44f)
-![Framework](https://img.shields.io/badge/framework-agnostic-blue)
+![Hosts](https://img.shields.io/badge/runs_on-Hermes%20%7C%20Claude%20%7C%20Codex%20%7C%20Cursor%20%7C%20ChatGPT-blue)
+![Status](https://img.shields.io/badge/framework-agnostic-success)
 
 <br/>
 
-> **„Nie generuj 'obiektów w próżni'. Generuj reklamy, które wyglądają jak kampania — z hierarchią, typografią, realnym światłem i strukturalnym przekazem."**
+> **„Don't generate objects in a void. Generate ads that look like a campaign — with hierarchy, typography, real light, and a structural message."**
 
 <br/>
 
@@ -21,127 +22,165 @@
 
 ---
 
-## 🧩 Problem
+## 🧩 The problem — why AI ads all look the same
 
-Grafiki generowane przez ChatGPT **wyglądają tak samo** — i to źle:
+Image models have **no taste**. Left to themselves they converge on a look anyone can spot as AI-slop:
 
-| 🐘 To, co widzisz | ➡️ To, co dostajesz |
-|-------------------|---------------------|
-| Małe ikonki, thumbnail clip-art | brak pełnej kompozycji |
-| Generyczne gradienty + purple | default, nie paleta brandu |
-| Text-on-photo Canva look | brak natywnego tekstu w scenie |
-| AI-wymyślone jedzenie | nie to, co serwuje lokal |
-| Brak hierarchii | nic nie czytelne z miniaturki |
+| 🐘 What the user sees | ➡️ What the model produces |
+|-----------------------|----------------------------|
+| A real business, with real photos | Tiny clip-art icons, no composition |
+| Their actual food / venue / product | AI-**invented** dishes, fake facades |
+| Their real logo | A distorted AI-**redrawn** logo |
+| A premium local restaurant | A generic purple-blue gradient + Inter font |
+| A memorable offer | Text slapped on a photo (Canva template), no message |
 
-**To jest AI-slop.** Piękny ad wygląda jak wycięty z profesjonalnej kampanii — a ten skill uczy agenta dokładnie, jak to osiągnąć.
-
----
-
-## ✨ Co daje ten skill
-
-- **🏛️ Design Doctrine** — 7 filarów pięknego designu (hierarchia, typografia, kolor, przestrzeń, imagery, logo fidelity, struktura ad).
-- **🚫 Anti-Slop Gate** — skompilowane kompendium zakazów z realnych rejectów produkcyjnych + programmatic grep gate.
-- **🔧 Pełny workflow** — od brief intake i researchu niszy, przez generację, po QA gate i delivery.
-- **🍽️ Niche Playbooks** — jak wygląda dobry ad w restauracji, hotelu, lokalnym biznesie, retailu i na eventach.
-- **📦 Biblioteka promptów** — gotowe szablony Codex/gpt-image-2 do natychmiastowego użycia.
-
-Framework-agnostic: **działa na Hermes, Claude Code, Codex, Cursor i każdym agencie** z natywnym loaderem skilli.
+The result reads as *"an image from ChatGPT"* — not a professional campaign. **This plugin fixes that.**
 
 ---
 
-## 📁 Struktura
+## ✨ The solution — rules, not vibes
+
+`Premium Ad Design` distills hard-won production rules into a **universal charter of beautiful advertising**. It does **not** depend on any one tool or host — the rules are the same everywhere:
+
+- ✅ **Hermes** — native skill
+- ✅ **Claude Code** — native skill
+- ✅ **Codex CLI** — native skill
+- ✅ **Cursor / Windsurf** — native skill
+- ✅ **ChatGPT / Claude / Gemini** — paste `design-rules.md` as a custom instruction
+- ✅ **Any custom agent / API** — inject the ruleset into the system prompt
+
+---
+
+## 🏛️ The 10 Rules of Beautiful Advertising
+
+The heart of the plugin. **One line each — the full charter is in `design-rules.md`.**
+
+1. **Hierarchy** — one dominant element (the TITLE), readable from a thumbnail, message in 1 second.
+2. **Real typography** — name real typefaces (Playfair, Montserrat…), max 3 families, contrast by weight & scale. Never "modern sans-serif".
+3. **Brand palette + one accent** — never the purple-blue default; no cream/sand "for warmth"; gradient only as a scrim.
+4. **Negative space** — generous margins (~8%), breathing room; space is luxury.
+5. **Imagery in context** — product in real use, real light, real people. Never floating on a void.
+6. **Real food from refs** — never let AI invent dishes the venue doesn't serve.
+7. **Logo fidelity** — never AI-redraw an official logo; place the original file.
+8. **Ad spine** — headline → subline → CTA → brand cue. A pretty photo is not an ad.
+9. **No AI copy** — banned words (delve, seamless, empower, elevate, robust, revolutionary, 🚀); names & numbers over adjectives.
+10. **QA before shipping** — thumbnail readability, correct spelling (incl. Polish diacritics), one focal point, contrast, logo fidelity.
+
+---
+
+## ⚙️ How it works — architecture
+
+```
+                   ┌─────────────────────────────┐
+                   │   design-rules.md           │  ← THE charter (paste-able)
+                   │   "The Rules of Beautiful   │     Works on ANY agent
+                   │    Advertising"             │
+                   └──────────────┬──────────────┘
+                                  │ loaded by
+        ┌─────────────────────────┼─────────────────────────┐
+        ▼                         ▼                         ▼
+   ┌───────────┐           ┌──────────────┐          ┌──────────────┐
+   │  SKILL.md │           │   INSTALL.md │          │  references/ │
+   │ agent     │           │   setup per  │          │  depth:      │
+   │ operating │           │   host +     │          │  prompts,    │
+   │ manual    │           │   ChatGPT    │          │  niches,     │
+   └───────────┘           └──────────────┘          │  anti-slop   │
+                                                     └──────────────┘
+```
+
+**The split is intentional:**
+- **`design-rules.md`** — the *content* (the taste). Self-contained, so it can be pasted into ChatGPT or injected into any system prompt. This is what changes an agent's taste.
+- **`SKILL.md`** — the *procedure* (what to DO: brief → research → angles → generate → QA → deliver). Skill loaders read its frontmatter.
+- **`references/`** — the *depth* (ready prompts, per-industry playbooks, full slop registry).
+- **`INSTALL.md`** — the *adapters* (how each host loads it).
+
+The result: **the taste travels**, no matter which agent runs it.
+
+---
+
+## 🧠 The workflow it drives
+
+```
+1. BRIEF     — what we promote, for whom, the CTA, platforms + collect refs
+               (logo, venue, food, products)
+2. RESEARCH  — how do top brands in this niche present themselves? If the
+               client has ads they like — that IS the style source of truth
+3. ANGLES    — 5-10 distinct promises/layouts, not 10 color swaps
+4. GENERATE  — one finished ad per generation; refs with a clear role
+5. QA        — contact sheet + checklist; scale+pad (never crop) near edges
+6. DELIVER   — files + contact sheet + notes; report model/cost
+```
+
+---
+
+## 🚀 Quick start
+
+### Hermes / Claude / Codex / Cursor
+```bash
+git clone https://github.com/aievolutionpl/premium-ad-design.git
+cp -r premium-ad-design ~/.hermes/skills/marketing/   # Hermes
+cp -r premium-ad-design ~/.claude/skills/             # Claude Code
+cp -r premium-ad-design ~/.codex/skills/              # Codex
+cp -r premium-ad-design ~/.cursor/skills/             # Cursor
+```
+
+### ChatGPT / Claude / Gemini (chat)
+Open **Custom Instructions** and paste the ruleset, or attach `design-rules.md` as a file. Then prompt:
+
+> *"Make a 4:5 social ad for [business]. Here are my reference photos: [attach logo/food/venue]. Follow the Premium Ad Design rules: one headline readable from a thumbnail, brand palette, real typography, no text-on-photo slop, real food from my photos, my logo unaltered, CTA 'Reserve a table'. Show 3 structurally different concepts first."*
+
+**Verify it loaded:** ask the agent to *"summarize the 10 rules of beautiful advertising"* — it should name hierarchy, real typography, brand palette, negative space, context imagery, logo fidelity, ad spine, banned AI words, QA.
+
+Full per-host steps: **`INSTALL.md`**.
+
+---
+
+## 📁 Repo structure
 
 ```
 premium-ad-design/
-├── SKILL.md                        # Doctrina + workflow + routing (serce)
-├── references/
-│   ├── anti-slop-registry.md       # Pełne kompendium zakazów visual + copy
-│   ├── niche-playbooks.md          # Jak wygląda dobry ad w każdej niszy
-│   └── prompt-library.md           # Gotowe szablony promptów
-├── LICENSE                         # MIT
-└── README.md
+├── SKILL.md                # Agent operating manual (procedure + routing)
+├── design-rules.md         # THE charter — "The Rules of Beautiful Advertising"
+├── INSTALL.md              # Setup + usage on every agent (incl. ChatGPT)
+├── README.md               # This manual
+├── LICENSE                 # MIT
+└── references/
+    ├── anti-slop-registry.md   # Full banned-pattern compendium (visual + copy)
+    ├── niche-playbooks.md      # Per-industry ad playbooks (restaurant, hotel, …)
+    └── prompt-library.md       # Ready-to-use prompt recipes for any model
 ```
 
 ---
 
-## 🚀 Instalacja
+## 🧭 File map
 
-### Hermes Agent
-```bash
-# skopiuj do katalogu skilli
-cp -r premium-ad-design ~/.hermes/skills/marketing/
-```
-
-### Claude Code / Codex / Cursor
-```bash
-cp -r premium-ad-design ~/.claude/skills/      # Claude Code
-cp -r premium-ad-design ~/.codex/skills/       # Codex CLI
-cp -r premium-ad-design ~/.cursor/skills/      # Cursor
-```
-
-Gotowe. Agent automatycznie załaduje `premium-ad-design` przy zadaniach typu "zrób flyer", "meta ad", "promocyjna grafika dla restauracji".
+| File | Use it for |
+|------|-----------|
+| `design-rules.md` | The rules — paste into any chat, or read as the canonical charter |
+| `SKILL.md` | Agent operating manual (skill loaders read this) |
+| `INSTALL.md` | Setup per host |
+| `references/prompt-library.md` | Ready-to-use prompt recipes |
+| `references/niche-playbooks.md` | Per-industry depth |
+| `references/anti-slop-registry.md` | Full banned-pattern list + grep gate |
+| `README.md` | This manual |
 
 ---
 
-## 🧠 Jak to działa
+## 🎯 Why it exists — the origin
 
-```
-BRIEF INTAKE (info + ref photos)
-    ↓
-RESEARCH NISZY (jak wyglądają dobre adsy w tej branży)
-    ↓
-ANGLE MATRIX (5-10 różnych kątów, nie color swaps)
-    ↓
-BACKEND / MODEL SELECTION (Codex vs NB2 vs PIL)
-    ↓
-GENERACJA (ref images + 5-slot prompt + design doctrine)
-    ↓
-QA GATE (contact sheet + vision_analyze + grep slop)
-    ↓
-DELIVERY (ZIP + contact sheet + koszt)
-```
+Built from **real production rejections**, not theory. Every rule maps to an actual mistake caught on a live campaign: the restaurant ad that invented dishes the kitchen never served, the hotel pack that mangled the logo, the flyer that was a Canva template with text slapped on a photo, the "premium" pack that was 10 color swaps of the same layout. These are the rules that turned those into passing campaigns.
 
 ---
 
-## 🎯 Design Doctrine (streszczenie)
+## 🤝 Contributing
 
-1. **Hierarchia** — jeden dominujący element (TITLE), czytelny z miniaturki.
-2. **Typografia** — prawdziwe fonty, max 3 rodziny, kontrast wagi/skali.
-3. **Kolor** — paleta brandu + JEDEN akcent, zero default gradientów.
-4. **Przestrzeń** — generozne marże, negatywna przestrzeń = luksus.
-5. **Imagery** — produkt w kontekście, realne światło, realne jedzenie z ref.
-6. **Logo fidelity** — nigdy nie AI-redraw oficjalnego logo.
-7. **Struktura** — headline → subline → CTA → brand cue. Piękne zdjęcie bez struktury ≠ ad.
+Have a rule that would've saved a campaign? Open a PR against `design-rules.md` — that's the canonical source; `SKILL.md` and the README summarize it.
 
 ---
 
-## 🍽️ Niche Playbooks
+## 📜 License
 
-| Nisza | Hero | Layout |
-|-------|------|--------|
-| 🍽️ Restauracja | Realne danie z ref photo | Zdjęcie góra 60% + solidny panel dół 40% |
-| 🏨 Hotel / venue | Facade, golden hour | Coastal editorial, direct-booking CTA |
-| 🏪 Lokalny biznes | Realny produkt/instalacja | Premium lifestyle, czytelne CTA + logo |
-| 🛍️ Retail | Produkt w użyciu | Real context, studio hero |
-| 🎉 Event | Mocna typografia | 1 hero + data/miejsce/CTA |
-
----
-
-## 🧭 Powiązane
-
-Ten skill **orkiestruje** istniejące biblioteki zamiast ich dublować:
-
-- [`imagegen`](https://github.com/aievolutionpl) — backendy, ref images, koszty
-- `reference-led-ad-production` — refs od klienta, packi wielu stylów
-- `premium-static-ad-production` — czyste tło + deterministyczna typografia
-- `gpt-image-prompt-framework` — 5-slotowy framework promptów
-- [`step-beyond`](https://github.com/aievolutionpl/step-beyond) — behavioralna proaktywność
-
----
-
-## 📜 Licencja
-
-MIT — używaj, remiksuj, publikuj.
+MIT — use it, remix it, ship it.
 
 ---
 

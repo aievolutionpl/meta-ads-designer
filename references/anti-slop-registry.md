@@ -1,6 +1,6 @@
 # 🚫 Anti-Slop Registry — pełne kompendium
 
-> Skompilowane z `jarvis-anti-slop` (visual/design) + `stop-slop` (copy) + realnych rejectów z produkcji. **Single source of truth:** obraz/design → ten plik + `jarvis-anti-slop`; copy → `stop-slop`. Nie utrzymuj rozbieżnych kopii.
+> Skompilowane z doświadczeń produkcyjnych na realnych kampaniach + powszechnie znanych rejestrów anti-slop (visual/design + copy). To jest uzupełnienie sekcji 9 w `design-rules.md` — pełne kompendium zakazów. Wersja obrazowa → tutaj; wersja copy → sekcja 8 w `design-rules.md`.
 
 ---
 
