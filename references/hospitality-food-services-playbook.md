@@ -1,6 +1,9 @@
 # 🍽️ Hospitality · Food · Services — Playbook
 
-> **Battle-tested rules for the three most common briefs.** Every rule here comes from a real campaign (De L'Etang taverna, Ommaroo Hotel, HFJ, local venues) — including the exact rejection modes Chris flagged and the layouts that passed QC. Follow this when the brief is a restaurant, hotel/venue, or a services business.
+> **Battle-tested rules for the three most common briefs.** Every rule here comes from real production campaigns (a coastal taverna, a seafront hotel, a local stove installer) — including the exact rejection modes that came back from the client and the layouts that passed QC. Follow this when the brief is a restaurant, hotel/venue, or a services business.
+
+> **Where the numbers live:** exact grid, type scale, panel heights, gradient values, palettes and font pairings are in [`layout-system.md`](layout-system.md). What the copy says is in [`headline-system.md`](headline-system.md). How output is scored is in [`qa-gate.md`](qa-gate.md). This file is the niche judgement that sits on top of them.
+> **Worked end-to-end examples of all three briefs:** [`../examples/`](../examples/).
 
 ---
 
@@ -29,7 +32,7 @@
 └─────────────────────────────┘
 ```
 
-**Hard rule: clean hard separation — NO text sitting directly on the food.** If the dish fills the frame, strengthen the bottom gradient: `max_alpha ~220`, `grad_h ~530` (for 1080×1350) so the bottom third becomes a clean dark band.
+**Hard rule: clean hard separation — NO text sitting directly on the food.** If the dish fills the frame and you must use a scrim instead of a panel, it has to be tall and near-opaque: gradient height ≥720px reaching alpha 255 on 1080×1350 (layout-system §3b). A short 400px gradient is the naive value and it fails on bright food.
 
 **Landscape photos:** don't force-crop a landscape table-spread to 4:5 (cuts ~50% width and clips plates). Use the "photo top + solid panel" layout instead of full-bleed cover-crop.
 
@@ -45,13 +48,14 @@ NO TEXT, NO WATERMARK, NO LOGO, NO PEOPLE. Pure photograph.
 
 Food must build appetite: texture, steam, gloss, juiciness, layers, sauce, crispness. For dynamic scenes use **Frozen-Time / Bullet-Time** (ingredients, sauce, crumbs frozen at peak motion) — but food must stay **physically credible**.
 
-### 1d · Native AI text is the default for food/venue (2026-08)
+### 1d · Native in-render text for food/venue
 
-Chris wants the copy **baked into the AI render**, not pasted on afterwards. "Nawet tekst musi być wygenerowany z AI."
+When the client wants the copy **baked into the AI render** rather than pasted on afterwards (a common and reasonable ask — pasted-on text is what makes an ad look like a template):
 
-- **gpt-image-2 (Codex)** spells native text most reliably. Pattern: prompt file with `Reference image N: '<abs-path>'` for the real dish/venue, plus a short text block + atmosphere cues + camera/lens specs.
+- **Use a model proven to spell in-scene text.** Model capability changes fast — verify on your host rather than trusting a name (`prompt-library.md` §model selection). Pattern: prompt file with `Reference image N: '<abs-path>'` for the real dish/venue, plus a short text block + atmosphere cues + camera/lens specs.
 - **Keep text SHORT** — brand + headline + one location line. More words = more spelling risk.
 - Append: `CRITICAL: every word must be spelled PERFECTLY with no typos — double-check '<brand>', '<place>'.`
+- **Never render a brand name containing an apostrophe, ampersand or accented character natively.** Leave the space and place the logo file (verified failure mode — see `../examples/01-restaurant-real-food.md`).
 - **Vision-QA every variant** — native text can drift, especially missing apostrophes.
 
 **Deterministic PIL overlay is a fallback** (tiny garbled footer), not the default composition method.
@@ -65,16 +69,11 @@ When the background is a bright or dense food shot, the naive layout fails QC. R
 - **Taller, near-opaque bottom gradient** (for 1080×1350: height ≥720px, alpha → 255) so the whole text block sits on dark navy.
 - **Top logo wordmark**: add a drop shadow + a subtle top scrim (~150px tall, alpha ~175) so a white logo reads on a bright sky/facade.
 
-### 1f · Headline font sizing for 4:5 (1080×1350) — the #1 crop failure
+### 1f · Headline font sizing — the #1 crop failure
 
-| Font size | Safe for | Risk |
-|-----------|----------|------|
-| 36–44pt | Headlines (1–3 words) | Very safe |
-| 48–56pt | Headlines (1–2 words) | Test on contact sheet |
-| 56+ pt | Single-word headers only | High crop risk |
-| 24–28pt | Body/subtitle | Safe with shadow |
+Mode A crop-risk table and the full type scale live in [`layout-system.md`](layout-system.md) §2a–2b. The niche-specific part:
 
-After first pass **always** vision-QA the contact sheet for: mid-word truncation, text touching edges, headlines overlapping busy photo areas (→ darken gradient).
+After the first pass **always** vision-QA the contact sheet for mid-word truncation, text touching edges, and headlines landing on busy areas of the food (→ deepen the scrim, or move to the panel layout). Food photos fail this more than any other category because the bright, high-frequency areas move between renders.
 
 ---
 
@@ -124,9 +123,9 @@ Heritage · seafront escape · terrace · dining · direct booking · events · 
 - Readable CTA + logo fidelity + location/phone.
 
 ### 3b · Angles that sell services
-- **Problem → Effect** (hard-to-reach cabinet → shelf at hand height). Show both in one "before/after" when it instantly proves value.
+- **Problem → Effect** (hard-to-reach cabinet → shelf at hand height). Ship it as a **pair of full-size creatives**, not a split-screen — a before/after squeezed into one frame halves both halves and fails the thumbnail test (R33). Worked example: [`../examples/03-services-problem-effect.md`](../examples/03-services-problem-effect.md).
 - **Package tiers** (e.g. "Installation included", "Finance available — £0 deposit").
-- **Deadline offers** (seasonal price lock: "Install before Oct 31").
+- **Deadline offers** (seasonal price lock: "Install before Oct 31"). The deadline must be real — never invent urgency for a local business that has to live with it.
 - **Transformation** (chaos → order, dark → light, dirty → clean).
 - **Benefit-led headline ≤40 chars**, body ≤125 chars.
 
@@ -149,16 +148,17 @@ Don't start with "make a beautiful kitchen". Start with "what should this ad say
 - No tiny fake footer/contact lines.
 
 ### 4c · White wordmark extraction from a solid-colour logo
-When the logo is white text on a solid colour (e.g. white wordmark on a blue square) and you need the wordmark alone:
-```python
-from PIL import Image; import numpy as np
-im = Image.open('logo.png').convert('RGBA'); a = np.array(im).astype(int)
-bright = np.minimum(np.minimum(a[:,:,0], a[:,:,1]), a[:,:,2])
-mask = (bright > 150).astype(np.uint8) * 255
-out = np.zeros_like(a); out[:,:,:3] = 255; out[:,:,3] = mask
-res = Image.fromarray(out.astype(np.uint8)).crop(Image.fromarray(out.astype(np.uint8)).getbbox())
-res.save('logo_white.png')
+
+When the logo is a white wordmark on a solid colour (e.g. white type on a blue square) and you need the wordmark alone, transparent:
+
+```bash
+python ../scripts/extract_wordmark.py refs/logo.png build/logo_white.png
+# dark mark on a light background:
+python ../scripts/extract_wordmark.py refs/logo.png build/logo_dark.png --invert
 ```
+
+The script masks and crops the original pixels — it never redraws anything (R03).
+
 Place the extracted wordmark prominently (top centre, ~300–320px wide on 1080px ad) with a drop shadow + top scrim so it reads over bright backgrounds. **Never** substitute a text rendering of the brand name for the official logo.
 
 ---
@@ -167,6 +167,6 @@ Place the extracted wordmark prominently (top centre, ~300–320px wide on 1080p
 
 - **Angle matrix:** test 3 angles × 2 hooks. Each angle = one core promise + "why this wins" (whitespace, geo advantage, competitor gap).
 - **Copy variants:** **Direct** ("Get X. Here's how.") · **Story** ("Last winter, the Smiths froze…") · **Authority** ("As seen in 500+ homes…") · **Urgency** ("Install before Oct 31 — price lock").
-- **Headline ≤40 chars, benefit-led.** Body ≤125 chars.
-- **Build the scene around the benefit** — message first, scene second.
-- **One creative = one idea.** Pick one reason to stop the scroll.
+- **Headline ≤40 chars, benefit-led.** Body ≤125 chars. Full budgets and the ten archetypes: [`headline-system.md`](headline-system.md).
+- **Build the scene around the benefit** — message first, scene second (R24).
+- **One creative = one idea.** Pick one reason to stop the scroll (R06).

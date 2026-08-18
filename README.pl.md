@@ -8,7 +8,7 @@
 
 [🇬🇧 English](README.md) · [PL](README.pl.md)
 
-![Version](https://img.shields.io/badge/version-4.0.0-6a5acd)
+![Version](https://img.shields.io/badge/version-5.0.0-6a5acd)
 ![License](https://img.shields.io/badge/license-MIT-brightgreen)
 ![Format](https://img.shields.io/badge/default_format-4:5%20(1080×1350)-informational)
 ![Hosts](https://img.shields.io/badge/runs_on-ChatGPT%20%7C%20Codex%20%7C%20Hermes%20%7C%20Claude%20%7C%20Cursor-blue)
@@ -68,51 +68,62 @@ Pełne kroki per host: **[`INSTALL.md`](INSTALL.md)**.
 `Meta Ads Designer` jest **framework-agnostic**. Te same zasady działają wszędzie — natywne skille na Hermes/Claude/Codex/Cursor, custom instruction w ChatGPT, albo wstrzyknięcie do system promptu dowolnego agenta/API.
 
 ```
-┌────────────────────────────────────────────┐
-│ visual-advertising-engine(.en).md          │  ← THE standard (34 zasady)
-│   Product First · Source of Truth ·        │     Prompt Architecture ·
-│   Hard Fails · Final Quality Check         │     Creative Workflow
-└───────────────┬────────────────────────────┘
-                │ podsumowany jako
-                ▼
-┌─────────────────────────────┐
-│      design-rules(.en).md   │  ← THE charter (wklejany gust)
-│   "The Rules of Beautiful   │     Działa na KAŻDYM agencie
-│    Advertising"             │
-└───────────────┬─────────────┘
-                │ ładowany przez
-        ┌───────┼───────┐
-        ▼       ▼       ▼
-   ┌────────┐ ┌───────┐ ┌──────────────┐
-   │SKILL.md│ │core.md│ │  references/ │
-   │ manual │ │wklejka│ │ głębia:      │
-   │        │ │1 str. │ │ prompty,     │
-   └────────┘ └───────┘ │ nisze, slop  │
-                        └──────────────┘
+┌──────────────────────────────────────────────────┐
+│  visual-advertising-engine.md                    │  ← ZASADY, R01–R34
+│  jedno źródło prawdy · stabilne ID reguł         │     cytuj je w QA
+└───────┬──────────────────────────────────────────┘
+        │ wykonywane przez
+        ▼
+┌────────────────────┬────────────────────┬────────────────────┐
+│ layout-system.md   │ headline-system.md │ qa-gate.md         │
+│ siatka · skala     │ archetypy          │ skrypt + vision    │
+│ palety · layouty   │ budżety · CTA      │ + rubryka punktowa │
+│ JAK MA WYGLĄDAĆ    │ CO MA MÓWIĆ        │ CZY MOŻNA WYSŁAĆ   │
+└────────────────────┴─────────┬──────────┴────────────────────┘
+                               │ pokazane w
+                               ▼
+                      ┌──────────────────┐
+                      │    examples/     │  ← gotowe briefy → prompty
+                      │  zero placeholder│     → werdykty QA → poprawki
+                      └────────┬─────────┘
+                               │ ładowane przez
+                 ┌─────────────┼─────────────┐
+                 ▼             ▼             ▼
+           ┌──────────┐  ┌──────────┐  ┌──────────────┐
+           │ SKILL.md │  │ core.md  │  │ references/  │
+           │ workflow │  │ wklejka  │  │ głębia nisz  │
+           │          │  │ 1 strona │  │ + anti-slop  │
+           └──────────┘  └──────────┘  └──────────────┘
 ```
 
-**Podział jest celowy:** *standard* (co agent stosuje) → *charter* (gust, wklejany) → *manual* (procedura) → *core* (1-stronicowa wklejka) → *references* (głębia). Gust podróżuje; procedura się adaptuje.
+**Podział jest celowy.** Zasady mówią *co znaczy dobrze*; trzy pliki systemowe zamieniają to na **liczby, słowa i próg jakości**; examples to udowadniają; `SKILL.md` to wykonuje; `core.md` jedzie wszędzie. Gust podróżuje; procedura się adaptuje.
 
 ---
 
-## 🏛️ Zasady Pięknej Reklamy
+## 🏛️ Co to faktycznie egzekwuje
 
-Pełny standard 34 zasad w **`visual-advertising-engine.md`**. Skrót:
+Pełny standard w **[`visual-advertising-engine.md`](visual-advertising-engine.md)** — 34 zasady ze stabilnymi ID (`R01`–`R34`), które cytujesz w werdykcie QA.
 
 > **Product First · Reference = Source of Truth · One creative = One idea · Don't decorate, direct.**
 
-1. **Hierarchia** — jeden dominujący element (produkt/tytuł), czytelny z miniaturki, przekaz w 1s.
-2. **Realna typografia** — nazwane fonty (Playfair, Montserrat…), max 3 rodziny, kontrast wagą i skalą. Nigdy "modern sans-serif".
-3. **Paleta brandu + jeden akcent** — nigdy purple-blue default; zero cream/sand "dla ciepła"; gradient tylko jako scrim.
-4. **Negatywna przestrzeń** — generozne marże, oddech; przestrzeń = luksus.
-5. **Imagery w kontekście** — produkt w realnym użyciu, realne światło, realni ludzie. Nigdy w próżni.
-6. **Realne jedzenie z refs** — nigdy nie pozwól AI wymyślać dań, których lokal nie serwuje.
-7. **Logo fidelity** — nigdy AI-redraw oficjalnego logo; wstaw oryginał.
-8. **Ad spine** — headline → subline → CTA → brand cue. Piękne zdjęcie ≠ ad.
-9. **Zero AI-copy** — zakazane słowa (delve, seamless, empower, elevate, robust, revolutionary, 🚀); nazwy i liczby zamiast przymiotników.
-10. **QA przed wysyłką** — czytelność z miniaturki, poprawna pisownia (w tym polskie diakrytyki), jeden focal point, kontrast, logo fidelity.
+**Zasady** — hierarchia czytelna z miniaturki · commercial realism (perspektywa, grawitacja, cienie, realne materiały) · światło opisane przez to, *co robi* · jawna decyzja kamery · głębia · produkt w użyciu · trzy obowiązkowe kąty (Problem/Efekt/Lifestyle) · spójność serii · anti-slop · hard fails.
 
-Plus z Engine: **Commercial realism** (perspektywa, grawitacja, cienie, realne materiały) · **Lighting is part of the product** · **Think like a photographer** · **Build depth** · **Trzy obowiązkowe kąty** (Problem/Efekt/Lifestyle) · **Visual Creative Library** (hero, packshot, lifestyle, product-in-use, macro, problem/solution, result, UGC, editorial, scroll-stopper) · **Spójność serii** · **Hard Fail Conditions** · **DON'T DECORATE. DIRECT.**
+**Liczby** ([`layout-system.md`](references/layout-system.md)) — siatka 12-kolumnowa, marginesy 86px, skala typograficzna w px, nazwane pary fontów z fallbackami, startowe palety per branża, trzy kanoniczne layouty z dokładnymi wysokościami paneli i wartościami scrimu, kontrast ≥4.5:1.
+
+**Słowa** ([`headline-system.md`](references/headline-system.md)) — test specyficzności, dziesięć archetypów headline'u, budżety znakowe spięte ze skalą typograficzną, CTA per branża po PL i EN, oraz strategia diakrytyków, dzięki której polski headline nie wyrenderuje się jako `ZOSTAN` bez ogonka.
+
+**Próg** ([`qa-gate.md`](references/qa-gate.md)) — `scripts/qa.py` do tego, co mierzy maszyna, prompt vision zwracający strukturalny JSON (transkrybuje tekst, a nie potakuje), i rubryka 10 kryteriów. Wysyłasz przy **≥16/20 i zerowych hard failach**.
+
+### Jeden test, który wycina większość AI-copy
+
+> Czy konkurent mógłby wkleić ten headline na swoją reklamę bez zmiany choćby jednego słowa?
+
+| ❌ | ✅ |
+|---|---|
+| Autentyczne smaki | Souvlaki prosto z grilla |
+| Twoja idealna ucieczka | Widok na morze, 4 minuty od portu |
+| Jakość, której możesz zaufać | 1400 kominków zamontowanych na wyspie |
+| Poczuj różnicę | Zimny dom w piątek. Ciepły w poniedziałek. |
 
 ---
 
@@ -125,9 +136,12 @@ Plus z Engine: **Commercial realism** (perspektywa, grawitacja, cienie, realne m
 3. ANGLES    — 5-10 różnych obietnic/layoutów, nie 10 color swaps
 4. CREATIVE  — produkt → benefit → target → angle → metaphor → typ →
                kompozycja → światło/kamera → constraints → potem prompt
-5. GENERATE  — jeden skończony ad per generacja; refs z rolą
-6. QA        — contact sheet + checklist; scale+pad (nigdy crop) przy krawędziach
-7. DELIVER   — pliki + contact sheet + notki; raport model/koszt
+5. TRYB      — tekst natywny w renderze czy kompozycja deterministyczna?
+               (diakrytyki, apostrofy, ceny, logo → deterministyczna)
+6. GENERATE  — jeden skończony ad per generacja; refs z nazwaną rolą;
+               prompt 11-częściowy, ZERO placeholderów
+7. QA        — scripts/qa.py + vision pass + rubryka; wysyłka przy >=16/20
+8. DELIVER   — pliki + contact sheet + punktacja per obraz + notki
 ```
 
 ---
@@ -136,45 +150,52 @@ Plus z Engine: **Commercial realism** (perspektywa, grawitacja, cienie, realne m
 
 ```
 meta-ads-designer/
-├── SKILL.md                        # Agent operating manual (procedura + routing)
-├── core.md                         # 1-stronicowe zasady do wklejenia
-├── visual-advertising-engine.md    # THE standard — 34 zasady (PL)
-├── visual-advertising-engine.en.md # THE standard — 34 zasady (EN)
-├── design-rules.md                 # Charter — Zasady Pięknej Reklamy (PL)
-├── design-rules.en.md              # Charter (EN)
-├── INSTALL.md                      # Setup per host (w tym ChatGPT)
-├── README.md                       # Ten manual (EN)
-├── README.pl.md                    # Ten manual (PL)
-├── LICENSE                         # MIT
-└── references/
-    ├── hospitality-food-services-playbook.md  # Głębia: food / hotel / serwisy (sprawdzone)
-    ├── anti-slop-registry.md       # Kompletne kompendium zakazów (visual + copy)
-    ├── niche-playbooks.md          # Playbooki per nisza (restauracja, hotel, …)
-    └── prompt-library.md           # Gotowe prompty dla dowolnego modelu
+├── SKILL.md                        # Manual agenta (procedura + routing)
+├── visual-advertising-engine.md    # ZASADY, R01–R34 — jedno źródło prawdy
+├── design-rules.md                 # Czytelny charter + indeks do reszty
+├── core.md                         # 1-stronicowa wklejka do dowolnego czatu
+├── INSTALL.md                      # Setup per host
+├── CHANGELOG.md
+├── examples/                       # Gotowe briefy → prompty → werdykty QA
+│   ├── 00-anti-examples.md         #   słaby vs skończony, obok siebie
+│   ├── 01-restaurant-real-food.md  #   Tryb A · real-food hero
+│   ├── 02-hotel-editorial.md       #   Tryb B · editorial split
+│   ├── 03-services-problem-effect.md
+│   └── 04-retail-product-in-use.md
+├── references/
+│   ├── layout-system.md            # Siatka, skala, palety, layouty, tryby
+│   ├── headline-system.md          # Archetypy, budżety, diakrytyki, CTA
+│   ├── qa-gate.md                  # Gate punktowy + prompt vision + rubryka
+│   ├── hospitality-food-services-playbook.md
+│   ├── niche-playbooks.md
+│   ├── prompt-library.md
+│   └── anti-slop-registry.md
+├── scripts/
+│   ├── qa.py                       # Deterministyczna warstwa QA
+│   └── extract_wordmark.py         # Biały wordmark z logo na jednolitym tle
+└── LICENSE
 ```
 
 ---
 
 ## 🧭 File map
 
-| Plik | Do czego |
-|------|----------|
-| `core.md` | **1-stronicowa wklejka** — wklej do dowolnego czatu/agenta |
-| `visual-advertising-engine(.en).md` | **Standard operacyjny** — 34 zasady przed każdym komercyjnym visualem |
-| `design-rules(.en).md` | Charter — gust |
-| `SKILL.md` | Manual agenta (czyta loader skilli) |
-| `INSTALL.md` | Setup per host |
-| `references/hospitality-food-services-playbook.md` | Głębokie reguły food / hotel / serwisy |
-| `references/prompt-library.md` | Gotowe prompty |
-| `references/niche-playbooks.md` | Głębia per nisza |
-| `references/anti-slop-registry.md` | Lista zakazów + grep gate |
-| `README.md` | Ten manual |
+| Chcę… | Otwórz |
+|-------|--------|
+| wkleić jedną stronę do czatu | `core.md` |
+| poznać zasady | `visual-advertising-engine.md` |
+| wiedzieć, jak duży jest headline | `references/layout-system.md` |
+| wiedzieć, co headline ma mówić | `references/headline-system.md` |
+| zdecydować, czy to wysyłam | `references/qa-gate.md` + `scripts/qa.py` |
+| zobaczyć skończony prompt | `examples/` |
+| ogarnąć brief restauracji / hotelu / serwisu | `references/hospitality-food-services-playbook.md` |
+| zainstalować to na swoim agencie | `INSTALL.md` |
 
 ---
 
 ## 🤝 Współpraca
 
-Masz zasadę, która uratowałaby kampanię? Otwórz PR do `visual-advertising-engine.md` — to źródło kanoniczne; `core.md`, `SKILL.md` i README je podsumowują. Zobacz [`CONTRIBUTING.md`](CONTRIBUTING.md).
+Masz zasadę, która uratowałaby kampanię? Otwórz PR do `visual-advertising-engine.md` — to źródło kanoniczne, reszta plików je podsumowuje. Nowe zasady dostają kolejne wolne `R`; istniejących nigdy nie przenumerowujemy. Zobacz [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ---
 

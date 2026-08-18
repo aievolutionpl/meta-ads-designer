@@ -1,97 +1,122 @@
-# 🍽️ Niche Playbooks — jak wygląda dobry ad w każdej niszy
+# 🎯 Niche Playbooks — what a good ad looks like per industry
 
-> **Zasada:** zanim zaprojektujesz, sprawdź jak prezentują się topowi gracze w tej niszy (Meta Ad Library, IG, konkurenci). Ten plik to punkt startowy — research niszy zawsze go aktualizuje.
+> **Before you design, check how the leaders in this niche present themselves** (Meta Ad Library, Instagram, competitors). This file is the starting point; niche research always updates it.
 
-> 🍽️ **Głębia dla 3 najczęstszych briefów (food / hotel / serwisy):** zobacz **`hospitality-food-services-playbook.md`** — zwycięskie layouty, tryby produkcji, font sizing, logo, marketing angles. Ten plik to skrót; tamten to sprawdzona w boju pełnia.
+> 🍽️ **Depth for the three most common briefs (food / hotel / services):** [`hospitality-food-services-playbook.md`](hospitality-food-services-playbook.md) — winning layouts, production modes, font sizing, logo handling, marketing angles. This file is the summary; that one is the battle-tested detail.
+
+Headline archetypes and character budgets referenced below: [`headline-system.md`](headline-system.md). Layout numbers: [`layout-system.md`](layout-system.md).
 
 ---
 
-## 🍽️ Restauracja / jedzenie
+## 🍽️ Restaurant / food
 
-### Co działa
-- **Real food wins.** Klient ma zdjęcia dań → użyj ich jako hero. Nigdy nie pozwól AI wymyślać dań, których lokal nie serwuje.
-- **Dark studio editorial** (czarne tło, spotlight, Hasselblad) — tylko gdy klient NIE ma użytecznych zdjęć i akceptuje stylizację.
-- **Real photo + solid panel:** zdjęcie u góry (~60-65%) + solidny ciemny/kolorowy panel na dole (~35-40%) z headline/subline/CTA/logo. Czysta separacja, zero tekstu na jedzeniu.
-- **Natywny tekst w scenie** (Codex gpt-image-2): brand mały serif u góry, headline duży bold, krótka location line.
-- Widok "jedzenie w użyciu" — danie na stole, bokeh, naturalne światło, nie płaskie z góry na białym.
+### What works
+- **Real food wins.** If the client has dish photos, they are the hero. Never let AI invent dishes the venue doesn't serve.
+- **Real photo + solid panel:** photo on top (~62%) + a solid dark or brand-coloured panel below (~38%) carrying headline/subline/CTA/logo. Hard separation, zero text on the food. (layout-system §3a)
+- **Dark studio editorial** (black background, single spotlight, medium format) — only when the client has no usable photos and accepts stylization.
+- **Native in-scene text** when the model spells reliably: small serif brand at the top, big bold headline, one short location line.
+- "Food in use" — the dish on a table, natural light, bokeh — beats a flat overhead on white.
 
-### Czego unikać
-- ❌ **Text-on-photo Canva template** (ramki + napis na zdjęciu) — #1 reject.
-- ❌ AI-gourmet: fancy fine-dining dania dla casual lokalu.
-- ❌ Krajobrazowe zdjęcie force-cropped do 4:5 (ucięte talerze) — użyj "photo top + panel" zamiast full-bleed cover-crop.
+### What to avoid
+- ❌ **Text-on-photo Canva template** — the #1 rejection.
+- ❌ AI-gourmet: fine-dining plating for a casual venue.
+- ❌ A landscape table-spread force-cropped to 4:5 with the plates clipped.
 
-### Typowe CTA
-`Zarezerwuj stolik` · `Zamów teraz` · `Menu` · `Zobacz ofertę`
+### Headline archetypes that work here
+CONCRETE (name the dish) · SENSORY · PLACE · DEADLINE (midweek offers)
+
+### Typical CTA
+`Reserve a table` · `Order now` · `See the menu`
 
 ---
 
 ## 🏨 Hotel / venue / accommodation
 
-### Co działa
-- **Coastal editorial:** golden hour, travel-magazine quality (Canon EOS R5, RF 24-70mm f/2.8L).
-- **Facade jako hero** (real ref), potem direct-booking CTA.
-- Layouty: heritage/luxury poster · seaside escape · terrace/dining · events · direct booking offer · arrival/evening.
-- Negatywna przestrzeń = luksus. Kontrolowane cienie, premium grading.
+### What works
+- **Coastal / travel-magazine editorial:** golden hour, real lens language (e.g. 24–70mm f/2.8 at the wide end).
+- **The real facade as hero**, then a direct-booking CTA.
+- Structurally different layouts: heritage poster · seaside escape · terrace/dining · events · direct-booking offer · arrival/evening.
+- Negative space as luxury. Controlled shadows, premium grade.
+- **The editorial split** (photo as a placed block on a flat brand field) is the fastest way out of generic hospitality.
 
-### Czego unikać
-- ❌ Logo na budynku przez AI — wstaw oryginał deterministycznie.
-- ❌ Zbyt wiele small text rows w footerze — czytelność z miniaturki.
+### What to avoid
+- ❌ AI drawing the logo onto the building — place the original file deterministically.
+- ❌ Re-generating a listed or distinctive facade — it invents balconies and windows.
+- ❌ Too many small text rows in the footer — it has to read from a thumbnail.
 
-### Typowe CTA
-`Book direct` · `Zarezerwuj pokój` · `Sprawdź dostępność` · `Poznaj ofertę`
+### Headline archetypes that work here
+OBJECTION (the portal-is-cheaper belief) · NUMBER (the direct-booking gap) · PLACE · PROOF
 
----
-
-## 🏪 Lokalny biznes (usługi, retail, home improvement)
-
-### Co działa
-- **Realne zdjęcia produktu/instalacji jako ref** → generuj nowe sceny premium (inne światło, pora dnia, lifestyle). NIE overlay na oryginale.
-- **Angles, które sprzedają usługi:** Problem → Efekt (przed/po gdy natychmiast pokazuje wartość) · Package tiers ("Instalacja w cenie", "£0 zaliczki, 0%") · Deadline offers ("Zainstaluj przed 31.10 — cena lock") · Transformation (bałagan → porządek, ciemno → jasno).
-- **Headline benefit-led ≤40 znaków**, body ≤125.
-- Czytelne CTA + logo fidelity + lokalizacja/telefon.
-
-### Czego unikać
-- ❌ Naklejanie ramek/gradientów na surowe zdjęcia klienta.
-- ❌ AI przekręcające markę produktu / sprzęt.
-- ❌ Before/after bez natychmiastowej wartości — tylko dla efektu (popularny format).
-
-### Typowe CTA
-`Umów wizytę` · `Zadzwoń` · `Zobacz realizacje` · `Sprawdź ofertę`
+### Typical CTA
+`Book direct` · `Check availability` · `See the rooms`
 
 ---
 
-## 🛍️ Retail / produkt
+## 🏪 Local business (services, retail, home improvement)
 
-### Co działa
-- **Produkt w użyciu** w realnym kontekście — nie floating na gradientowym tle.
-- Realni ludzie, realne środowisko, realne światło.
-- Studio hero: czyste tło, kierunkowe światło, produkt hero, zero clutter.
+### What works
+- **Real product/install photos as references** → generate **new** premium scenes (different light, time of day, lifestyle). Never overlay on the client's raw photo.
+- **Angles that sell services:** Problem → Effect (before/after when it proves value instantly) · package tiers ("Installation included", "£0 deposit") · genuine deadline offers ("Fitted before October 31") · transformation (chaos → order, dark → light).
+- **Benefit-led headline ≤40 characters**, body ≤125.
+- Readable CTA + logo fidelity + location/phone — all deterministic, never AI-rendered.
 
-### Czego unikać
-- ❌ Floating product na gradient + glow — najczęstszy slop produktowy.
-- ❌ Isometryczna ilustracja dla produktów.
+### What to avoid
+- ❌ Pasting frames or gradients onto the client's raw photos.
+- ❌ AI mangling a product brand or a piece of equipment.
+- ❌ Invented urgency. If there's no real cut-off, use PROOF or OBJECTION instead.
+- ❌ Before/after inside one frame — it halves both halves and fails the thumbnail test. Ship a pair.
 
-### Typowe CTA
-`Kup teraz` · `Zamów` · `Zobacz kolekcję` · `-20% tylko dziś`
+### Headline archetypes that work here
+CONTRAST · DEADLINE · PROOF · OBJECTION
 
----
-
-## 🎉 Wydarzenie / nightlife / promocja
-
-### Co działa
-- Mocna typografia, duży tytuł czytelny z miniaturki.
-- Event rows (data/miejsce) czytelne, nie zatłoczone.
-- 1 hero + data/miejsce/CTA.
-
-### Czego unikać
-- ❌ Przeciążenie elementami — za dużo informacji = nic się nie czyta.
-
-### Typowe CTA
-`Kup bilet` · `Zarezerwuj` · `Więcej info`
+### Typical CTA
+`Book a survey` · `Call today` · `See our work`
 
 ---
 
-## 🎯 Uniwersalne: research niszy w 30 sekund
-1. Meta Ad Library → wyszukaj branżę/lokalizację → zobacz 10 top adów.
-2. IG → profile konkurentów → zapisz jakie layouty/kolory się powtarzają.
-3. Zapytaj klienta: "masz istniejące adsy, które Ci się podobają?" — jeśli tak, **to jest źródło prawdy stylu**. Podnieś ich styl, nie wymyślaj własnego generycznego premium.
+## 🛍️ Retail / product
+
+### What works
+- **Product in use** in a real context — not floating on a gradient.
+- Real people, real environments, real light.
+- Studio hero: clean background, directional light, product as hero, zero clutter.
+- For anything mechanical: supply **two** references — the packshot for appearance, a drawing for how it moves.
+
+### What to avoid
+- ❌ Floating product on a gradient with a glow — the most common product slop.
+- ❌ Isometric illustration for a physical product.
+- ❌ Drifting counts across a series (tiers, buttons, fixings) — pin them explicitly.
+
+### Headline archetypes that work here
+CONCRETE · AUDIENCE · NUMBER · CONTRAST
+
+### Typical CTA
+`Shop now` · `See the collection` · `Order today`
+
+---
+
+## 🎉 Event / nightlife / promotion
+
+### What works
+- Strong typography; a big title readable from a thumbnail.
+- Event rows (date/venue) legible, not crowded.
+- One hero + date/venue/CTA. Nothing else.
+
+### What to avoid
+- ❌ Overloading the frame — too much information means nothing gets read.
+- ❌ More than one accent colour; poster design fails fast on colour noise.
+
+### Headline archetypes that work here
+DEADLINE · PLACE · AUDIENCE
+
+### Typical CTA
+`Get tickets` · `Reserve your spot`
+
+---
+
+## 🧭 Universal: niche research in 30 seconds
+
+1. **Meta Ad Library** → search the industry/location → look at 10 top ads.
+2. **Instagram** → competitor profiles → note which layouts and colours repeat.
+3. **Ask the client:** "do you have existing ads you like?" If yes, **that is the style source of truth.** Elevate their look; don't substitute your own generic "premium".
+4. Note the niche's clichés — and treat them as the list of things your ad must not do.
