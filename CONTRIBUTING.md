@@ -9,7 +9,7 @@ This is a **rules repo** — the value is the design doctrine. Every contributio
 | File | Role | When to edit it |
 |------|------|-----------------|
 | **`visual-advertising-engine.md`** | The canonical standard (34 rules) | **Adding/refining a rule → edit here FIRST.** This is the source of truth. English. |
-| `design-rules.md` / `design-rules.en.md` | The readable charter | Summarize a rule already in the engine. |
+| `design-rules.md` | The readable charter (English canonical) | Summarize a rule already in the engine. |
 | `core.md` | The 1-page inject | Add only if a rule is so essential it must be in the inject. |
 | `SKILL.md` | Agent manual | Procedural/workflow changes. |
 | `references/` | Depth (prompts, niches, slop registry) | Concrete, reusable additions (a prompt recipe, a niche pattern, a new slop tell). |

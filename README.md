@@ -76,7 +76,7 @@ Full per-host steps: **[`INSTALL.md`](INSTALL.md)**.
                 │ summarized as
                 ▼
 ┌─────────────────────────────┐
-│      design-rules(.en).md   │  ← THE charter (paste-able taste)
+│      design-rules.md       │  ← THE charter (paste-able taste)
 │   "The Rules of Beautiful   │     Works on ANY agent
 │    Advertising"             │
 └───────────────┬─────────────┘
@@ -92,7 +92,7 @@ Full per-host steps: **[`INSTALL.md`](INSTALL.md)**.
 ```
 
 - **`visual-advertising-engine.md`** — the *standard* (34 rules). What an agent follows **before** any commercial visual: Product First, Reference = Source of Truth, Prompt Architecture, Hard Fails, QA.
-- **`design-rules(.en).md`** — the *charter* (the taste). Self-contained, so it can be pasted into any chat or injected into any system prompt.
+- **`design-rules.md`** — the *charter* (the taste). English canonical. Self-contained, so it can be pasted into any chat or injected into any system prompt.
 - **`core.md`** — the *one-page inject*. The essential rules + the weak/strong prompt example, for the fastest possible setup.
 - **`SKILL.md`** — the *procedure*. Brief → research → angles → creative → generate → QA → deliver. Skill loaders read its frontmatter.
 - **`references/`** — the *depth*: a battle-tested food/hotel/services playbook, per-industry niche playbooks, ready prompt recipes, and the full anti-slop registry.
@@ -143,15 +143,20 @@ meta-ads-designer/
 ├── SKILL.md                        # Agent operating manual (procedure + routing)
 ├── core.md                         # 1-page injectable rules — paste into any chat
 ├── visual-advertising-engine.md    # THE standard — 34 rules
-├── design-rules.md                 # The charter (PL)
-├── design-rules.en.md              # The charter (EN)
+├── design-rules.md                 # The charter (English canonical)
 ├── INSTALL.md                      # Setup + usage on every agent (incl. ChatGPT)
 ├── README.md                       # This manual (EN)
 ├── README.pl.md                    # This manual (PL)
+├── CHANGELOG.md                    # Version history
 ├── LICENSE                         # MIT
 ├── assets/meta-ads-designer-banner.png
+├── examples/                       # Worked ad examples (anti, restaurant, hotel, services, retail)
+├── scripts/                        # extract_wordmark.py, qa.py
 └── references/
     ├── hospitality-food-services-playbook.md  # Deep rules: food / hotel / services
+    ├── layout-system.md            # Layout + panel-height + gradient values
+    ├── headline-system.md          # Headline sizing & contrast rules
+    ├── qa-gate.md                  # QA gate & rejection criteria
     ├── anti-slop-registry.md       # Full banned-pattern compendium (visual + copy)
     ├── niche-playbooks.md          # Per-industry ad playbooks
     └── prompt-library.md           # Ready-to-use prompt recipes for any model
@@ -165,7 +170,7 @@ meta-ads-designer/
 |------|-----------|
 | `core.md` | The one-page inject — paste into any chat/agent |
 | `visual-advertising-engine.md` | The operating standard — 34 rules |
-| `design-rules(.en).md` | The charter — the taste |
+| `design-rules.md` | The charter — the taste |
 | `SKILL.md` | Agent operating manual (skill loaders read this) |
 | `INSTALL.md` | Setup per host |
 | `references/hospitality-food-services-playbook.md` | Deep rules for food / hotel / services |

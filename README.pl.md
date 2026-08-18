@@ -76,7 +76,7 @@ Pełne kroki per host: **[`INSTALL.md`](INSTALL.md)**.
                 │ podsumowany jako
                 ▼
 ┌─────────────────────────────┐
-│      design-rules(.en).md   │  ← THE charter (wklejany gust)
+│      design-rules.md       │  ← THE charter (wklejany gust)
 │   "The Rules of Beautiful   │     Działa na KAŻDYM agencie
 │    Advertising"             │
 └───────────────┬─────────────┘
@@ -92,7 +92,7 @@ Pełne kroki per host: **[`INSTALL.md`](INSTALL.md)**.
 ```
 
 - **`visual-advertising-engine.md`** — *standard* (34 zasady). Co agent stosuje **przed** każdym komercyjnym visualem: Product First, Reference = Source of Truth, Prompt Architecture, Hard Fails, QA.
-- **`design-rules(.en).md`** — *charter* (gust). Samowystarczalny — wklejasz do dowolnego czatu lub wstrzykujesz do system promptu.
+- **`design-rules.md`** — *charter* (gust). Angielski kanon. Samowystarczalny — wklejasz do dowolnego czatu lub wstrzykujesz do system promptu.
 - **`core.md`** — *wklejka 1-stronicowa*. Esencja zasad + przykład słabego/mocnego promptu — najszybszy setup.
 - **`SKILL.md`** — *procedura*. Brief → research → angles → creative → generate → QA → deliver. Loader skilli czyta frontmatter.
 - **`references/`** — *głębia*: sprawdzony playbook food/hotel/serwisy, playbooki per nisza, gotowe prompty, pełny rejestr anti-slop.
@@ -143,15 +143,20 @@ meta-ads-designer/
 ├── SKILL.md                        # Manual agenta (procedura + routing)
 ├── core.md                         # 1-stronicowe zasady — wklej do dowolnego czatu
 ├── visual-advertising-engine.md    # THE standard — 34 zasady
-├── design-rules.md                 # Charter (PL)
-├── design-rules.en.md              # Charter (EN)
+├── design-rules.md                 # Charter (angielski kanon)
 ├── INSTALL.md                      # Setup + użycie na każdym agencie (w tym ChatGPT)
 ├── README.md                       # Ten manual (EN)
 ├── README.pl.md                    # Ten manual (PL)
+├── CHANGELOG.md                    # Historia wersji
 ├── LICENSE                         # MIT
 ├── assets/meta-ads-designer-banner.png
+├── examples/                       # Gotowe przykłady adów (anti, restauracja, hotel, serwisy, retail)
+├── scripts/                        # extract_wordmark.py, qa.py
 └── references/
     ├── hospitality-food-services-playbook.md  # Głębia: food / hotel / serwisy
+    ├── layout-system.md            # Layout + panel-heights + gradient values
+    ├── headline-system.md          # Rozmiary headline i kontrast
+    ├── qa-gate.md                  # Brama QA i kryteria odrzucenia
     ├── anti-slop-registry.md       # Kompletne kompendium zakazów (visual + copy)
     ├── niche-playbooks.md          # Playbooki per nisza
     └── prompt-library.md           # Gotowe prompty dla dowolnego modelu
@@ -165,7 +170,7 @@ meta-ads-designer/
 |------|----------|
 | `core.md` | Wklejka 1-stron — wklej do dowolnego czatu/agenta |
 | `visual-advertising-engine.md` | Standard operacyjny — 34 zasady |
-| `design-rules(.en).md` | Charter — gust |
+| `design-rules.md` | Charter — gust |
 | `SKILL.md` | Manual agenta (czyta loader skilli) |
 | `INSTALL.md` | Setup per host |
 | `references/hospitality-food-services-playbook.md` | Głębokie reguły food / hotel / serwisy |

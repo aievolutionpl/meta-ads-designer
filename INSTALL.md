@@ -50,29 +50,42 @@ cp -r meta-ads-designer ~/.cursor/skills/   # Cursor
 These are chatbots, not skill runners — but the plugin still works, two ways:
 
 **Option A — custom instruction (recommended):**
-1. Open ChatGPT → Settings (or "Customize ChatGPT") → **Custom Instructions**.
-2. Paste the **`design-rules.md`** file content (or this condensed version):
-
-> "You are an expert art director for AI-generated advertising. Before creating ANY poster, flyer, meta ad or promo graphic, follow THE RULES OF BEAUTIFUL ADVERTISING: (1) one dominant element — a title readable from a thumbnail; (2) real named typefaces, max 3 families, contrast by weight and scale; (3) brand palette + one accent, never purple-blue gradient or cream/sand bg; (4) generous margins and negative space; (5) product in real context with real light — never floating on a void; (6) food must be the client's real dishes, never AI-invented; (7) never let AI redraw an official logo — place the original; (8) every ad needs the spine headline → subline → CTA → brand cue; (9) no banned AI words (delve, seamless, empower, elevate, robust, revolutionary, 🚀); (10) QA before delivering: thumbnail readability, correct spelling, one focal point, logo fidelity, contrast. Always ask for the client's reference photos (logo, venue, food, products) and use them to preserve authenticity."
+1. Open Settings → **Custom Instructions** (or the equivalent).
+2. Paste the contents of **[`core.md`](core.md)**. It is written to be a one-page inject and is self-contained: the rules, the numbers, the headline method, the two production modes and the pass mark.
 
 **Option B — knowledge/attachment:**
-- In ChatGPT you can attach `design-rules.md` as a file (paid plans allow file upload). Then prompt: "Apply THE RULES OF BEAUTIFUL ADVERTISING from the attached file."
+Attach `core.md` plus `references/layout-system.md` and `references/headline-system.md` as files, then prompt: *"Apply the Meta Ads Designer rules from the attached files."* Add `examples/01-restaurant-real-food.md` if you want the model to see a finished prompt before writing one.
 
-> **Prompt starter for the chat:** "Make a 4:5 social ad for [business]. Here are the reference photos: [attach logo/venue/food]. Follow the Meta Ads Designer rules: one headline readable from a thumbnail, brand palette, real typography, no text-on-photo slop, real food from my photos, my logo unaltered, CTA 'Reserve a table'. Show me 3 structurally different concepts first."
+> **Prompt starter:** "Make a 4:5 social ad for [business]. Here are the reference photos: [attach logo/venue/food]. Follow the Meta Ads Designer rules: one headline that passes the specificity test, real named typefaces, brand palette with one accent, 8% margins, no text-on-photo slop, real food from my photos, my logo unaltered, CTA 'Reserve a table'. Show me 3 structurally different concepts first, each using a different headline archetype."
 
 ---
 
 ## 6 · Any custom agent / API
 
-Inject **`design-rules.md`** into your system prompt (it's fully self-contained), or load `SKILL.md` if your harness supports native skills.
+Inject **`core.md`** into your system prompt (fully self-contained), or load `SKILL.md` if your harness supports native skills. For maximum strictness, inject `visual-advertising-engine.md` as well — it's the canonical rule set with stable IDs the agent can cite back to you.
+
+---
+
+## 7 · The scripts (optional but recommended)
+
+The QA gate's deterministic layer and the wordmark extractor need two common packages:
+
+```bash
+pip install pillow numpy
+
+python scripts/qa.py out/*.png --format 4:5 --text-box 86,843,994,1290
+python scripts/extract_wordmark.py refs/logo.png build/logo_white.png
+```
+
+`qa.py` exits non-zero when any image fails, so it drops into CI or a pre-delivery hook. Everything else in the repo is plain Markdown with no dependencies.
 
 ---
 
 ## ✅ Verify it's loaded
 
-Ask the agent: *"Summarize the 10 rules of beautiful advertising from the Meta Ads Designer plugin."*
-- Correct = the agent lists hierarchy, real typography, brand palette, negative space, imagery in context, logo fidelity, ad spine, banned AI words, QA.
-- If it recites generic "make it premium and professional" — it didn't load the rules. Re-check the install path / re-paste.
+Ask the agent: *"What is the specificity test, and what's the default margin on a 1080×1350 ad?"*
+- **Correct:** "could a competitor paste this headline unchanged" — and "86px, 8% of the short edge".
+- **Didn't load:** generic advice about making it premium and professional. Re-check the install path or re-paste.
 
 ---
 
@@ -80,14 +93,19 @@ Ask the agent: *"Summarize the 10 rules of beautiful advertising from the Meta A
 
 | File | Use it for |
 |------|-----------|
-| `visual-advertising-engine.md` | **The operating standard** — 34 rules (Product First, Prompt Architecture, Hard Fails, QA). Follow before any commercial visual |
-| `design-rules.md` | The rules — paste into any chat, or read as the canonical charter |
+| `visual-advertising-engine.md` | **The rules** — R01–R34, single source of truth. Follow before any commercial visual |
+| `references/layout-system.md` | The numbers — grid, type scale, palettes, layouts, production modes |
+| `references/headline-system.md` | The words — archetypes, budgets, diacritics strategy, CTAs |
+| `references/qa-gate.md` | The pass mark — script + vision prompt + scored rubric |
+| `examples/` | Finished briefs → finished prompts → QA verdicts |
+| `core.md` | The one-page inject for chat hosts |
+| `design-rules.md` | Readable charter + index to everything |
 | `SKILL.md` | Agent operating manual (skill loaders read this) |
-| `INSTALL.md` | This file — setup per host |
-| `references/hospitality-food-services-playbook.md` | Deep rules: food / hotel / services (battle-tested) |
-| `references/prompt-library.md` | Ready-to-use prompt recipes |
+| `references/hospitality-food-services-playbook.md` | Deep rules: food / hotel / services |
+| `references/layout-system.md` | Layout + panel-height + gradient values |
+| `references/headline-system.md` | Headline sizing & contrast rules |
+| `references/qa-gate.md` | QA gate & rejection criteria |
 | `references/niche-playbooks.md` | Per-industry depth |
+| `references/prompt-library.md` | Prompt skeletons |
 | `references/anti-slop-registry.md` | Full banned-pattern list + grep gate |
-| `README.md` | The manual / homepage |
-
-> **For maximum strictness on any agent:** paste or attach **`visual-advertising-engine.md`** (the 34-rule standard) instead of — or in addition to — `design-rules.md`. The Engine is the deeper, more commercial-grade version of the charter.
+| `scripts/` | `qa.py`, `extract_wordmark.py` |

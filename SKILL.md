@@ -122,14 +122,19 @@ meta-ads-designer/
 ├── SKILL.md                # This file — agent operating manual
 ├── core.md                 # 1-page injectable rules — paste into any chat/agent
 ├── visual-advertising-engine.md  # THE 34-rule operating standard (canonical, EN)
-├── design-rules.md         # Readable charter of beautiful advertising (PL)
-├── design-rules.en.md      # Readable charter of beautiful advertising (EN)
+├── design-rules.md         # Readable charter of beautiful advertising (English canonical)
 ├── INSTALL.md              # Setup + usage on every agent (incl. ChatGPT)
 ├── README.md               # Homepage / manual (EN)
 ├── README.pl.md            # Homepage / manual (PL)
+├── CHANGELOG.md            # Version history
 ├── LICENSE                 # MIT
+├── examples/               # Worked ad examples (food, hotel, services, retail)
+├── scripts/                # extract_wordmark.py, qa.py
 └── references/
     ├── hospitality-food-services-playbook.md # Deep rules: food / hotel / services
+    ├── layout-system.md        # Layout + panel-height + gradient values
+    ├── headline-system.md      # Headline sizing & contrast rules
+    ├── qa-gate.md              # QA gate & rejection criteria
     ├── anti-slop-registry.md   # Full banned-patterns compendium (visual + copy)
     ├── niche-playbooks.md      # Per-industry ad playbooks
     └── prompt-library.md       # Ready-to-use prompt recipes (any model)
