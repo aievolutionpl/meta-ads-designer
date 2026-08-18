@@ -76,3 +76,7 @@ The plugin knew what good design *is*. This release makes it executable: numbers
 - Reworked **How the skill works** (layers + two production modes + workflow).
 - Added **Agent instructions** section — how an agent given the repo should navigate (core → SKILL → references, 4 pre-generation questions, routing table, QA, delivery).
 - PL main (`README.md`) and EN extra (`README.en.md`) kept in sync.
+
+## [5.2.0] — core.md expanded into complete general-knowledge guide
+- `core.md` rebuilt from a 1-page rule digest into a self-contained general-knowledge guide for generating beautiful social-media ads: the law, per-platform formats (default 4:5), creative process, composition & hierarchy, real typography, colour, product-first + source of truth, lighting & camera, layouts, copy & headlines (specificity test), niche playbooks (food/hotel/services/retail), two production modes, prompt architecture, anti-slop, series & variation, hard fails, QA gate.
+- Updated core.md descriptions across README (PL/EN), SKILL, INSTALL, design-rules, CONTRIBUTING.

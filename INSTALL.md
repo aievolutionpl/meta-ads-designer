@@ -51,7 +51,7 @@ These are chatbots, not skill runners — but the plugin still works, two ways:
 
 **Option A — custom instruction (recommended):**
 1. Open Settings → **Custom Instructions** (or the equivalent).
-2. Paste the contents of **[`core.md`](core.md)**. It is written to be a one-page inject and is self-contained: the rules, the numbers, the headline method, the two production modes and the pass mark.
+2. Paste the contents of **[`core.md`](core.md)**. It is written as a self-contained general-knowledge inject: formats, creative process, composition, typography, colour, light, layouts, copy, niches, the two production modes, prompt architecture, anti-slop, hard fails and the pass mark.
 
 **Option B — knowledge/attachment:**
 Attach `core.md` plus `references/layout-system.md` and `references/headline-system.md` as files, then prompt: *"Apply the Meta Ads Designer rules from the attached files."* Add `examples/01-restaurant-real-food.md` if you want the model to see a finished prompt before writing one.
@@ -98,7 +98,7 @@ Ask the agent: *"What is the specificity test, and what's the default margin on 
 | `references/headline-system.md` | The words — archetypes, budgets, diacritics strategy, CTAs |
 | `references/qa-gate.md` | The pass mark — script + vision prompt + scored rubric |
 | `examples/` | Finished briefs → finished prompts → QA verdicts |
-| `core.md` | The one-page inject for chat hosts |
+| `core.md` | The complete general-knowledge inject for chat hosts |
 | `design-rules.md` | Readable charter + index to everything |
 | `SKILL.md` | Agent operating manual (skill loaders read this) |
 | `references/hospitality-food-services-playbook.md` | Deep rules: food / hotel / services |

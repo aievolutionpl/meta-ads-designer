@@ -9,7 +9,7 @@
 
 **How to use it.**
 - **As an agent skill** → load [`SKILL.md`](SKILL.md) (it routes from here).
-- **As a paste-into-any-chat** → paste [`core.md`](core.md) as a custom instruction. It's the one-page inject.
+- **As a paste-into-any-chat** → paste [`core.md`](core.md) as a custom instruction. It's the complete general-knowledge inject.
 - **As a checklist** → run [`references/qa-gate.md`](references/qa-gate.md) on every output before you ship it.
 
 ---

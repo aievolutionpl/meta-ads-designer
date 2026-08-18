@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1600px; height:900px; overflow:hidden; }
+  body {
+    font-family:'Space Grotesk', sans-serif;
+    background:radial-gradient(1200px 700px at 78% -10%, rgba(0,231,255,0.10), transparent 55%),
+               radial-gradient(900px 600px at 12% 110%, rgba(124,255,30,0.06), transparent 55%),
+               linear-gradient(135deg,#0a0a0d 0%, #101116 55%, #0c0c10 100%);
+    color:#f5f6f8;
+    display:flex; align-items:center;
+    position:relative;
+  }
+  /* subtle grid */
+  body::after{
+    content:''; position:absolute; inset:0;
+    background-image:linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),
+                     linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);
+    background-size:64px 64px;
+    mask-image:radial-gradient(1200px 700px at 50% 40%, #000 30%, transparent 75%);
+    -webkit-mask-image:radial-gradient(1200px 700px at 50% 40%, #000 30%, transparent 75%);
+    pointer-events:none;
+  }
+  .wrap{ display:flex; align-items:center; width:100%; padding:0 84px; gap:70px; position:relative; z-index:2; }
+  .left{ flex:1.15; }
+  .eyebrow{
+    font-family:'Orbitron'; font-weight:500; font-size:22px; letter-spacing:6px;
+    color:#00E7FF; text-transform:uppercase; margin-bottom:22px;
+    display:flex; align-items:center; gap:14px;
+  }
+  .eyebrow .dot{ width:9px; height:9px; border-radius:50%; background:#00E7FF; box-shadow:0 0 14px #00E7FF; }
+  h1{
+    font-family:'Orbitron'; font-weight:900; font-size:82px; line-height:1.02;
+    letter-spacing:1px;
+  }
+  h1 .thin{ font-weight:500; color:#aeb2bd; }
+  h1 .gold{ color:#e8c469; }
+  .tagline{
+    font-size:30px; font-weight:400; color:#c9cdd6; margin-top:20px; line-height:1.35;
+    max-width:720px;
+  }
+  .tagline b{ color:#fff; font-weight:500; }
+  .direct{
+    font-family:'Orbitron'; font-weight:700; font-size:26px; letter-spacing:5px;
+    color:#e8c469; margin-top:26px;
+  }
+  .badges{ display:flex; flex-wrap:wrap; gap:12px; margin-top:30px; }
+  .pill{
+    font-family:'Orbitron'; font-weight:500; font-size:16px; letter-spacing:2px;
+    color:#d7dae1; padding:9px 18px; border:1px solid rgba(255,255,255,0.14);
+    border-radius:40px; background:rgba(255,255,255,0.03);
+  }
+  .pill.accent{ color:#00E7FF; border-color:rgba(0,231,255,0.4); }
+  .right{ flex:1; display:flex; align-items:center; justify-content:center; position:relative; }
+  .frames{ position:relative; width:430px; height:560px; }
+  .frame{
+    position:absolute; width:430px; height:560px; border-radius:26px; overflow:hidden;
+    background:#15161b; box-shadow:0 40px 80px rgba(0,0,0,0.6);
+    border:1px solid rgba(255,255,255,0.09);
+  }
+  .f1{ transform:rotate(-6deg) translateX(-20px); top:18px; left:0; }
+  .f2{ transform:rotate(3deg) translateX(18px) translateY(10px); top:0; left:0; z-index:2;
+       border-color:rgba(232,196,105,0.35); }
+  .f3{ transform:rotate(-1deg) translateX(14px); top:40px; left:0; }
+  .shot{
+    height:64%; position:relative; overflow:hidden;
+  }
+  .s1{ background:linear-gradient(160deg,#3a2413 0%,#7a4a1e 40%,#2a1a0e 100%); }
+  .s2{ background:linear-gradient(160deg,#0f2536 0%,#1f4a66 45%,#0a1822 100%); }
+  .s3{ background:linear-gradient(160deg,#262017 0%,#5a4a2a 45%,#17130c 100%); }
+  .shot .glow{
+    position:absolute; top:12%; left:50%; transform:translateX(-50%);
+    width:220px; height:150px; border-radius:50%;
+    background:radial-gradient(circle, rgba(255,255,255,0.5), rgba(255,255,255,0) 70%);
+    filter:blur(6px);
+  }
+  .shot .label{
+    position:absolute; bottom:14px; left:0; right:0; text-align:center;
+    font-family:'Orbitron'; font-weight:700; font-size:15px; letter-spacing:3px; color:#fff;
+    text-shadow:0 2px 10px rgba(0,0,0,0.8);
+  }
+  .panel{ height:36%; background:#1a1b21; padding:16px 18px; display:flex; flex-direction:column; justify-content:center; }
+  .panel .h{ font-family:'Orbitron'; font-weight:700; font-size:22px; letter-spacing:1px; color:#fff; }
+  .panel .h.gold{ color:#e8c469; }
+  .panel .sub{ font-size:13px; color:#9aa0ab; margin-top:5px; letter-spacing:1px; }
+  .panel .cta{
+    margin-top:12px; display:inline-flex; align-self:flex-start; font-family:'Orbitron';
+    font-weight:700; font-size:12px; letter-spacing:2px; color:#0a0a0d;
+    background:#e8c469; padding:7px 14px; border-radius:4px;
+  }
+  .f2 .cta{ background:#00E7FF; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="left">
+      <div class="eyebrow"><span class="dot"></span> Open-source · MIT · for AI agents</div>
+      <h1>META ADS<br><span class="thin">DESIGNER</span></h1>
+      <div class="tagline">The universal <b>advertising standard</b> for AI agents — teach any model to design <b>beautiful</b> Meta · Instagram · Facebook ads and stop generating <b>AI-slop</b>.</div>
+      <div class="direct">DON'T DECORATE. DIRECT.</div>
+      <div class="badges">
+        <span class="pill accent">4:5 (1080×1350)</span>
+        <span class="pill">PRODUCT FIRST</span>
+        <span class="pill">SOURCE OF TRUTH</span>
+        <span class="pill">5 AGENTS</span>
+      </div>
+    </div>
+    <div class="right">
+      <div class="frames">
+        <div class="frame f1">
+          <div class="shot s1"><div class="glow"></div><div class="label">REAL FOOD</div></div>
+          <div class="panel"><div class="h">FRESH DAILY</div><div class="sub">GOURMET · OPEN NOW</div><div class="cta">ORDER</div></div>
+        </div>
+        <div class="frame f2">
+          <div class="shot s2"><div class="glow"></div><div class="label">HOTEL</div></div>
+          <div class="panel"><div class="h gold">STAY &amp; ESCAPE</div><div class="sub">LUXURY · BEACHFRONT</div><div class="cta">BOOK</div></div>
+        </div>
+        <div class="frame f3">
+          <div class="shot s3"><div class="glow"></div><div class="label">PRODUCT</div></div>
+          <div class="panel"><div class="h">CRAFTED</div><div class="sub">PREMIUM · HANDBUILT</div><div class="cta">SHOP</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

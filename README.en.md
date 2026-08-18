@@ -106,7 +106,7 @@ Full per-host steps: **[`INSTALL.md`](INSTALL.md)**.
 
 - **`visual-advertising-engine.md`** — *standard* (34 rules). What the agent applies **before** every commercial visual: Product First, Reference = Source of Truth, Prompt Architecture, Hard Fails, QA. **This is the canonical source** — new rules land here first.
 - **`design-rules.md`** — *charter* (taste). English canonical. Self-contained — paste into any chat or inject into the system prompt.
-- **`core.md`** — *1-page paste*. The essence of the rules + a weak/strong prompt example — the fastest setup.
+- **`core.md`** — *complete general knowledge (inject)*. Per-platform formats, creative process, composition, typography, colour, light, layouts, copy, niches, production modes, prompt architecture, anti-slop, hard fails, QA — self-contained, paste into any chat.
 - **`SKILL.md`** — *procedure* (agent manual). Brief → research → angles → creative → generate → QA → deliver. The skill loader reads the frontmatter.
 - **`references/`** — *depth*: the battle-tested food/hotel/services playbook, layout system, headline system, QA gate, ready prompts, the full anti-slop registry.
 
@@ -198,7 +198,7 @@ core.md  →  SKILL.md  →  (details)  →  references/
 ```
 meta-ads-designer/
 ├── SKILL.md                        # Agent manual (procedure + routing)
-├── core.md                         # 1-page rules — paste into any chat
+├── core.md                         # Complete general knowledge (inject) — paste into any chat
 ├── visual-advertising-engine.md    # THE standard — 34 rules
 ├── design-rules.md                 # The charter (English canonical)
 ├── INSTALL.md                      # Setup + usage on every agent (incl. ChatGPT)
@@ -225,7 +225,7 @@ meta-ads-designer/
 
 | File | Purpose |
 |------|---------|
-| `core.md` | 1-page paste — paste into any chat/agent |
+| `core.md` | Complete general knowledge — paste into any chat/agent |
 | `visual-advertising-engine.md` | Operating standard — 34 rules (canonical source) |
 | `design-rules.md` | The charter — taste |
 | `SKILL.md` | Agent manual (read by the skill loader) |

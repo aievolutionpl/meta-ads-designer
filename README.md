@@ -106,7 +106,7 @@ Pełne kroki per host: **[`INSTALL.md`](INSTALL.md)**.
 
 - **`visual-advertising-engine.md`** — *standard* (34 zasady). Co agent stosuje **przed** każdym komercyjnym visualem: Product First, Reference = Source of Truth, Prompt Architecture, Hard Fails, QA. **To jest źródło kanoniczne** — nowe reguły trafiają tu najpierw.
 - **`design-rules.md`** — *charter* (gust). Angielski kanon. Samowystarczalny — wklejasz do dowolnego czatu lub wstrzykujesz do system promptu.
-- **`core.md`** — *wklejka 1-stronicowa*. Esencja zasad + przykład słabego/mocnego promptu — najszybszy setup.
+- **`core.md`** — *kompletna wiedza ogólna (inject)*. Formaty per platforma, proces kreatywny, kompozycja, typografia, kolor, światło, layout, copy, nisze, tryby produkcji, prompt architecture, anti-slop, hard fails, QA — samodzielny, wklejasz do dowolnego czatu.
 - **`SKILL.md`** — *procedura* (agent manual). Brief → research → angles → creative → generate → QA → deliver. Loader skilli czyta frontmatter.
 - **`references/`** — *głębia*: sprawdzony playbook food/hotel/serwisy, layout system, headline system, QA gate, gotowe prompty, pełny rejestr anti-slop.
 
@@ -198,7 +198,7 @@ core.md  →  SKILL.md  →  (szczegóły)  →  references/
 ```
 meta-ads-designer/
 ├── SKILL.md                        # Manual agenta (procedura + routing)
-├── core.md                         # 1-stronicowe zasady — wklej do dowolnego czatu
+├── core.md                         # Kompletna wiedza ogólna (inject) — wklej do dowolnego czatu
 ├── visual-advertising-engine.md    # THE standard — 34 zasady
 ├── design-rules.md                 # Charter (angielski kanon)
 ├── INSTALL.md                      # Setup + użycie na każdym agencie (w tym ChatGPT)
@@ -225,7 +225,7 @@ meta-ads-designer/
 
 | Plik | Do czego |
 |------|----------|
-| `core.md` | Wklejka 1-stron — wklej do dowolnego czatu/agenta |
+| `core.md` | Kompletna wiedza ogólna — wklej do dowolnego czatu/agenta |
 | `visual-advertising-engine.md` | Standard operacyjny — 34 zasady (źródło kanoniczne) |
 | `design-rules.md` | Charter — gust |
 | `SKILL.md` | Manual agenta (czyta loader skilli) |
