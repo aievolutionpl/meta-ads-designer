@@ -78,4 +78,4 @@ grep -ci "delve\|seamless\|empower\|elevate\|robust\|tapestry\|game-changer\|rev
 ```
 
 > ⚠️ **False positives:** CSS variables i nazwy klas (`--purple`, `.card-lp`) są legalne. Sprawdź kontekst, blokuj tylko realne slopy.
-> ⚠️ **Meta-uwagi:** nie cytuj zakazanych słów w sekcji "QA" samego pliku — grep je złapie. Zamiast tego napisz "Zgodne z premium-ad-design / stop-slop — PASS".
+> ⚠️ **Meta-uwagi:** nie cytuj zakazanych słów w sekcji "QA" samego pliku — grep je złapie. Zamiast tego napisz "Zgodne z meta-ads-designer / stop-slop — PASS".

@@ -2,7 +2,7 @@
 
 > **The main standard for every agent that generates advertising.** Applies to: ad generation · product photography · lifestyle visuals · Meta Ads creatives · social media graphics · e-commerce visuals · image-generation prompts · image-editing prompts · ad series & campaigns.
 
-**Framework-agnostic.** This is the deepest, most authoritative layer of the **Premium Ad Design** plugin. `design-rules.md` is the readable charter; **this is the operating standard** every agent should follow before producing any commercial visual.
+**Framework-agnostic.** This is the deepest, most authoritative layer of the **Meta Ads Designer** plugin. `design-rules.md` is the readable charter; **this is the operating standard** every agent should follow before producing any commercial visual.
 
 ---
 
@@ -221,7 +221,7 @@ If the generator handles text poorly: generate a clean visual · add real typogr
 ## 19 · MOBILE-FIRST COMPOSITION
 
 Design for the phone first. Key formats:
-- **META FEED — 4:5.** The default for static ads.
+- **META FEED — 4:5.** **The default for static ads.** Use 4:5 unless the user explicitly asks for another ratio — it's the Instagram/Facebook feed default (1080×1350).
 - **REELS / STORIES — 9:16.** Keep the most important elements away from the extreme edges.
 - **MARKETPLACE / E-COMMERCE — 1:1**, or the format the marketplace requires.
 

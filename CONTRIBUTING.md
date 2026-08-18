@@ -1,4 +1,4 @@
-# 🤝 Contributing to Art Director
+# 🤝 Contributing to Meta Ads Designer
 
 Thanks for helping make AI agents produce less slop and more campaigns. 🙌
 

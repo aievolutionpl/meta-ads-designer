@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎬 Art Director
+# 🎬 Meta Ads Designer
 
 ### Uniwersalny standard reklamy dla agentów AI — przestań generować AI-slop, zacznij generować kampanie.
 
@@ -8,15 +8,18 @@
 
 [🇬🇧 English](README.md) · [PL](README.pl.md)
 
-![Version](https://img.shields.io/badge/version-3.1.0-6a5acd)
+![Version](https://img.shields.io/badge/version-4.0.0-6a5acd)
 ![License](https://img.shields.io/badge/license-MIT-brightgreen)
-![Hosts](https://img.shields.io/badge/runs_on-Hermes%20%7C%20Claude%20%7C%20Codex%20%7C%20Cursor%20%7C%20ChatGPT-blue)
+![Format](https://img.shields.io/badge/default_format-4:5%20(1080×1350)-informational)
+![Hosts](https://img.shields.io/badge/runs_on-ChatGPT%20%7C%20Codex%20%7C%20Hermes%20%7C%20Claude%20%7C%20Cursor-blue)
 ![Framework](https://img.shields.io/badge/framework-agnostic-success)
 ![PRs](https://img.shields.io/badge/PRs-welcome-2ea44f)
 
 <br/>
 
 > **„Nie generuj 'obiektów w próżni'. Generuj reklamy, które wyglądają jak kampania — z hierarchią, typografią, realnym światłem i strukturalnym przekazem."**
+
+> **Domyślny format: 4:5 (1080×1350)** — feed Instagram/Facebook. Użytkownik może poprosić o inny ratio; 4:5 to default.
 
 > **`DON'T DECORATE. DIRECT.`** — Jeden produkt. Jedna idea. Jeden mocny visual.
 
@@ -38,7 +41,7 @@ Modele obrazowe **nie mają gustu**. Pozostawione same sobie zbiegają do looku,
 | Premium lokalna restauracja | Generyczny purple-blue gradient + Inter font |
 | Zapadająca w pamięć oferta | Tekst naklejony na zdjęcie (Canva), bez komunikatu |
 
-Efekt brzmi jak *"obrazek od ChatGPT"* — nie jak profesjonalna kampania. **Art Director to naprawia.**
+Efekt brzmi jak *"obrazek od ChatGPT"* — nie jak profesjonalna kampania. **Meta Ads Designer to naprawia.**
 
 ---
 
@@ -46,15 +49,15 @@ Efekt brzmi jak *"obrazek od ChatGPT"* — nie jak profesjonalna kampania. **Art
 
 **Opcja A — jedna wklejka.** Wklej zawartość **[`core.md`](core.md)** do ChatGPT / Claude / Gemini jako custom instruction, a potem wpisz:
 
-> *"Zrób 4:5 social ad dla mojej kawiarni. Oto moje zdjęcia referencyjne: [logo + napoje]. Trzymaj się zasad Art Director — produkt na pierwszym planie, prawdziwe jedzenie z moich zdjęć, moje logo bez zmian, jeden headline czytelny z miniaturki, zero text-on-photo slopu. Pokaż 3 strukturalnie różne koncepty."*
+> *"Zrób 4:5 social ad dla mojej kawiarni. Oto moje zdjęcia referencyjne: [logo + napoje]. Trzymaj się zasad Meta Ads Designer — produkt na pierwszym planie, prawdziwe jedzenie z moich zdjęć, moje logo bez zmian, jeden headline czytelny z miniaturki, zero text-on-photo slopu. Pokaż 3 strukturalnie różne koncepty."*
 
 **Opcja B — jako skill** (Hermes / Claude Code / Codex / Cursor):
 ```bash
-git clone https://github.com/aievolutionpl/art-director.git
-cp -r art-director ~/.hermes/skills/marketing/   # lub ~/.claude/skills/ ~/.codex/skills/ ~/.cursor/skills/
+git clone https://github.com/aievolutionpl/meta-ads-designer.git
+cp -r meta-ads-designer ~/.hermes/skills/marketing/   # lub ~/.claude/skills/ ~/.codex/skills/ ~/.cursor/skills/
 ```
 
-**Weryfikacja** — poproś agenta: *"podsumuj zasady Art Director"*. Powinien wymienić product-first, source of truth, commercial realism, hierarchię, negatywną przestrzeń, anti-slop, hard fails. Jeśli recytuje generyczne "make it premium" — nie wczytał; wklej ponownie.
+**Weryfikacja** — poproś agenta: *"podsumuj zasady Meta Ads Designer"*. Powinien wymienić product-first, source of truth, commercial realism, hierarchię, negatywną przestrzeń, anti-slop, hard fails. Jeśli recytuje generyczne "make it premium" — nie wczytał; wklej ponownie.
 
 Pełne kroki per host: **[`INSTALL.md`](INSTALL.md)**.
 
@@ -62,7 +65,7 @@ Pełne kroki per host: **[`INSTALL.md`](INSTALL.md)**.
 
 ## ✨ Dlaczego działa na każdym agencie
 
-`Art Director` jest **framework-agnostic**. Te same zasady działają wszędzie — natywne skille na Hermes/Claude/Codex/Cursor, custom instruction w ChatGPT, albo wstrzyknięcie do system promptu dowolnego agenta/API.
+`Meta Ads Designer` jest **framework-agnostic**. Te same zasady działają wszędzie — natywne skille na Hermes/Claude/Codex/Cursor, custom instruction w ChatGPT, albo wstrzyknięcie do system promptu dowolnego agenta/API.
 
 ```
 ┌────────────────────────────────────────────┐
@@ -132,7 +135,7 @@ Plus z Engine: **Commercial realism** (perspektywa, grawitacja, cienie, realne m
 ## 📁 Struktura repo
 
 ```
-art-director/
+meta-ads-designer/
 ├── SKILL.md                        # Agent operating manual (procedura + routing)
 ├── core.md                         # 1-stronicowe zasady do wklejenia
 ├── visual-advertising-engine.md    # THE standard — 34 zasady (PL)
@@ -184,5 +187,5 @@ MIT — używaj, remiksuj, publikuj.
   <b>Created by</b><br/>
   <b>AI EVOLUTION LABS</b><br/>
   <sub>Channel Islands</sub><br/>
-  <sub><a href="https://github.com/aievolutionpl/art-director">github.com/aievolutionpl/art-director</a></sub>
+  <sub><a href="https://github.com/aievolutionpl/meta-ads-designer">github.com/aievolutionpl/meta-ads-designer</a></sub>
 </div>

@@ -195,8 +195,10 @@
 | Pinterest | 2:3 | 1000×1500 |
 | Banner | 4:1 | 2048×512 |
 
+> **DEFAULT: 4:5 (1080×1350)** — the Instagram/Facebook feed default. Use 4:5 unless the user explicitly asks for another ratio. Compose for the specific format.
+
 **Rule:** when text or logos live near the edge, resize with **scale+pad**, never a hard crop (crop cuts content).
 
 ---
 
-*This charter is part of the **Art Director** plugin. For install instructions on every agent, see `INSTALL.md`. For the one-page inject, see `core.md`. For the full operating standard, see `visual-advertising-engine.md`.*
+*This charter is part of the **Meta Ads Designer** plugin. For install instructions on every agent, see `INSTALL.md`. For the one-page inject, see `core.md`. For the full operating standard, see `visual-advertising-engine.md`.*

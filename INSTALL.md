@@ -1,4 +1,4 @@
-# 🚀 INSTALL — how to run Premium Ad Design on any agent
+# 🚀 INSTALL — how to run Meta Ads Designer on any agent
 
 This plugin is **framework-agnostic**. The same rules work on every agent. Pick your host below.
 
@@ -7,19 +7,19 @@ This plugin is **framework-agnostic**. The same rules work on every agent. Pick 
 ## 1 · Hermes Agent
 
 ```bash
-git clone https://github.com/aievolutionpl/art-director.git
-cp -r art-director ~/.hermes/skills/marketing/
+git clone https://github.com/aievolutionpl/meta-ads-designer.git
+cp -r meta-ads-designer ~/.hermes/skills/marketing/
 ```
 
-Hermes auto-loads `premium-ad-design` when you ask for posters/flyers/meta ads. The skill's `design-rules.md` + `SKILL.md` are read automatically.
+Hermes auto-loads `meta-ads-designer` when you ask for posters/flyers/meta ads. The skill's `design-rules.md` + `SKILL.md` are read automatically.
 
 ---
 
 ## 2 · Claude Code
 
 ```bash
-git clone https://github.com/aievolutionpl/art-director.git
-cp -r art-director ~/.claude/skills/
+git clone https://github.com/aievolutionpl/meta-ads-designer.git
+cp -r meta-ads-designer ~/.claude/skills/
 ```
 
 Claude Code reads the `SKILL.md` frontmatter and loads the plugin on matching tasks.
@@ -29,8 +29,8 @@ Claude Code reads the `SKILL.md` frontmatter and loads the plugin on matching ta
 ## 3 · Codex CLI
 
 ```bash
-git clone https://github.com/aievolutionpl/art-director.git
-cp -r art-director ~/.codex/skills/
+git clone https://github.com/aievolutionpl/meta-ads-designer.git
+cp -r meta-ads-designer ~/.codex/skills/
 ```
 
 ---
@@ -38,8 +38,8 @@ cp -r art-director ~/.codex/skills/
 ## 4 · Cursor / Windsurf
 
 ```bash
-git clone https://github.com/aievolutionpl/art-director.git
-cp -r art-director ~/.cursor/skills/   # Cursor
+git clone https://github.com/aievolutionpl/meta-ads-designer.git
+cp -r meta-ads-designer ~/.cursor/skills/   # Cursor
 # or ~/.windsurf/skills/  # Windsurf
 ```
 
@@ -58,7 +58,7 @@ These are chatbots, not skill runners — but the plugin still works, two ways:
 **Option B — knowledge/attachment:**
 - In ChatGPT you can attach `design-rules.md` as a file (paid plans allow file upload). Then prompt: "Apply THE RULES OF BEAUTIFUL ADVERTISING from the attached file."
 
-> **Prompt starter for the chat:** "Make a 4:5 social ad for [business]. Here are the reference photos: [attach logo/venue/food]. Follow the Premium Ad Design rules: one headline readable from a thumbnail, brand palette, real typography, no text-on-photo slop, real food from my photos, my logo unaltered, CTA 'Reserve a table'. Show me 3 structurally different concepts first."
+> **Prompt starter for the chat:** "Make a 4:5 social ad for [business]. Here are the reference photos: [attach logo/venue/food]. Follow the Meta Ads Designer rules: one headline readable from a thumbnail, brand palette, real typography, no text-on-photo slop, real food from my photos, my logo unaltered, CTA 'Reserve a table'. Show me 3 structurally different concepts first."
 
 ---
 
@@ -70,7 +70,7 @@ Inject **`design-rules.md`** into your system prompt (it's fully self-contained)
 
 ## ✅ Verify it's loaded
 
-Ask the agent: *"Summarize the 10 rules of beautiful advertising from the Premium Ad Design plugin."*
+Ask the agent: *"Summarize the 10 rules of beautiful advertising from the Meta Ads Designer plugin."*
 - Correct = the agent lists hierarchy, real typography, brand palette, negative space, imagery in context, logo fidelity, ad spine, banned AI words, QA.
 - If it recites generic "make it premium and professional" — it didn't load the rules. Re-check the install path / re-paste.
 

@@ -1,16 +1,17 @@
 <div align="center">
 
-# 🎬 Art Director
+# 🎬 Meta Ads Designer
 
-### The visual advertising engine for AI agents — stop generating AI-slop, start generating campaigns.
+### The visual advertising engine for AI agents — design beautiful Meta / Instagram / Facebook ads, and stop generating AI-slop.
 
-**Posters · Flyers · Meta Ads · Product photography · E-commerce visuals** — for restaurants, hotels, local businesses and retail.
+**Meta Ads · Instagram · Facebook · Posters · Flyers · Product photography · E-commerce visuals** — for restaurants, hotels, local businesses and retail.
 
 [🇵🇱 Polski](README.pl.md) · [EN](README.md)
 
-![Version](https://img.shields.io/badge/version-3.1.0-6a5acd)
+![Version](https://img.shields.io/badge/version-4.0.0-6a5acd)
 ![License](https://img.shields.io/badge/license-MIT-brightgreen)
-![Hosts](https://img.shields.io/badge/runs_on-Hermes%20%7C%20Claude%20%7C%20Codex%20%7C%20Cursor%20%7C%20ChatGPT-blue)
+![Format](https://img.shields.io/badge/default_format-4:5%20(1080×1350)-informational)
+![Hosts](https://img.shields.io/badge/runs_on-ChatGPT%20%7C%20Codex%20%7C%20Hermes%20%7C%20Claude%20%7C%20Cursor-blue)
 ![Framework](https://img.shields.io/badge/framework-agnostic-success)
 ![PRs](https://img.shields.io/badge/PRs-welcome-2ea44f)
 
@@ -18,11 +19,13 @@
 
 > **„Don't generate objects in a void. Generate ads that look like a campaign — with hierarchy, typography, real light, and a structural message."**
 
+> **Default format: 4:5 (1080×1350)** — the Instagram/Facebook feed default. The user can request any other ratio; 4:5 is the default.
+
 > **`DON'T DECORATE. DIRECT.`** — One product. One idea. One strong visual.
 
 <br/>
 
-<img src="assets/art-director-banner.png" alt="Art Director — Don't Decorate. Direct." width="100%"/>
+<img src="assets/meta-ads-designer-banner.png" alt="Meta Ads Designer — Don't Decorate. Direct." width="100%"/>
 
 <br/>
 
@@ -42,7 +45,7 @@ Image models have **no taste**. Left to themselves they converge on a look anyon
 | A premium local restaurant | A generic purple-blue gradient + Inter font |
 | A memorable offer | Text slapped on a photo (Canva template), no message |
 
-The result reads as *"an image from ChatGPT"* — not a professional campaign. **Art Director fixes that.**
+The result reads as *"an image from ChatGPT"* — not a professional campaign. **Meta Ads Designer fixes that.**
 
 ---
 
@@ -50,15 +53,15 @@ The result reads as *"an image from ChatGPT"* — not a professional campaign. *
 
 **Option A — one paste.** Put the contents of **[`core.md`](core.md)** into ChatGPT / Claude / Gemini as a custom instruction, then prompt:
 
-> *"Make a 4:5 social ad for my coffee shop. Here are my reference photos: [attach logo + drinks]. Follow the Art Director rules — product first, real food from my photos, my logo unaltered, one headline readable from a thumbnail, no text-on-photo slop. Show me 3 structurally different concepts."*
+> *"Make a 4:5 social ad for my coffee shop. Here are my reference photos: [attach logo + drinks]. Follow the Meta Ads Designer rules — product first, real food from my photos, my logo unaltered, one headline readable from a thumbnail, no text-on-photo slop. Show me 3 structurally different concepts."*
 
 **Option B — as a skill** (Hermes / Claude Code / Codex / Cursor):
 ```bash
-git clone https://github.com/aievolutionpl/art-director.git
-cp -r art-director ~/.hermes/skills/marketing/   # or ~/.claude/skills/ ~/.codex/skills/ ~/.cursor/skills/
+git clone https://github.com/aievolutionpl/meta-ads-designer.git
+cp -r meta-ads-designer ~/.hermes/skills/marketing/   # or ~/.claude/skills/ ~/.codex/skills/ ~/.cursor/skills/
 ```
 
-**Verify it loaded** — ask the agent to *"summarize the Art Director rules"*. It should name product-first, source of truth, commercial realism, hierarchy, negative space, anti-slop, hard fails. If it recites generic "make it premium", it didn't load — re-paste.
+**Verify it loaded** — ask the agent to *"summarize the Meta Ads Designer rules"*. It should name product-first, source of truth, commercial realism, hierarchy, negative space, anti-slop, hard fails. If it recites generic "make it premium", it didn't load — re-paste.
 
 Full per-host steps: **[`INSTALL.md`](INSTALL.md)**.
 
@@ -66,7 +69,7 @@ Full per-host steps: **[`INSTALL.md`](INSTALL.md)**.
 
 ## ✨ Why it works on any agent
 
-`Art Director` is **framework-agnostic**. The same rules travel everywhere — native skills on Hermes/Claude/Codex/Cursor, custom instructions on ChatGPT, or system-prompt injection on any agent/API.
+`Meta Ads Designer` is **framework-agnostic**. The same rules travel everywhere — native skills on Hermes/Claude/Codex/Cursor, custom instructions on ChatGPT, or system-prompt injection on any agent/API.
 
 ```
 ┌────────────────────────────────────────────┐
@@ -136,7 +139,7 @@ Plus, from the Engine: **Commercial realism** (perspective, gravity, shadows, re
 ## 📁 Repo structure
 
 ```
-art-director/
+meta-ads-designer/
 ├── SKILL.md                        # Agent operating manual (procedure + routing)
 ├── core.md                         # 1-page injectable rules — paste into any chat
 ├── visual-advertising-engine.md    # THE standard — 34 rules (PL)
@@ -188,5 +191,5 @@ MIT — use it, remix it, ship it.
   <b>Created by</b><br/>
   <b>AI EVOLUTION LABS</b><br/>
   <sub>Channel Islands</sub><br/>
-  <sub><a href="https://github.com/aievolutionpl/art-director">github.com/aievolutionpl/art-director</a></sub>
+  <sub><a href="https://github.com/aievolutionpl/meta-ads-designer">github.com/aievolutionpl/meta-ads-designer</a></sub>
 </div>

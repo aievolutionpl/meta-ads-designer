@@ -1,13 +1,13 @@
 ---
-name: premium-ad-design
+name: meta-ads-designer
 description: Universal plugin that teaches agents how to design beautiful posters, flyers, meta ads and promo graphics — and generate them without AI-slop. Framework-agnostic: works on Hermes, Claude Code, Codex, Cursor, ChatGPT and any agent. Load when the user asks for promotional images for a business/restaurant/hotel/local brand, especially when they upload logo, service or food reference photos.
 version: 3.0.0
 license: MIT
 author: AI Evolution Labs
-url: https://github.com/aievolutionpl/art-director
+url: https://github.com/aievolutionpl/meta-ads-designer
 ---
 
-# 🎨 Premium Ad Design
+# 🎨 Meta Ads Designer
 
 > **"Don't generate objects in a void. Generate ads that look like a campaign — with hierarchy, typography, real light, and a structural message."**
 
@@ -41,7 +41,7 @@ This is a **universal plugin** that runs on any AI agent. It teaches **what beau
 10. **Show product in use** — packshot alone isn't enough; a hand/gesture/POV gives context.
 11. **Typography after the image** — strong photo first, then headline → support → CTA. Not a dashboard.
 12. **Don't generate important text in-image** — if the model is weak at text, generate a clean visual and add real typography + the real logo later.
-13. **Mobile-first composition** — 4:5 Meta feed, 9:16 Reels/Stories, 1:1 marketplace. Compose for the format; don't rely on cropping.
+13. **Mobile-first composition — DEFAULT is 4:5 (1080×1350)**, the Instagram/Facebook feed default; 9:16 for Reels/Stories, 1:1 marketplace, 16:9 — only when the user asks. Compose for the format; don't rely on cropping.
 14. **Series consistency** — product identical across 5–10 images; only context/frame/mood/light change. Like one shoot.
 15. **Variation, not randomness** — hero · lifestyle · feature · close-up · problem · result · premium · UGC · unexpected angle.
 16. **Food builds appetite** — texture, steam, gloss, juiciness, layers; Frozen-Time/Bullet-Time for dynamic scenes. Physically credible.
@@ -54,7 +54,7 @@ This is a **universal plugin** that runs on any AI agent. It teaches **what beau
 ## 🔧 WORKFLOW — from brief to finished pack
 
 ### 1 · Brief intake
-Collect: **what** we promote (product/service/offer/event), **for whom**, the **CTA**, the **platforms** (IG feed 4:5, Stories 9:16, FB 1:1, print), and **reference photos** (logo, venue, food, products). Treat supplied refs as source assets — preserve authenticity.
+Collect: **what** we promote (product/service/offer/event), **for whom**, the **CTA**, the **platforms** (default ratio **4:5 = 1080×1350**, the Instagram/Facebook feed default; 9:16 for Reels/Stories, 1:1 for marketplace — use 4:5 unless the user asks otherwise), and **reference photos** (logo, venue, food, products). Treat supplied refs as source assets — preserve authenticity.
 
 ### 2 · Research the niche
 Before generating, find out how top brands in this niche present themselves (Meta Ad Library, Instagram, competitors).
@@ -113,7 +113,7 @@ Full steps per host: `INSTALL.md`.
 ## 📁 Repo structure
 
 ```
-premium-ad-design/
+meta-ads-designer/
 ├── SKILL.md                # This file — agent operating manual
 ├── core.md                 # 1-page injectable rules — paste into any chat/agent
 ├── visual-advertising-engine.md  # THE 34-rule operating standard (PL)
@@ -143,5 +143,5 @@ MIT — use it, remix it, ship it.
   <b>Created by</b><br>
   <b>AI EVOLUTION LABS</b><br>
   <sub>Channel Islands</sub><br>
-  <sub><a href="https://github.com/aievolutionpl/art-director">github.com/aievolutionpl/art-director</a></sub>
+  <sub><a href="https://github.com/aievolutionpl/meta-ads-designer">github.com/aievolutionpl/meta-ads-designer</a></sub>
 </p>

@@ -36,8 +36,8 @@ d.text((90, 52), "THE VISUAL ADVERTISING ENGINE FOR AI AGENTS", font=small_f, fi
 d.rectangle([90, 52 + 34, 210, 55 + 34], fill="#D4A853")
 
 # Tytuł
-d.text((86, 210), "ART", font=title_f, fill=(255, 255, 255))
-d.text((86, 340), "DIRECTOR", font=title_f, fill=(255, 255, 255))
+d.text((86, 190), "META ADS", font=title_f, fill=(255, 255, 255))
+d.text((86, 320), "DESIGNER", font=title_f, fill=(255, 255, 255))
 
 # Złota linia akcentu
 d.rectangle([90, 505, 470, 508], fill="#D4A853")
@@ -47,8 +47,8 @@ d.text((90, 530), "DON'T DECORATE. DIRECT.", font=tag_f, fill=(212, 168, 83))
 
 # Stopka
 d.text((90, H - 52), "AI EVOLUTION LABS  ·  CHANNEL ISLANDS", font=foot_f, fill=(120, 128, 140))
-d.text((W - 320, H - 52), "github.com/aievolutionpl/art-director", font=foot_f, fill=(120, 128, 140))
+d.text((W - 320, H - 52), "github.com/aievolutionpl/meta-ads-designer", font=foot_f, fill=(120, 128, 140))
 
-out = "/home/aibot/repos/premium-ad-design/assets/art-director-banner.png"
+out = "/home/aibot/repos/premium-ad-design/assets/meta-ads-designer-banner.png"
 img.save(out)
 print("saved", out, img.size)
