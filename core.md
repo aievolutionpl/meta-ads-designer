@@ -101,10 +101,17 @@ Never prompt first. Run this order:
 - **Banned copy:** `delve · seamless · empower · elevate · robust · tapestry · revolutionary · game-changer · unlock · unleash · your perfect X · rhetorical questions · 🚀 · em dashes`.
 
 ## 11 · Niche playbooks
+> Full per-industry playbooks (15 niches, What works / Avoid / Headline / CTA): `references/niche-playbooks.md`. Depth for food/hotel/services: `references/hospitality-food-services-playbook.md`. Quick map below.
+
 - **Food/restaurant:** real dish photos are the hero (top ~62%) + a **solid** panel below with headline/subline/CTA/logo. Zero text on the food. Never invent dishes the venue doesn't serve. Warm, appetite-driven light.
 - **Hotel/venue:** a distinctive or listed facade → deterministic mode (see §12) — the model invents balconies and redraws signage. Real-photo + clean typography beats an AI-rebuilt building.
 - **Services/trade:** real install photos as refs → generate NEW premium scenes. Problem→Effect as a **pair** of creatives. Package tiers and deadlines must be **real**.
-- **Retail/product:** product in real use, sharp, isolated by contrast. Let the product be 100% recognisable.
+- **Retail/product:** product in real use, sharp, isolated by contrast. Let the product be 100% recognisable. Colour must match the listing (returns are killed by mismatched colour).
+- **Fitness:** real bodies/effort, not CGI; transformation as a **series**, not split-screen.
+- **Beauty/spa:** editorial soft light, believable skin, product as hero — never a redrawn label.
+- **Real estate:** the **real** property is the hero; never AI-invent architecture. Price + location pop as type.
+- **Tech/SaaS:** real UI screenshots (never invented interfaces); one feature per ad.
+- **Finance/professional:** credibility over flash; real numbers sell; deterministic Mode B for text safety.
 
 ## 12 · Two production modes — decide before generating
 - **A · Native in-render text** — copy baked into the render. Only for short Latin-script copy (≤12 rendered words) on a model verified to spell. Quote every word; append `CRITICAL: every word spelled PERFECTLY`.

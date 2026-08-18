@@ -215,7 +215,7 @@ meta-ads-designer/
     ├── headline-system.md          # Headline sizes and contrast
     ├── qa-gate.md                  # QA gate and rejection criteria
     ├── anti-slop-registry.md       # Full banned-pattern compendium (visual + copy)
-    ├── niche-playbooks.md          # Per-industry playbooks
+    ├── niche-playbooks.md          # 15 industry playbooks (food, hotel, fitness, beauty, real estate, tech…)
     └── prompt-library.md           # Ready prompts for any model
 ```
 
@@ -235,7 +235,7 @@ meta-ads-designer/
 | `references/headline-system.md` | Headline sizes and contrast |
 | `references/qa-gate.md` | QA gate and rejection criteria |
 | `references/anti-slop-registry.md` | Banned-pattern list + grep gate |
-| `references/niche-playbooks.md` | Per-industry depth |
+| `references/niche-playbooks.md` | 15 industry playbooks (What works / Avoid / Headline / CTA) |
 | `references/prompt-library.md` | Ready prompts |
 | `README.md` | This manual (PL) |
 | `README.en.md` | This manual (EN) |

@@ -215,7 +215,7 @@ meta-ads-designer/
     ├── headline-system.md          # Rozmiary headline i kontrast
     ├── qa-gate.md                  # Brama QA i kryteria odrzucenia
     ├── anti-slop-registry.md       # Kompletne kompendium zakazów (visual + copy)
-    ├── niche-playbooks.md          # Playbooki per nisza
+    ├── niche-playbooks.md          # 15 playbooków nisz (food, hotel, fitness, beauty, real estate, tech…)
     └── prompt-library.md           # Gotowe prompty dla dowolnego modelu
 ```
 
@@ -235,7 +235,7 @@ meta-ads-designer/
 | `references/headline-system.md` | Rozmiary headline i kontrast |
 | `references/qa-gate.md` | Brama QA i kryteria odrzucenia |
 | `references/anti-slop-registry.md` | Lista zakazów + grep gate |
-| `references/niche-playbooks.md` | Głębia per nisza |
+| `references/niche-playbooks.md` | 15 playbooków nisz (What works / Avoid / Headline / CTA) |
 | `references/prompt-library.md` | Gotowe prompty |
 | `README.md` | Ten manual (PL) |
 | `README.en.md` | Ten manual (EN) |

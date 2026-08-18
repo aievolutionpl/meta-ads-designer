@@ -80,3 +80,8 @@ The plugin knew what good design *is*. This release makes it executable: numbers
 ## [5.2.0] — core.md expanded into complete general-knowledge guide
 - `core.md` rebuilt from a 1-page rule digest into a self-contained general-knowledge guide for generating beautiful social-media ads: the law, per-platform formats (default 4:5), creative process, composition & hierarchy, real typography, colour, product-first + source of truth, lighting & camera, layouts, copy & headlines (specificity test), niche playbooks (food/hotel/services/retail), two production modes, prompt architecture, anti-slop, series & variation, hard fails, QA gate.
 - Updated core.md descriptions across README (PL/EN), SKILL, INSTALL, design-rules, CONTRIBUTING.
+
+## [5.3.0] — niches expanded to a full per-industry encyclopedia
+- `references/niche-playbooks.md` grew from 5 to **15 niches** (added fitness/gym, beauty/spa, real estate, automotive, education, health/clinic/supplements, finance/professional, tech/SaaS, fashion, pets/vet, creative services, wellness/retreats; enriched café, café-coffee, e-commerce retail). Each: What works / What to avoid / Headline archetypes / Typical CTA.
+- `core.md` §11 expanded with a niche quick-map (food, hotel, services, retail, fitness, beauty, real estate, tech, finance) + pointers to the deep file.
+- Updated niche-playbooks descriptions in README (PL/EN), SKILL, INSTALL.

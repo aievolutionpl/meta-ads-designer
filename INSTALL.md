@@ -105,7 +105,7 @@ Ask the agent: *"What is the specificity test, and what's the default margin on 
 | `references/layout-system.md` | Layout + panel-height + gradient values |
 | `references/headline-system.md` | Headline sizing & contrast rules |
 | `references/qa-gate.md` | QA gate & rejection criteria |
-| `references/niche-playbooks.md` | Per-industry depth |
+| `references/niche-playbooks.md` | 15 per-industry playbooks (What works / Avoid / Headline / CTA) |
 | `references/prompt-library.md` | Prompt skeletons |
 | `references/anti-slop-registry.md` | Full banned-pattern list + grep gate |
 | `scripts/` | `qa.py`, `extract_wordmark.py` |

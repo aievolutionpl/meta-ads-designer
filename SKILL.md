@@ -136,7 +136,7 @@ meta-ads-designer/
     ├── headline-system.md      # Headline sizing & contrast rules
     ├── qa-gate.md              # QA gate & rejection criteria
     ├── anti-slop-registry.md   # Full banned-patterns compendium (visual + copy)
-    ├── niche-playbooks.md      # Per-industry ad playbooks
+    ├── niche-playbooks.md      # 15 per-industry ad playbooks
     └── prompt-library.md       # Ready-to-use prompt recipes (any model)
 ```
 
