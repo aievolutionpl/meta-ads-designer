@@ -7,8 +7,8 @@ This plugin is **framework-agnostic**. The same rules work on every agent. Pick 
 ## 1 · Hermes Agent
 
 ```bash
-git clone https://github.com/aievolutionpl/premium-ad-design.git
-cp -r premium-ad-design ~/.hermes/skills/marketing/
+git clone https://github.com/aievolutionpl/art-director.git
+cp -r art-director ~/.hermes/skills/marketing/
 ```
 
 Hermes auto-loads `premium-ad-design` when you ask for posters/flyers/meta ads. The skill's `design-rules.md` + `SKILL.md` are read automatically.
@@ -18,8 +18,8 @@ Hermes auto-loads `premium-ad-design` when you ask for posters/flyers/meta ads. 
 ## 2 · Claude Code
 
 ```bash
-git clone https://github.com/aievolutionpl/premium-ad-design.git
-cp -r premium-ad-design ~/.claude/skills/
+git clone https://github.com/aievolutionpl/art-director.git
+cp -r art-director ~/.claude/skills/
 ```
 
 Claude Code reads the `SKILL.md` frontmatter and loads the plugin on matching tasks.
@@ -29,8 +29,8 @@ Claude Code reads the `SKILL.md` frontmatter and loads the plugin on matching ta
 ## 3 · Codex CLI
 
 ```bash
-git clone https://github.com/aievolutionpl/premium-ad-design.git
-cp -r premium-ad-design ~/.codex/skills/
+git clone https://github.com/aievolutionpl/art-director.git
+cp -r art-director ~/.codex/skills/
 ```
 
 ---
@@ -38,8 +38,8 @@ cp -r premium-ad-design ~/.codex/skills/
 ## 4 · Cursor / Windsurf
 
 ```bash
-git clone https://github.com/aievolutionpl/premium-ad-design.git
-cp -r premium-ad-design ~/.cursor/skills/   # Cursor
+git clone https://github.com/aievolutionpl/art-director.git
+cp -r art-director ~/.cursor/skills/   # Cursor
 # or ~/.windsurf/skills/  # Windsurf
 ```
 

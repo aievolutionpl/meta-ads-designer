@@ -4,7 +4,7 @@ description: Universal plugin that teaches agents how to design beautiful poster
 version: 3.0.0
 license: MIT
 author: AI Evolution Labs
-url: https://github.com/aievolutionpl/premium-ad-design
+url: https://github.com/aievolutionpl/art-director
 ---
 
 # 🎨 Premium Ad Design
@@ -115,10 +115,14 @@ Full steps per host: `INSTALL.md`.
 ```
 premium-ad-design/
 ├── SKILL.md                # This file — agent operating manual
-├── visual-advertising-engine.md  # THE 34-rule operating standard (Product First, Prompt Architecture, Hard Fails)
-├── design-rules.md         # Readable charter of beautiful advertising
+├── core.md                 # 1-page injectable rules — paste into any chat/agent
+├── visual-advertising-engine.md  # THE 34-rule operating standard (PL)
+├── visual-advertising-engine.en.md # THE 34-rule operating standard (EN)
+├── design-rules.md         # Readable charter of beautiful advertising (PL)
+├── design-rules.en.md      # Readable charter of beautiful advertising (EN)
 ├── INSTALL.md              # Setup + usage on every agent (incl. ChatGPT)
-├── README.md               # Homepage / manual
+├── README.md               # Homepage / manual (EN)
+├── README.pl.md            # Homepage / manual (PL)
 ├── LICENSE                 # MIT
 └── references/
     ├── anti-slop-registry.md   # Full banned-patterns compendium (visual + copy)
@@ -139,5 +143,5 @@ MIT — use it, remix it, ship it.
   <b>Created by</b><br>
   <b>AI EVOLUTION LABS</b><br>
   <sub>Channel Islands</sub><br>
-  <sub><a href="https://github.com/aievolutionpl/premium-ad-design">github.com/aievolutionpl/premium-ad-design</a></sub>
+  <sub><a href="https://github.com/aievolutionpl/art-director">github.com/aievolutionpl/art-director</a></sub>
 </p>

@@ -1,20 +1,28 @@
 <div align="center">
 
-# 🎨 Premium Ad Design
+# 🎬 Art Director
 
-### The universal plugin that teaches AI agents how to design beautiful ads — and stop producing AI-slop
+### The visual advertising engine for AI agents — stop generating AI-slop, start generating campaigns.
 
-**Postery · Flyery · Meta ads · Promo graphics** — for restaurants, hotels, local businesses and retail.
+**Posters · Flyers · Meta Ads · Product photography · E-commerce visuals** — for restaurants, hotels, local businesses and retail.
 
-![Version](https://img.shields.io/badge/version-3.0.0-6a5acd)
+[🇵🇱 Polski](README.pl.md) · [EN](README.md)
+
+![Version](https://img.shields.io/badge/version-3.1.0-6a5acd)
 ![License](https://img.shields.io/badge/license-MIT-brightgreen)
-![Language](https://img.shields.io/badge/lang-PL-2ea44f)
 ![Hosts](https://img.shields.io/badge/runs_on-Hermes%20%7C%20Claude%20%7C%20Codex%20%7C%20Cursor%20%7C%20ChatGPT-blue)
-![Status](https://img.shields.io/badge/framework-agnostic-success)
+![Framework](https://img.shields.io/badge/framework-agnostic-success)
+![PRs](https://img.shields.io/badge/PRs-welcome-2ea44f)
 
 <br/>
 
 > **„Don't generate objects in a void. Generate ads that look like a campaign — with hierarchy, typography, real light, and a structural message."**
+
+> **`DON'T DECORATE. DIRECT.`** — One product. One idea. One strong visual.
+
+<br/>
+
+<img src="assets/art-director-banner.png" alt="Art Director — Don't Decorate. Direct." width="100%"/>
 
 <br/>
 
@@ -34,33 +42,70 @@ Image models have **no taste**. Left to themselves they converge on a look anyon
 | A premium local restaurant | A generic purple-blue gradient + Inter font |
 | A memorable offer | Text slapped on a photo (Canva template), no message |
 
-The result reads as *"an image from ChatGPT"* — not a professional campaign. **This plugin fixes that.**
+The result reads as *"an image from ChatGPT"* — not a professional campaign. **Art Director fixes that.**
 
 ---
 
-## ✨ The solution — rules, not vibes
+## 🚀 Try it right now (no install)
 
-`Premium Ad Design` distills hard-won production rules into a **universal charter of beautiful advertising**. It does **not** depend on any one tool or host — the rules are the same everywhere:
+**Option A — one paste.** Put the contents of **[`core.md`](core.md)** into ChatGPT / Claude / Gemini as a custom instruction, then prompt:
 
-- ✅ **Hermes** — native skill
-- ✅ **Claude Code** — native skill
-- ✅ **Codex CLI** — native skill
-- ✅ **Cursor / Windsurf** — native skill
-- ✅ **ChatGPT / Claude / Gemini** — paste `design-rules.md` as a custom instruction
-- ✅ **Any custom agent / API** — inject the ruleset into the system prompt
+> *"Make a 4:5 social ad for my coffee shop. Here are my reference photos: [attach logo + drinks]. Follow the Art Director rules — product first, real food from my photos, my logo unaltered, one headline readable from a thumbnail, no text-on-photo slop. Show me 3 structurally different concepts."*
+
+**Option B — as a skill** (Hermes / Claude Code / Codex / Cursor):
+```bash
+git clone https://github.com/aievolutionpl/art-director.git
+cp -r art-director ~/.hermes/skills/marketing/   # or ~/.claude/skills/ ~/.codex/skills/ ~/.cursor/skills/
+```
+
+**Verify it loaded** — ask the agent to *"summarize the Art Director rules"*. It should name product-first, source of truth, commercial realism, hierarchy, negative space, anti-slop, hard fails. If it recites generic "make it premium", it didn't load — re-paste.
+
+Full per-host steps: **[`INSTALL.md`](INSTALL.md)**.
+
+---
+
+## ✨ Why it works on any agent
+
+`Art Director` is **framework-agnostic**. The same rules travel everywhere — native skills on Hermes/Claude/Codex/Cursor, custom instructions on ChatGPT, or system-prompt injection on any agent/API.
+
+```
+┌────────────────────────────────────────────┐
+│ visual-advertising-engine(.en).md          │  ← THE standard (34 rules)
+│   Product First · Source of Truth ·        │     Prompt Architecture ·
+│   Hard Fails · Final Quality Check         │     Creative Workflow
+└───────────────┬────────────────────────────┘
+                │ summarized as
+                ▼
+┌─────────────────────────────┐
+│      design-rules(.en).md   │  ← THE charter (paste-able taste)
+│   "The Rules of Beautiful   │     Works on ANY agent
+│    Advertising"             │
+└───────────────┬─────────────┘
+                │ loaded by
+        ┌───────┼───────┐
+        ▼       ▼       ▼
+   ┌────────┐ ┌───────┐ ┌──────────────┐
+   │SKILL.md│ │core.md│ │  references/ │
+   │ manual │ │inject │ │ depth:       │
+   │        │ │me 1-pg│ │ prompts,     │
+   └────────┘ └───────┘ │ niches, slop │
+                        └──────────────┘
+```
+
+**The split is intentional:** the *standard* (what an agent follows) → the *charter* (the taste, paste-able) → the *manual* (procedure) → the *core* (one-page inject) → the *references* (depth). Taste travels; procedure adapts.
 
 ---
 
 ## 🏛️ The Rules of Beautiful Advertising
 
-The heart of the plugin is the **Visual Advertising Engine** (`visual-advertising-engine.md`) — the full 34-rule operating standard. Here are the 10 headline rules; **the complete standard is in the Engine file.**
+Full 34-rule standard in **`visual-advertising-engine.md`**. Headlines:
 
 > **Product First · Reference = Source of Truth · One creative = One idea · Don't decorate, direct.**
 
-1. **Hierarchy** — one dominant element (the TITLE / the product), readable from a thumbnail, message in 1 second.
+1. **Hierarchy** — one dominant element (the product / title), readable from a thumbnail, message in 1 second.
 2. **Real typography** — name real typefaces (Playfair, Montserrat…), max 3 families, contrast by weight & scale. Never "modern sans-serif".
 3. **Brand palette + one accent** — never the purple-blue default; no cream/sand "for warmth"; gradient only as a scrim.
-4. **Negative space** — generous margins (~8%), breathing room; space is luxury.
+4. **Negative space** — generous margins, breathing room; space is luxury.
 5. **Imagery in context** — product in real use, real light, real people. Never floating on a void.
 6. **Real food from refs** — never let AI invent dishes the venue doesn't serve.
 7. **Logo fidelity** — never AI-redraw an official logo; place the original file.
@@ -68,43 +113,7 @@ The heart of the plugin is the **Visual Advertising Engine** (`visual-advertisin
 9. **No AI copy** — banned words (delve, seamless, empower, elevate, robust, revolutionary, 🚀); names & numbers over adjectives.
 10. **QA before shipping** — thumbnail readability, correct spelling (incl. Polish diacritics), one focal point, contrast, logo fidelity.
 
----
-
-## ⚙️ How it works — architecture
-
-```
-                   ┌──────────────────────────────────────────┐
-                   │  visual-advertising-engine.md            │  ← THE standard
-                   │  "Visual Advertising Engine"             │     (34 rules: Product
-                   │   34-rule operating standard             │      First, Prompt
-                   └──────────────┬───────────────────────────┘      Architecture,
-                                  │ summarized as               Hard Fails)
-                                  ▼
-                   ┌─────────────────────────────┐
-                   │   design-rules.md           │  ← THE charter (paste-able)
-                   │   "The Rules of Beautiful   │     Works on ANY agent
-                   │    Advertising"             │
-                   └──────────────┬──────────────┘
-                                  │ loaded by
-        ┌─────────────────────────┼─────────────────────────┐
-        ▼                         ▼                         ▼
-   ┌───────────┐           ┌──────────────┐          ┌──────────────┐
-   │  SKILL.md │           │   INSTALL.md │          │  references/ │
-   │ agent     │           │   setup per  │          │  depth:      │
-   │ operating │           │   host +     │          │  prompts,    │
-   │ manual    │           │   ChatGPT    │          │  niches,     │
-   └───────────┘           └──────────────┘          │  anti-slop   │
-                                                     └──────────────┘
-```
-
-**The split is intentional:**
-- **`visual-advertising-engine.md`** — the *operating standard* (34 rules): Product First, Reference = Source of Truth, Prompt Architecture, Creative Workflow, Hard Fails, Final Quality Check. This is what an agent follows before any commercial visual.
-- **`design-rules.md`** — the *charter* (the taste). Self-contained, so it can be pasted into ChatGPT or injected into any system prompt. This is what changes an agent's taste.
-- **`SKILL.md`** — the *procedure* (what to DO: brief → research → angles → creative → generate → QA → deliver). Skill loaders read its frontmatter.
-- **`references/`** — the *depth* (ready prompts, per-industry playbooks, full slop registry).
-- **`INSTALL.md`** — the *adapters* (how each host loads it).
-
-The result: **the taste travels**, no matter which agent runs it.
+Plus, from the Engine: **Commercial realism** (perspective, gravity, shadows, real materials) · **Lighting is part of the product** · **Think like a photographer** · **Build depth** · **Three mandatory angles** (Problem/Effect/Lifestyle) · **The Visual Creative Library** (hero, packshot, lifestyle, product-in-use, macro, problem/solution, result, UGC, editorial, scroll-stopper) · **Series consistency** · **Hard Fail Conditions** · **DON'T DECORATE. DIRECT.**
 
 ---
 
@@ -112,48 +121,31 @@ The result: **the taste travels**, no matter which agent runs it.
 
 ```
 1. BRIEF     — what we promote, for whom, the CTA, platforms + collect refs
-               (logo, venue, food, products)
 2. RESEARCH  — how do top brands in this niche present themselves? If the
                client has ads they like — that IS the style source of truth
 3. ANGLES    — 5-10 distinct promises/layouts, not 10 color swaps
-4. GENERATE  — one finished ad per generation; refs with a clear role
-5. QA        — contact sheet + checklist; scale+pad (never crop) near edges
-6. DELIVER   — files + contact sheet + notes; report model/cost
+4. CREATIVE  — product → benefit → target → angle → metaphor → type →
+               composition → light/camera → constraints → then the prompt
+5. GENERATE  — one finished ad per generation; refs with a clear role
+6. QA        — contact sheet + checklist; scale+pad (never crop) near edges
+7. DELIVER   — files + contact sheet + notes; report model/cost
 ```
-
----
-
-## 🚀 Quick start
-
-### Hermes / Claude / Codex / Cursor
-```bash
-git clone https://github.com/aievolutionpl/premium-ad-design.git
-cp -r premium-ad-design ~/.hermes/skills/marketing/   # Hermes
-cp -r premium-ad-design ~/.claude/skills/             # Claude Code
-cp -r premium-ad-design ~/.codex/skills/              # Codex
-cp -r premium-ad-design ~/.cursor/skills/             # Cursor
-```
-
-### ChatGPT / Claude / Gemini (chat)
-Open **Custom Instructions** and paste the ruleset, or attach `design-rules.md` as a file. Then prompt:
-
-> *"Make a 4:5 social ad for [business]. Here are my reference photos: [attach logo/food/venue]. Follow the Premium Ad Design rules: one headline readable from a thumbnail, brand palette, real typography, no text-on-photo slop, real food from my photos, my logo unaltered, CTA 'Reserve a table'. Show 3 structurally different concepts first."*
-
-**Verify it loaded:** ask the agent to *"summarize the 10 rules of beautiful advertising"* — it should name hierarchy, real typography, brand palette, negative space, context imagery, logo fidelity, ad spine, banned AI words, QA.
-
-Full per-host steps: **`INSTALL.md`**.
 
 ---
 
 ## 📁 Repo structure
 
 ```
-premium-ad-design/
+art-director/
 ├── SKILL.md                        # Agent operating manual (procedure + routing)
-├── visual-advertising-engine.md    # THE standard — "Visual Advertising Engine" (34 rules)
-├── design-rules.md                 # THE charter — "The Rules of Beautiful Advertising"
+├── core.md                         # 1-page injectable rules — paste into any chat
+├── visual-advertising-engine.md    # THE standard — 34 rules (PL)
+├── visual-advertising-engine.en.md # THE standard — 34 rules (EN)
+├── design-rules.md                 # The charter — Rules of Beautiful Advertising (PL)
+├── design-rules.en.md              # The charter (EN)
 ├── INSTALL.md                      # Setup + usage on every agent (incl. ChatGPT)
-├── README.md                       # This manual
+├── README.md                       # This manual (EN)
+├── README.pl.md                    # This manual (PL)
 ├── LICENSE                         # MIT
 └── references/
     ├── anti-slop-registry.md       # Full banned-pattern compendium (visual + copy)
@@ -167,8 +159,9 @@ premium-ad-design/
 
 | File | Use it for |
 |------|-----------|
-| `visual-advertising-engine.md` | **The operating standard** — 34 rules agents follow before any commercial visual |
-| `design-rules.md` | The charter — paste into any chat, or read as the canonical taste |
+| `core.md` | **The one-page inject** — paste into any chat/agent |
+| `visual-advertising-engine(.en).md` | **The operating standard** — 34 rules agents follow before any commercial visual |
+| `design-rules(.en).md` | The charter — the taste |
 | `SKILL.md` | Agent operating manual (skill loaders read this) |
 | `INSTALL.md` | Setup per host |
 | `references/prompt-library.md` | Ready-to-use prompt recipes |
@@ -178,15 +171,9 @@ premium-ad-design/
 
 ---
 
-## 🎯 Why it exists — the origin
-
-Built from **real production rejections**, not theory. Every rule maps to an actual mistake caught on a live campaign: the restaurant ad that invented dishes the kitchen never served, the hotel pack that mangled the logo, the flyer that was a Canva template with text slapped on a photo, the "premium" pack that was 10 color swaps of the same layout. These are the rules that turned those into passing campaigns.
-
----
-
 ## 🤝 Contributing
 
-Have a rule that would've saved a campaign? Open a PR against `design-rules.md` — that's the canonical source; `SKILL.md` and the README summarize it.
+Have a rule that would've saved a campaign? Open a PR against `visual-advertising-engine.md` — it's the canonical source; `core.md`, `SKILL.md` and the README summarize it. See [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ---
 
@@ -201,5 +188,5 @@ MIT — use it, remix it, ship it.
   <b>Created by</b><br/>
   <b>AI EVOLUTION LABS</b><br/>
   <sub>Channel Islands</sub><br/>
-  <sub><a href="https://github.com/aievolutionpl/premium-ad-design">github.com/aievolutionpl/premium-ad-design</a></sub>
+  <sub><a href="https://github.com/aievolutionpl/art-director">github.com/aievolutionpl/art-director</a></sub>
 </div>
