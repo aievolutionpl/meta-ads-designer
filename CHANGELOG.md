@@ -30,7 +30,7 @@ The plugin knew what good design *is*. This release makes it executable: numbers
 
 ### Removed
 - **`visual-advertising-engine.en.md`** — it was byte-identical to the file it was supposedly mirroring.
-- **`design-rules.en.md`** — the two copies had already drifted (the EN version carried a workflow step the PL one didn't). English is now canonical for the rules; `README.pl.md` remains the Polish manual.
+- **`design-rules.en.md`** — the two copies had already drifted (the EN version carried a workflow step the PL one didn't). English is now canonical for the rules; `README.md` is the Polish main manual and `README.en.md` the English extra.
 
 ### Fixed
 - Version drift between `SKILL.md` frontmatter (3.0.0), the README badges (4.0.0) and the release history (v4.1) — all now 5.0.0.
@@ -65,3 +65,7 @@ The plugin knew what good design *is*. This release makes it executable: numbers
 - Banner replaced with the client-supplied artwork (`assets/meta-ads-designer-banner.png`).
 - Removed redundant `visual-advertising-engine.en.md` (engine is a single English canonical file) and `assets/make_banner.py`.
 - Rebased/merged with the v5.0.0 PR (examples/, scripts/, layout/headline/qa references, CHANGELOG).
+
+## [5.0.1] — README language layout
+- `README.md` is now the **Polish** main manual; English moved to **`README.en.md`** (extra).
+- Updated language-switcher links and all internal references (`SKILL.md`, `INSTALL.md`, `CONTRIBUTING.md`).

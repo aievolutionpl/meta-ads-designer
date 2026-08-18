@@ -124,8 +124,8 @@ meta-ads-designer/
 ├── visual-advertising-engine.md  # THE 34-rule operating standard (canonical, EN)
 ├── design-rules.md         # Readable charter of beautiful advertising (English canonical)
 ├── INSTALL.md              # Setup + usage on every agent (incl. ChatGPT)
-├── README.md               # Homepage / manual (EN)
-├── README.pl.md            # Homepage / manual (PL)
+├── README.md               # Homepage / manual (PL, main)
+├── README.en.md            # Homepage / manual (EN, extra)
 ├── CHANGELOG.md            # Version history
 ├── LICENSE                 # MIT
 ├── examples/               # Worked ad examples (food, hotel, services, retail)

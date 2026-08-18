@@ -13,7 +13,7 @@ This is a **rules repo** — the value is the design doctrine. Every contributio
 | `core.md` | The 1-page inject | Add only if a rule is so essential it must be in the inject. |
 | `SKILL.md` | Agent manual | Procedural/workflow changes. |
 | `references/` | Depth (prompts, niches, slop registry) | Concrete, reusable additions (a prompt recipe, a niche pattern, a new slop tell). |
-| `README.md` / `README.pl.md` | Manuals | Keep in sync (EN + PL). |
+| `README.md` / `README.en.md` | Manuals | `README.md` = Polish main; `README.en.md` = English. Keep in sync. |
 
 ## Rule of thumb
 **Rule first, summary second.** New principles go into `visual-advertising-engine.md`. Don't only patch the README — a rule that lives only in the manual won't reach agents.
