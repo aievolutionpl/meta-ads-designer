@@ -1,7 +1,7 @@
 ---
 name: meta-ads-designer
 description: Universal plugin that teaches agents how to design beautiful posters, flyers, meta ads and promo graphics — and generate them without AI-slop. Framework-agnostic: works on Hermes, Claude Code, Codex, Cursor, ChatGPT and any agent. Load when the user asks for promotional images for a business/restaurant/hotel/local brand, especially when they upload logo, service or food reference photos.
-version: 3.0.0
+version: 5.4.0
 license: MIT
 author: AI Evolution Labs
 url: https://github.com/aievolutionpl/meta-ads-designer
@@ -21,9 +21,10 @@ This is a **universal plugin** that runs on any AI agent. It teaches **what beau
 
 1. **`visual-advertising-engine.md`** — the 34-rule operating standard (Product First, Reference = Source of Truth, Prompt Architecture, Hard Fails, QA). **Read this before any commercial visual.**
 2. **`design-rules.md`** — the canonical charter of beautiful advertising (the readable summary of the engine).
-3. Then follow the workflow below.
-4. For host setup (Hermes / Claude / Codex / Cursor / ChatGPT): `INSTALL.md`.
-5. For prompts and niche depth: `references/`.
+3. **`core.md`** — only when you need one self-contained page to hand to a chat host or paste into another agent's system prompt. It restates the doctrine; the engine outranks it.
+4. Then follow the workflow below.
+5. For host setup (Hermes / Claude / Codex / Cursor / ChatGPT): `INSTALL.md`.
+6. For prompts and niche depth: `references/`.
 
 ---
 
@@ -82,7 +83,7 @@ Do **not** jump to the prompt. Run the engine's creative workflow first:
 - Model choice is host-specific — see `references/prompt-library.md` and `INSTALL.md`. Rule of thumb: a model that renders text well for in-scene headlines; a clean-photo pipeline for everything else.
 
 ### 5 · QA gate (mandatory)
-1. Check dimensions; **scale+pad** (never crop) when text/logo is near an edge.
+1. Run `python scripts/qa.py <file> --format 4:5 --text-box x0,y0,x1,y1` (add `--logo-box` when a logo is placed). **Declare the boxes** — without them the safe-area, contrast, thumbnail and scrim checks report `n/a` and the PASS means only "right dimensions, no collage". Fix edge intrusions with **scale+pad**, never a crop.
 2. Build a **contact sheet** (exclude prior contact sheets from the glob).
 3. Inspect each ad against **every rule in `design-rules.md` §12** — thumbnail readability, spelling (incl. Polish diacritics), hierarchy, accent ≤3, logo fidelity, no fake footers, no text-on-photo slop, no AI-invented food, ad spine present, contrast.
 4. Fix minor issues deterministically (clean typography pass); regenerate when the visual is fundamentally wrong.
@@ -128,8 +129,10 @@ meta-ads-designer/
 ├── README.en.md            # Homepage / manual (EN, extra)
 ├── CHANGELOG.md            # Version history
 ├── LICENSE                 # MIT
+├── CONTRIBUTING.md         # How to add a rule (rule-ID policy, no-duplication rule)
 ├── examples/               # Worked ad examples (food, hotel, services, retail)
-├── scripts/                # extract_wordmark.py, qa.py
+├── assets/                 # Banner and generated hero images for the README
+├── scripts/                # qa.py, test_qa.py (its self-test), extract_wordmark.py
 └── references/
     ├── hospitality-food-services-playbook.md # Deep rules: food / hotel / services
     ├── layout-system.md        # Layout + panel-height + gradient values

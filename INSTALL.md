@@ -73,9 +73,12 @@ The QA gate's deterministic layer and the wordmark extractor need two common pac
 ```bash
 pip install pillow numpy
 
-python scripts/qa.py out/*.png --format 4:5 --text-box 86,843,994,1290
+python scripts/qa.py out/*.png --format 4:5 --text-box 86,900,994,1264
 python scripts/extract_wordmark.py refs/logo.png build/logo_white.png
+python scripts/test_qa.py        # verifies the gate itself, 13 synthetic cases
 ```
+
+Always pass `--text-box` on a creative that carries copy (and `--logo-box` when you place a logo). Without them the safe-area, contrast, thumbnail and scrim checks have nothing to measure, report `n/a`, and the PASS is only partial — the script warns you when this happens.
 
 `qa.py` exits non-zero when any image fails, so it drops into CI or a pre-delivery hook. Everything else in the repo is plain Markdown with no dependencies.
 
@@ -102,10 +105,8 @@ Ask the agent: *"What is the specificity test, and what's the default margin on 
 | `design-rules.md` | Readable charter + index to everything |
 | `SKILL.md` | Agent operating manual (skill loaders read this) |
 | `references/hospitality-food-services-playbook.md` | Deep rules: food / hotel / services |
-| `references/layout-system.md` | Layout + panel-height + gradient values |
-| `references/headline-system.md` | Headline sizing & contrast rules |
-| `references/qa-gate.md` | QA gate & rejection criteria |
 | `references/niche-playbooks.md` | 15 per-industry playbooks (What works / Avoid / Headline / CTA) |
 | `references/prompt-library.md` | Prompt skeletons |
 | `references/anti-slop-registry.md` | Full banned-pattern list + grep gate |
-| `scripts/` | `qa.py`, `extract_wordmark.py` |
+| `scripts/` | `qa.py` (QA gate), `test_qa.py` (its self-test), `extract_wordmark.py` |
+| `CONTRIBUTING.md` | How to add a rule without forking the doctrine |

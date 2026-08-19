@@ -127,7 +127,7 @@ The apostrophe is the classic Mode A failure — it happened on 3 of 5 renders i
 1. **Brand line moved to Mode B.** The dish, headline and detail line stayed native; `DE L'ETANG` was rendered deterministically from the logo file afterwards. A brand name with punctuation is not worth five regenerations.
 2. **Headline dropped to two lines at 64px** and the copy shortened, per layout-system §2b — a 22-character line at 88px was crop-risky on a 1080px canvas.
 3. **Panel padding raised** to 64px bottom so the detail line cleared the safe area.
-4. Re-run: `python scripts/qa.py out/ad_01.png --format 4:5 --text-box 86,843,994,1290` → PASS, and the vision pass returned `spelling_errors: []`.
+4. Re-run: `python scripts/qa.py out/ad_01.png --format 4:5 --text-box 86,900,994,1264` → PASS, and the vision pass returned `spelling_errors: []`.
 
 **Second pass: 18/20 — ship.** (Deductions: typography 1 for a slightly tight two-line lockup; space 1 for a panel that could breathe more.)
 

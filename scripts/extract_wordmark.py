@@ -3,7 +3,12 @@
 
 For the common case: the client's logo is a white wordmark on a solid coloured
 square, and the ad needs the wordmark alone, transparent, to sit on a photo.
-This never redraws anything — it masks and crops the original pixels (R03/R30-logo).
+
+It never redraws letterforms: the shapes come straight from the source file's own
+alpha, so the wordmark stays 1:1 with the client's asset (R03/R30-logo). It does
+flatten colour — every surviving pixel becomes pure white (or pure black with
+--invert). That is the right output for a mono wordmark on a photo, and the wrong
+one for a multi-colour mark: place that logo's original file instead.
 
 Usage:
     python scripts/extract_wordmark.py logo.png logo_white.png

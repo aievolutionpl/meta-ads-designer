@@ -22,7 +22,7 @@ A great ad does ONE job: stop the scroll and deliver ONE message. Everything els
 | Instagram / Facebook feed (default) | **4:5** | 1080×1350 |
 | Reels / Stories / Shorts | 9:16 | 1080×1920 |
 | Marketplace / square | 1:1 | 1080×1080 |
-| Wide / web | 16:9 | 1080×608 |
+| Wide / web | 16:9 | 1920×1080 |
 
 **Default is 4:5 (1080×1350)** — the feed default. Ask the user before switching. Design the composition FOR the chosen frame; cropping a 4:5 to 1:1 destroys the hierarchy.
 
