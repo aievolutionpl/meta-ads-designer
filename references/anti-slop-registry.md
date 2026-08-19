@@ -78,16 +78,18 @@ Text deliverables (prompts, captions, prose) — run before publishing:
 
 ```bash
 # 1. Visual-slop vocabulary leaking into prompts
-grep -Eic "purple gradient|glassmorphism|neon glow|glowing orbs|floating particles|isometric" "$f" || echo "CLEAN"
+grep -Eiq "purple gradient|glassmorphism|neon glow|glowing orbs|floating particles|isometric" "$f" \
+  && echo "SLOP" || echo "CLEAN"
 
 # 2. AI copy tells
-grep -Eic "delve|seamless|empower|elevate|robust|tapestry|game-changer|revolutionary|unlock|unleash|🚀" "$f" || echo "CLEAN"
+grep -Eiq "delve|seamless|empower|elevate|robust|tapestry|game-changer|revolutionary|unlock|unleash|🚀" "$f" \
+  && echo "SLOP" || echo "CLEAN"
 ```
 
 Images — the grep above cannot see them. Use the real gate:
 
 ```bash
-python scripts/qa.py out/*.png --format 4:5 --text-box 86,843,994,1290
+python scripts/qa.py out/*.png --format 4:5 --text-box 86,900,994,1264
 ```
 
 → [`qa-gate.md`](qa-gate.md) for all three layers.

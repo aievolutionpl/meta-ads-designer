@@ -3,11 +3,17 @@
 
 Layer 1 of references/qa-gate.md. Measures only what a machine measures better
 than an eye: dimensions, safe area, text contrast, collage seams, thumbnail
-legibility, focal dispersion, scrim opacity. Everything subjective is layer 2.
+legibility, focal dispersion, scrim uniformity. Everything subjective is layer 2.
+
+Pass --text-box (and --logo-box) whenever the image carries copy: without them
+the safe-area, contrast, thumbnail and scrim checks have nothing to measure and
+report "n/a", so a PASS is only partial.
 
 Usage:
     python scripts/qa.py out/ad_01.png --format 4:5
-    python scripts/qa.py out/ad_01.png --format 4:5 --text-box 86,843,994,1290
+    python scripts/qa.py out/ad_01.png --format 4:5 --text-box 86,900,994,1264
+    python scripts/qa.py out/ad_01.png --format 4:5 --text-box 86,900,994,1230 \
+                                       --logo-box 780,1240,994,1290
     python scripts/qa.py out/*.png --format 4:5 --contact-sheet out/_contact.png
     python scripts/qa.py out/ad_01.png --json          # machine-readable only
 
@@ -41,7 +47,18 @@ MARGIN_RATIO = 0.08          # R08 / layout-system §1a
 MIN_CONTRAST = 4.5           # layout-system §4a
 MIN_THUMBNAIL_RETENTION = 0.40
 MAX_FOCAL_REGIONS = 2        # R07
-MIN_SCRIM_OPACITY = 0.85     # layout-system §3b
+MIN_SCRIM_UNIFORMITY = 0.85  # layout-system §3b
+
+# Placement chrome that actually sits *on top of* the creative (layout-system
+# §1b), in px on the canonical canvas, scaled by the short edge.
+#
+# Only 9:16 is gated. The 120px bottom zone listed for 4:5 is placement-dependent
+# advice, not chrome — the canonical photo+panel layout (§3a) deliberately runs
+# its CTA/logo row at 64px from the bottom, and gating on 120px would fail the
+# repo's own reference layout.
+KEEPOUTS = {
+    "9:16": {"top": 250, "bottom": 320},    # profile row / CTA + caption
+}
 
 
 # ---------------------------------------------------------------- primitives
@@ -93,20 +110,62 @@ def check_dimensions(img: Image.Image, fmt: str | None) -> tuple[str, bool]:
     return f"{got} {'ok' if ok else f'expected {want[0]}x{want[1]}'}", ok
 
 
-def check_safe_area(g: np.ndarray) -> tuple[str, bool]:
-    """Flag hard content (strong edges) sitting inside the 8% margin band."""
+def check_safe_area(size: tuple[int, int], boxes: dict[str, tuple[int, int, int, int]],
+                    fmt: str | None) -> tuple[str, bool]:
+    """Exact check: every declared box sits inside the 8% margin and the
+    placement keep-outs (R08 / layout-system §1b).
+
+    This is geometry, not a heuristic — a declared box either crosses the margin
+    or it does not. Without --text-box / --logo-box there is nothing to verify;
+    the advisory `margin_activity` metric is all the image itself can tell us.
+    """
+    if not boxes:
+        return "n/a (pass --text-box / --logo-box)", True
+    w, h = size
+    m = int(round(min(h, w) * MARGIN_RATIO))
+    keep = KEEPOUTS.get(fmt or "", {})
+    scale = min(h, w) / 1080
+    top = m + int(round(keep.get("top", 0) * scale))
+    bottom = h - m - int(round(keep.get("bottom", 0) * scale))
+    problems = []
+    for name, (x0, y0, x1, y1) in boxes.items():
+        over = []
+        if x0 < m:
+            over.append(f"left {m - x0}px")
+        if x1 > w - m:
+            over.append(f"right {x1 - (w - m)}px")
+        if y0 < top:
+            over.append(f"top {top - y0}px")
+        if y1 > bottom:
+            over.append(f"bottom {y1 - bottom}px")
+        if over:
+            problems.append(f"{name} crosses {', '.join(over)}")
+    if problems:
+        return "; ".join(problems), False
+    return f"clear (margin {m}px, keep-out {top}-{bottom}px)", True
+
+
+def check_margin_activity(g: np.ndarray) -> tuple[str, bool]:
+    """Advisory: how much strong edge energy sits in the 8% margin band.
+
+    Never fails the run. A full-bleed photograph legitimately bleeds into the
+    margin and scores as high as a headline that crosses it, so this number is
+    a prompt to look, not a verdict. The verdict is check_safe_area(), which
+    measures declared geometry instead of guessing at it.
+    """
     h, w = g.shape
     m = int(round(min(h, w) * MARGIN_RATIO))
     e = _edges(g)
     interior = e[m:h - m, m:w - m]
     if interior.size == 0:
         return "canvas too small to measure", True
-    thresh = max(np.percentile(interior, 99), 24.0)
+    thresh = max(float(np.percentile(interior, 99)), 24.0)
     band = e.copy()
     band[m:h - m, m:w - m] = 0
-    intrusion = float((band > thresh).sum()) / max(band.size, 1)
-    ok = intrusion < 0.004
-    return f"{'clear' if ok else 'content in margin'} ({intrusion * 100:.2f}%)", ok
+    band_area = band.size - interior.size
+    activity = float((band > thresh).sum()) / max(band_area, 1)
+    note = "quiet" if activity < 0.001 else "busy — check the margin by eye"
+    return f"{activity * 100:.2f}% ({note})", True
 
 
 def check_contrast(rgb: np.ndarray, box: tuple[int, int, int, int] | None) -> tuple[float, bool]:
@@ -126,8 +185,16 @@ def check_contrast(rgb: np.ndarray, box: tuple[int, int, int, int] | None) -> tu
     if region.size == 0:
         return 0.0, False
     lum = _luminance(region)
-    fg = float(np.percentile(lum, 95))   # glyph pixels
-    bg = float(np.percentile(lum, 20))   # backdrop
+    # The backdrop is the majority of the box; glyphs are the minority riding on
+    # top of it. Percentile pairs like (95, 20) assume glyphs cover >5% of the
+    # box — well-set 88px type on a roomy panel covers far less, and the check
+    # then reports 1.0 against itself. Anchor on the median instead and take
+    # whichever extreme lies further from it, so light-on-dark and dark-on-light
+    # both measure correctly.
+    bg = float(np.median(lum))
+    hi = float(np.percentile(lum, 99.5))
+    lo = float(np.percentile(lum, 0.5))
+    fg = hi if (hi - bg) >= (bg - lo) else lo
     ratio = _contrast_ratio(fg, bg)
     return round(ratio, 2), ratio >= MIN_CONTRAST or box is None
 
@@ -238,15 +305,22 @@ def check_scrim(rgb: np.ndarray, box: tuple[int, int, int, int] | None) -> tuple
         return 0.0, False
     med = float(np.median(backdrop))
     uniform = float((np.abs(backdrop - med) < 0.06).mean())
-    return round(uniform, 2), uniform >= MIN_SCRIM_OPACITY
+    return round(uniform, 2), uniform >= MIN_SCRIM_UNIFORMITY
 
 
 # -------------------------------------------------------------------- runner
 
-def audit(path: Path, fmt: str | None, box: tuple[int, int, int, int] | None) -> dict:
+def audit(path: Path, fmt: str | None, box: tuple[int, int, int, int] | None,
+          logo_box: tuple[int, int, int, int] | None = None) -> dict:
     img = Image.open(path).convert("RGB")
     rgb = np.asarray(img)
     g = _gray(img)
+
+    boxes: dict[str, tuple[int, int, int, int]] = {}
+    if box:
+        boxes["text-box"] = box
+    if logo_box:
+        boxes["logo-box"] = logo_box
 
     results: dict[str, object] = {}
     failed: list[str] = []
@@ -257,7 +331,8 @@ def audit(path: Path, fmt: str | None, box: tuple[int, int, int, int] | None) ->
             failed.append(name)
 
     record("dimensions", *check_dimensions(img, fmt))
-    record("safe_area", *check_safe_area(g))
+    record("safe_area", *check_safe_area((img.width, img.height), boxes, fmt))
+    record("margin_activity", *check_margin_activity(g))
     record("contrast", *check_contrast(rgb, box))
     collage, ok = check_collage(img)
     record("collage", collage, ok)
@@ -265,12 +340,16 @@ def audit(path: Path, fmt: str | None, box: tuple[int, int, int, int] | None) ->
     record("focal_regions", *check_focal(g))
     record("scrim_uniformity", *check_scrim(rgb, box))
 
-    return {
+    report = {
         "file": path.name,
         "verdict": "PASS" if not failed else "FAIL",
         "checks": results,
         "failed": failed,
     }
+    if not box:
+        report["note"] = ("no --text-box: safe_area, contrast, thumbnail and scrim "
+                          "were not verified — PASS here is partial")
+    return report
 
 
 def contact_sheet(paths: list[Path], out: Path, cols: int = 3, cell: int = 420) -> None:
@@ -301,26 +380,39 @@ def main() -> int:
     ap.add_argument("--format", dest="fmt", choices=sorted(FORMATS), default=None,
                     help="expected placement format (default: skip the check)")
     ap.add_argument("--text-box", dest="box", default=None,
-                    help="x0,y0,x1,y1 of the copy block — sharpens contrast/scrim/thumbnail")
+                    help="x0,y0,x1,y1 of the copy block — enables safe-area, "
+                         "contrast, scrim and thumbnail checks")
+    ap.add_argument("--logo-box", dest="logo_box", default=None,
+                    help="x0,y0,x1,y1 of the logo — safe-area checked too")
     ap.add_argument("--contact-sheet", dest="sheet", type=Path, default=None)
     ap.add_argument("--json", action="store_true", help="JSON only, no human summary")
     args = ap.parse_args()
 
-    box = None
-    if args.box:
+    def parse_box(raw: str | None, flag: str):
+        if not raw:
+            return None
         try:
-            parts = tuple(int(v) for v in args.box.split(","))
+            parts = tuple(int(v) for v in raw.split(","))
         except ValueError:
-            return _die("--text-box must be four integers: x0,y0,x1,y1")
+            parts = ()
         if len(parts) != 4:
-            return _die("--text-box must be four integers: x0,y0,x1,y1")
-        box = parts  # type: ignore[assignment]
+            raise ValueError(f"{flag} must be four integers: x0,y0,x1,y1")
+        x0, y0, x1, y1 = parts
+        if x1 <= x0 or y1 <= y0:
+            raise ValueError(f"{flag} must be x0,y0,x1,y1 with x1>x0 and y1>y0")
+        return parts
+
+    try:
+        box = parse_box(args.box, "--text-box")
+        logo_box = parse_box(args.logo_box, "--logo-box")
+    except ValueError as exc:
+        return _die(str(exc))
 
     paths = [p for p in args.images if p.suffix.lower() in {".png", ".jpg", ".jpeg", ".webp"}]
     if not paths:
         return _die("no images given")
 
-    reports = [audit(p, args.fmt, box) for p in paths]
+    reports = [audit(p, args.fmt, box, logo_box) for p in paths]
 
     if args.sheet:
         contact_sheet([p for p in paths if p.resolve() != args.sheet.resolve()], args.sheet)
@@ -329,6 +421,9 @@ def main() -> int:
 
     if not args.json:
         print("\n--- summary ---", file=sys.stderr)
+        if not box:
+            print("note: no --text-box given — safe_area, contrast, thumbnail and "
+                  "scrim were skipped. A PASS here is partial.", file=sys.stderr)
         for r in reports:
             note = ", ".join(r["failed"]) or "—"
             print(f"{r['file']:<28} {r['verdict']:<5} {note}", file=sys.stderr)

@@ -6,6 +6,8 @@
 
 Run all three on **every** output. Not on the batch — on every image.
 
+> ⚠️ **A PASS without `--text-box` is a partial PASS.** Four of the seven checks measure the copy block; with no box declared they report `n/a` and the script says so in its output. On any creative that carries text, pass `--text-box` (and `--logo-box` when a logo is placed) or the gate is checking dimensions and seams only.
+
 ---
 
 ## 1 · Layer 1 — deterministic checks (`scripts/qa.py`)
@@ -13,26 +15,34 @@ Run all three on **every** output. Not on the batch — on every image.
 Things a machine measures better than an eye. No model call, no cost.
 
 ```bash
-python scripts/qa.py out/ad_01.png --format 4:5 --text-box 86,843,994,1290
+python scripts/qa.py out/ad_01.png --format 4:5 --text-box 86,900,994,1264
+python scripts/qa.py out/ad_01.png --format 4:5 --text-box 86,900,994,1200 \
+                                   --logo-box 780,1210,994,1264
 python scripts/qa.py out/*.png --format 4:5 --contact-sheet out/_contact.png
 ```
 
-| Check | Rule | Fail condition |
-|-------|------|----------------|
-| Dimensions | R19 | not the declared format's exact resolution |
-| Safe area | R08 | non-background pixels inside the 8% margin |
-| Text contrast | layout §4a | < 4.5:1 between the text box and its backdrop |
-| Collage / grid detection | R06 | strong internal seams → the model produced a grid |
-| Thumbnail legibility | R33 | headline region loses > 60% of its edge energy at 150px |
-| Focal dispersion | R07 | saliency spread over > 2 strong regions |
-| Scrim opacity | layout §3b | mean alpha under the text block < 85% |
+The script's own behaviour is covered by `python scripts/test_qa.py` — thirteen
+synthetic cases asserting that the canonical layouts pass and the known failure
+modes fail. Run it after touching `qa.py`.
+
+| Check | Rule | Needs | Fail condition |
+|-------|------|-------|----------------|
+| `dimensions` | R19 | `--format` | not the declared format's exact resolution |
+| `safe_area` | R08 | `--text-box` / `--logo-box` | a declared box crosses the 8% margin, or the 9:16 chrome zones |
+| `margin_activity` | R08 | — | **advisory, never fails.** Edge energy in the margin band. A full-bleed photo scores as high as a headline that crosses the margin, so this number tells you to look — `safe_area` is the verdict |
+| `contrast` | layout §4a | `--text-box` | < 4.5:1 between the glyph population and the backdrop median inside the box |
+| `collage` | R06 | — | a seam runs the full length of the canvas → the model produced a grid |
+| `thumbnail` | R33 | `--text-box` | the copy block loses > 60% of its edge energy at 150px |
+| `focal_regions` | R07 | — | saliency spread over > 2 strong regions |
+| `scrim_uniformity` | layout §3b | `--text-box` | < 85% of the backdrop under the copy sits in one tight luminance band (a busy photo under the text) |
 
 Output is JSON, so it drops straight into a report:
 
 ```json
 {"file":"ad_01.png","verdict":"PASS","checks":{"dimensions":"1080x1350 ok",
- "safe_area":"clear","contrast":6.8,"collage":false,"thumbnail":0.81,
- "focal_regions":1,"scrim_alpha":0.94},"failed":[]}
+ "safe_area":"clear (margin 86px, keep-out 86-1264px)",
+ "margin_activity":"0.04% (quiet)","contrast":6.8,"collage":false,
+ "thumbnail":0.81,"focal_regions":1,"scrim_uniformity":0.94},"failed":[]}
 ```
 
 ---
@@ -151,10 +161,12 @@ For the written deliverables around the image. This does **not** check images �
 
 ```bash
 # Visual-slop vocabulary leaking into prompts
-grep -Eic "purple gradient|glassmorphism|neon glow|glowing orbs|floating particles|isometric" "$f" || echo "CLEAN"
+grep -Eiq "purple gradient|glassmorphism|neon glow|glowing orbs|floating particles|isometric" "$f" \
+  && echo "SLOP" || echo "CLEAN"
 
 # AI copy tells in captions/prose
-grep -Eic "delve|seamless|empower|elevate|robust|tapestry|game-changer|revolutionary|unlock|unleash|🚀" "$f" || echo "CLEAN"
+grep -Eiq "delve|seamless|empower|elevate|robust|tapestry|game-changer|revolutionary|unlock|unleash|🚀" "$f" \
+  && echo "SLOP" || echo "CLEAN"
 
 # Placeholders that survived into a final prompt (R25)
 grep -En "\[[A-Z_ ]+\]|<BRAND>|HEADLINE\"" "$f" && echo "UNFINISHED PROMPT"
@@ -169,7 +181,8 @@ grep -En "\[[A-Z_ ]+\]|<BRAND>|HEADLINE\"" "$f" && echo "UNFINISHED PROMPT"
 
 ```
 gate      script PASS  +  vision JSON  +  score ≥16/20  +  zero hard fails
-layers    1. scripts/qa.py       — dimensions, margins, contrast, collage, thumbnail
+layers    1. scripts/qa.py       — dimensions, safe area, contrast, collage, thumbnail
+             (always pass --text-box, or four of seven checks report n/a)
           2. vision prompt (§2)  — structured JSON, adversarial, transcribes all text
           3. rubric (§3)         — 10 criteria × 0/1/2
 redo      any hard fail · score <12 · reads_as_ai_generated

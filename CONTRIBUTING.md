@@ -25,13 +25,15 @@ A rule is useful if it would **prevent a real rejection**. Anchor it in a concre
 
 ## Process
 1. Fork + branch (`feat/my-rule`).
-2. Edit the canonical file (engine) + sync the EN mirror.
+2. Edit the canonical file (`visual-advertising-engine.md`). Give a new rule the next free ID; never renumber an existing one — deprecate it and add a new ID.
 3. Update the summary in `core.md` / `design-rules.md` only if the rule is headline-grade.
-4. Keep README (EN + PL) in sync if it lists rules.
-5. Open a PR with a one-line "why": the real rejection this rule would have caught.
+4. Keep README (PL + EN) in sync if it lists rules.
+5. If you touched `scripts/`, run `python scripts/test_qa.py` and add a case for the behaviour you changed.
+6. Open a PR with a one-line "why": the real rejection this rule would have caught.
 
 ## Style
-- **PL is canonical** for the standard; keep the EN mirror identical in meaning.
+- **English is canonical for the rules.** `visual-advertising-engine.md`, `design-rules.md`, `core.md` and `references/` are English; `README.md` is the Polish manual and `README.en.md` the English one. There is no EN mirror of the engine — the duplicate was removed in 5.0.0 because the two copies had drifted.
+- **One fact, one home.** If a number lives in `layout-system.md`, other files link to it rather than restating it. Restated numbers drift.
 - Banned-word-free copy (we practice what we preach — no "delve", "seamless", "empower"...).
 
 ## License

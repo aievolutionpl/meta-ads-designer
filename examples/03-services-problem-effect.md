@@ -146,7 +146,7 @@ margins     86px all sides
 
 ## 6 · The fix
 
-1. **Scrim raised** — gradient top moved from y=630 to y=560 and the opaque point from y=1100 to y=1040, so the whole headline sits at ≥85% opacity. `scripts/qa.py --text-box 86,1040,994,1290` went from `scrim_uniformity: 0.71` to `0.96`.
+1. **Scrim raised** — gradient top moved from y=630 to y=560 and the opaque point from y=1100 to y=1040, so the whole headline sits at ≥85% opacity. `scripts/qa.py --text-box 86,1040,994,1264` went from `scrim_uniformity: 0.71` to `0.96`.
 2. **Firelight wash removed** by naming it: `light falls off within one metre of the firebox; the ceiling stays dark`. Vague negatives ("no glow") are weaker than a positive physical constraint.
 3. **The pair shipped together**, sequenced Problem → Effect. Neither creative was rewritten to carry both halves — that would have broken R06.
 

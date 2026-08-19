@@ -24,13 +24,15 @@ All values are given for the default canvas **1080×1350 (4:5)** and scale propo
 
 | Format | Canvas | Outer margin | Extra keep-out |
 |--------|--------|--------------|----------------|
-| **4:5 feed** | 1080×1350 | 86px all sides | bottom 120px (caption/CTA chrome on some placements) |
+| **4:5 feed** | 1080×1350 | 86px all sides | bottom 120px — *advisory*, some placements only |
 | **9:16 story/reel** | 1080×1920 | 86px sides | **top 250px** (profile row), **bottom 320px** (CTA + caption) |
 | **1:1** | 1080×1080 | 86px all sides | — |
 | **16:9** | 1920×1080 | 96px all sides | — |
 | **2:3 Pinterest** | 1000×1500 | 80px all sides | — |
 
 Anything critical (headline, logo, price, CTA) lives **inside** the safe area. Decorative photography may bleed.
+
+**What is gated and what is advice.** The 86px margin and the 9:16 chrome zones are hard — `scripts/qa.py --text-box` fails a creative that crosses them, because that chrome is drawn on top of the image. The 4:5 bottom 120px is advisory: the canonical photo+panel layout (§3a) deliberately runs its CTA/logo row at 64px from the bottom, and on a standard feed placement nothing covers it. Keep copy out of it when you can; don't redesign §3a to satisfy it.
 
 ### 1c · Scaling to other formats
 
@@ -48,7 +50,7 @@ Multiply every px value in this file by `canvas_short_edge / 1080`. For 9:16 (sh
 |------|------|--------|----------|-------------|-----------|
 | **Eyebrow / label** | 24px | 600 | +8% (uppercase) | 1.2 | 24 |
 | **Headline — 1 line** | 88px | 700–900 | −1% | 1.05 | 22 |
-| **Headline — 2 lines** | 64px | 700–900 | −1% | 1.10 | 2 × 22 |
+| **Headline — 2 lines** | 64px | 700–900 | −1% | 1.10 | ≤22 per line, ≤40 total |
 | **Headline — 3 lines** | 48px | 700–900 | 0 | 1.15 | 3 × 26 |
 | **Subline** | 34px | 400–500 | 0 | 1.35 | 45 |
 | **Body / detail row** | 28px | 400 | 0 | 1.45 | 60 |
