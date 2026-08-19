@@ -4,6 +4,29 @@ All notable changes to Meta Ads Designer. Versions follow [SemVer](https://semve
 
 ---
 
+## [5.5.0] — 2026-08-19
+
+A structure pass over the skill itself. The rules were fine; the wrapper around them sent the agent to sections that don't exist, to a script path that doesn't resolve, and through ~730 lines of doctrine before it had heard the brief.
+
+### Fixed
+- **`SKILL.md` pointed at three sections that were never there.** `design-rules.md §10.5` (two production modes) and `§12` (the QA rule list) do not exist — that file stops at §9 — and the slop check was cited as `§9`, which is the platform-dimensions table. An agent following step 3.6 or the mandatory QA step in 5 found nothing. They now resolve to §4, §8 and §6, each quoted by title so a renumber is visible rather than silent.
+- **The QA step told the agent to run `python scripts/qa.py`.** Installed to `~/.claude/skills/meta-ads-designer`, that path resolves against the user's project, where it does not exist. The step now resolves the skill's own directory first and names the dependency install.
+- **`visual-advertising-engine.md §25` is a rule ID, not a section number** — cited as `R25` now, like everywhere else.
+
+### Changed
+- **`SKILL.md` no longer front-loads the doctrine.** "Load first (in order)" asked for the engine, the charter and the inject — about 730 lines — before the brief was even taken. It is now a load-when table: this file runs the brief, everything else opens at the step that needs it. `core.md` is marked as what it is, the paste-in for chat hosts with no skill loader, and taken off the agent's path.
+- **The load table routes to all seven references.** `layout-system.md`, `headline-system.md`, `qa-gate.md`, `anti-slop-registry.md` and `niche-playbooks.md` previously appeared only inside the repo-structure tree, with no cue for when to open them.
+- **Frontmatter is a valid Agent Skills header.** `version`, `author` and `url` are not spec keys and a strict loader rejects them; they moved under `metadata`. The description now leads with what the skill does and states its trigger, instead of opening on "Universal plugin that teaches agents…".
+- **The 17 quick rules carry their canonical IDs** (`R02`, `R03`, …). The summary and the standard can now be diffed instead of trusted.
+
+### Added
+- **`scripts/check_docs.py`** — dead relative links, `§`-pointers to sections that don't exist, rule IDs no rule defines, an invalid `SKILL.md` frontmatter, and version drift between the frontmatter, the README badges and this file. Run against the previous commit it reports 8 problems, including every pointer fixed above.
+- **`.github/workflows/ci.yml`** — `check_docs.py` and `test_qa.py` on every push and PR. `test_qa.py` has been in the repo since 5.4.0 with nothing running it.
+- **`requirements.txt`** — `pillow`, `numpy`. `INSTALL.md` asked for a bare `pip install pillow numpy` with no pinned floor.
+- **`.claude-plugin/plugin.json`** — installable through a Claude Code marketplace, not only by `cp -r`.
+
+---
+
 ## [5.4.0] — 2026-08-19
 
 An audit pass over the whole skill. The gate was making ship/no-ship calls it could not actually support, and the docs had drifted from the code and from each other.
