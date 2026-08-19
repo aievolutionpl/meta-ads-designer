@@ -71,12 +71,15 @@ Inject **`core.md`** into your system prompt (fully self-contained), or load `SK
 The QA gate's deterministic layer and the wordmark extractor need two common packages:
 
 ```bash
-pip install pillow numpy
+pip install -r requirements.txt
 
 python scripts/qa.py out/*.png --format 4:5 --text-box 86,900,994,1264
 python scripts/extract_wordmark.py refs/logo.png build/logo_white.png
 python scripts/test_qa.py        # verifies the gate itself, 13 synthetic cases
+python scripts/check_docs.py     # verifies the docs: links, section pointers, rule IDs, versions
 ```
+
+Run these from the skill's own directory (`~/.claude/skills/meta-ads-designer`, or wherever you cloned it) — the paths above are relative to it, not to the project you are designing for.
 
 Always pass `--text-box` on a creative that carries copy (and `--logo-box` when you place a logo). Without them the safe-area, contrast, thumbnail and scrim checks have nothing to measure, report `n/a`, and the PASS is only partial — the script warns you when this happens.
 
@@ -108,5 +111,5 @@ Ask the agent: *"What is the specificity test, and what's the default margin on 
 | `references/niche-playbooks.md` | 15 per-industry playbooks (What works / Avoid / Headline / CTA) |
 | `references/prompt-library.md` | Prompt skeletons |
 | `references/anti-slop-registry.md` | Full banned-pattern list + grep gate |
-| `scripts/` | `qa.py` (QA gate), `test_qa.py` (its self-test), `extract_wordmark.py` |
+| `scripts/` | `qa.py` (QA gate), `test_qa.py` (its self-test), `check_docs.py` (doc integrity), `extract_wordmark.py` |
 | `CONTRIBUTING.md` | How to add a rule without forking the doctrine |

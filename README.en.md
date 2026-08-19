@@ -8,7 +8,7 @@
 
 [🇵🇱 Polski](README.md) · [🇬🇧 English](README.en.md)
 
-![Version](https://img.shields.io/badge/version-5.4.0-6a5acd)
+![Version](https://img.shields.io/badge/version-5.5.0-6a5acd)
 ![License](https://img.shields.io/badge/license-MIT-brightgreen)
 ![Format](https://img.shields.io/badge/default_format-4:5%20(1080×1350)-informational)
 ![Hosts](https://img.shields.io/badge/runs_on-ChatGPT%20%7C%20Codex%20%7C%20Hermes%20%7C%20Claude%20%7C%20Cursor-blue)
@@ -206,9 +206,13 @@ meta-ads-designer/
 ├── README.en.md                    # This manual (EN, extra)
 ├── CHANGELOG.md                    # Version history
 ├── LICENSE                         # MIT
+├── CONTRIBUTING.md                 # How to add a rule (rule-ID policy, no-duplication rule)
+├── requirements.txt                # pillow + numpy — dependencies for scripts/
+├── .claude-plugin/plugin.json      # Plugin manifest (install via a Claude Code marketplace)
+├── .github/workflows/ci.yml        # CI: check_docs.py + test_qa.py on every push
 ├── assets/meta-ads-designer-banner.png
 ├── examples/                       # Worked ad examples (anti, restaurant, hotel, services, retail)
-├── scripts/                        # qa.py, test_qa.py, extract_wordmark.py
+├── scripts/                        # qa.py, test_qa.py, check_docs.py, extract_wordmark.py
 └── references/
     ├── hospitality-food-services-playbook.md  # Depth: food / hotel / services
     ├── layout-system.md            # Layout + panel heights + gradient values

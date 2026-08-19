@@ -1,0 +1,9 @@
+{
+  "name": "meta-ads-designer",
+  "description": "Design and generate posters, flyers, Meta/social ads and promo graphics that look art-directed instead of AI-generated.",
+  "version": "5.5.0",
+  "author": { "name": "AI Evolution Labs", "url": "https://github.com/aievolutionpl" },
+  "homepage": "https://github.com/aievolutionpl/meta-ads-designer",
+  "license": "MIT",
+  "keywords": ["design", "advertising", "meta-ads", "image-generation", "marketing"]
+}

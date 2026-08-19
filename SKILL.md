@@ -1,10 +1,11 @@
 ---
 name: meta-ads-designer
-description: Universal plugin that teaches agents how to design beautiful posters, flyers, meta ads and promo graphics — and generate them without AI-slop. Framework-agnostic: works on Hermes, Claude Code, Codex, Cursor, ChatGPT and any agent. Load when the user asks for promotional images for a business/restaurant/hotel/local brand, especially when they upload logo, service or food reference photos.
-version: 5.4.0
+description: Designs and generates posters, flyers, Meta/social ads and promo graphics that look art-directed instead of AI-generated - hierarchy, real typography, real light, one message per creative. Use when the user asks for an ad, poster, flyer, promo or social graphic for a business, restaurant, hotel or local brand, especially when a logo, venue, product or food photo is attached; also for product photography, lifestyle and e-commerce visuals, and image-editing prompts. Framework-agnostic - runs on Hermes, Claude Code, Codex, Cursor and ChatGPT.
 license: MIT
-author: AI Evolution Labs
-url: https://github.com/aievolutionpl/meta-ads-designer
+metadata:
+  version: 5.5.0
+  author: AI Evolution Labs
+  url: https://github.com/aievolutionpl/meta-ads-designer
 ---
 
 # 🎨 Meta Ads Designer
@@ -17,36 +18,47 @@ This is a **universal plugin** that runs on any AI agent. It teaches **what beau
 
 ---
 
-## ⚡ Load first (in order)
+## ⚡ How to load this skill
 
-1. **`visual-advertising-engine.md`** — the 34-rule operating standard (Product First, Reference = Source of Truth, Prompt Architecture, Hard Fails, QA). **Read this before any commercial visual.**
-2. **`design-rules.md`** — the canonical charter of beautiful advertising (the readable summary of the engine).
-3. **`core.md`** — only when you need one self-contained page to hand to a chat host or paste into another agent's system prompt. It restates the doctrine; the engine outranks it.
-4. Then follow the workflow below.
-5. For host setup (Hermes / Claude / Codex / Cursor / ChatGPT): `INSTALL.md`.
-6. For prompts and niche depth: `references/`.
+**Read this file first.** It carries the intake, the routing, the workflow and the QA gate — enough to run a brief end to end. Pull anything else in **only at the step that needs it**. All paths are relative to this skill's own directory (call it `SKILL_DIR`), not to the user's working directory.
+
+| Open | At which point |
+|------|----------------|
+| `visual-advertising-engine.md` | **Before writing any prompt for a commercial visual.** The 34-rule operating standard, `R01`–`R34` — every other file cites these IDs. |
+| `design-rules.md` | You want the doctrine in prose, or the index of which file answers which question. |
+| `references/layout-system.md` | Placing anything: grid, margins, panel heights, type scale, palettes. |
+| `references/headline-system.md` | Writing the copy inside the ad: archetypes, character budgets, diacritics, CTAs. |
+| `references/prompt-library.md` | Filling the 5-slot prompt, or choosing a model. |
+| `references/hospitality-food-services-playbook.md` | The brief is food, restaurant, hotel, venue or a local service. |
+| `references/niche-playbooks.md` | Any other industry — 15 playbooks. |
+| `references/anti-slop-registry.md` | An output looks generic and you need the named pattern and the grep gate. |
+| `references/qa-gate.md` | Step 5 — the scored rubric behind the script. |
+| `examples/` | You want a finished brief → prompt → verdict before writing your own. |
+| `INSTALL.md` | Host setup, or the user asks how to install this. |
+
+**Skip `core.md`.** It is the self-contained inject for chat hosts that have no skill loader (paste into ChatGPT/Gemini custom instructions). If you are reading `SKILL.md` you can reach the engine directly, and the engine outranks it.
 
 ---
 
 ## 🎯 Core rules (non-negotiable)
 
-1. **Product First** — the product is the main character: visible, large, lit, sharper than surroundings, attractive angle. Never hide it in a big set.
-2. **Reference = Source of Truth** — a supplied product photo is a technical document. NEVER change shape/proportions/color/construction/material/logo/lettering/mechanism. Only environment, light, frame, perspective, styling. Respect the product's physics.
-3. **Commercial realism** — professional commercial photography, not "obvious AI ad". Correct perspective, scale, gravity, shadows, real materials.
-4. **One creative = one idea** — one message, one focal point. Don't cram product + 7 benefits + promo + reviews.
-5. **Hierarchy** — PRIMARY (product) → SECONDARY (context) → TERTIARY (subtle atmosphere).
-6. **Negative space** — don't fill the frame. Space = premium + room for the headline.
-7. **Lighting is part of the product** — say exactly what the light does (clean commercial / premium dramatic / natural lifestyle / food commercial).
-8. **Think like a photographer** — decide camera position, angle, lens, depth of field, foreground/midground/background.
-9. **Build depth** — foreground → subject → background. No flat images.
-10. **Show product in use** — packshot alone isn't enough; a hand/gesture/POV gives context.
-11. **Typography after the image** — strong photo first, then headline → support → CTA. Not a dashboard.
-12. **Don't generate important text in-image** — if the model is weak at text, generate a clean visual and add real typography + the real logo later.
-13. **Mobile-first composition — DEFAULT is 4:5 (1080×1350)**, the Instagram/Facebook feed default; 9:16 for Reels/Stories, 1:1 marketplace, 16:9 — only when the user asks. Compose for the format; don't rely on cropping.
-14. **Series consistency** — product identical across 5–10 images; only context/frame/mood/light change. Like one shoot.
-15. **Variation, not randomness** — hero · lifestyle · feature · close-up · problem · result · premium · UGC · unexpected angle.
-16. **Food builds appetite** — texture, steam, gloss, juiciness, layers; Frozen-Time/Bullet-Time for dynamic scenes. Physically credible.
-17. **Anti-slop** — no random neon, HUD, icons, gradients, arrows, fake logos, excessive bokeh, plastic surfaces. Every element has a function.
+1. **Product First** — the product is the main character: visible, large, lit, sharper than surroundings, attractive angle. Never hide it in a big set. `R02`
+2. **Reference = Source of Truth** — a supplied product photo is a technical document. NEVER change shape/proportions/color/construction/material/logo/lettering/mechanism. Only environment, light, frame, perspective, styling. Respect the product's physics. `R03`
+3. **Commercial realism** — professional commercial photography, not "obvious AI ad". Correct perspective, scale, gravity, shadows, real materials. `R04`
+4. **One creative = one idea** — one message, one focal point. Don't cram product + 7 benefits + promo + reviews. `R06`
+5. **Hierarchy** — PRIMARY (product) → SECONDARY (context) → TERTIARY (subtle atmosphere). `R07`
+6. **Negative space** — don't fill the frame. Space = premium + room for the headline. `R08`
+7. **Lighting is part of the product** — say exactly what the light does (clean commercial / premium dramatic / natural lifestyle / food commercial). `R09`
+8. **Think like a photographer** — decide camera position, angle, lens, depth of field, foreground/midground/background. `R10`
+9. **Build depth** — foreground → subject → background. No flat images. `R11`
+10. **Show product in use** — packshot alone isn't enough; a hand/gesture/POV gives context. `R12`
+11. **Typography after the image** — strong photo first, then headline → support → CTA. Not a dashboard. `R17`
+12. **Don't generate important text in-image** — if the model is weak at text, generate a clean visual and add real typography + the real logo later. `R18`
+13. **Mobile-first composition — DEFAULT is 4:5 (1080×1350)**, the Instagram/Facebook feed default; 9:16 for Reels/Stories, 1:1 marketplace, 16:9 — only when the user asks. Compose for the format; don't rely on cropping. `R19`
+14. **Series consistency** — product identical across 5–10 images; only context/frame/mood/light change. Like one shoot. `R20`
+15. **Variation, not randomness** — hero · lifestyle · feature · close-up · problem · result · premium · UGC · unexpected angle. `R21`
+16. **Food builds appetite** — texture, steam, gloss, juiciness, layers; Frozen-Time/Bullet-Time for dynamic scenes. Physically credible. `R15`
+17. **Anti-slop** — no random neon, HUD, icons, gradients, arrows, fake logos, excessive bokeh, plastic surfaces. Every element has a function. `R05`
 
 **Final principle: DON'T DECORATE. DIRECT.** One product. One idea. One strong visual.
 
@@ -68,10 +80,10 @@ Define **5–10 distinct promises and layouts**, not 10 color swaps. Examples: h
 
 ### 3.5 · Creative generation (before writing any prompt)
 Do **not** jump to the prompt. Run the engine's creative workflow first:
-1. **Identify the product.** 2. **Identify the most important benefit.** 3. **Define the target.** 4. **Choose the marketing angle** (Problem / Effect / Lifestyle). 5. **Invent a simple visual metaphor or situation.** 6. **Choose the creative type** (from the library: hero, packshot, lifestyle, product-in-use, macro, problem/solution, result, UGC, editorial, scroll-stopper). 7. **Design the composition.** 8. **Define light and camera.** 9. **Add constraints.** 10. **Only then write the final prompt** using the 11-part architecture in `visual-advertising-engine.md` §25.
+1. **Identify the product.** 2. **Identify the most important benefit.** 3. **Define the target.** 4. **Choose the marketing angle** (Problem / Effect / Lifestyle). 5. **Invent a simple visual metaphor or situation.** 6. **Choose the creative type** (from the library: hero, packshot, lifestyle, product-in-use, macro, problem/solution, result, UGC, editorial, scroll-stopper). 7. **Design the composition.** 8. **Define light and camera.** 9. **Add constraints.** 10. **Only then write the final prompt** using the 11-part architecture in `visual-advertising-engine.md` `R25`.
 
 ### 3.6 · Route by brief type
-- **Food / restaurant:** two modes (see `design-rules.md` §10.5). If the client has real dish photos → **real-food hero** (photo top ~60–65% + solid panel bottom ~35–40%, zero text on food). If not → **dark studio editorial**. **Native AI text in-scene is the default** (keep strings SHORT: brand + headline + 1 location line; append `CRITICAL: every word spelled PERFECTLY`). Depth: `references/hospitality-food-services-playbook.md`.
+- **Food / restaurant:** two modes (see `design-rules.md` §4 "The two production modes"). If the client has real dish photos → **real-food hero** (photo top ~60–65% + solid panel bottom ~35–40%, zero text on food). If not → **dark studio editorial**. **Native AI text in-scene is the default** (keep strings SHORT: brand + headline + 1 location line; append `CRITICAL: every word spelled PERFECTLY`). Depth: `references/hospitality-food-services-playbook.md`.
 - **Hotel / venue:** prefer **real-photo + deterministic typography/logo** over AI re-generation of the building. Design system: serif headline + clean sans body, coastal palette (navy/teal/cream/white/gold), real photo hero + content card. Produce structurally different styles (heritage poster · travel cover · swiss grid · terrace · dining · direct-booking · events · seaside · offer · brand story).
 - **Services / local biz:** real product/install photos as refs → generate NEW premium scenes (never overlay on the client's raw photo). Angles: Problem→Effect · package tiers · deadline offers · transformation · benefit-led headline ≤40 chars. Use **deterministic composition** when text/logo fidelity matters.
 
@@ -83,9 +95,9 @@ Do **not** jump to the prompt. Run the engine's creative workflow first:
 - Model choice is host-specific — see `references/prompt-library.md` and `INSTALL.md`. Rule of thumb: a model that renders text well for in-scene headlines; a clean-photo pipeline for everything else.
 
 ### 5 · QA gate (mandatory)
-1. Run `python scripts/qa.py <file> --format 4:5 --text-box x0,y0,x1,y1` (add `--logo-box` when a logo is placed). **Declare the boxes** — without them the safe-area, contrast, thumbnail and scrim checks report `n/a` and the PASS means only "right dimensions, no collage". Fix edge intrusions with **scale+pad**, never a crop.
+1. Run `python "$SKILL_DIR/scripts/qa.py" <file> --format 4:5 --text-box x0,y0,x1,y1` (add `--logo-box` when a logo is placed). `SKILL_DIR` is the directory this file sits in — resolve it before you call the script; a bare `scripts/qa.py` resolves against the user's project, where it does not exist. Needs `pillow` and `numpy` (`pip install -r "$SKILL_DIR/requirements.txt"`). **Declare the boxes** — without them the safe-area, contrast, thumbnail and scrim checks report `n/a` and the PASS means only "right dimensions, no collage". Fix edge intrusions with **scale+pad**, never a crop.
 2. Build a **contact sheet** (exclude prior contact sheets from the glob).
-3. Inspect each ad against **every rule in `design-rules.md` §12** — thumbnail readability, spelling (incl. Polish diacritics), hierarchy, accent ≤3, logo fidelity, no fake footers, no text-on-photo slop, no AI-invented food, ad spine present, contrast.
+3. Inspect each ad against **every rule in `design-rules.md` §8 "The QA gate"** — thumbnail readability, spelling (incl. Polish diacritics), hierarchy, accent ≤3, logo fidelity, no fake footers, no text-on-photo slop, no AI-invented food, ad spine present, contrast.
 4. Fix minor issues deterministically (clean typography pass); regenerate when the visual is fundamentally wrong.
 
 ### 6 · Delivery
@@ -96,7 +108,7 @@ Do **not** jump to the prompt. Run the engine's creative workflow first:
 
 ## 🚫 Quick slop check (before ANY output)
 
-From `design-rules.md` §9 — if any of these is present, fix it:
+From `design-rules.md` §6 "Quick slop check" — if any of these is present, fix it:
 purple/blue default gradient · glassmorphism · neon glow · gradient text · tiny clip-art icons · text slapped on a photo · cream/sand bg · over-round cards · cards-in-cards · icons > content · gray-on-tinted text · isometric default · AI-invented food · AI-redrawn logo · a pretty photo with no ad structure.
 
 ---
@@ -130,6 +142,9 @@ meta-ads-designer/
 ├── CHANGELOG.md            # Version history
 ├── LICENSE                 # MIT
 ├── CONTRIBUTING.md         # How to add a rule (rule-ID policy, no-duplication rule)
+├── requirements.txt        # pillow + numpy, for scripts/
+├── .claude-plugin/         # plugin.json — install via a Claude Code marketplace
+├── .github/workflows/ci.yml # runs check_docs.py + test_qa.py on every push
 ├── examples/               # Worked ad examples (food, hotel, services, retail)
 ├── assets/                 # Banner and generated hero images for the README
 ├── scripts/                # qa.py, test_qa.py (its self-test), extract_wordmark.py
