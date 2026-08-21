@@ -4,6 +4,28 @@ All notable changes to Meta Ads Designer. Versions follow [SemVer](https://semve
 
 ---
 
+## [5.6.0] — 2026-08-21
+
+A **creative-systems** pass: the skill now treats an ad as one cell in a testable campaign that *learns*, not a one-off picture. Adds the variation matrix, the hook gate, the performance loop, platform compliance, and a video/UGC track — five new canonical rules and seven new reference docs.
+
+### Added
+- **`R35` Creative Variation Matrix** — a campaign is a test-ready set: lock the brand, rotate one axis per variant, never two. New `references/variation-matrix.md`.
+- **`R36` Hook & Headline First** — the 20→3 hook gate: decide the message before the visual. New `references/hook-engineering.md`.
+- **`R37` Performance Feedback Loop** — publish → measure → feed the winner into the next brief; creative → landing continuity. New `references/creative-performance-loop.md`.
+- **`R38` Platform Compliance & Multi-Ratio** — per-platform safe zones; every ratio via re-layout, never a dumb crop. New `references/platform-compliance.md`.
+- **`R39` Video & Motion Track** — static-first; motion serves the hook; model per motion job. New `references/video-ugc-track.md`.
+- **`references/model-routing.md`** — generator + cost decision table (static & video), iteration budget before spend.
+- **`references/competitor-ad-teardown.md`** — turn winning competitor ads into testable briefs (research step).
+
+### Changed
+- **`SKILL.md`** — the load table now routes to all seven new references with their rule IDs; workflow gained the variation-matrix/hook steps in §3, model routing + a video route in §4, a platform-compliance check in §5, native-per-placement + continuity-note delivery in §6, and a new **§6.5 Performance loop** step. Core rules list grows to 22 (adds `R35`–`R39`).
+- **`visual-advertising-engine.md`** — canonical standard grows from 34 to 39 rules (`R01`–`R39`); the links table routes to the new references.
+- **`README.md` / `README.en.md`** — version badge, "39 rules", and the new references in the structure tree and file map.
+
+The QA gate, the scripts, and the `R01`–`R34` IDs are untouched — this is a purely additive release (no renumbering, no layout change).
+
+---
+
 ## [5.5.0] — 2026-08-19
 
 A structure pass over the skill itself. The rules were fine; the wrapper around them sent the agent to sections that don't exist, to a script path that doesn't resolve, and through ~730 lines of doctrine before it had heard the brief.

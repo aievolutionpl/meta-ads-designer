@@ -8,7 +8,7 @@
 
 [🇬🇧 English](README.en.md) · [🇵🇱 Polski](README.md)
 
-![Version](https://img.shields.io/badge/version-5.5.0-6a5acd)
+![Version](https://img.shields.io/badge/version-5.6.0-6a5acd)
 ![License](https://img.shields.io/badge/license-MIT-brightgreen)
 ![Format](https://img.shields.io/badge/default_format-4:5%20(1080×1350)-informational)
 ![Hosts](https://img.shields.io/badge/runs_on-ChatGPT%20%7C%20Codex%20%7C%20Hermes%20%7C%20Claude%20%7C%20Cursor-blue)
@@ -82,7 +82,7 @@ Pełne kroki per host: **[`INSTALL.md`](INSTALL.md)**.
 
 ```
 ┌────────────────────────────────────────────┐
-│ visual-advertising-engine.md               │  ← THE standard (34 zasady)
+│ visual-advertising-engine.md               │  ← THE standard (39 zasad)
 │   Product First · Source of Truth ·        │     Prompt Architecture ·
 │   Hard Fails · Final Quality Check         │     Creative Workflow
 └───────────────┬────────────────────────────┘
@@ -104,11 +104,11 @@ Pełne kroki per host: **[`INSTALL.md`](INSTALL.md)**.
                         └──────────────────┘
 ```
 
-- **`visual-advertising-engine.md`** — *standard* (34 zasady). Co agent stosuje **przed** każdym komercyjnym visualem: Product First, Reference = Source of Truth, Prompt Architecture, Hard Fails, QA. **To jest źródło kanoniczne** — nowe reguły trafiają tu najpierw.
+- **`visual-advertising-engine.md`** — *standard* (39 zasad). Co agent stosuje **przed** każdym komercyjnym visualem: Product First, Reference = Source of Truth, Prompt Architecture, Hard Fails, QA, Variation Matrix, Hook First, Performance Loop, Compliance, Video Track. **To jest źródło kanoniczne** — nowe reguły trafiają tu najpierw.
 - **`design-rules.md`** — *charter* (gust). Angielski kanon. Samowystarczalny — wklejasz do dowolnego czatu lub wstrzykujesz do system promptu.
 - **`core.md`** — *kompletna wiedza ogólna (inject)*. Formaty per platforma, proces kreatywny, kompozycja, typografia, kolor, światło, layout, copy, nisze, tryby produkcji, prompt architecture, anti-slop, hard fails, QA — samodzielny, wklejasz do dowolnego czatu.
-- **`SKILL.md`** — *procedura* (agent manual). Brief → research → angles → creative → generate → QA → deliver. Loader skilli czyta frontmatter.
-- **`references/`** — *głębia*: sprawdzony playbook food/hotel/serwisy, layout system, headline system, QA gate, gotowe prompty, pełny rejestr anti-slop.
+- **`SKILL.md`** — *procedura* (agent manual). Brief → research → angles → creative → generate → QA → deliver → performance loop. Loader skilli czyta frontmatter.
+- **`references/`** — *głębia*: playbook food/hotel/serwisy, layout system, headline system, variation matrix, hook engineering, performance loop, platform compliance, video/UGC track, model routing, competitor teardown, QA gate, gotowe prompty, pełny rejestr anti-slop.
 
 ### Dwa tryby produkcji (decyzja przed generacją)
 | Tryb | Co to | Kiedy |
@@ -199,7 +199,7 @@ core.md  →  SKILL.md  →  (szczegóły)  →  references/
 meta-ads-designer/
 ├── SKILL.md                        # Manual agenta (procedura + routing)
 ├── core.md                         # Kompletna wiedza ogólna (inject) — wklej do dowolnego czatu
-├── visual-advertising-engine.md    # THE standard — 34 zasady
+├── visual-advertising-engine.md    # THE standard — 39 zasad
 ├── design-rules.md                 # Charter (angielski kanon)
 ├── INSTALL.md                      # Setup + użycie na każdym agencie (w tym ChatGPT)
 ├── README.md                       # Ten manual (PL, główny)
@@ -217,6 +217,13 @@ meta-ads-designer/
     ├── hospitality-food-services-playbook.md  # Głębia: food / hotel / serwisy
     ├── layout-system.md            # Layout + panel-heights + gradient values
     ├── headline-system.md          # Rozmiary headline i kontrast
+    ├── variation-matrix.md         # Test-ready sets: lock brand, rotate one axis (R35)
+    ├── hook-engineering.md         # The 20→3 hook gate (R36)
+    ├── creative-performance-loop.md # Publish → measure → feed the next brief (R37)
+    ├── platform-compliance.md      # Safe zones + ratio re-layout per platform (R38)
+    ├── video-ugc-track.md          # Video/UGC motion production (R39)
+    ├── model-routing.md            # Generator + koszt (decyzja przed spendem)
+    ├── competitor-ad-teardown.md   # Wygrywające ady konkurencji → briefy
     ├── qa-gate.md                  # Brama QA i kryteria odrzucenia
     ├── anti-slop-registry.md       # Kompletne kompendium zakazów (visual + copy)
     ├── niche-playbooks.md          # 15 playbooków nisz (food, hotel, fitness, beauty, real estate, tech…)
@@ -230,13 +237,20 @@ meta-ads-designer/
 | Plik | Do czego |
 |------|----------|
 | `core.md` | Kompletna wiedza ogólna — wklej do dowolnego czatu/agenta |
-| `visual-advertising-engine.md` | Standard operacyjny — 34 zasady (źródło kanoniczne) |
+| `visual-advertising-engine.md` | Standard operacyjny — 39 zasad (źródło kanoniczne) |
 | `design-rules.md` | Charter — gust |
 | `SKILL.md` | Manual agenta (czyta loader skilli) |
 | `INSTALL.md` | Setup per host |
 | `references/hospitality-food-services-playbook.md` | Głębokie reguły food / hotel / serwisy |
 | `references/layout-system.md` | Layout + panele + gradienty |
 | `references/headline-system.md` | Rozmiary headline i kontrast |
+| `references/variation-matrix.md` | Test-ready sets: lock brand, rotate one axis (R35) |
+| `references/hook-engineering.md` | The 20→3 hook gate (R36) |
+| `references/creative-performance-loop.md` | Publish → measure → feed the next brief (R37) |
+| `references/platform-compliance.md` | Safe zones + ratio re-layout per platform (R38) |
+| `references/video-ugc-track.md` | Video/UGC motion production (R39) |
+| `references/model-routing.md` | Generator + koszt (decyzja przed spendem) |
+| `references/competitor-ad-teardown.md` | Wygrywające ady konkurencji → briefy |
 | `references/qa-gate.md` | Brama QA i kryteria odrzucenia |
 | `references/anti-slop-registry.md` | Lista zakazów + grep gate |
 | `references/niche-playbooks.md` | 15 playbooków nisz (What works / Avoid / Headline / CTA) |

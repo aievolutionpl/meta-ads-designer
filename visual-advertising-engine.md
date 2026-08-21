@@ -8,9 +8,16 @@
 
 | | |
 |---|---|
-| **Rules** | R01–R34 below |
+| **Rules** | R01–R39 below |
 | **Layout / type / color numbers** | [`references/layout-system.md`](references/layout-system.md) |
 | **Headline & copy generation** | [`references/headline-system.md`](references/headline-system.md) |
+| **Creative variation matrix (test-ready sets)** | [`references/variation-matrix.md`](references/variation-matrix.md) |
+| **Hook & headline engineering** | [`references/hook-engineering.md`](references/hook-engineering.md) |
+| **Performance feedback loop** | [`references/creative-performance-loop.md`](references/creative-performance-loop.md) |
+| **Platform compliance & multi-ratio** | [`references/platform-compliance.md`](references/platform-compliance.md) |
+| **Video / UGC motion track** | [`references/video-ugc-track.md`](references/video-ugc-track.md) |
+| **Model routing & cost discipline** | [`references/model-routing.md`](references/model-routing.md) |
+| **Competitor ad teardown** | [`references/competitor-ad-teardown.md`](references/competitor-ad-teardown.md) |
 | **QA gate (scored, machine-checkable)** | [`references/qa-gate.md`](references/qa-gate.md) |
 | **Worked end-to-end examples** | [`examples/`](examples/) |
 
@@ -416,6 +423,75 @@ Every visual passes the **scored gate** in [`references/qa-gate.md`](references/
 - [ ] Visual works even without copy (R29)
 - [ ] Format matches the placement (R19)
 - [ ] The whole looks like a professional ad (R32)
+
+---
+
+## R35 · CREATIVE VARIATION MATRIX
+
+**A campaign is a set built for testing, not a single hero.** Before generating, define the **variation matrix**: what stays **locked** (brand-lock) and which **test axes** rotate between variants.
+
+**Stays locked (brand-lock):** product (R03) · logo · brand palette · core promise · headline intent. **Rotates (one axis per variant):** hook wording · visual metaphor · format · lifestyle scene · creator/face · emotion · ratio/placement.
+
+- **Lock the brand, rotate the message.** A variant differs by the promise it tests, not by a colour swap (R21).
+- **Never rotate two axes in one variant** — you won't know what won. One variable per cell, everything else identical.
+- **Series consistency (R20) applies to tests too** — all variants read as the same campaign, not ten random ideas.
+
+> A test set is `1 locked promise × 1 rotating axis × N variants`, not `N unrelated ads`.
+
+Depth: [`references/variation-matrix.md`](references/variation-matrix.md).
+
+---
+
+## R36 · HOOK & HEADLINE FIRST
+
+**The hook decides the composition, not the reverse.** Before writing a single prompt, resolve what makes someone stop the scroll — in words.
+
+Run the **20→3 hook gate** (see [`references/hook-engineering.md`](references/hook-engineering.md)):
+1. Write **20 candidate hooks** for the one promise (R06).
+2. **Rank** them by stop-power and relevance to the target.
+3. Pick **3 structurally different** survivors — different opening mechanism, not three phrasings of the same line.
+
+Only after the hook survives do you build the scene around it (R24) and set the type scale (R17). A headline is not a placeholder you paste onto a finished picture.
+
+> If the thumbnail or the first second doesn't carry the message, the ad lost before the visual mattered.
+
+---
+
+## R37 · PERFORMANCE FEEDBACK LOOP
+
+**The creative system learns from live results, not from taste alone.** After a campaign ships, the metrics come back and feed the *next* brief.
+
+- **Close the loop:** publish → measure (CTR, CPA/ROAS, hook-through, 3s hold for video) → label the winning angle/format → carry it forward as the new default in the next variation matrix (R35).
+- **Kill silently, promote loudly.** Cut what underperforms without ego; give the winner more budget and more variants.
+- **Creative → landing continuity:** the ad's promise must be the landing page's first message. An ad that promises one thing and lands on another burns budget (R06).
+- **Guard against over-fitting** — one small win on a tiny sample is noise, not a new religion.
+
+Depth: [`references/creative-performance-loop.md`](references/creative-performance-loop.md).
+
+---
+
+## R38 · PLATFORM COMPLIANCE & MULTI-RATIO
+
+**An ad that passes the canvas but dies under platform chrome is a failed deliverable.** Compose for the placement, including its UI overlays and safe zones.
+
+- **Per-platform safe zones:** Meta feed 4:5 keeps the lower caption/CTA area clear; 9:16 Reels/Stories keep the top and bottom UI zones clear (R19); TikTok and YouTube Shorts have their own text-safe bands. See [`references/platform-compliance.md`](references/platform-compliance.md).
+- **Every ratio via re-layout, never a dumb crop.** Scaling/panning to change ratio is a **recomposition** (headline, CTA, product re-seated), not a `crop` — a crop loses hierarchy (R07).
+- **Deliver native files per placement** (4:5 feed, 9:16 short, 1:1 marketplace, 16:9 video), not one image the user has to hack.
+
+> If the thumbnail is unreadable (R33) or the CTA is under a platform button, the creative wasn't finished.
+
+---
+
+## R39 · VIDEO & MOTION TRACK
+
+**The rules of static advertising survive into motion; motion must serve the message, not decorate it.** When the brief calls for a reel, TikTok, story or animated ad, add a motion track:
+
+- **Static-first:** the hero frame of the video must pass the same gate as a static ad (R02–R34). Motion is a layer on top of a design that already works.
+- **Formats that have a job:** product-image-to-video · UGC/avatar talking-head · 3–12s motion from stills · animated loop. Pick the format for the promise (R35), not for novelty.
+- **Motion supports the hook (R36):** the first second must carry the message; captions and on-screen text are large, clear, purposeful — never a HUD (R05).
+- **Route the model to the job:** a precise-motion model for product demos, a cinematic model for story-driven ads, a lip-sync/avatar model for UGC — see [`references/model-routing.md`](references/model-routing.md).
+
+Depth: [`references/video-ugc-track.md`](references/video-ugc-track.md).
 
 ---
 
