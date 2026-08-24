@@ -3,7 +3,7 @@ name: meta-ads-designer
 description: Designs and generates posters, flyers, Meta/social ads and promo graphics that look art-directed instead of AI-generated - hierarchy, real typography, real light, one message per creative. Use when the user asks for an ad, poster, flyer, promo or social graphic for a business, restaurant, hotel or local brand, especially when a logo, venue, product or food photo is attached; also for product photography, lifestyle and e-commerce visuals, and image-editing prompts. Framework-agnostic - runs on Hermes, Claude Code, Codex, Cursor and ChatGPT.
 license: MIT
 metadata:
-  version: 5.6.0
+  version: 5.8.0
   author: AI Evolution Labs
   url: https://github.com/aievolutionpl/meta-ads-designer
 ---
@@ -33,6 +33,7 @@ This is a **universal plugin** that runs on any AI agent. It teaches **what beau
 | `references/creative-performance-loop.md` | Step 6.5 — publishing, measuring, and feeding results into the next brief. `R37` |
 | `references/platform-compliance.md` | Step 5 — safe zones per platform and ratio re-layout (never a dumb crop). `R38` |
 | `references/video-ugc-track.md` | The brief needs video/UGC/motion. `R39` |
+| `references/artifact-control.md` | **Before spending on any generation, and before every edit.** The eight artifact modes, the high-risk subject register, session hygiene, the preservation contract and the symptom→remedy table. `R40` `R41` |
 | `references/model-routing.md` | Choosing the generator and the iteration budget before spending. |
 | `references/competitor-ad-teardown.md` | Step 2 — turning winning competitor ads into testable briefs. |
 | `references/prompt-library.md` | Filling the 5-slot prompt, or choosing a model. |
@@ -71,6 +72,8 @@ This is a **universal plugin** that runs on any AI agent. It teaches **what beau
 20. **Performance feedback** — publish, measure, feed the winner into the next brief; ad promise = landing page promise. `R37`
 21. **Platform compliance & multi-ratio** — safe zones per placement, every ratio by re-layout (never a dumb crop). `R38`
 22. **Video & motion track** — static-first; motion serves the hook, never decorates. `R39`
+23. **Artifact control** — a clean render is the precondition for every other rule. Bound the detail, don't collide styles, one concept per fresh session, ship at full quality. `R40`
+24. **Minimal effective edit** — preserve what already works, change only what was asked. Every edit prompt carries `EDIT INSTRUCTIONS` *and* `PRESERVE`; one element per turn; reference accuracy outranks creative improvement. `R41`
 
 **Final principle: DON'T DECORATE. DIRECT.** One product. One idea. One strong visual.
 
@@ -103,8 +106,10 @@ Do **not** jump to the prompt. Run the engine's creative workflow first:
 - **Services / local biz:** real product/install photos as refs → generate NEW premium scenes (never overlay on the client's raw photo). Angles: Problem→Effect · package tiers · deadline offers · transformation · benefit-led headline ≤40 chars. Use **deterministic composition** when text/logo fidelity matters.
 
 ### 4 · Generation
-- **One finished ad per generation.** Never ask a model to make a batch or contact sheet in one image. Open with: `ONE SINGLE FINISHED AD ONLY — no collage, no grid, no split-screen.`
-- **Use reference images with a clear role** for every subject you must preserve (face, product, logo, building). Name each ref's role: "Image A = subject, Image B = style".
+- **Run the artifact pre-flight first** (`references/artifact-control.md` §10, `R40`) — screen the brief for a high-risk texture subject, for colliding style descriptors, for the right quality tier, and open a **fresh session**. Most artifacted outputs are caused by generating a second image in a session that already made one, so treat it as a setup step, not a troubleshooting step.
+- **One finished ad per generation, and one concept per session.** Never ask a model to make a batch or contact sheet in one image. Open with: `ONE SINGLE FINISHED AD ONLY — no collage, no grid, no split-screen.` A direct iteration of what is on screen (angle, light, framing, one object, a text fix) stays in the session; a new concept, scene or campaign direction opens a fresh one (`R40` mode C).
+- **Editing an existing image rather than generating one?** Write both slots — `EDIT INSTRUCTIONS` (the one thing that changes) and `PRESERVE` (everything that must survive). Change **one element per turn**, and specify integration: scale, perspective, contact shadows and reflections matched to the existing scene. Silence is not protection; anything unnamed gets redrawn (`R41`, `references/artifact-control.md` §8).
+- **Use reference images with a clear role** for every subject you must preserve (face, product, logo, building). Name each ref's role: "Image A = subject, Image B = style". **Cap it at 2–3 references** — more of them collide and drift the product (`R40`).
 - Fill the **5-slot prompt** (SCENE / SUBJECT / DETAILS / USE CASE / CONSTRAINTS — see `references/prompt-library.md`) and bake in the design rules from `design-rules.md`.
 - **Native in-scene text** (if the model renders text well): quote EVERY rendered word in quotes; add `CRITICAL: every word spelled perfectly` + the names. Keep text short (brand + headline + one location line).
 - **Route the model to the job** — native text, clean photo, re-composition, or video/UGC. Decide the generator and the iteration budget *before* spending: see `references/model-routing.md` and `INSTALL.md`.
@@ -114,8 +119,9 @@ Do **not** jump to the prompt. Run the engine's creative workflow first:
 1. Run `python "$SKILL_DIR/scripts/qa.py" <file> --format 4:5 --text-box x0,y0,x1,y1` (add `--logo-box` when a logo is placed). `SKILL_DIR` is the directory this file sits in — resolve it before you call the script; a bare `scripts/qa.py` resolves against the user's project, where it does not exist. Needs `pillow` and `numpy` (`pip install -r "$SKILL_DIR/requirements.txt"`). **Declare the boxes** — without them the safe-area, contrast, thumbnail and scrim checks report `n/a` and the PASS means only "right dimensions, no collage". Fix edge intrusions with **scale+pad**, never a crop.
 2. Build a **contact sheet** (exclude prior contact sheets from the glob).
 3. Inspect each ad against **every rule in `design-rules.md` §8 "The QA gate"** — thumbnail readability, spelling (incl. Polish diacritics), hierarchy, accent ≤3, logo fidelity, no fake footers, no text-on-photo slop, no AI-invented food, ad spine present, contrast.
-4. **Check platform compliance** — safe zones for each placement and ratio re-layout (never a dumb crop). See `references/platform-compliance.md` (`R38`).
-5. Fix minor issues deterministically (clean typography pass); regenerate when the visual is fundamentally wrong.
+4. **Inspect for artifacts at 100%, not at thumbnail size** — cellular/webbing texture on fine surfaces, speckle or tiling on flat ones, halos or texture bleed around anything edited, duplicated or warped geometry, and any element you never briefed (that one is session bleed, not a prompt bug). **On an edit, diff it against the reference**: whatever changed beyond the one thing you asked for is a defect (`R41`). No script can call this: grain, fabric weave and webbing are the same high-frequency energy. See `references/artifact-control.md` §12 (`R40`).
+5. **Check platform compliance** — safe zones for each placement and ratio re-layout (never a dumb crop). See `references/platform-compliance.md` (`R38`).
+6. Fix minor issues deterministically (clean typography pass); repair local blemishes by masking; **regenerate** — in a clean session, from a fixed prompt — when the visual is fundamentally wrong or the product drifted. Read the symptom off the recovery table rather than re-rolling blind: `references/artifact-control.md` §11.
 
 ### 6 · Delivery
 - Package final files + contact sheet + short notes; report the model/cost if paid. Save reference photos to the client folder for reuse.
@@ -178,6 +184,7 @@ meta-ads-designer/
     ├── creative-performance-loop.md # Publish → measure → feed the next brief (R37)
     ├── platform-compliance.md  # Safe zones + ratio re-layout per platform (R38)
     ├── video-ugc-track.md      # Video/UGC motion production (R39)
+    ├── artifact-control.md     # The 8 artifact modes, preservation contract, recovery (R40, R41)
     ├── model-routing.md        # Generator + cost decision table
     ├── competitor-ad-teardown.md # Turn winning competitor ads into briefs
     ├── qa-gate.md              # QA gate & rejection criteria

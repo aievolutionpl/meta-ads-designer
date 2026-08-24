@@ -495,6 +495,46 @@ Depth: [`references/video-ugc-track.md`](references/video-ugc-track.md).
 
 ---
 
+## R40 · ARTIFACT CONTROL
+
+**A dirty render is not bad luck — it is one of four named failure modes, and all four are decided before you spend.** Diagnose the mode; the fixes do not transfer between them.
+
+- **A · Texture dissolution** — fine repeating or organic detail at scale (fur, knit, foliage, crumb, seeds, stone, particles) collapses into Voronoi cells, webbing or noise clusters. Fix by **bounding the detail**: write the prompt as a *layout specification* of discrete parts, not a holistic atmosphere; give micro-texture **one** sharp zone and defocus the rest (R10, R11); name the **material**, never the density ("ultra-detailed", "intricate", "8k" are direct triggers); and state the negatives explicitly — `STRICTLY NO cellular texture, NO webbing, NO repeating Voronoi patterns, NO noise clusters, NO tiled texture fills`.
+- **B · Style collision** — two descriptors that cannot coexist ("Impressionist" + "ultra-detailed"). The model doesn't choose between them, it tries to satisfy both, and the conflict surfaces as artifacting. **One artist, one medium** is the test. Styles sharing a visual logic combine freely and often beat either alone. An obscure named style is the same failure — describe its mechanics instead (R09, R10).
+- **C · Context bleed** — the editing memory that makes in-chat refinement work also ghosts earlier images into later ones. The first image in a session is almost always clean; every one after it is dirtier, **even on an unrelated subject**. This is the largest single cause. So R34's *one finished ad per generation* becomes **one finished ad per session**: iterate by opening a clean session with a better prompt, never by nudging the same image again. At scale, prefer an API call — independent context — over a chat thread.
+- **D · Quality tier** — draft-tier settings are for validating the angle, never for the shipped asset. Draft cheap, render the winner high. If raising the tier doesn't clear it, you are in A, B or C.
+
+**Anchoring is the same discipline.** A model with no explicit rule set for your brand will interpret one prompt many ways — drifting tone, shadow direction and background across a catalogue. Anchor with **2–3 references maximum, each with a labelled role** (R03); more references collide exactly like clashing styles. Anchor specifics — colour values, a lighting reference, an approved packshot — not a vibe.
+
+**Repair matches the damage:** regenerate for major breakage and for anything touching the product itself (R03 is absolute); mask and repaint only local blemishes; upscale only soft detail. Upscaling a webbed image returns a bigger webbed image.
+
+Artifacting is the one failure a script cannot call — grain, weave and webbing are the same high-frequency energy — so it is inspected **at 100%, by eye**, in the vision pass, never at thumbnail size.
+
+Depth and the pre-flight checklist: [`references/artifact-control.md`](references/artifact-control.md).
+
+> A clean render is the precondition for every other rule in this document. An artifacted ad fails R05 before anyone reads the headline.
+
+---
+
+## R41 · MINIMAL EFFECTIVE EDIT
+
+**Preserve what already works. Change only what was requested.** Most commercial image work is editing, not generation, and the dominant failure is not a dirty texture — it is the model rebuilding what nobody asked it to touch. An edit instruction with no preservation contract reads as a licence to re-solve the whole frame.
+
+Asked to replace the stove, you keep the room. Asked to change the clothing, you keep the face. Asked to improve the lighting, you keep the composition.
+
+- **Every edit prompt carries two slots, never one:** `EDIT INSTRUCTIONS` (the one thing that changes) and `PRESERVE` (everything that must survive). Silence is not protection — anything unnamed is fair game.
+- **Default preserve-list**, unless the brief says otherwise: room layout · architecture · proportions · subject identity · facial features · product shape · product branding · furniture placement · camera orientation · the visual logic of the frame.
+- **One element per turn.** Simultaneous changes are how the four edit artifacts arrive together: **reference drift** (the scene changed too), **edge halo/bleed** (the edit was too big to integrate), **duplication and warped geometry** (the model re-solved a protected region), and **overload** (several ideas, no hero left — R06 failing at the edit layer). The meta-remedy for all four is the same: make the ask smaller. Two clean edits beat one ambitious one.
+- **Integration is part of the instruction.** Match scale, perspective, contact shadows and reflections to the existing scene, and ask for a clean boundary with no halo, glow or texture bleed. An object with no contact shadow reads as a sticker (R04).
+- **Edit priority order:** preserve identity and composition → make the change → match lighting and perspective → repair edge integration → improve realism → remove artifacts → polish. **Reference accuracy outranks creative improvement, always.** An edit that made the picture nicer while losing the room is a failed edit, not a bonus.
+- **Iteration has a shape:** one concept = one image family = one session. A direct iteration of what is on screen (angle, light, framing, one object, text fix) stays in the session; a new concept, scene or campaign direction opens a fresh one (R40 mode C).
+
+Depth, the copy-paste preservation blocks and the symptom→remedy table: [`references/artifact-control.md`](references/artifact-control.md) §7, §8, §11.
+
+> The brief asked for one change. Every other change you shipped is a defect, however good it looks.
+
+---
+
 ## 🏁 FINAL PRINCIPLE — DON'T DECORATE. DIRECT.
 
 Don't treat the image generator as a tool for adding more and more effects. Treat it like a **production crew**. First decide: what we show · why we show it · where the viewer looks · what emotions we want · what benefit must be understood. Only later choose: light · lens · set design · styling · color · effects.

@@ -14,6 +14,8 @@ Run all three on **every** output. Not on the batch — on every image.
 
 Things a machine measures better than an eye. No model call, no cost.
 
+> **Artifacting is deliberately not here.** Sensor grain, fabric weave and Voronoi webbing are the same high-frequency energy, so any threshold strict enough to catch webbing rejects legitimate photography. It is called by eye in layer 2, at 100% (`R40`).
+
 ```bash
 python scripts/qa.py out/ad_01.png --format 4:5 --text-box 86,900,994,1264
 python scripts/qa.py out/ad_01.png --format 4:5 --text-box 86,900,994,1200 \
@@ -57,6 +59,11 @@ ad image against the rules below. Be adversarial — your job is to find reasons
 reject it, not to be encouraging. If you cannot see something clearly, say so
 rather than assuming it is fine.
 
+Inspect the image at FULL RESOLUTION, not scaled down. Texture artifacting is
+invisible at thumbnail size and obvious at 100% — zoom into every fine-texture
+surface (fur, knit, foliage, crumb, stone, hair) and every flat one (walls, skies,
+panels) before you answer.
+
 Reference images supplied with this brief: [list them, or "none"]
 Declared copy that should appear on the image:
   brand:    "<BRAND>"
@@ -82,6 +89,19 @@ Return ONLY this JSON, no prose:
   "text_sits_on_busy_area": true|false,
   "anatomy_errors": ["deformed hands, extra fingers, impossible limbs"],
   "physics_errors": ["floating objects, wrong shadows, missing contact"],
+  "texture_artifacts": ["surfaces showing cellular/Voronoi cells, webbing,
+                        netting, noise clusters, speckle on flat areas, or a
+                        tiled/repeating texture fill — name the surface; [] if none"],
+  "unbriefed_elements": ["any shape, object or colour cast present in the image
+                          with no line in the prompt behind it — session ghosting"],
+  "style_coherence": true|false,
+  "edge_halo_or_bleed": ["objects ringed by a glow, seam or smear, or texture
+                          leaking across their boundary; [] if none"],
+  "duplicated_or_warped": ["duplicated objects, melted geometry, impossible
+                            reflections; [] if none"],
+  "unrequested_changes": ["ON AN EDIT ONLY: anything that differs from the
+                           reference beyond the one change that was requested —
+                           room, layout, furniture, face, framing, materials"],
   "slop_tells_present": ["from: neon, glow, glassmorphism, gradient text,
                           floating particles, isometric, HUD, clip-art icons,
                           fake UI, excessive bokeh, plastic surfaces"],
@@ -92,7 +112,8 @@ Return ONLY this JSON, no prose:
   "one_sentence_verdict": "",
   "hard_fails": ["R30-product|R30-logo|R30-text|R30-anatomy|R30-physics|
                   R30-scale|R30-chaos|R30-ui|R30-background|R30-stock|
-                  R30-function|R30-overload"],
+                  R30-function|R30-overload|R40-texture|R40-ghosting|
+                  R41-drift|R41-halo"],
   "score": {"hierarchy":0-2, "product":0-2, "realism":0-2, "typography":0-2,
             "copy":0-2, "color":0-2, "space":0-2, "logo":0-2,
             "thumbnail":0-2, "idea":0-2},
@@ -102,6 +123,11 @@ Return ONLY this JSON, no prose:
 
 **Reading the result:**
 - Any entry in `hard_fails` → regenerate. Do not retouch.
+- `texture_artifacts` non-empty → **`R40-texture`**. Bound the detail and regenerate ([`artifact-control.md`](artifact-control.md) §3); repair locally only for a single small anomaly, never across a surface.
+- `unbriefed_elements` non-empty → **`R40-ghosting`**. The prompt is not the bug — you generated this in a session that had already produced an image. Regenerate in a fresh one ([`artifact-control.md`](artifact-control.md) §5).
+- `unrequested_changes` non-empty on an edit → **`R41-drift`**. The `PRESERVE` slot was missing or too thin. Re-edit with the preservation block for that subject; do not accept the drift because the result looks good ([`artifact-control.md`](artifact-control.md) §8).
+- `edge_halo_or_bleed` or `duplicated_or_warped` non-empty → **`R41-halo`**. The edit was too large to integrate. Shrink the ask, hold the original lighting, and specify contact shadows ([`artifact-control.md`](artifact-control.md) §7).
+- `style_coherence: false` → two colliding style descriptors. Pick one and regenerate; re-rolling will not resolve it ([`artifact-control.md`](artifact-control.md) §4).
 - `spelling_errors` with `severity: hard` → regenerate (Mode A) or re-render the text layer (Mode B).
 - `total < 16` → fix the lowest-scoring criteria and re-run.
 - `reads_as_ai_generated: true` with `total ≥ 16` → trust the flag, not the score. Redesign.
@@ -116,7 +142,7 @@ Ten criteria, 0/1/2 each. This is what `score` in the vision JSON refers to, and
 |---|-----------|----------|--------------|----------|
 | 1 | **Hierarchy** (R07) | two or more elements compete; eye doesn't land | one focal point but weak separation | one obvious focal point in <1s, clear 2nd and 3rd level |
 | 2 | **Product / subject** (R02) | small, obscured, or ambiguous | visible but not dominant | large, lit, sharper than surroundings, attractive angle |
-| 3 | **Realism** (R04) | wrong physics, deformed anatomy, fake materials | mostly plausible, one soft tell | reads as a real photograph; correct light, shadows, contact |
+| 3 | **Realism** (R04, R40) | wrong physics, deformed anatomy, fake materials, or visible texture artifacting | mostly plausible, one soft tell | reads as a real photograph; correct light, shadows, contact; every surface clean at 100% |
 | 4 | **Typography** (R17, layout §2) | >3 sizes or >2 families; default font; mid-word clipping | correct sizes, unremarkable pairing | named pairing, correct tracking, hierarchy ratio ≥3× |
 | 5 | **Copy** (headline-system) | interchangeable headline, banned words, misspelling | specific but long or flat | passes the specificity test; within budget; spine reads as one voice |
 | 6 | **Color** (layout §4) | default gradient, >3 accent placements, contrast <4.5:1 | brand palette, contrast ok | brand palette, one accent used ≤3×, deliberate contrast |

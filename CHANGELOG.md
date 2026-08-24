@@ -4,6 +4,55 @@ All notable changes to Meta Ads Designer. Versions follow [SemVer](https://semve
 
 ---
 
+## [5.8.0] — 2026-08-24
+
+An **edit-discipline** pass, and the second half of the artifact story. `5.7.0` covered artifacts you generate; this covers the ones you *edit* into existence — which is most of them, because most commercial image work is changing an image that already exists rather than making a new one.
+
+The dominant failure in that work is not a dirty texture. It is the model rebuilding what nobody asked it to touch: replace the stove, get a redesigned room; change the clothing, get a different face. An edit instruction with no preservation contract reads as a licence to re-solve the whole frame.
+
+### Added
+- **`R41` Minimal Effective Edit** — preserve what already works, change only what was requested. Every edit prompt carries two slots and never one: `EDIT INSTRUCTIONS` and `PRESERVE`. Defines the default preserve-list, one-element-per-turn, integration as part of the instruction (scale, perspective, contact shadows, reflections), and the edit priority order in which **reference accuracy outranks creative improvement**.
+- **Four new artifact modes, E–H**, in `references/artifact-control.md` §7 — **reference drift**, **edge halo / texture bleed**, **duplication / warped geometry**, and **overload**. All four are one failure at bottom: too much requested in one turn.
+- **`references/artifact-control.md` §8 — the preservation contract**, with copy-paste blocks for scenes/interiors, faces and products, plus an integration block for placing an object into an existing scene.
+- **`references/artifact-control.md` §11 — failure recovery**, a symptom→remedy table covering all eight modes, so a dirty output is diagnosed rather than re-rolled.
+- **`references/prompt-library.md`** — a full reference-image edit template built on the preservation contract, the three preservation blocks as a lookup table, and the four rules that govern edits.
+
+### Changed
+- **`R40` mode C is now the image-family model.** The `5.7.0` rule ("one image per fresh session") was too blunt — it forbade the legitimate case of iterating on the image you just made. The accurate rule is **one concept = one image family = one session**: direct iterations (angle, lighting, framing, one object, a text fix) stay in the session; a new concept, scene or campaign direction opens a fresh one. The failure everyone actually hits is running a *new family inside an old one*.
+- **`references/artifact-control.md`** — restructured into two families, generation artifacts (A–D) and edit artifacts (E–H); sections renumbered to 13; the pre-flight checklist gains an edit branch.
+- **`references/qa-gate.md`** — the vision pass returns `edge_halo_or_bleed`, `duplicated_or_warped` and `unrequested_changes`; two new hard fails, `R41-drift` and `R41-halo`. On an edit, the image is diffed against its reference: whatever changed beyond the one requested thing is a defect.
+- **`SKILL.md`** — core rules grow to 24; step 4 gains the edit branch; step 5 diffs edits against the reference and routes failures through the recovery table.
+- **`visual-advertising-engine.md`** — 40 rules → 41.
+- **Constraint discipline** — use only the negatives a scene can actually produce. Every possible constraint in one prompt dilutes the ones that matter; there is no point banning malformed hands in a packshot with no people.
+- **Micro-detail: reduce rather than ban.** Where an atmospheric element belongs, ask for less of it — "a small number of subtle natural sparks", not "thousands of glowing sparks". Quantity is what dissolves into noise, not the element.
+- **`design-rules.md`** / **`core.md`** — edit discipline folded into the map, workflow, slop check and hard-fail list, keeping the standalone chat inject self-contained.
+
+`R01`–`R40` are untouched — additive, no renumbering of rule IDs.
+
+---
+
+## [5.7.0] — 2026-08-24
+
+An **artifact-control** pass. Every rule in this skill assumed the render came back clean; this release covers the renders that don't. Artifacting is reframed from bad luck into four named failure modes with four named causes — all of them decided at setup, before any spend.
+
+### Added
+- **`R40` Artifact Control** — the four modes and their fixes: **texture dissolution** (bound the detail — layout-specification prompting, one sharp zone, materials not density adjectives, explicit negative constraints), **style collision** (two descriptors that can't coexist render as noise; one artist, one medium), **context bleed** (the in-chat editing memory ghosts earlier images into later ones — the largest single cause, fixed by one image per fresh session), and **quality tier** (draft cheap, ship high).
+- **`references/artifact-control.md`** — the full tool behind `R40`: the high-risk subject register mapped onto this repo's actual briefs (food, fashion, hotel, pets, home & garden, jewellery), bounded-vs-atmospheric prompting, the style-collision table, session hygiene, reference anchoring for e-commerce and brand consistency, repair-vs-regenerate, artifact QA and a pre-flight checklist.
+
+### Changed
+- **`SKILL.md`** — core rules grow to 23; the load table routes to `artifact-control.md`; step 4 opens with the artifact pre-flight and extends "one ad per generation" to **one ad per session**, capping references at 2–3; step 5 gains a 100% artifact inspection.
+- **`visual-advertising-engine.md`** — 39 rules → 40 (`R01`–`R40`).
+- **`references/qa-gate.md`** — the vision pass now inspects at full resolution and returns `texture_artifacts`, `unbriefed_elements` and `style_coherence`; two new hard fails, `R40-texture` and `R40-ghosting`, each routed to the mode that causes it. Documents why artifacting is deliberately **not** scripted.
+- **`references/prompt-library.md`** — new anti-artifact constraint block for fine-texture briefs, plus the density-adjective ban and session hygiene.
+- **`references/anti-slop-registry.md`** — new §1a "Artifact slop": the slop nobody chose, listed by cause.
+- **`references/model-routing.md`** — a fourth pre-spend question (is the setup clean?), draft-cheap/ship-high, API-over-chat-thread at scale, and an artifacted-output fallback that diagnoses instead of re-rolling.
+- **`design-rules.md`** / **`core.md`** — artifact control folded into the doctrine, the workflow, the slop check and the hard-fail list, so the standalone chat inject stays self-contained.
+
+### Not changed
+`scripts/qa.py` is untouched, deliberately. A deterministic artifact check was built and rejected during this release: sensor grain, fabric weave and Voronoi webbing are the same high-frequency energy, so every threshold strict enough to catch webbing also rejected legitimate high-ISO photography, and a structure-based variant scored the repo's own canonical layout worse than pure noise. Artifacting is called by eye at 100% in layer 2, where the distinction is actually decidable. `R01`–`R39` are untouched — this is a purely additive release.
+
+---
+
 ## [5.6.0] — 2026-08-21
 
 A **creative-systems** pass: the skill now treats an ad as one cell in a testable campaign that *learns*, not a one-off picture. Adds the variation matrix, the hook gate, the performance loop, platform compliance, and a video/UGC track — five new canonical rules and seven new reference docs.
