@@ -136,12 +136,25 @@ OBJECTIVE · SUBJECT · ACTION/CONTEXT · ENVIRONMENT · COMPOSITION · CAMERA �
 - **No text-on-photo without a scrim or panel.** If you can't read it from a thumbnail, it's decoration.
 - **Commercial realism:** correct perspective, scale, gravity, shadows, real materials (metal = metal, wood = wood). Photography, not "generic 3D".
 
+## 16a · Artifact control (a clean render is the precondition for all of the above)
+Four failure modes, all decided before you spend. Diagnose the mode — the fixes don't transfer.
+- **Texture dissolution** — fine repeating detail at scale (fur, knit, foliage, water, crumb, seeds, stone, particles) collapses into Voronoi cells, webbing or noise clusters. **Bound the detail:** write the prompt as a *layout specification* of discrete parts, not a holistic atmosphere; allow readable micro-texture on **one** named surface and defocus the rest; name the **material**, never the density — `ultra-detailed`, `intricate`, `8k` are direct triggers. Append to constraints: `STRICTLY NO cellular texture, NO webbing, NO repeating Voronoi patterns, NO noise clusters, NO tiled texture fills.`
+- **Style collision** — two descriptors that can't coexist ("Impressionist" + "ultra-detailed"). The model tries to satisfy both and the conflict renders as noise. Test: could one artist in one medium produce both? Styles sharing a visual logic combine freely. An obscure named style fails the same way — describe its mechanics instead.
+- **Context bleed** — the in-chat editing memory ghosts earlier images into later ones. The first image in a session is almost always clean; each one after it is dirtier, **even on an unrelated subject**. This is the largest single cause. So: **one image per fresh session.** Iterate by opening a clean session with a better prompt, never by nudging the same image again. At scale, prefer API calls over a chat thread.
+- **Quality tier** — draft settings validate the angle; they never ship. Draft cheap, render the winner high (transparent-background packshots especially).
+
+**Anchoring:** 2–3 references maximum, each with a labelled role — more of them collide exactly like clashing styles and drift the product. Anchor specifics (colour values, a lighting reference, an approved packshot), not a vibe.
+
+**Repair matches the damage:** regenerate for major breakage and for anything touching the product; mask and repaint only a local blemish; upscale only soft detail — upscaling a webbed image returns a bigger webbed image.
+
+**Inspect at 100%, never at thumbnail size.** No script can separate artifacting from grain or fabric weave; only your eye can.
+
 ## 17 · Series & variation
 - Across 5–10 images the product is **identical**; only context, frame, mood and light change (series consistency).
 - **Variation ≠ randomness.** A colour swap is not a variant. Different creatives test different **promises** (angle / headline / archetype).
 
 ## 18 · Hard fail — regenerate, don't retouch
-product changed · logo wrong or redrawn · lettering fake or misspelled · hands deformed · physics wrong · product too small · image chaotic · too much UI · background outshines the product · looks like stock AI · the ad says too many things.
+product changed · logo wrong or redrawn · lettering fake or misspelled · hands deformed · physics wrong · product too small · image chaotic · too much UI · background outshines the product · looks like stock AI · the ad says too many things · **visible cellular/webbing/noise texture anywhere** · **a tiled or repeating texture fill** · **any element you never briefed** (session ghosting — regenerate in a fresh session, don't rewrite the prompt).
 
 ## 19 · The gate — score before you deliver
 10 criteria × 0/1/2: hierarchy · product · realism · typography · copy · colour · space · logo · thumbnail · idea. **Ship at ≥16/20 with zero hard fails.** Ask a vision model to **transcribe** every word it can read and compare it yourself — asking "is the spelling correct?" gets a yes.

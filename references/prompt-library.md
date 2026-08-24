@@ -132,6 +132,28 @@ Finished version: [`../examples/03-services-problem-effect.md`](../examples/03-s
 
 ---
 
+## 🧬 Anti-artifact block — append on any fine-texture brief
+
+Add to the `CONSTRAINTS` slot whenever the scene carries fur, knit, weave, foliage, water, crumb, seeds, stone, rust or particles — the subjects that dissolve into noise (`R40`, [`artifact-control.md`](artifact-control.md) §2):
+
+```
+STRICTLY NO cellular texture, NO webbing, NO netting, NO neural-network
+patterns, NO repeating Voronoi patterns, NO noise clusters, NO tiled or
+repeating texture fills, NO speckled grain across flat surfaces.
+Micro-texture is readable ONLY on [the one named surface]; every other
+surface is smooth, even, or out of focus.
+```
+
+Three rules that go with it:
+
+1. **Never write a density adjective.** `ultra-detailed`, `intricate`, `hyper-detailed`, `rich texture`, `8k` are requests for unbounded micro-repetition. Name the material instead — "char blistering on one edge", "brushed steel with a visible grain direction".
+2. **Keep `COMPOSITION` a layout specification.** Discrete bounded parts in percentages — which is what the skeleton above already asks for. A holistic atmospheric description is what artifacts.
+3. **Never collide two styles.** If one artist in one medium could not produce both descriptors at once, the render will try to satisfy both and come back noisy. Check the `BRAND MOOD` slot too.
+
+**Session hygiene beats every prompt fix here:** generate each of these prompts in a **fresh session**, one image only. Re-prompting in a session that already produced an image is the largest single cause of dirty output — refine the prompt and open a clean room instead ([`artifact-control.md`](artifact-control.md) §5).
+
+---
+
 ## ⚠️ Native text — avoiding misspellings
 
 1. **Quote every word** you want rendered.

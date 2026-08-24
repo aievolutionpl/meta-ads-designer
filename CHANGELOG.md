@@ -4,6 +4,28 @@ All notable changes to Meta Ads Designer. Versions follow [SemVer](https://semve
 
 ---
 
+## [5.7.0] — 2026-08-24
+
+An **artifact-control** pass. Every rule in this skill assumed the render came back clean; this release covers the renders that don't. Artifacting is reframed from bad luck into four named failure modes with four named causes — all of them decided at setup, before any spend.
+
+### Added
+- **`R40` Artifact Control** — the four modes and their fixes: **texture dissolution** (bound the detail — layout-specification prompting, one sharp zone, materials not density adjectives, explicit negative constraints), **style collision** (two descriptors that can't coexist render as noise; one artist, one medium), **context bleed** (the in-chat editing memory ghosts earlier images into later ones — the largest single cause, fixed by one image per fresh session), and **quality tier** (draft cheap, ship high).
+- **`references/artifact-control.md`** — the full tool behind `R40`: the high-risk subject register mapped onto this repo's actual briefs (food, fashion, hotel, pets, home & garden, jewellery), bounded-vs-atmospheric prompting, the style-collision table, session hygiene, reference anchoring for e-commerce and brand consistency, repair-vs-regenerate, artifact QA and a pre-flight checklist.
+
+### Changed
+- **`SKILL.md`** — core rules grow to 23; the load table routes to `artifact-control.md`; step 4 opens with the artifact pre-flight and extends "one ad per generation" to **one ad per session**, capping references at 2–3; step 5 gains a 100% artifact inspection.
+- **`visual-advertising-engine.md`** — 39 rules → 40 (`R01`–`R40`).
+- **`references/qa-gate.md`** — the vision pass now inspects at full resolution and returns `texture_artifacts`, `unbriefed_elements` and `style_coherence`; two new hard fails, `R40-texture` and `R40-ghosting`, each routed to the mode that causes it. Documents why artifacting is deliberately **not** scripted.
+- **`references/prompt-library.md`** — new anti-artifact constraint block for fine-texture briefs, plus the density-adjective ban and session hygiene.
+- **`references/anti-slop-registry.md`** — new §1a "Artifact slop": the slop nobody chose, listed by cause.
+- **`references/model-routing.md`** — a fourth pre-spend question (is the setup clean?), draft-cheap/ship-high, API-over-chat-thread at scale, and an artifacted-output fallback that diagnoses instead of re-rolling.
+- **`design-rules.md`** / **`core.md`** — artifact control folded into the doctrine, the workflow, the slop check and the hard-fail list, so the standalone chat inject stays self-contained.
+
+### Not changed
+`scripts/qa.py` is untouched, deliberately. A deterministic artifact check was built and rejected during this release: sensor grain, fabric weave and Voronoi webbing are the same high-frequency energy, so every threshold strict enough to catch webbing also rejected legitimate high-ISO photography, and a structure-based variant scored the repo's own canonical layout worse than pure noise. Artifacting is called by eye at 100% in layer 2, where the distinction is actually decidable. `R01`–`R39` are untouched — this is a purely additive release.
+
+---
+
 ## [5.6.0] — 2026-08-21
 
 A **creative-systems** pass: the skill now treats an ad as one cell in a testable campaign that *learns*, not a one-off picture. Adds the variation matrix, the hook gate, the performance loop, platform compliance, and a video/UGC track — five new canonical rules and seven new reference docs.

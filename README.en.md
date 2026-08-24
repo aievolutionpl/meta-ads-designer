@@ -8,7 +8,7 @@
 
 [🇵🇱 Polski](README.md) · [🇬🇧 English](README.en.md)
 
-![Version](https://img.shields.io/badge/version-5.6.0-6a5acd)
+![Version](https://img.shields.io/badge/version-5.7.0-6a5acd)
 ![License](https://img.shields.io/badge/license-MIT-brightgreen)
 ![Format](https://img.shields.io/badge/default_format-4:5%20(1080×1350)-informational)
 ![Hosts](https://img.shields.io/badge/runs_on-ChatGPT%20%7C%20Codex%20%7C%20Hermes%20%7C%20Claude%20%7C%20Cursor-blue)
@@ -82,7 +82,7 @@ Full per-host steps: **[`INSTALL.md`](INSTALL.md)**.
 
 ```
 ┌────────────────────────────────────────────┐
-│ visual-advertising-engine.md               │  ← THE standard (39 rules)
+│ visual-advertising-engine.md               │  ← THE standard (40 rules)
 │   Product First · Source of Truth ·        │     Prompt Architecture ·
 │   Hard Fails · Final Quality Check         │     Creative Workflow
 └───────────────┬────────────────────────────┘
@@ -104,7 +104,7 @@ Full per-host steps: **[`INSTALL.md`](INSTALL.md)**.
                         └──────────────────┘
 ```
 
-- **`visual-advertising-engine.md`** — *standard* (39 rules). What the agent applies **before** every commercial visual: Product First, Reference = Source of Truth, Prompt Architecture, Hard Fails, QA, Variation Matrix, Hook First, Performance Loop, Compliance, Video Track. **This is the canonical source** — new rules land here first.
+- **`visual-advertising-engine.md`** — *standard* (40 rules). What the agent applies **before** every commercial visual: Product First, Reference = Source of Truth, Prompt Architecture, Hard Fails, QA, Variation Matrix, Hook First, Performance Loop, Compliance, Video Track, Artifact Control. **This is the canonical source** — new rules land here first.
 - **`design-rules.md`** — *charter* (taste). English canonical. Self-contained — paste into any chat or inject into the system prompt.
 - **`core.md`** — *complete general knowledge (inject)*. Per-platform formats, creative process, composition, typography, colour, light, layouts, copy, niches, production modes, prompt architecture, anti-slop, hard fails, QA — self-contained, paste into any chat.
 - **`SKILL.md`** — *procedure* (agent manual). Brief → research → angles → creative → generate → QA → deliver. The skill loader reads the frontmatter.
@@ -199,7 +199,7 @@ core.md  →  SKILL.md  →  (details)  →  references/
 meta-ads-designer/
 ├── SKILL.md                        # Agent manual (procedure + routing)
 ├── core.md                         # Complete general knowledge (inject) — paste into any chat
-├── visual-advertising-engine.md    # THE standard — 39 rules
+├── visual-advertising-engine.md    # THE standard — 40 rules
 ├── design-rules.md                 # The charter (English canonical)
 ├── INSTALL.md                      # Setup + usage on every agent (incl. ChatGPT)
 ├── README.md                       # This manual (PL, main)
@@ -222,6 +222,7 @@ meta-ads-designer/
     ├── creative-performance-loop.md # Publish → measure → feed the next brief (R37)
     ├── platform-compliance.md      # Safe zones + ratio re-layout per platform (R38)
     ├── video-ugc-track.md          # Video/UGC motion production (R39)
+    ├── artifact-control.md         # The four artifact modes + pre-flight (R40)
     ├── model-routing.md            # Generator + cost (decide before spend)
     ├── competitor-ad-teardown.md   # Winning competitor ads → briefs
     ├── qa-gate.md                  # QA gate and rejection criteria
@@ -237,7 +238,7 @@ meta-ads-designer/
 | File | Purpose |
 |------|---------|
 | `core.md` | Complete general knowledge — paste into any chat/agent |
-| `visual-advertising-engine.md` | Operating standard — 39 rules (canonical source) |
+| `visual-advertising-engine.md` | Operating standard — 40 rules (canonical source) |
 | `design-rules.md` | Charter — taste |
 | `SKILL.md` | Agent manual (read by skill loaders) |
 | `INSTALL.md` | Setup per host |
@@ -249,6 +250,7 @@ meta-ads-designer/
 | `references/creative-performance-loop.md` | Publish → measure → feed the next brief (R37) |
 | `references/platform-compliance.md` | Safe zones + ratio re-layout per platform (R38) |
 | `references/video-ugc-track.md` | Video/UGC motion production (R39) |
+| `references/artifact-control.md` | Clean renders: the four artifact modes + pre-flight (R40) |
 | `references/model-routing.md` | Generator + cost (decide before spend) |
 | `references/competitor-ad-teardown.md` | Winning competitor ads → briefs |
 | `references/qa-gate.md` | QA gate and rejection criteria |

@@ -36,6 +36,7 @@
 | Other industries | [`references/niche-playbooks.md`](references/niche-playbooks.md) |
 | Ready-made prompt skeletons | [`references/prompt-library.md`](references/prompt-library.md) |
 | What exactly counts as "AI look"? | [`references/anti-slop-registry.md`](references/anti-slop-registry.md) |
+| The render came back dirty / webbed / ghosted | [`references/artifact-control.md`](references/artifact-control.md) |
 | How do I install this on my agent? | [`INSTALL.md`](INSTALL.md) |
 
 ---
@@ -101,6 +102,8 @@ If any of these is present, fix it:
 
 purple/blue default gradient · glassmorphism · neon glow · gradient text · tiny clip-art icons · text slapped on a photo · cream/sand bg · over-round cards · cards-in-cards · icons > content · gray-on-tinted text · isometric default · AI-invented food · AI-redrawn logo · a pretty photo with no ad structure.
 
+**And the slop nobody chose** — the render itself broke: cellular/webbing texture on fur, knit, foliage or crumb · speckle or tiling on a flat wall or sky · a muddy render matching neither style asked for · an object or colour cast nobody briefed (that one is ghosting from an earlier image in the session). Fixes: [`references/artifact-control.md`](references/artifact-control.md).
+
 Full compendium with fixes: [`references/anti-slop-registry.md`](references/anti-slop-registry.md).
 
 ---
@@ -116,9 +119,12 @@ Full compendium with fixes: [`references/anti-slop-registry.md`](references/anti
 3. ANGLES    — define 5–10 distinct promises/layouts, not 10 color swaps.
 4. CREATIVE  — product → benefit → target → angle → metaphor → type →
                headline → composition → light/camera → constraints  (R28)
-5. GENERATE  — one finished ad per generation. Use refs with a clear role.
+5. GENERATE  — artifact pre-flight first (texture risk, style collision,
+               fresh session, quality tier). One finished ad per generation
+               AND per session. Refs with a clear role, 2-3 max.
                A model must never make a batch/collage in one image.
-6. QA        — score every output against references/qa-gate.md; fix or redo.
+6. QA        — score every output against references/qa-gate.md; inspect for
+               artifacts at 100%, not at thumbnail size; fix or redo.
 7. DELIVER   — package files + contact sheet + notes. Report the model/cost.
 ```
 
@@ -126,7 +132,7 @@ Full compendium with fixes: [`references/anti-slop-registry.md`](references/anti
 
 ## 8 · The QA gate
 
-Every output is scored: **10 criteria × 0/1/2, ship at ≥16/20 with zero hard fails.** The gate includes a copy-paste vision-QA prompt that returns structured JSON, plus `scripts/qa.py` for the things a machine can measure (dimensions, safe area, contrast, collage detection, thumbnail legibility).
+Every output is scored: **10 criteria × 0/1/2, ship at ≥16/20 with zero hard fails.** The gate includes a copy-paste vision-QA prompt that returns structured JSON, plus `scripts/qa.py` for the things a machine can measure (dimensions, safe area, contrast, collage detection, thumbnail legibility). Texture artifacting is deliberately **not** scripted — grain, weave and webbing are the same high-frequency energy to a script, so it is called by eye at 100% in the vision pass.
 
 → [`references/qa-gate.md`](references/qa-gate.md)
 

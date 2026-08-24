@@ -35,6 +35,23 @@
 
 ---
 
+## 1a · Artifact slop — the render itself is broken
+
+Distinct from designed slop: nobody chose these, the model produced them. They are the clearest possible tell that an ad was machine-made, and they are all preventable at setup (`R40`, [`artifact-control.md`](artifact-control.md)).
+
+| Banned | Cause | Instead |
+|--------|-------|---------|
+| cellular / Voronoi texture, webbing, netting over fur, knit, foliage, crumb | fine repeating detail asked for at scale | bound the detail: one sharp zone, the rest defocused |
+| noise clusters or speckle across a flat wall, sky or panel | same | name the material, keep flat surfaces genuinely flat |
+| a tiled or repeating texture fill | same | a real surface, or clean negative space |
+| a muddy render matching neither style asked for | two colliding style descriptors | one artist, one medium — pick one style |
+| a shape, object or colour cast nobody briefed | ghosting from an earlier image in the session | one image per fresh session |
+| soft, dirty, mushy output on a final asset | draft-tier quality settings | draft cheap, ship at full quality |
+
+**Density adjectives are prompt slop.** `ultra-detailed` · `hyper-detailed` · `intricate` · `rich texture everywhere` · `8k detail` — these request unbounded micro-repetition and are the direct trigger for texture dissolution. Describe the **material** instead (`R40`).
+
+---
+
 ## 2 · Ad-specific slop — never in a creative
 
 - ❌ Tiny icons / clip-art / thumbnail-style graphics instead of a real composition

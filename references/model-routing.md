@@ -8,11 +8,12 @@ Different generators have different strengths: spelling native text, clean produ
 
 ## 1 · Decision before spend
 
-Before generating, answer three questions:
+Before generating, answer four questions:
 
 1. **What is the job?** Native in-scene text · clean product photo · video motion · UGC talking-head · re-composition/editing.
 2. **Which model is best at that job?** Route by the table below — never by habit.
 3. **What is a reasonable iteration budget?** How many attempts before the angle is wrong, not the model? (R35 keeps you from re-rolling the same brief.)
+4. **Is the setup clean?** Fresh session, quality tier matched to the deliverable, 2–3 labelled references, no colliding styles. Spending before the artifact pre-flight ([`artifact-control.md`](artifact-control.md) §10) is how budgets leak into re-rolls (R40).
 
 If the brief is new or uncertain, **generate small first**: one finished ad (R34) to validate the angle, then scale.
 
@@ -49,6 +50,8 @@ Route per the motion track: [`video-ugc-track.md`](video-ugc-track.md) §5.
 - **Validate before you scale.** One finished creative first; a winning direction earns a batch (R35, R37).
 - **QA before long renders.** For video, QA the hero frame and first second first — a bad first frame wastes the whole render.
 - **Name the cost.** If the platform charges per generation, report the model and the number of generations in the delivery (SKILL.md step 6).
+- **Draft cheap, ship high.** Validate the angle at a draft quality tier, then re-render the winner at full quality. Draft tiers are for iteration; a final product shot or a transparent-background packshot needs medium/high or it ships soft and dirty (R40 mode D).
+- **At scale, prefer API calls to a chat thread.** Each call is an independent request with context you control, so cross-image ghosting is meaningfully lower — which matters most on exactly the sets where consistency is the deliverable (R20, R35).
 - **Prefer the free/deterministic path when fidelity matters** (Mode B, R18): compose real typography and the official logo deterministically instead of paying for a model to guess at it.
 
 ---
@@ -58,6 +61,7 @@ Route per the motion track: [`video-ugc-track.md`](video-ugc-track.md) §5.
 - **Spelling fails** → switch to Mode B (deterministic composition) rather than re-rolling a model that can't spell.
 - **Product drifts** → strengthen the reference role (R03) or switch to an editing model; do not accept a changed product.
 - **Motion is weak** → go back to a strong static hero rather than ship a weak video (R39: static-first).
+- **Output is artifacted** → do not re-roll blind. Diagnose the mode first (R40): high-risk texture subject, colliding styles, session bleed, or draft-tier settings. Re-rolling clears none of them.
 - **Fatigue / repetition** → the model isn't the problem; re-route to a different generation strategy (new angle, R13) instead of re-rolling the same prompt.
 
 A routing failure is a decision problem, not a coin to keep flipping.
