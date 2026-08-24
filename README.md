@@ -8,7 +8,7 @@
 
 [🇬🇧 English](README.en.md) · [🇵🇱 Polski](README.md)
 
-![Version](https://img.shields.io/badge/version-5.7.0-6a5acd)
+![Version](https://img.shields.io/badge/version-5.8.0-6a5acd)
 ![License](https://img.shields.io/badge/license-MIT-brightgreen)
 ![Format](https://img.shields.io/badge/default_format-4:5%20(1080×1350)-informational)
 ![Hosts](https://img.shields.io/badge/runs_on-ChatGPT%20%7C%20Codex%20%7C%20Hermes%20%7C%20Claude%20%7C%20Cursor-blue)
@@ -82,7 +82,7 @@ Pełne kroki per host: **[`INSTALL.md`](INSTALL.md)**.
 
 ```
 ┌────────────────────────────────────────────┐
-│ visual-advertising-engine.md               │  ← THE standard (40 zasad)
+│ visual-advertising-engine.md               │  ← THE standard (41 zasad)
 │   Product First · Source of Truth ·        │     Prompt Architecture ·
 │   Hard Fails · Final Quality Check         │     Creative Workflow
 └───────────────┬────────────────────────────┘
@@ -104,7 +104,7 @@ Pełne kroki per host: **[`INSTALL.md`](INSTALL.md)**.
                         └──────────────────┘
 ```
 
-- **`visual-advertising-engine.md`** — *standard* (40 zasad). Co agent stosuje **przed** każdym komercyjnym visualem: Product First, Reference = Source of Truth, Prompt Architecture, Hard Fails, QA, Variation Matrix, Hook First, Performance Loop, Compliance, Video Track, Artifact Control. **To jest źródło kanoniczne** — nowe reguły trafiają tu najpierw.
+- **`visual-advertising-engine.md`** — *standard* (41 zasad). Co agent stosuje **przed** każdym komercyjnym visualem: Product First, Reference = Source of Truth, Prompt Architecture, Hard Fails, QA, Variation Matrix, Hook First, Performance Loop, Compliance, Video Track, Artifact Control, Minimal Effective Edit. **To jest źródło kanoniczne** — nowe reguły trafiają tu najpierw.
 - **`design-rules.md`** — *charter* (gust). Angielski kanon. Samowystarczalny — wklejasz do dowolnego czatu lub wstrzykujesz do system promptu.
 - **`core.md`** — *kompletna wiedza ogólna (inject)*. Formaty per platforma, proces kreatywny, kompozycja, typografia, kolor, światło, layout, copy, nisze, tryby produkcji, prompt architecture, anti-slop, hard fails, QA — samodzielny, wklejasz do dowolnego czatu.
 - **`SKILL.md`** — *procedura* (agent manual). Brief → research → angles → creative → generate → QA → deliver → performance loop. Loader skilli czyta frontmatter.
@@ -199,7 +199,7 @@ core.md  →  SKILL.md  →  (szczegóły)  →  references/
 meta-ads-designer/
 ├── SKILL.md                        # Manual agenta (procedura + routing)
 ├── core.md                         # Kompletna wiedza ogólna (inject) — wklej do dowolnego czatu
-├── visual-advertising-engine.md    # THE standard — 40 zasad
+├── visual-advertising-engine.md    # THE standard — 41 zasad
 ├── design-rules.md                 # Charter (angielski kanon)
 ├── INSTALL.md                      # Setup + użycie na każdym agencie (w tym ChatGPT)
 ├── README.md                       # Ten manual (PL, główny)
@@ -222,7 +222,7 @@ meta-ads-designer/
     ├── creative-performance-loop.md # Publish → measure → feed the next brief (R37)
     ├── platform-compliance.md      # Safe zones + ratio re-layout per platform (R38)
     ├── video-ugc-track.md          # Video/UGC motion production (R39)
-    ├── artifact-control.md         # Cztery tryby artefaktów + pre-flight (R40)
+    ├── artifact-control.md         # 8 trybów artefaktów + kontrakt preservation (R40, R41)
     ├── model-routing.md            # Generator + koszt (decyzja przed spendem)
     ├── competitor-ad-teardown.md   # Wygrywające ady konkurencji → briefy
     ├── qa-gate.md                  # Brama QA i kryteria odrzucenia
@@ -238,7 +238,7 @@ meta-ads-designer/
 | Plik | Do czego |
 |------|----------|
 | `core.md` | Kompletna wiedza ogólna — wklej do dowolnego czatu/agenta |
-| `visual-advertising-engine.md` | Standard operacyjny — 40 zasad (źródło kanoniczne) |
+| `visual-advertising-engine.md` | Standard operacyjny — 41 zasad (źródło kanoniczne) |
 | `design-rules.md` | Charter — gust |
 | `SKILL.md` | Manual agenta (czyta loader skilli) |
 | `INSTALL.md` | Setup per host |
@@ -250,7 +250,7 @@ meta-ads-designer/
 | `references/creative-performance-loop.md` | Publish → measure → feed the next brief (R37) |
 | `references/platform-compliance.md` | Safe zones + ratio re-layout per platform (R38) |
 | `references/video-ugc-track.md` | Video/UGC motion production (R39) |
-| `references/artifact-control.md` | Czyste rendery: cztery tryby artefaktów + pre-flight (R40) |
+| `references/artifact-control.md` | Czyste rendery i bezpieczne edycje: 8 trybów artefaktów, kontrakt preservation (R40, R41) |
 | `references/model-routing.md` | Generator + koszt (decyzja przed spendem) |
 | `references/competitor-ad-teardown.md` | Wygrywające ady konkurencji → briefy |
 | `references/qa-gate.md` | Brama QA i kryteria odrzucenia |

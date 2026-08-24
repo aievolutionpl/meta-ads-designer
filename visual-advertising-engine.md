@@ -516,6 +516,25 @@ Depth and the pre-flight checklist: [`references/artifact-control.md`](reference
 
 ---
 
+## R41 · MINIMAL EFFECTIVE EDIT
+
+**Preserve what already works. Change only what was requested.** Most commercial image work is editing, not generation, and the dominant failure is not a dirty texture — it is the model rebuilding what nobody asked it to touch. An edit instruction with no preservation contract reads as a licence to re-solve the whole frame.
+
+Asked to replace the stove, you keep the room. Asked to change the clothing, you keep the face. Asked to improve the lighting, you keep the composition.
+
+- **Every edit prompt carries two slots, never one:** `EDIT INSTRUCTIONS` (the one thing that changes) and `PRESERVE` (everything that must survive). Silence is not protection — anything unnamed is fair game.
+- **Default preserve-list**, unless the brief says otherwise: room layout · architecture · proportions · subject identity · facial features · product shape · product branding · furniture placement · camera orientation · the visual logic of the frame.
+- **One element per turn.** Simultaneous changes are how the four edit artifacts arrive together: **reference drift** (the scene changed too), **edge halo/bleed** (the edit was too big to integrate), **duplication and warped geometry** (the model re-solved a protected region), and **overload** (several ideas, no hero left — R06 failing at the edit layer). The meta-remedy for all four is the same: make the ask smaller. Two clean edits beat one ambitious one.
+- **Integration is part of the instruction.** Match scale, perspective, contact shadows and reflections to the existing scene, and ask for a clean boundary with no halo, glow or texture bleed. An object with no contact shadow reads as a sticker (R04).
+- **Edit priority order:** preserve identity and composition → make the change → match lighting and perspective → repair edge integration → improve realism → remove artifacts → polish. **Reference accuracy outranks creative improvement, always.** An edit that made the picture nicer while losing the room is a failed edit, not a bonus.
+- **Iteration has a shape:** one concept = one image family = one session. A direct iteration of what is on screen (angle, light, framing, one object, text fix) stays in the session; a new concept, scene or campaign direction opens a fresh one (R40 mode C).
+
+Depth, the copy-paste preservation blocks and the symptom→remedy table: [`references/artifact-control.md`](references/artifact-control.md) §7, §8, §11.
+
+> The brief asked for one change. Every other change you shipped is a defect, however good it looks.
+
+---
+
 ## 🏁 FINAL PRINCIPLE — DON'T DECORATE. DIRECT.
 
 Don't treat the image generator as a tool for adding more and more effects. Treat it like a **production crew**. First decide: what we show · why we show it · where the viewer looks · what emotions we want · what benefit must be understood. Only later choose: light · lens · set design · styling · color · effects.

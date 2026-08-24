@@ -1,27 +1,40 @@
 # 🧬 Artifact Control — keeping the render clean
 
-> The operating tool behind **R40**. Every other rule in this skill assumes the render came back clean. This one is about the renders that don't: the cellular webbing across a knitted jumper, the noise clusters in the foliage, the faint ghost of the last image bleeding into this one, the product that quietly changed shape on generation four.
+> The operating tool behind **R40** (clean renders) and **R41** (minimal effective edit). Every other rule in this skill assumes the render came back clean. This one is about the renders that don't: the cellular webbing across a knitted jumper, the noise clusters in the foliage, the faint ghost of the last image bleeding into this one, the product that quietly changed shape on generation four.
 >
-> Artifacting is not bad luck and it is not a model you have to accept. It is **four named failure modes with four named causes**, and every one of them is decided by how you set up the generation — before you spend anything.
+> Artifacting is not bad luck and it is not a model you have to accept. It is **eight named failure modes with eight named causes** — four from how you ask for a new image, four from how you ask to change an existing one — and every one of them is decided at setup, before you spend anything.
 
 Sources: [ApiPass — How to Solve GPT Image 2 Artifacting Issues](https://apipass.dev/blogs/how-to-solve-gpt-image-2-artifacting-issues), [ApiPass — The Artifact Issue: Reasons and Solutions](https://apipass.dev/blogs/gpt-image-2-launch-tiling-texture-artifact), [ApiPass — Leftovers from Previous Chat Images](https://apipass.dev/blogs/gpt-image-2-artifacting-previous-image-ghosting), [Rewarx — Fixing Artifacts & Noise for Ecommerce](https://www.rewarx.com/blogs/chatgpt-image-2-artifacts-noise-issues-guide), [Rewarx — Product Consistency Issues](https://www.rewarx.com/blogs/gpt-image-2-product-consistency-issues).
 
-Written against GPT Image 2's documented behaviour, but the mechanics — subject risk, style conflict, context bleed, quality tier — are general. Verify the specifics on your host and this month's model (`model-routing.md` §5).
+Written against GPT Image 2's documented behaviour, but the mechanics — subject risk, style conflict, context bleed, quality tier, edit scope — are general. Verify the specifics on your host and this month's model (`model-routing.md` §5).
 
 ---
 
-## 1 · The four failure modes
+## 1 · The failure modes
 
-Name the mode before you fix anything. The fixes do not transfer between modes — re-rolling a style conflict forever will never clear it, and sharpening a prompt will never clear context bleed.
+Name the mode before you fix anything. The fixes do not transfer between modes — re-rolling a style collision forever will never clear it, and sharpening a prompt will never clear context bleed.
 
-| # | Mode | What you see | Root cause | Fix lives in |
-|---|------|--------------|------------|--------------|
+There are two families. **Generation artifacts (A–D)** come from how you asked for a new image. **Edit artifacts (E–H)** come from how you asked to change an existing one, and they are the ones that bite hardest in production, because most commercial work is editing.
+
+### Generation artifacts
+
+| # | Mode | What you see | Root cause | Fix |
+|---|------|--------------|------------|-----|
 | **A** | **Texture dissolution** | Noise clusters, Voronoi cells, webbing, netting over fine repeating structures | The subject demands fine repeating/organic micro-detail at scale | §2 + §3 |
-| **B** | **Style collision** | Incoherent, muddy, noisy output that matches neither descriptor | Two style descriptors that cannot physically coexist | §4 |
+| **B** | **Style collision** | Incoherent, muddy output that matches neither descriptor | Two style descriptors that cannot physically coexist | §4 |
 | **C** | **Context bleed / ghosting** | Faint shapes, colours or objects from an earlier image in this session | The editing memory that makes in-chat refinement work, firing unintentionally | §5 |
 | **D** | **Quality-tier grime** | Softness, mush, dirty edges, weak transparency | Draft-tier quality settings used for a final asset | §6 |
 
-> **Diagnostic order.** Always ask §5 first — *was this the first image in the session?* The majority of artifact-filled outputs come from mode C, and mode C is invisible in the prompt. A perfect prompt on generation six still produces a dirty image.
+### Edit artifacts
+
+| # | Mode | What you see | Root cause | Fix |
+|---|------|--------------|------------|-----|
+| **E** | **Reference drift** | The room, face, layout or product changed when you only asked for one thing | No preservation contract — silence reads as permission | §7 + §8 |
+| **F** | **Edge halo / bleed** | A glow, seam or smeared boundary around the edited object; texture leaking across it | The edit was too large to integrate, or lighting wasn't held | §7 |
+| **G** | **Duplication / warping** | A second copy of an object, melted geometry, impossible reflections | The model re-solved a region it should have preserved | §7 |
+| **H** | **Overload** | A busy, cluttered image with no hero left | Several visual ideas were requested at once | §7 |
+
+> **Diagnostic order.** Ask §5 first — *was this the first image in the session?* Mode C is the single largest cause and it is invisible in the prompt; a perfect prompt on generation six still produces a dirty image. Then ask §7 — *did I actually say what to preserve?*
 
 ---
 
@@ -94,6 +107,8 @@ repeating texture fills, NO speckled grain across flat surfaces.
 
 This block is a **constraint, not a style cue** — it belongs in `CONSTRAINTS` with the rest of the negatives (`R25`), never in the scene description.
 
+**Use only the negatives the scene can actually produce.** A prompt carrying every possible constraint dilutes the ones that matter and spends attention on hazards that were never in the frame — there is no point banning malformed hands in a packshot with no people. Pick the block that fits the subject: texture negatives for fine-detail scenes, geometry and boundary negatives for edits (§7), anatomy negatives only when there is a person.
+
 ### 3e · Composite instead of asking for everything at once
 
 If the brief genuinely needs a busy field *and* a clean hero, generate them separately: **product on a clean background first, then bring the busy element in as a second step.** Two clean renders composited beat one render that had to resolve both. This is the same Mode B (deterministic composition) route the skill already prefers when fidelity matters (`R18`).
@@ -128,17 +143,30 @@ Styles that share a common visual logic can be combined freely and **often produ
 
 **The observed pattern.** The first image in a session is almost always clean. Quality degrades with each subsequent generation in that session. The effect compounds. The vast majority of artifact-filled images come from exactly this cause — and it holds **even when the prompts are completely unrelated subjects**.
 
-### The rules
+### The rule — one concept, one image family
 
-1. **One fresh session per image generated from scratch.** Not per campaign, not per client — per image.
-2. **Never reuse a conversation across unrelated generations.** Different subject is not protection.
-3. **Iterating? Open a new session and regenerate from a refined prompt** — do not keep adjusting the same image in the same thread. This inverts the instinct: the fix for a nearly-right image is a better prompt in a clean room, not another nudge in a dirty one.
-4. **Deliberate editing is the one exception.** When you *want* the model to hold the previous image — a genuine edit of that exact asset — the memory is the feature. Stay in the session, do the edit, and stop. Then leave.
-5. **At scale, prefer the API to the chat interface.** Each API call is an independent request where you control exactly what context is passed in, so cross-image bleed is meaningfully lower. For any campaign that ships a set (`R20`, `R35`), this is the default route.
+The blunt version ("never generate twice in a session") is wrong, because it forbids the legitimate case: iterating on the image you just made. The accurate rule is **one concept = one image family = one session.**
+
+A **same-family** turn is a direct iteration of the concept already on screen. Stay in the session:
+
+> change the camera angle · change the lighting · fix the text · remove one object · replace one product · adjust framing · improve realism · polish quality
+
+A **new-family** turn is a different concept wearing the same conversation. Open a fresh session:
+
+> an entirely new scene · a new advertising concept · a different room · a new campaign direction · a different composition · a different visual story
+
+**The failure everyone hits is running a new family inside an old one** — a new subject, a new campaign, a new room, in the thread that already made three images. Different subject is *not* protection; unrelated prompts ghost each other just as readily.
+
+Four rules follow:
+
+1. **One concept per session.** Not per campaign, not per client — per concept.
+2. **Same-family iteration is allowed, but it is not free.** Each turn costs a little cleanliness. Keep families short, and when the image is nearly right but the *prompt* was wrong, refine the prompt and open a clean session rather than nudging a dirty one.
+3. **A new family always gets a new session**, restating only the current concept and the references it actually needs.
+4. **At scale, prefer the API to the chat interface.** Each API call is an independent request where you control exactly what context is passed in, so cross-image bleed is meaningfully lower. For any campaign that ships a set (`R20`, `R35`), this is the default route.
 
 ### What this changes in this skill's workflow
 
-`R34` already demands **one finished ad per generation**. Mode C extends it: **one finished ad per *session*.** A variation matrix of three variants (`R35`) is three clean sessions, not three turns in one — and that is also what protects series consistency (`R20`), since a ghosted variant will not match its siblings.
+`R34` already demands **one finished ad per generation**. Mode C extends it: **one concept per session.** A variation matrix of three structurally different variants (`R35`) is three families, so three clean sessions — never three turns in one. That is also what protects series consistency (`R20`): a ghosted variant will not match its siblings.
 
 > **Symptom check.** If an output carries a shape, colour cast or object you never asked for, and you cannot find it in your prompt — stop debugging the prompt. Check what you generated earlier in that session.
 
@@ -155,7 +183,93 @@ Before blaming the prompt, check the request settings.
 
 ---
 
-## 7 · Reference-image discipline (e-commerce & brand consistency)
+## 7 · Modes E–H — the edit artifacts
+
+**The core principle of every edit: preserve what already works, change only what was requested.**
+
+Most commercial image work is not generation, it is editing — swap this product into that room, change the background behind this person, relight this scene. The dominant failure is not a dirty texture. It is **the model rebuilding things nobody asked it to touch**, because an edit instruction with no preservation contract reads as a licence to re-solve the whole frame.
+
+| | Asked for | Got back |
+|---|---|---|
+| ❌ | "replace the stove" | a redesigned room, moved furniture, new flooring |
+| ❌ | "change the clothing" | a different face |
+| ❌ | "improve the lighting" | a new composition |
+| ✅ | "replace the stove" | the same room, one new stove, matched shadows |
+
+### E · Reference drift
+
+The room, face, layout, proportions or product changed alongside the thing you asked for. **Cause: silence.** Anything you did not explicitly protect is fair game — the model has no way to know that the flooring was load-bearing to the brief.
+
+**Fix:** write the preservation contract (§8). Then shrink the edit: one element per turn, not four.
+
+### F · Edge halo and texture bleed
+
+A glow, dark seam or smeared boundary rings the edited object; texture leaks across the join; the object looks pasted rather than photographed.
+
+**Fix:** reduce the *scale* of the edit — a smaller ask integrates better than a large one. Then say what the boundary must do: hold the original lighting and background, and give the object **real contact shadows and reflections consistent with the scene's existing light direction**. An object with no contact shadow always reads as a sticker (`R04`).
+
+### G · Duplication and warped geometry
+
+A second copy of an object appears, geometry melts, reflections become impossible, hands gain fingers. The model re-solved a region it should have left alone.
+
+**Fix:** name the geometry as protected (§8), and add only the relevant negatives: `no duplicated objects, no warped geometry, no melted edges, no impossible reflections`. If it persists, the edit is too big — split it into two turns.
+
+### H · Overload
+
+The image came back busy: several ideas competing, no hero left, decorative elements nobody briefed.
+
+**Fix:** this is `R06` (one creative = one idea) failing at the edit layer. Strip the secondary ideas and return to one hero, one environment, one message. Every additional simultaneous change also multiplies the risk of E, F and G.
+
+---
+
+## 8 · The preservation contract
+
+**Every edit prompt carries two slots that generation prompts don't need:** what changes, and what must not. Never write one without the other — an `EDIT INSTRUCTIONS` slot with no `PRESERVE` slot is how mode E happens.
+
+```
+EDIT INSTRUCTIONS: [the one thing that changes]
+PRESERVE:          [everything that must survive untouched]
+```
+
+### Copy-paste preservation blocks
+
+**Scene / interior:**
+
+> Preserve the original room layout, architecture, proportions, furniture placement, flooring, camera position and perspective. Change only the [element].
+
+**Faces and people:**
+
+> Preserve facial identity, bone structure, proportions, age, skin features and expression. Do not redesign the face.
+
+**Products:**
+
+> Preserve the exact product geometry, proportions, materials, branding and recognisable design details. Use the supplied product reference as the dominant visual anchor.
+
+**Integration** — pair with any of the above when placing an object into an existing scene:
+
+> Match the object's scale, perspective, contact shadows and reflections to the existing scene. Integrate the boundary cleanly with no halo, glow or texture bleed.
+
+### The default preserve-list
+
+Unless the brief explicitly says otherwise, these survive every edit: room layout · architecture · proportions · subject identity · facial features · product shape · product branding · furniture placement · camera orientation · the overall visual logic of the frame.
+
+### Edit priority order
+
+When an edit involves judgement, resolve in this order. **Reference accuracy outranks creative improvement** — always.
+
+1. Preserve identity and composition
+2. Make the requested change
+3. Match lighting and perspective
+4. Repair edge integration
+5. Improve realism
+6. Remove artifacts
+7. Polish
+
+An edit that made the picture *nicer* while losing the room is a failed edit, not a bonus.
+
+---
+
+## 9 · Reference-image discipline (e-commerce & brand consistency)
 
 The same model that artifacts textures also drifts products. Both are anchoring problems.
 
@@ -174,7 +288,7 @@ The same model that artifacts textures also drifts products. Both are anchoring 
 
 ---
 
-## 8 · Repair vs. regenerate
+## 10 · Repair vs. regenerate
 
 Once an artifact is in a finished render, the fix depends on its size. **Match the tool to the damage** — the efficient workflow is hybrid.
 
@@ -189,7 +303,29 @@ Once an artifact is in a finished render, the fix depends on its size. **Match t
 
 ---
 
-## 9 · Artifact QA — what to look for
+## 11 · Failure recovery — symptom to remedy
+
+Read the symptom, apply the named remedy. Do not re-roll blind: none of these clear by chance.
+
+| Symptom | Mode | Remedy |
+|---------|------|--------|
+| Worms, cells, webbing, strange micro-texture | A | Cut unnecessary high-frequency detail (fog, particles, glitter, foliage, grain, repeating pattern). Add the anti-cellular constraint block (§3d). Bound the detail to one surface |
+| Muddy render matching neither style asked for | B | Two colliding descriptors. Pick one and regenerate — re-rolling cannot resolve it (§4) |
+| Ghost objects, un-briefed shapes or colour casts | C | Start a fresh session. Restate only the current concept and the references it needs (§5) |
+| Soft, dirty, mushy final asset | D | Raise the quality tier. If it doesn't clear, re-diagnose — you are in A, B or C (§6) |
+| The room / scene changed far too much | E | Add the scene preservation block. Name architecture, layout, furniture, perspective and framing as protected; change only [X] (§8) |
+| Product shape or proportions changed | E | State that exact geometry and proportions must be preserved; make the product reference the dominant anchor. Never accept a drifted product — `R03` is absolute |
+| Face changed identity | E | Add the face preservation block. Split the edit so identity and wardrobe never change in the same turn (§8) |
+| Halo or glow around the edited object | F | Shrink the edit. Explicitly preserve the original lighting and background, and request clean boundary integration with real contact shadows (§7) |
+| Object looks pasted on | F | Ask for matched scale, perspective, contact shadows and reflections consistent with the scene's existing light |
+| Duplicated object or melted geometry | G | Name the geometry as protected; add only the relevant negatives. If it persists, split the edit into two turns (§7) |
+| Image became busy, no hero left | H | Remove the secondary visual ideas. One hero, one environment, one message (`R06`) |
+
+> **The meta-remedy: make the ask smaller.** Modes E through H are all, at bottom, one failure — too much requested in one turn. Two clean edits beat one ambitious one, every time.
+
+---
+
+## 12 · Artifact QA — what to look for
 
 Artifacting is one of the few failure modes a deterministic script genuinely cannot call: **sensor grain, fabric weave and Voronoi webbing all read as high-frequency energy**, so any threshold strict enough to catch webbing rejects legitimate photography. That is why there is no `qa.py` check for it — it belongs to the vision pass ([`qa-gate.md`](qa-gate.md) §2), inspected at 100%.
 
@@ -206,13 +342,20 @@ Inspect **at full resolution, not at thumbnail size.** Artifacting hides at 150p
 
 ---
 
-## 10 · Pre-flight checklist
+## 13 · Pre-flight checklist
 
 Run before spending anything on a commercial visual (SKILL.md step 4):
 
 - [ ] **Mode A screen** — does the brief contain a high-risk subject (§2)? If yes: bounded layout prompt (§3a), one sharp zone (§3b), materials not density adjectives (§3c), negative-constraint block (§3d).
 - [ ] **Mode B screen** — do any two style descriptors collide (§4)? Could one artist in one medium produce both? Is any named style obscure enough to need describing instead?
-- [ ] **Mode C screen** — is this a **fresh session**? Am I generating exactly one image in it?
+- [ ] **Mode C screen** — is this concept its own **image family** in a fresh session (§5)?
 - [ ] **Mode D screen** — is the quality tier right for the deliverable, not for the draft?
-- [ ] **References** — 2–3 maximum, each with a labelled role, anchoring specifics not vibes (§7).
-- [ ] **Post-render** — inspected at 100% against §9 before it enters the QA gate.
+- [ ] **References** — 2–3 maximum, each with a labelled role, anchoring specifics not vibes (§9).
+- [ ] **Post-render** — inspected at 100% against §12 before it enters the QA gate.
+
+**If this is an edit rather than a new image, add:**
+
+- [ ] **Is this one concept, or several?** One element changes per turn. Several changes at once is how E, F, G and H all arrive together (§7).
+- [ ] **Is the `PRESERVE` slot written?** An `EDIT INSTRUCTIONS` slot without one is an open licence to redraw the frame (§8).
+- [ ] **Is integration specified?** Scale, perspective, contact shadows and reflections matched to the existing scene — or the object ships as a sticker.
+- [ ] **Same image family?** A direct iteration stays in the session; a new concept opens a fresh one (§5).

@@ -4,6 +4,33 @@ All notable changes to Meta Ads Designer. Versions follow [SemVer](https://semve
 
 ---
 
+## [5.8.0] — 2026-08-24
+
+An **edit-discipline** pass, and the second half of the artifact story. `5.7.0` covered artifacts you generate; this covers the ones you *edit* into existence — which is most of them, because most commercial image work is changing an image that already exists rather than making a new one.
+
+The dominant failure in that work is not a dirty texture. It is the model rebuilding what nobody asked it to touch: replace the stove, get a redesigned room; change the clothing, get a different face. An edit instruction with no preservation contract reads as a licence to re-solve the whole frame.
+
+### Added
+- **`R41` Minimal Effective Edit** — preserve what already works, change only what was requested. Every edit prompt carries two slots and never one: `EDIT INSTRUCTIONS` and `PRESERVE`. Defines the default preserve-list, one-element-per-turn, integration as part of the instruction (scale, perspective, contact shadows, reflections), and the edit priority order in which **reference accuracy outranks creative improvement**.
+- **Four new artifact modes, E–H**, in `references/artifact-control.md` §7 — **reference drift**, **edge halo / texture bleed**, **duplication / warped geometry**, and **overload**. All four are one failure at bottom: too much requested in one turn.
+- **`references/artifact-control.md` §8 — the preservation contract**, with copy-paste blocks for scenes/interiors, faces and products, plus an integration block for placing an object into an existing scene.
+- **`references/artifact-control.md` §11 — failure recovery**, a symptom→remedy table covering all eight modes, so a dirty output is diagnosed rather than re-rolled.
+- **`references/prompt-library.md`** — a full reference-image edit template built on the preservation contract, the three preservation blocks as a lookup table, and the four rules that govern edits.
+
+### Changed
+- **`R40` mode C is now the image-family model.** The `5.7.0` rule ("one image per fresh session") was too blunt — it forbade the legitimate case of iterating on the image you just made. The accurate rule is **one concept = one image family = one session**: direct iterations (angle, lighting, framing, one object, a text fix) stay in the session; a new concept, scene or campaign direction opens a fresh one. The failure everyone actually hits is running a *new family inside an old one*.
+- **`references/artifact-control.md`** — restructured into two families, generation artifacts (A–D) and edit artifacts (E–H); sections renumbered to 13; the pre-flight checklist gains an edit branch.
+- **`references/qa-gate.md`** — the vision pass returns `edge_halo_or_bleed`, `duplicated_or_warped` and `unrequested_changes`; two new hard fails, `R41-drift` and `R41-halo`. On an edit, the image is diffed against its reference: whatever changed beyond the one requested thing is a defect.
+- **`SKILL.md`** — core rules grow to 24; step 4 gains the edit branch; step 5 diffs edits against the reference and routes failures through the recovery table.
+- **`visual-advertising-engine.md`** — 40 rules → 41.
+- **Constraint discipline** — use only the negatives a scene can actually produce. Every possible constraint in one prompt dilutes the ones that matter; there is no point banning malformed hands in a packshot with no people.
+- **Micro-detail: reduce rather than ban.** Where an atmospheric element belongs, ask for less of it — "a small number of subtle natural sparks", not "thousands of glowing sparks". Quantity is what dissolves into noise, not the element.
+- **`design-rules.md`** / **`core.md`** — edit discipline folded into the map, workflow, slop check and hard-fail list, keeping the standalone chat inject self-contained.
+
+`R01`–`R40` are untouched — additive, no renumbering of rule IDs.
+
+---
+
 ## [5.7.0] — 2026-08-24
 
 An **artifact-control** pass. Every rule in this skill assumed the render came back clean; this release covers the renders that don't. Artifacting is reframed from bad luck into four named failure modes with four named causes — all of them decided at setup, before any spend.

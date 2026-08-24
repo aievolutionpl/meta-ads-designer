@@ -37,6 +37,7 @@
 | Ready-made prompt skeletons | [`references/prompt-library.md`](references/prompt-library.md) |
 | What exactly counts as "AI look"? | [`references/anti-slop-registry.md`](references/anti-slop-registry.md) |
 | The render came back dirty / webbed / ghosted | [`references/artifact-control.md`](references/artifact-control.md) |
+| I'm editing an image, not making one | [`references/artifact-control.md`](references/artifact-control.md) §7–§8 |
 | How do I install this on my agent? | [`INSTALL.md`](INSTALL.md) |
 
 ---
@@ -102,7 +103,7 @@ If any of these is present, fix it:
 
 purple/blue default gradient · glassmorphism · neon glow · gradient text · tiny clip-art icons · text slapped on a photo · cream/sand bg · over-round cards · cards-in-cards · icons > content · gray-on-tinted text · isometric default · AI-invented food · AI-redrawn logo · a pretty photo with no ad structure.
 
-**And the slop nobody chose** — the render itself broke: cellular/webbing texture on fur, knit, foliage or crumb · speckle or tiling on a flat wall or sky · a muddy render matching neither style asked for · an object or colour cast nobody briefed (that one is ghosting from an earlier image in the session). Fixes: [`references/artifact-control.md`](references/artifact-control.md).
+**And the slop nobody chose** — the render itself broke: cellular/webbing texture on fur, knit, foliage or crumb · speckle or tiling on a flat wall or sky · a muddy render matching neither style asked for · an object or colour cast nobody briefed (that one is ghosting from an earlier image in the session) · on an edit, anything that changed beyond the one thing you asked for · a halo, seam or texture bleed around an edited object. Fixes: [`references/artifact-control.md`](references/artifact-control.md).
 
 Full compendium with fixes: [`references/anti-slop-registry.md`](references/anti-slop-registry.md).
 
@@ -120,8 +121,10 @@ Full compendium with fixes: [`references/anti-slop-registry.md`](references/anti
 4. CREATIVE  — product → benefit → target → angle → metaphor → type →
                headline → composition → light/camera → constraints  (R28)
 5. GENERATE  — artifact pre-flight first (texture risk, style collision,
-               fresh session, quality tier). One finished ad per generation
-               AND per session. Refs with a clear role, 2-3 max.
+               fresh session, quality tier). One finished ad per generation,
+               one concept per session. Refs with a clear role, 2-3 max.
+               EDITING? Write EDIT INSTRUCTIONS *and* PRESERVE; change one
+               element per turn; match scale, perspective and contact shadows.
                A model must never make a batch/collage in one image.
 6. QA        — score every output against references/qa-gate.md; inspect for
                artifacts at 100%, not at thumbnail size; fix or redo.

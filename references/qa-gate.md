@@ -95,6 +95,13 @@ Return ONLY this JSON, no prose:
   "unbriefed_elements": ["any shape, object or colour cast present in the image
                           with no line in the prompt behind it — session ghosting"],
   "style_coherence": true|false,
+  "edge_halo_or_bleed": ["objects ringed by a glow, seam or smear, or texture
+                          leaking across their boundary; [] if none"],
+  "duplicated_or_warped": ["duplicated objects, melted geometry, impossible
+                            reflections; [] if none"],
+  "unrequested_changes": ["ON AN EDIT ONLY: anything that differs from the
+                           reference beyond the one change that was requested —
+                           room, layout, furniture, face, framing, materials"],
   "slop_tells_present": ["from: neon, glow, glassmorphism, gradient text,
                           floating particles, isometric, HUD, clip-art icons,
                           fake UI, excessive bokeh, plastic surfaces"],
@@ -105,7 +112,8 @@ Return ONLY this JSON, no prose:
   "one_sentence_verdict": "",
   "hard_fails": ["R30-product|R30-logo|R30-text|R30-anatomy|R30-physics|
                   R30-scale|R30-chaos|R30-ui|R30-background|R30-stock|
-                  R30-function|R30-overload|R40-texture|R40-ghosting"],
+                  R30-function|R30-overload|R40-texture|R40-ghosting|
+                  R41-drift|R41-halo"],
   "score": {"hierarchy":0-2, "product":0-2, "realism":0-2, "typography":0-2,
             "copy":0-2, "color":0-2, "space":0-2, "logo":0-2,
             "thumbnail":0-2, "idea":0-2},
@@ -117,6 +125,8 @@ Return ONLY this JSON, no prose:
 - Any entry in `hard_fails` → regenerate. Do not retouch.
 - `texture_artifacts` non-empty → **`R40-texture`**. Bound the detail and regenerate ([`artifact-control.md`](artifact-control.md) §3); repair locally only for a single small anomaly, never across a surface.
 - `unbriefed_elements` non-empty → **`R40-ghosting`**. The prompt is not the bug — you generated this in a session that had already produced an image. Regenerate in a fresh one ([`artifact-control.md`](artifact-control.md) §5).
+- `unrequested_changes` non-empty on an edit → **`R41-drift`**. The `PRESERVE` slot was missing or too thin. Re-edit with the preservation block for that subject; do not accept the drift because the result looks good ([`artifact-control.md`](artifact-control.md) §8).
+- `edge_halo_or_bleed` or `duplicated_or_warped` non-empty → **`R41-halo`**. The edit was too large to integrate. Shrink the ask, hold the original lighting, and specify contact shadows ([`artifact-control.md`](artifact-control.md) §7).
 - `style_coherence: false` → two colliding style descriptors. Pick one and regenerate; re-rolling will not resolve it ([`artifact-control.md`](artifact-control.md) §4).
 - `spelling_errors` with `severity: hard` → regenerate (Mode A) or re-render the text layer (Mode B).
 - `total < 16` → fix the lowest-scoring criteria and re-run.

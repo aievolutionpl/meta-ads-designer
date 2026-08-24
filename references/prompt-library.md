@@ -39,6 +39,8 @@ CRITICAL: every word spelled PERFECTLY — double-check 'BRAND', 'PLACE'.
 
 **Rule of thumb:** if a slot could be answered by a different agency for a different client without changing a word, it isn't specific enough yet.
 
+**Editing an existing image rather than making a new one?** The skeleton above gains two slots, and they are never written apart — see the edit template below (`R41`).
+
 ---
 
 ## 🍽️ Restaurant — real food hero
@@ -132,6 +134,51 @@ Finished version: [`../examples/03-services-problem-effect.md`](../examples/03-s
 
 ---
 
+## ✏️ Reference-image edit — the preservation contract
+
+The template for changing something in an image that already exists. **Most commercial work is this**, and its dominant failure is not a dirty texture — it is the model rebuilding what nobody asked it to touch (`R41`, [`artifact-control.md`](artifact-control.md) §7).
+
+```
+Edit the supplied reference image. ONE change only.
+
+Reference image A = the scene, source of truth: this exact room/subject.
+Reference image B = the new object, source of truth: this exact product.
+
+EDIT INSTRUCTIONS: Replace only [the one element] with the object in
+  reference B. Match its scale, perspective, contact shadows and
+  reflections to the existing scene light.
+PRESERVE: the original room layout, architecture, proportions, furniture
+  placement, flooring, camera position and perspective. Do not redesign
+  the room, move furniture, alter architecture, or change the framing.
+LIGHTING: retain the existing light direction and quality; refine only
+  for a premium commercial-photography finish.
+MATERIALS: keep wood, stone, glass, plaster and metal physically
+  believable — metal behaves like metal, glass like glass.
+CONSTRAINTS: no edge halos, no glow around the new object, no texture
+  bleed across the boundary, no duplicated objects, no warped geometry,
+  no melted edges, no impossible reflections. Nothing added that was
+  not asked for.
+```
+
+### The three preservation blocks
+
+Drop the one that fits into `PRESERVE`:
+
+| Editing | Block |
+|---------|-------|
+| **A scene / interior** | `Preserve the original room layout, architecture, proportions, furniture placement, flooring, camera position and perspective. Change only [X].` |
+| **A person** | `Preserve facial identity, bone structure, proportions, age, skin features and expression. Do not redesign the face.` |
+| **A product** | `Preserve the exact product geometry, proportions, materials, branding and recognisable design details. Use the supplied product reference as the dominant visual anchor.` |
+
+### Four rules that go with it
+
+1. **Never write `EDIT INSTRUCTIONS` without `PRESERVE`.** Anything you don't name is fair game — silence reads as permission.
+2. **One element per turn.** Simultaneous changes produce drift, halos, duplication and clutter all at once. Two clean edits beat one ambitious one.
+3. **Reference accuracy outranks creative improvement.** An edit that made the picture nicer while losing the room is a failed edit.
+4. **Only the negatives this scene can produce.** Geometry and boundary negatives for edits; anatomy negatives only when there is a person. Every possible constraint in one prompt dilutes the ones that matter.
+
+---
+
 ## 🧬 Anti-artifact block — append on any fine-texture brief
 
 Add to the `CONSTRAINTS` slot whenever the scene carries fur, knit, weave, foliage, water, crumb, seeds, stone, rust or particles — the subjects that dissolve into noise (`R40`, [`artifact-control.md`](artifact-control.md) §2):
@@ -149,6 +196,8 @@ Three rules that go with it:
 1. **Never write a density adjective.** `ultra-detailed`, `intricate`, `hyper-detailed`, `rich texture`, `8k` are requests for unbounded micro-repetition. Name the material instead — "char blistering on one edge", "brushed steel with a visible grain direction".
 2. **Keep `COMPOSITION` a layout specification.** Discrete bounded parts in percentages — which is what the skeleton above already asks for. A holistic atmospheric description is what artifacts.
 3. **Never collide two styles.** If one artist in one medium could not produce both descriptors at once, the render will try to satisfy both and come back noisy. Check the `BRAND MOOD` slot too.
+
+**Reduce high-frequency detail, don't just ban it.** Where an atmospheric element genuinely belongs in the scene, ask for less of it rather than none — "a small number of subtle natural sparks" instead of "thousands of glowing sparks flying everywhere"; "very subtle atmospheric haze" instead of "dense fog filling the room". Quantity is what dissolves into noise, not the element itself.
 
 **Session hygiene beats every prompt fix here:** generate each of these prompts in a **fresh session**, one image only. Re-prompting in a session that already produced an image is the largest single cause of dirty output — refine the prompt and open a clean room instead ([`artifact-control.md`](artifact-control.md) §5).
 

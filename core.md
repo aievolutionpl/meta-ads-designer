@@ -140,7 +140,7 @@ OBJECTIVE · SUBJECT · ACTION/CONTEXT · ENVIRONMENT · COMPOSITION · CAMERA �
 Four failure modes, all decided before you spend. Diagnose the mode — the fixes don't transfer.
 - **Texture dissolution** — fine repeating detail at scale (fur, knit, foliage, water, crumb, seeds, stone, particles) collapses into Voronoi cells, webbing or noise clusters. **Bound the detail:** write the prompt as a *layout specification* of discrete parts, not a holistic atmosphere; allow readable micro-texture on **one** named surface and defocus the rest; name the **material**, never the density — `ultra-detailed`, `intricate`, `8k` are direct triggers. Append to constraints: `STRICTLY NO cellular texture, NO webbing, NO repeating Voronoi patterns, NO noise clusters, NO tiled texture fills.`
 - **Style collision** — two descriptors that can't coexist ("Impressionist" + "ultra-detailed"). The model tries to satisfy both and the conflict renders as noise. Test: could one artist in one medium produce both? Styles sharing a visual logic combine freely. An obscure named style fails the same way — describe its mechanics instead.
-- **Context bleed** — the in-chat editing memory ghosts earlier images into later ones. The first image in a session is almost always clean; each one after it is dirtier, **even on an unrelated subject**. This is the largest single cause. So: **one image per fresh session.** Iterate by opening a clean session with a better prompt, never by nudging the same image again. At scale, prefer API calls over a chat thread.
+- **Context bleed** — the in-chat editing memory ghosts earlier images into later ones. The first image in a session is almost always clean; each one after it is dirtier, **even on an unrelated subject**. This is the largest single cause. So: **one concept = one image family = one session.** A direct iteration of what is on screen (angle, light, framing, one object, a text fix) stays in the session; a new concept, scene or campaign direction opens a fresh one. At scale, prefer API calls over a chat thread.
 - **Quality tier** — draft settings validate the angle; they never ship. Draft cheap, render the winner high (transparent-background packshots especially).
 
 **Anchoring:** 2–3 references maximum, each with a labelled role — more of them collide exactly like clashing styles and drift the product. Anchor specifics (colour values, a lighting reference, an approved packshot), not a vibe.
@@ -149,12 +149,22 @@ Four failure modes, all decided before you spend. Diagnose the mode — the fixe
 
 **Inspect at 100%, never at thumbnail size.** No script can separate artifacting from grain or fabric weave; only your eye can.
 
+## 16b · Editing — preserve what works, change only what was asked
+Most commercial work is editing, and its dominant failure is not a dirty texture — it is the model rebuilding what nobody asked it to touch. Asked to replace the stove, keep the room. Asked to change the clothing, keep the face. Asked to fix the lighting, keep the composition.
+- **Two slots, never one:** `EDIT INSTRUCTIONS` (the one thing that changes) and `PRESERVE` (everything that must survive). Silence is not protection — anything unnamed gets redrawn.
+- **Default preserve-list:** room layout · architecture · proportions · subject identity · facial features · product shape · product branding · furniture placement · camera orientation · the visual logic of the frame.
+- **Preservation blocks.** Scene: *"Preserve the original room layout, architecture, proportions, furniture placement, camera position and perspective. Change only [X]."* Face: *"Preserve facial identity, bone structure, proportions, age, skin features and expression. Do not redesign the face."* Product: *"Preserve the exact product geometry, proportions, materials, branding and recognisable design details."*
+- **One element per turn.** Simultaneous changes produce the four edit artifacts at once — **drift** (the scene changed too), **halo/bleed** (edit too big to integrate), **duplication/warped geometry** (a protected region got re-solved), **overload** (several ideas, no hero left). The remedy for all four is the same: make the ask smaller.
+- **Integration is part of the instruction:** match scale, perspective, contact shadows and reflections to the existing scene light, and ask for a clean boundary with no halo or texture bleed. No contact shadow = a sticker.
+- **Priority order:** preserve identity and composition → make the change → match lighting and perspective → repair edges → improve realism → remove artifacts → polish. **Reference accuracy outranks creative improvement, always.** An edit that made the picture nicer while losing the room is a failed edit.
+- **Only the negatives this scene can produce.** Every possible constraint in one prompt dilutes the ones that matter.
+
 ## 17 · Series & variation
 - Across 5–10 images the product is **identical**; only context, frame, mood and light change (series consistency).
 - **Variation ≠ randomness.** A colour swap is not a variant. Different creatives test different **promises** (angle / headline / archetype).
 
 ## 18 · Hard fail — regenerate, don't retouch
-product changed · logo wrong or redrawn · lettering fake or misspelled · hands deformed · physics wrong · product too small · image chaotic · too much UI · background outshines the product · looks like stock AI · the ad says too many things · **visible cellular/webbing/noise texture anywhere** · **a tiled or repeating texture fill** · **any element you never briefed** (session ghosting — regenerate in a fresh session, don't rewrite the prompt).
+product changed · logo wrong or redrawn · lettering fake or misspelled · hands deformed · physics wrong · product too small · image chaotic · too much UI · background outshines the product · looks like stock AI · the ad says too many things · **visible cellular/webbing/noise texture anywhere** · **a tiled or repeating texture fill** · **any element you never briefed** (session ghosting — regenerate in a fresh session, don't rewrite the prompt) · **on an edit: anything that changed beyond the one thing asked for** (drift), a halo or texture bleed around the edited object, a duplicated or melted object.
 
 ## 19 · The gate — score before you deliver
 10 criteria × 0/1/2: hierarchy · product · realism · typography · copy · colour · space · logo · thumbnail · idea. **Ship at ≥16/20 with zero hard fails.** Ask a vision model to **transcribe** every word it can read and compare it yourself — asking "is the spelling correct?" gets a yes.
