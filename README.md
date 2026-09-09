@@ -1,300 +1,118 @@
-<div align="center">
+# Meta Ads Designer
 
-# 🎬 Meta Ads Designer
+### Od briefu do reklamy z wyraźnym pomysłem.
 
-### Uniwersalny standard reklamy dla agentów AI — projektuj piękne Meta / Instagram / Facebook adsy i przestań generować AI-slop.
+Skill dla agentów AI, który pomaga dobierać **kompozycję, typografię, kolor i kierunek wizualny**, a następnie zapisywać te decyzje w precyzyjnych promptach do generowania obrazów.
 
-**Meta Ads · Instagram · Facebook · Postery · Flyery · Fotografia produktowa · Grafiki e-commerce** — dla restauracji, hoteli, lokalnych biznesów i retailu.
+[English](README.en.md) · [Instrukcja skilla](SKILL.md) · [Szybki start](#szybki-start) · [Przykłady](examples/README.md)
 
-[🇬🇧 English](README.en.md) · [🇵🇱 Polski](README.md)
+![Version](https://img.shields.io/badge/version-5.9.0-222222)
+![License](https://img.shields.io/badge/license-MIT-222222)
+![Model independent](https://img.shields.io/badge/prompts-model_independent-222222)
 
-![Version](https://img.shields.io/badge/version-5.9.0-6a5acd)
-![License](https://img.shields.io/badge/license-MIT-brightgreen)
-![Format](https://img.shields.io/badge/default_format-4:5%20(1080×1350)-informational)
-![Hosts](https://img.shields.io/badge/runs_on-ChatGPT%20%7C%20Codex%20%7C%20Hermes%20%7C%20Claude%20%7C%20Cursor-blue)
-![Framework](https://img.shields.io/badge/framework-agnostic-success)
-![PRs](https://img.shields.io/badge/PRs-welcome-2ea44f)
+![Meta Ads Designer — nowoczesna typografia i trzy wyraziste kreacje reklamowe](assets/meta-ads-designer-bold.png)
 
-<br/>
+*Koncepcje demonstracyjne wygenerowane z art-directed promptu: fikcyjna kawiarnia DAYBREAK, wydarzenie AFTER HOURS i marka FORM. To ilustracja kierunków projektowych, nie kampanie klientów ani dowód skuteczności reklamowej. [Prompt i opis grafiki](examples/06-readme-showcase.md).*
 
-<img src="assets/meta-ads-designer-banner.png" alt="Meta Ads Designer" width="100%"/>
+## Co robi ten skill
 
-> **Domyślny format: 4:5 (1080×1350)** — feed Instagram/Facebook. Użytkownik może poprosić o inny ratio; 4:5 to default.
+Pomaga agentowi odpowiedzieć na pytania, które decydują o wyglądzie reklamy: co widz ma zrozumieć, na co spojrzy najpierw, jak ułożyć tekst i kiedy wybrać fotografię, ilustrację albo plakat typograficzny.
 
-> **`DON'T DECORATE. DIRECT.`** — Jeden produkt. Jedna idea. Jeden mocny visual.
+Działa przy tworzeniu reklam social media, flyerów, posterów, fotografii produktowej i koncepcji kampanii. Możesz zamówić sam prompt lub użyć go razem z narzędziem generowania obrazów. Wiedza projektowa jest niezależna od modelu.
 
-<br/>
+## Zobacz, skąd bierze się efekt
 
-</div>
+| Brief | Decyzja projektowa | Co pokazuje grafika |
+|---|---|---|
+| Kawiarnia: zachęcić do spokojnego śniadania | Bliski kadr, naturalne światło, krótki nagłówek szeryfowy | Jeden apetyczny produkt i czytelny rytm obrazu oraz tekstu |
+| Wydarzenie muzyczne: zwrócić uwagę na nazwę | Nazwa jako dominanta, skondensowany krój, mocny kontrast | Flyer, który działa bez zdjęcia |
+| Ceramika: pokazać formę przedmiotu | Duża sylwetka, stonowana paleta, kierunkowy cień | Materiał i kształt prowadzą kompozycję |
 
----
+Każda kreacja ma własny język wizualny. Łączy je hierarchia i świadomy dobór elementów.
 
-## Design taste i prompty niezależne od modelu
+Ten sam zestaw pomysłów można rozwinąć w spokojniejszym kierunku editorial:
 
-Wersja 5.9 prowadzi agenta od celu marketingowego do konkretnej kompozycji: dominanty, kolejności czytania, typografii, palety i przestrzeni na tekst. Obsługuje fotografię, ilustrację i flyery typograficzne. Kolory i style ocenia w kontekście marki.
+![Wariant editorial: naturalne światło, spokojniejsze kolory i czytelna hierarchia](assets/meta-ads-designer-editorial.png)
 
-- [Art direction](references/art-direction.md): jak dobierać pomysł wizualny i kompozycję.
-- [Prompt craft](references/prompt-craft.md): jak zapisać decyzje w kompletnym prompcie.
-- [Trzy przykłady](examples/05-model-independent-directions.md): event, gastronomia i usługa lokalna.
+*Druga plansza demonstracyjna. Zmienia się charakter art direction, a nie zakres możliwości skilla.*
 
-Możesz poprosić tylko o prompt. Agent sprawdza wtedy jego treść i spójność; ocenę wizualną wykonuje dopiero dla rzeczywiście wygenerowanego obrazu. R42–R44 doprecyzowują starsze przepisy poniżej: sztywne zakazy stylów są ostrzeżeniami przed przypadkowymi wyborami, a nie zakazem świadomej estetyki marki.
+## Jak działa
 
-## 🧩 Problem — dlaczego AI adsy wyglądają tak samo
+```mermaid
+flowchart LR
+    A["Brief: odbiorca i oferta"] --> B["Jedna myśl reklamy"]
+    B --> C["Kompozycja, typografia, kolor"]
+    C --> D["Gotowy prompt"]
+    D --> E["Obraz i ocena wizualna"]
+```
 
-Modele obrazowe **nie mają gustu**. Pozostawione same sobie zbiegają do jednego „AI looku" — i ten look **zawsze wygląda tak samo**, niezależnie czy robisz reklamę restauracji, hotelu czy serwisu naprawczego. Oto co realnie produkują, gdy nie damy im zasad:
+1. **Brief** — agent ustala odbiorcę, prawdziwą ofertę, cel, format i dostępne materiały.
+2. **Pomysł** — wybiera, co pokaże korzyść: produkt, działanie, detal, sytuacja lub typografia.
+3. **Art direction** — określa dominantę, kolejność czytania, przestrzeń na tekst, fonty i paletę.
+4. **Prompt** — zapisuje konkretną kompozycję, dokładne treści i ograniczenia.
+5. **Ocena** — sprawdza spójność promptu; po wygenerowaniu obrazu również czytelność, pisownię i zgodność z materiałami.
 
-| 🐘 Co robi „goły" model | ➡️ Jak to wygląda w praktyce |
-|------------------------|------------------------------|
-| **Słaba typografia** | Czcionki bez nazwy, „renderowane" zamiast dobranych; literówki i bełkot zamiast słów; Inter jako domyślna fonta wszędzie. |
-| **Każdy obrazek ten sam** | Ten sam purple-blue gradient, te same pozy, te same twarze — reklama pizzerii i reklama kancelarii wyglądają identycznie. |
-| **Małe ikonki clip-art** | Zawsze źle osadzone, pikselozowate, bez stylu — psują każdą generację. |
-| **Za dużo tekstu** | Akapity naklejone na zdjęcie, nieczytelne z telefonu; nic nie jest komunikatem. |
-| **Wszystko pachnie AI-slopem** | Neonowe glow, pseudo-interfejsy, hologramy, generyczne gradienty — „obrazek od ChatGPT", nie kampania. |
-| **Zmienia Twoje zdjęcia** | Twarze ludzi, wnętrza lokalu i fasady nie przypominają prawdziwych — klient nie rozpoznaje własnego biznesu. |
-| **Wymyśla / halucynuje** | Danie, którego nie ma w menu; logo „AI-redrawn"; fikcyjne napisy na szyldach i cenówki, które nie istnieją. |
-| **Brak hierarchii** | Z miniaturki telefonu nie widać ani produktu, ani CTA — ad ginie w feedzie. |
+Jeśli prosisz tylko o prompt, praca kończy się na jego sprawdzeniu. Agent nie ocenia obrazu, którego nie widział.
 
-**Efekt brzmi jak „obrazek od ChatGPT" — nie jak profesjonalna kampania.**
+## Szybki start
 
-### ✅ Co Meta Ads Designer zmienia
+### W zwykłym czacie
 
-Skill **zastępuje ten brak gustu regułami operacyjnymi** — tak jak zrobiłby to art director, fotograf reklamowy i media buyer, gdybyś wynajął ich do jednej kampanii:
+Wklej [core.md](core.md) jako instrukcję lub dodaj go jako materiał do rozmowy. Potem podaj krótki brief:
 
-- **Produkt jest bohaterem** — rozpoznawalny w ~1 s, dobrze oświetlony, pierwszy plan.
-- **Twoje zdjęcia to Święta Prawda** — skill **nie pozwala** zmieniać twarzy, wnętrz, dań ani logo. Używa ich, nie przerabia.
-- **Realna typografia** — nazwane fonty, max 3 rodziny, kontrast wagą i skalą; żadnych literówek.
-- **Jedna idea na kreatywę** — przekaz czytelny z miniaturki telefonu.
-- **Jakość jak od zespołu** — produkt, źródło, realizm komercyjny, hierarchia, anti-slop, QA przed wysyłką.
+> Przygotuj prompt do reklamy 4:5 mojej kawiarni. Odbiorcy: osoby szukające śniadania w okolicy. Załączam zdjęcie croissanta i logo. Cel: zachęcić do wizyty. Nagłówek: „Poranek ma warstwy.” Dobierz kompozycję, typografię i kolor. Zachowaj wygląd produktu i logo. Nie dodawaj niepotwierdzonych cen ani promocji.
 
----
+### Jako skill dla agenta
 
-## 🚀 Wypróbuj teraz (bez instalacji)
+Sklonuj repozytorium i umieść cały katalog w katalogu skilli swojego agenta:
 
-**Opcja A — jedna wklejka.** Wklej zawartość **[`core.md`](core.md)** do ChatGPT / Claude / Gemini jako custom instruction, a potem wpisz:
-
-> *„Zrób 4:5 social ad dla mojej kawiarni. Oto moje zdjęcia referencyjne: [logo + napoje]. Trzymaj się zasad — produkt na pierwszym planie, prawdziwe jedzenie z moich zdjęć, moje logo bez zmian, jeden headline czytelny z miniaturki, zero text-on-photo slopu. Pokaż 3 strukturalnie różne koncepty."*
-
-**Opcja B — jako skill** (Hermes / Claude Code / Codex / Cursor):
 ```bash
 git clone https://github.com/aievolutionpl/meta-ads-designer.git
-cp -r meta-ads-designer ~/.hermes/skills/marketing/   # lub ~/.claude/skills/ ~/.codex/skills/ ~/.cursor/skills/
 ```
 
-**Weryfikacja** — poproś agenta: *„podsumuj zasady"*. Powinien wymienić product-first, source of truth, commercial realism, hierarchię, negatywną przestrzeń, anti-slop, hard fails. Jeśli recytuje generyczne „make it premium" — nie wczytał; wklej ponownie.
+Instrukcją wejściową jest [SKILL.md](SKILL.md). Szczegóły dla poszczególnych hostów znajdziesz w [INSTALL.md](INSTALL.md).
 
-Pełne kroki per host: **[`INSTALL.md`](INSTALL.md)**.
+## Co pomaga ograniczyć AI-slop
 
----
+- **Jedna dominanta.** Produkt, nazwa wydarzenia lub oferta ma pierwszeństwo przed dekoracją.
+- **Typografia z rolą.** Konkretny krój, ciężar, szerokość, układ wierszy i hierarchia.
+- **Kolor wynikający z marki.** Palety i style są dobierane do briefu; nie ma jednego „premium looku” dla wszystkich.
+- **Prawdziwe materiały.** Referencje określają wygląd produktu, lokalu i identyfikacji.
+- **Treść bez zmyślonych faktów.** Żadnych fikcyjnych opinii, cen, terminów czy wyników.
+- **Korekta konkretnego problemu.** Agent poprawia kompozycję albo komunikat zamiast dopisywać „bardziej pięknie, cinematic, 8K”.
 
-## ⚙️ Jak działa skill
+## Tekst i logo w reklamie
 
-`Meta Ads Designer` jest **framework-agnostic** — te same zasady działają na każdym agencie (ChatGPT, Claude, Codex, Hermes, Cursor, dowolny API). Zbudowany jest **warstwowo** — każda warstwa ma jedno zadanie i jedną drogę wejścia:
+Dla krótkich treści można poprosić generator o gotową reklamę i sprawdzić jej pisownię. Gdy liczą się dokładny font, polskie znaki, cena lub oficjalne logo, skill przewiduje osobny skład: obraz z zaplanowanym miejscem na tekst oraz specyfikację typografii.
 
-```
-┌────────────────────────────────────────────┐
-│ visual-advertising-engine.md               │  ← THE standard (44 zasady)
-│   Product First · Source of Truth ·        │     Prompt Architecture ·
-│   Hard Fails · Final Quality Check         │     Creative Workflow
-└───────────────┬────────────────────────────┘
-                │ podsumowany jako
-                ▼
-┌─────────────────────────────┐
-│      design-rules.md       │  ← THE charter (wklejany gust)
-│   "The Rules of Beautiful   │     Działa na KAŻDYM agencie
-│    Advertising"             │
-└───────────────┬─────────────┘
-                │ ładowany przez
-        ┌───────┼───────┐
-        ▼       ▼       ▼
-   ┌────────┐ ┌───────┐ ┌──────────────────┐
-   │SKILL.md│ │core.md│ │  references/     │
-   │ manual │ │wklejka│ │  głębia:         │
-   │        │ │1 str. │ │  food/hotel/svc, │
-   └────────┘ └───────┘ │  prompty, slop   │
-                        └──────────────────┘
-```
+Prompt wyraża intencję projektową. Nie gwarantuje identycznego fontu, położenia co do piksela ani bezbłędnej pisowni w każdym narzędziu.
 
-- **`visual-advertising-engine.md`** — *standard* (44 zasady). Co agent stosuje **przed** każdym komercyjnym visualem: Product First, Reference = Source of Truth, Prompt Architecture, Hard Fails, QA, Variation Matrix, Hook First, Performance Loop, Compliance, Video Track, Artifact Control, Minimal Effective Edit. **To jest źródło kanoniczne** — nowe reguły trafiają tu najpierw.
-- **`design-rules.md`** — *charter* (gust). Angielski kanon. Samowystarczalny — wklejasz do dowolnego czatu lub wstrzykujesz do system promptu.
-- **`core.md`** — *kompletna wiedza ogólna (inject)*. Formaty per platforma, proces kreatywny, kompozycja, typografia, kolor, światło, layout, copy, nisze, tryby produkcji, prompt architecture, anti-slop, hard fails, QA — samodzielny, wklejasz do dowolnego czatu.
-- **`SKILL.md`** — *procedura* (agent manual). Brief → research → angles → creative → generate → QA → deliver → performance loop. Loader skilli czyta frontmatter.
-- **`references/`** — *głębia*: playbook food/hotel/serwisy, layout system, headline system, variation matrix, hook engineering, performance loop, platform compliance, video/UGC track, model routing, competitor teardown, QA gate, gotowe prompty, pełny rejestr anti-slop.
+## Materiały w repozytorium
 
-### Dwa tryby produkcji (decyzja przed generacją)
-| Tryb | Co to | Kiedy |
-|------|-------|-------|
-| **A · Natywny tekst AI** | Tekst **baked into** render AI, w scenie. Najlepsza pisownia: gpt-image-2 (Codex). Krótkie stringi. | Restauracja/venue/food — default. |
-| **B · Kompozycja deterministyczna** | Generuj czyste tło, potem składaj ad (oficjalne logo + dokładna typografia + panele). | Gdy liczy się fidelity tekstu/logo (serwisy, oferty). |
+| Materiał | Do czego służy |
+|---|---|
+| [SKILL.md](SKILL.md) | Instrukcja agenta i dobór materiałów |
+| [core.md](core.md) | Samodzielna instrukcja do wklejenia w czacie |
+| [Art direction](references/art-direction.md) | Od celu marketingowego do kompozycji i typografii |
+| [Prompt craft](references/prompt-craft.md) | Pisanie i sprawdzanie promptów |
+| [Przykłady promptów](examples/05-model-independent-directions.md) | Flyer, gastronomia i usługa lokalna |
+| [Visual Advertising Engine](visual-advertising-engine.md) | Kanoniczne reguły R01–R44 |
+| [Layout system](references/layout-system.md) | Punkty wyjścia dla siatki, marginesów i skali tekstu |
+| [QA gate](references/qa-gate.md) | Ocena rzeczywiście wygenerowanych obrazów |
+| [Pozostałe przykłady](examples/README.md) | Briefy, prompty i omówienie decyzji |
 
-### Workflow
-```
-1. BRIEF     — co, dla kogo, CTA, platformy (default 4:5) + zbierz refs
-2. RESEARCH  — jak prezentują się topowe brandy w niszy?
-3. ANGLES    — 5-10 różnych obietnic/layoutów, nie 10 color swaps
-4. CREATIVE  — produkt → benefit → target → angle → metaphor → typ →
-               kompozycja → światło/kamera → constraints → potem prompt
-5. GENERATE  — jeden skończony ad per generacja
-6. QA        — contact sheet + checklist; scale+pad (nigdy crop) przy krawędziach
-7. DELIVER   — pliki + contact sheet + notki
+## Weryfikacja i rozwój
+
+```bash
+pip install -r requirements.txt
+python scripts/check_docs.py
+python scripts/test_qa.py
 ```
 
----
+Kontrole dokumentacji sprawdzają linki, odwołania do reguł i wersje. Skrypt QA bada wybrane cechy techniczne obrazu; ocenę kompozycji, wiarygodności i zgodności z briefem trzeba wykonać osobno. Wyniki kampanii wymagają pomiaru po publikacji.
 
-## 🧭 Instrukcja dla agenta (dostałeś to repo? czytaj to)
-
-To repo jest **skillem dla agentów** — dostaje je albo człowiek (żeby wkleić zasadę), albo sam agent (żeby działać). Jeśli jesteś agentem, który ma teraz **wygenerować ady**, oto jak się poruszać — od zera do gotowych plików:
-
-**1. Wejdź w flow w tej kolejności (nie pomijaj):**
-```text
-core.md  →  SKILL.md  →  (szczegóły)  →  references/
- (1 min)     (pełna        reguły        (głębia tylko
-             procedura)    standardu     gdy brief pasuje)
-```
-
-**2. Zasada „Source of Truth" działa na Ciebie:** zdjęcia od klienta = dokument techniczny. **Nie zmieniasz** twarzy, wnętrz, dań, logo, proporcji ani napisów. Możesz zmienić światło, kadr, perspektywę, scenografię, mood.
-
-**3. Zanim wygenerujesz cokolwiek, odpowiedz na 4 pytania:**
-- **Format?** Domyślny **4:5 (1080×1350)** — chyba że user jawnie prosi o inny (9:16 Reels, 1:1 marketplace, 16:9).
-- **Refs?** Zebrałem wszystkie zdjęcia referencyjne klienta (produkt, lokal, dania, logo)? → wklej je, nie opisuj.
-- **Tryb?** A (natywny tekst AI w scenie) czy B (deterministyczna kompozycja — czyste tło + skład w code)? Decyzja według tabeli wyżej.
-- **Routing?** Który obszar repo dotyczy tego briefu:
-
-| Brief | Czytaj |
-|-------|--------|
-| Restauracja / jedzenie / venue | `references/hospitality-food-services-playbook.md` + `layout-system.md` §3 |
-| Hotel / lokal / obiekt | `references/hospitality-food-services-playbook.md` (real-photo + deterministyczna typografia) |
-| Serwis / usługa | `references/hospitality-food-services-playbook.md` (serwisy) + tryb B (fidelity) |
-| Retail / produkt | `examples/04-retail-product-in-use.md` + `layout-system.md` |
-| Konkretna nisza | `references/niche-playbooks.md` |
-| Nie wiem / coś nowego | `design-rules.md` + `visual-advertising-engine.md` |
-
-**4. Pisz prompt jak fotograf reklamowy** — produkt → benefit → odbiorca → kąt → metafora → typ → kompozycja → światło/kamera → constraints. **Zakazane słowa** i anti-slop patterns: `references/anti-slop-registry.md`.
-
-**5. QA przed wysyłką** — `references/qa-gate.md`: czytelność z miniaturki, poprawna pisownia, jeden focal point, logo fidelity, zero wymyślonych dań/fasad. **Nie wiesz, czy przechodzi QA?** Nie wysyłaj.
-
-**6. Deliver** — pliki + contact sheet + krótkie notki co i dlaczego. Pokaż jakość, nie ilość.
+Zasady współpracy: [CONTRIBUTING.md](CONTRIBUTING.md). Historia zmian: [CHANGELOG.md](CHANGELOG.md).
 
 ---
 
-## 🏛️ Zasady (skrót — pełny standard w Engine)
-
-> **Product First · Reference = Source of Truth · One creative = One idea · Don't decorate, direct.**
-
-1. **Hierarchia** — jeden dominujący element, czytelny z miniaturki, przekaz w 1s.
-2. **Realna typografia** — nazwane fonty, max 3 rodziny, kontrast wagą i skalą; **nigdy** wyrenderowany bełkot zamiast słów.
-3. **Paleta brandu + jeden akcent** — nigdy purple-blue default.
-4. **Negatywna przestrzeń** — marże, oddech; przestrzeń = luksus.
-5. **Imagery w kontekście** — produkt w realnym użyciu, realne światło, realni ludzie.
-6. **Realne jedzenie z refs** — nigdy nie pozwól AI wymyślać dań, których lokal nie serwuje.
-7. **Logo fidelity** — nigdy AI-redraw oficjalnego logo; wstaw oryginał.
-8. **Ad spine** — headline → subline → CTA → brand cue. Piękne zdjęcie ≠ ad.
-9. **Zero AI-copy** — zakazane słowa; nazwy i liczby zamiast przymiotników.
-10. **QA przed wysyłką** — czytelność z miniaturki, poprawna pisownia, jeden focal point, logo fidelity.
-
-**Więcej reguł, które robią różnicę:**
-- **Commercial realism** — metal wygląda jak metal, grawitacja działa, cienie są. Fotografia, nie „generyczne 3D".
-- **Lighting is part of the product** — światło jest elementem reklamy, nie przypadkiem.
-- **Think like a photographer** — kadr, głębia, ujęcie zamiast „wygeneruj logo na gradient".
-- **Build depth** — pierwszy plan / środek / tło; scena żyje.
-- **Trzy obowiązkowe kąty** — Problem → Efekt → Lifestyle (dla produktów i usług).
-- **Visual Creative Library** — zbieraj sprawdzone kompozycje; nie zaczynaj od zera za każdym razem.
-- **Spójność serii** — ady w jednej kampanii to jedna rodzina, nie 10 przypadków.
-- **Hard Fail Conditions** — konkretne rzeczy, które dyskwalifikują pracę: złe litery, fake logo, wymyślone dania, tekst nieczytelny z miniaturki.
-
----
-
-## 📁 Struktura repo
-
-```
-meta-ads-designer/
-├── SKILL.md                        # Manual agenta (procedura + routing)
-├── core.md                         # Kompletna wiedza ogólna (inject) — wklej do dowolnego czatu
-├── visual-advertising-engine.md    # THE standard — 44 zasady
-├── design-rules.md                 # Charter (angielski kanon)
-├── INSTALL.md                      # Setup + użycie na każdym agencie (w tym ChatGPT)
-├── README.md                       # Ten manual (PL, główny)
-├── README.en.md                    # Ten manual (EN, extra)
-├── CHANGELOG.md                    # Historia wersji
-├── LICENSE                         # MIT
-├── CONTRIBUTING.md                 # Jak dodać zasadę (polityka ID, zasada braku duplikacji)
-├── requirements.txt                # pillow + numpy — zależności scripts/
-├── .claude-plugin/plugin.json      # Manifest pluginu (instalacja przez marketplace Claude Code)
-├── .github/workflows/ci.yml        # CI: check_docs.py + test_qa.py przy każdym pushu
-├── assets/meta-ads-designer-banner.png
-├── examples/                       # Gotowe przykłady adów (anti, restauracja, hotel, serwisy, retail)
-├── scripts/                        # qa.py, test_qa.py, check_docs.py, extract_wordmark.py
-└── references/
-    ├── hospitality-food-services-playbook.md  # Głębia: food / hotel / serwisy
-    ├── layout-system.md            # Layout + panel-heights + gradient values
-    ├── headline-system.md          # Rozmiary headline i kontrast
-    ├── variation-matrix.md         # Test-ready sets: lock brand, rotate one axis (R35)
-    ├── hook-engineering.md         # The 20→3 hook gate (R36)
-    ├── creative-performance-loop.md # Publish → measure → feed the next brief (R37)
-    ├── platform-compliance.md      # Safe zones + ratio re-layout per platform (R38)
-    ├── video-ugc-track.md          # Video/UGC motion production (R39)
-    ├── artifact-control.md         # 8 trybów artefaktów + kontrakt preservation (R40, R41)
-    ├── model-routing.md            # Generator + koszt (decyzja przed spendem)
-    ├── competitor-ad-teardown.md   # Wygrywające ady konkurencji → briefy
-    ├── qa-gate.md                  # Brama QA i kryteria odrzucenia
-    ├── anti-slop-registry.md       # Kompletne kompendium zakazów (visual + copy)
-    ├── niche-playbooks.md          # 15 playbooków nisz (food, hotel, fitness, beauty, real estate, tech…)
-    └── prompt-library.md           # Gotowe prompty dla dowolnego modelu
-```
-
----
-
-## 🧭 File map
-
-| Plik | Do czego |
-|------|----------|
-| `core.md` | Kompletna wiedza ogólna — wklej do dowolnego czatu/agenta |
-| `visual-advertising-engine.md` | Standard operacyjny — 44 zasady (źródło kanoniczne) |
-| `design-rules.md` | Charter — gust |
-| `SKILL.md` | Manual agenta (czyta loader skilli) |
-| `INSTALL.md` | Setup per host |
-| `references/hospitality-food-services-playbook.md` | Głębokie reguły food / hotel / serwisy |
-| `references/layout-system.md` | Layout + panele + gradienty |
-| `references/headline-system.md` | Rozmiary headline i kontrast |
-| `references/variation-matrix.md` | Test-ready sets: lock brand, rotate one axis (R35) |
-| `references/hook-engineering.md` | The 20→3 hook gate (R36) |
-| `references/creative-performance-loop.md` | Publish → measure → feed the next brief (R37) |
-| `references/platform-compliance.md` | Safe zones + ratio re-layout per platform (R38) |
-| `references/video-ugc-track.md` | Video/UGC motion production (R39) |
-| `references/artifact-control.md` | Czyste rendery i bezpieczne edycje: 8 trybów artefaktów, kontrakt preservation (R40, R41) |
-| `references/model-routing.md` | Generator + koszt (decyzja przed spendem) |
-| `references/competitor-ad-teardown.md` | Wygrywające ady konkurencji → briefy |
-| `references/qa-gate.md` | Brama QA i kryteria odrzucenia |
-| `references/anti-slop-registry.md` | Lista zakazów + grep gate |
-| `references/niche-playbooks.md` | 15 playbooków nisz (What works / Avoid / Headline / CTA) |
-| `references/prompt-library.md` | Gotowe prompty |
-| `README.md` | Ten manual (PL) |
-| `README.en.md` | Ten manual (EN) |
-
----
-
-## 🤝 Współpraca
-
-Masz zasadę, która uratowałaby kampanię? Otwórz PR do `visual-advertising-engine.md` — to źródło kanoniczne. Zobacz [`CONTRIBUTING.md`](CONTRIBUTING.md).
-
----
-
-## 📜 Licencja
-
-MIT — używaj, remiksuj, publikuj.
-
----
-
-<br/>
-<div align="center">
-  <b>Created by</b><br/>
-  <b>AI EVOLUTION LABS</b><br/>
-  <sub>Channel Islands</sub><br/>
-  <sub><a href="https://github.com/aievolutionpl/meta-ads-designer">github.com/aievolutionpl/meta-ads-designer</a></sub>
-</div>
-
----
-
-## 🌐 Strony
-
-- [aievolutionlabs.io](http://aievolutionlabs.io/)
-- [aievolutionpolska.pl](https://www.aievolutionpolska.pl/)
+Created by **AI Evolution Labs** · [MIT License](LICENSE) · [aievolutionlabs.io](https://aievolutionlabs.io/)

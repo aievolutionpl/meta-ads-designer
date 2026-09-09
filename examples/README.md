@@ -6,6 +6,8 @@ A placeholder prompt (`SUBJECT: [main object]`) gets filled in generically, and 
 
 ## The cases
 
+For generated visual demonstrations, see the [README showcase](06-readme-showcase.md): two presentation boards with exact prompts and fictional concept labels.
+
 | # | File | Brief | Mode | Teaches |
 |---|------|-------|------|---------|
 | 00 | [`00-anti-examples.md`](00-anti-examples.md) | — | — | the same brief written weakly vs. properly, and what comes back |
