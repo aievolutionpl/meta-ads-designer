@@ -8,7 +8,7 @@
 
 | | |
 |---|---|
-| **Rules** | R01–R39 below |
+| **Rules** | R01–R44 below |
 | **Layout / type / color numbers** | [`references/layout-system.md`](references/layout-system.md) |
 | **Headline & copy generation** | [`references/headline-system.md`](references/headline-system.md) |
 | **Creative variation matrix (test-ready sets)** | [`references/variation-matrix.md`](references/variation-matrix.md) |
@@ -22,6 +22,10 @@
 | **Worked end-to-end examples** | [`examples/`](examples/) |
 
 ---
+
+## Scope and precedence
+
+This standard teaches model-independent advertising judgment and prompt writing. R42–R44 qualify older recipes: choose the medium for the message, and distinguish a style preference from a fidelity requirement. Photography-specific rules apply only to photography. Numerical layouts are starting points. User brief and supplied identity outrank category defaults. Tool setup is optional production guidance, never a prerequisite for writing a prompt.
 
 ## R01 · MAIN GOAL
 
@@ -534,6 +538,34 @@ Depth, the copy-paste preservation blocks and the symptom→remedy table: [`refe
 > The brief asked for one change. Every other change you shipped is a defect, however good it looks.
 
 ---
+
+## R42 · TASTE IS A DECISION, NOT A STYLE BAN
+
+Choose a visual grammar that serves audience, message and brand: photographic, documentary, editorial, typographic, illustrated or graphic. A product, service action, event name or verified offer may be the dominant element. Product-first means the advertised subject is immediately understood.
+
+Separate hard failures (false facts, identity drift, broken text, unreadable essential content) from preferences (colour, medium, serif versus sans, symmetry, texture). Cream, purple and gradients can belong to a deliberate identity. Arbitrary choices and incoherent execution are the failures. This qualifies older style prohibitions throughout the repo.
+
+Use photographic depth only for photographic work. Layout numbers guide composition; inspect actual fit. A subline or button-shaped CTA is optional when the message and next action are already clear. Apply the removal test to the prompt as well as the image.
+
+Depth: [art direction](references/art-direction.md).
+
+## R43 · MARKETING TO VISUAL CONTRACT
+
+Before prompting, resolve audience and moment → verified offer → one takeaway → visible mechanism → action. State what the viewer understands because of what they see. Never invent proof, prices, urgency, reviews or business details. Omit unknown facts or ask when essential.
+
+Explore distinct concepts when useful, then select a coherent direction. For controlled experiments, change one variable and hold the rest fixed; concept exploration may vary multiple decisions without claiming causal attribution. A single requested prompt does not need twenty hooks or a mandatory campaign.
+
+Specify medium, dominant element, reading path, copy field, quiet space, type roles, palette roles and reference fidelity. Explain the few decisions that distinguish this brand from a generic category template.
+
+## R44 · PROMPT QUALITY AND IMAGE QUALITY ARE DIFFERENT
+
+R25 is a semantic checklist, not mandatory headings. Combine it into concise prose. Add exact copy, type roles and reading order for finished ads; replace camera/light fields with graphic form when appropriate. The five-slot skeleton is an alternative packaging of those decisions, not a second required prompt.
+
+A prompt specifies one output, one direction, exact copy or a separate typesetting contract, composition and relevant constraints. Omit model names, unsupported parameter syntax and irrelevant rules. Check factual support, spatial feasibility, copy length and contradictions before delivery.
+
+Prompting cannot guarantee exact fonts, pixels, spelling or preservation. For prompt-only work, deliver the complete prompt without claiming a rendered result. For an actual image, inspect small-size hierarchy, text and source fidelity before scoring it.
+
+Depth: [prompt craft](references/prompt-craft.md) and [worked directions](examples/05-model-independent-directions.md).
 
 ## 🏁 FINAL PRINCIPLE — DON'T DECORATE. DIRECT.
 

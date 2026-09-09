@@ -6,6 +6,8 @@ All values are given for the default canvas **1080×1350 (4:5)** and scale propo
 
 ---
 
+These are production starting values, not universal definitions of taste. Choose a visual grammar with [art direction](art-direction.md) first. R42 qualifies style prohibitions below: brand colours outrank presets and graphic/type-led flyers are valid. The QA script uses a conservative layout profile; it cannot judge every intentional poster composition.
+
 ## 1 · Canvas, grid and safe areas
 
 ### 1a · The grid
@@ -32,7 +34,7 @@ All values are given for the default canvas **1080×1350 (4:5)** and scale propo
 
 Anything critical (headline, logo, price, CTA) lives **inside** the safe area. Decorative photography may bleed.
 
-**What is gated and what is advice.** The 86px margin and the 9:16 chrome zones are hard — `scripts/qa.py --text-box` fails a creative that crosses them, because that chrome is drawn on top of the image. The 4:5 bottom 120px is advisory: the canonical photo+panel layout (§3a) deliberately runs its CTA/logo row at 64px from the bottom, and on a standard feed placement nothing covers it. Keep copy out of it when you can; don't redesign §3a to satisfy it.
+**What is gated and what is advice.** The script enforces its conservative 86px margin and 9:16 keep-out profile. A design margin is not platform chrome. The additional 4:5 bottom 120px is advisory; critical content in the panel still stays at least 86px from the bottom. Verify current placement overlays when preparing final delivery.
 
 ### 1c · Scaling to other formats
 
@@ -57,7 +59,7 @@ Multiply every px value in this file by `canvas_short_edge / 1080`. For 9:16 (sh
 | **CTA (button label)** | 28px | 600 | +6% (uppercase) | 1.0 | 18 |
 | **Legal / credit** | 18px | 400 | +2% | 1.3 | — |
 
-**The hierarchy ratio (R07):** headline ≥ 3× body size. At 88/28 that's 3.1× — the minimum that survives a thumbnail. If your headline needs to drop below 48px to fit, **the copy is too long** — rewrite it ([`headline-system.md`](headline-system.md)), don't shrink the type.
+**Hierarchy (R07):** use scale, weight and placement to make the headline dominate. The 88/28 pairing is one starting point; multiline headlines deliberately use smaller ratios. Check actual phone-size readability. If copy does not fit at a readable size, rewrite it or change the layout.
 
 **Never use more than 3 sizes on one ad**, and never more than 2 typeface families.
 
@@ -118,7 +120,7 @@ All listed families are open-licence (SIL OFL) except Didot and Helvetica Now �
 | Photo height | 810–878px (60–65%) |
 | Panel height | 472–540px (35–40%) |
 | Panel fill | **solid** brand dark or brand color — not a gradient |
-| Panel inner padding | 86px sides, 56px top, 64px bottom |
+| Panel inner padding | 86px sides, 56px top, at least 86px bottom for critical content |
 | Separation | hard edge. **Zero text on the photo.** |
 | Logo | bottom-right or panel-centre, height 56–72px |
 

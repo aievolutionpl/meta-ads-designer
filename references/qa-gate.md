@@ -2,9 +2,11 @@
 
 > **A checkbox list gets ticked without anybody looking at the image.** This gate has three layers that each produce evidence: a deterministic script, a structured vision pass, and a scored rubric with a shipping threshold.
 
-**Ship condition: score ≥ 16/20 AND zero hard fails AND `scripts/qa.py` returns PASS.**
+**Rendered-image ship condition: score ≥ 16/20, zero hard fails and applicable technical checks passed.** For the script's supported photographic layouts, require its PASS. For other intentional layouts, document which heuristic is inapplicable and verify the corresponding property by inspection or an appropriate measurement.
 
-Run all three on **every** output. Not on the batch — on every image.
+Apply image review to every rendered image. For prompt-only requests, use [prompt craft](prompt-craft.md); never invent an image score.
+
+R42 interpretation: product means advertised subject; realism means medium coherence for graphics; brand attribution may be approved text when no official logo is supplied. Subline and button-shaped CTA are optional if message and action are already clear. The script is a conservative photographic-layout heuristic: inspect flagged seams and flat graphic regions before rejecting an intentional poster. Document inapplicable checks rather than silently calling them PASS.
 
 > ⚠️ **A PASS without `--text-box` is a partial PASS.** Four of the seven checks measure the copy block; with no box declared they report `n/a` and the script says so in its output. On any creative that carries text, pass `--text-box` (and `--logo-box` when a logo is placed) or the gate is checking dimensions and seams only.
 

@@ -14,6 +14,8 @@ A placeholder prompt (`SUBJECT: [main object]`) gets filled in generically, and 
 | 03 | [`03-services-problem-effect.md`](03-services-problem-effect.md) | stove installer, wants autumn leads | B — deterministic | Problem→Effect angle, deadline offer, real install refs |
 | 04 | [`04-retail-product-in-use.md`](04-retail-product-in-use.md) | product brand, reference photo supplied | A — native text | reference-as-source-of-truth, product-in-use, series of 5 |
 
+Additional prompt-only teaching cases: [model-independent directions](05-model-independent-directions.md) covers a typographic flyer, food ad and service ad. These are fictional briefs without rendered results or invented QA scores.
+
 ## How each case is structured
 
 ```

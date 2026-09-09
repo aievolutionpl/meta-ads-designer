@@ -4,6 +4,17 @@ All notable changes to Meta Ads Designer. Versions follow [SemVer](https://semve
 
 ---
 
+## [5.9.0] — 2026-09-09
+
+Model-independent art direction and prompt craft.
+
+- Reworked the entrypoint around marketing intent, composition, prompt writing and actual-output critique with progressive reference loading.
+- Added R42–R44: contextual design taste, marketing-to-visual decisions and separate prompt/image quality checks.
+- Added art-direction and prompt-craft references and fictional worked prompts for typography, food and services.
+- Qualified older style bans and photographic defaults; graphic flyers and deliberate brand palettes are valid.
+- Distinguished concept exploration from controlled tests and clarified image-QA heuristic limits.
+- Corrected the universal headline-ratio assumption: hierarchy must fit actual copy.
+
 ## [5.8.0] — 2026-08-24
 
 An **edit-discipline** pass, and the second half of the artifact story. `5.7.0` covered artifacts you generate; this covers the ones you *edit* into existence — which is most of them, because most commercial image work is changing an image that already exists rather than making a new one.

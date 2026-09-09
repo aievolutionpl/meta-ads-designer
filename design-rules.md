@@ -5,7 +5,7 @@
 
 **Why this exists.** Image models have no taste. Left to themselves they converge on the same boring, unconvincing look: tiny clip-art icons, generic purple-blue gradients, default fonts, text slapped onto photos like a Canva template, invented dishes the restaurant never served, logos mangled by a redraw. This charter is the antidote.
 
-**This file does not restate the rules.** The rules live in one place — [`visual-advertising-engine.md`](visual-advertising-engine.md), as stable IDs `R01`–`R34`. This charter explains the doctrine and tells you which file to open next.
+**This file does not restate the rules.** The rules live in one place — [`visual-advertising-engine.md`](visual-advertising-engine.md), as stable IDs `R01`–`R44`. This charter explains the doctrine and tells you which file to open next.
 
 **How to use it.**
 - **As an agent skill** → load [`SKILL.md`](SKILL.md) (it routes from here).
@@ -13,6 +13,10 @@
 - **As a checklist** → run [`references/qa-gate.md`](references/qa-gate.md) on every output before you ship it.
 
 ---
+
+## How to interpret the recipes
+
+Use [art direction](references/art-direction.md) and [prompt craft](references/prompt-craft.md) for R42–R44. Choose medium and hierarchy for the marketing message; an event title can be a flyer's hero. Photography rules apply to photography. The style bans below warn against arbitrary defaults, not deliberate brand palettes or coherent graphic directions. Protect identity, facts and readability; let colour, type and composition serve the brief. For prompt-only requests, review the prompt rather than an imagined image.
 
 ## 0 · The one-line law
 
@@ -26,7 +30,7 @@
 
 | Your question | Open |
 |---------------|------|
-| What are the rules? | [`visual-advertising-engine.md`](visual-advertising-engine.md) — R01–R34, authoritative |
+| What are the rules? | [`visual-advertising-engine.md`](visual-advertising-engine.md) — R01–R44, authoritative |
 | I need one page to paste into a chat | [`core.md`](core.md) |
 | How big is the headline? What grid? What colors? | [`references/layout-system.md`](references/layout-system.md) |
 | What should the headline actually *say*? | [`references/headline-system.md`](references/headline-system.md) |

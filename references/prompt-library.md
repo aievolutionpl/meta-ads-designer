@@ -6,6 +6,12 @@ Combine with the 11-part architecture (R25), the numbers in [`layout-system.md`]
 
 ---
 
+## Choose the medium first
+
+Use [art direction](art-direction.md) for the visual decision and [prompt craft](prompt-craft.md) for final wording. Photographic fields below are conditional: a typographic flyer needs type and graphic form instead of a lens. R25 is the semantic checklist; five slots are a compact packaging option.
+
+Specify one ad, not a contact sheet. A purposeful split composition is allowed when it serves one message. See [worked directions](../examples/05-model-independent-directions.md) for event, food and service prompts.
+
 ## 🧱 Universal skeleton
 
 ```

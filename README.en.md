@@ -8,7 +8,7 @@
 
 [🇵🇱 Polski](README.md) · [🇬🇧 English](README.en.md)
 
-![Version](https://img.shields.io/badge/version-5.8.0-6a5acd)
+![Version](https://img.shields.io/badge/version-5.9.0-6a5acd)
 ![License](https://img.shields.io/badge/license-MIT-brightgreen)
 ![Format](https://img.shields.io/badge/default_format-4:5%20(1080×1350)-informational)
 ![Hosts](https://img.shields.io/badge/runs_on-ChatGPT%20%7C%20Codex%20%7C%20Hermes%20%7C%20Claude%20%7C%20Cursor-blue)
@@ -28,6 +28,16 @@
 </div>
 
 ---
+
+## Model-independent design taste and prompts
+
+Version 5.9 guides agents from marketing intent to composition, reading order, typography and palette. Photography, illustration and typographic flyers are supported. Colour and style are judged in the context of the brand.
+
+- [Art direction](references/art-direction.md): choose a visual idea and composition.
+- [Prompt craft](references/prompt-craft.md): turn decisions into a complete prompt.
+- [Three examples](examples/05-model-independent-directions.md): event, food and local service.
+
+Prompt-only requests need no image tool. Review the prompt's consistency; assess visual quality only after an image exists. R42–R44 qualify older recipes below: style prohibitions warn against arbitrary defaults, not deliberate brand expression.
 
 ## 🧩 Problem — why AI ads all look the same
 
@@ -82,7 +92,7 @@ Full per-host steps: **[`INSTALL.md`](INSTALL.md)**.
 
 ```
 ┌────────────────────────────────────────────┐
-│ visual-advertising-engine.md               │  ← THE standard (41 rules)
+│ visual-advertising-engine.md               │  ← THE standard (44 rules)
 │   Product First · Source of Truth ·        │     Prompt Architecture ·
 │   Hard Fails · Final Quality Check         │     Creative Workflow
 └───────────────┬────────────────────────────┘
@@ -104,7 +114,7 @@ Full per-host steps: **[`INSTALL.md`](INSTALL.md)**.
                         └──────────────────┘
 ```
 
-- **`visual-advertising-engine.md`** — *standard* (41 rules). What the agent applies **before** every commercial visual: Product First, Reference = Source of Truth, Prompt Architecture, Hard Fails, QA, Variation Matrix, Hook First, Performance Loop, Compliance, Video Track, Artifact Control, Minimal Effective Edit. **This is the canonical source** — new rules land here first.
+- **`visual-advertising-engine.md`** — *standard* (44 rules). What the agent applies **before** every commercial visual: Product First, Reference = Source of Truth, Prompt Architecture, Hard Fails, QA, Variation Matrix, Hook First, Performance Loop, Compliance, Video Track, Artifact Control, Minimal Effective Edit. **This is the canonical source** — new rules land here first.
 - **`design-rules.md`** — *charter* (taste). English canonical. Self-contained — paste into any chat or inject into the system prompt.
 - **`core.md`** — *complete general knowledge (inject)*. Per-platform formats, creative process, composition, typography, colour, light, layouts, copy, niches, production modes, prompt architecture, anti-slop, hard fails, QA — self-contained, paste into any chat.
 - **`SKILL.md`** — *procedure* (agent manual). Brief → research → angles → creative → generate → QA → deliver. The skill loader reads the frontmatter.
@@ -199,7 +209,7 @@ core.md  →  SKILL.md  →  (details)  →  references/
 meta-ads-designer/
 ├── SKILL.md                        # Agent manual (procedure + routing)
 ├── core.md                         # Complete general knowledge (inject) — paste into any chat
-├── visual-advertising-engine.md    # THE standard — 41 rules
+├── visual-advertising-engine.md    # THE standard — 44 rules
 ├── design-rules.md                 # The charter (English canonical)
 ├── INSTALL.md                      # Setup + usage on every agent (incl. ChatGPT)
 ├── README.md                       # This manual (PL, main)
@@ -238,7 +248,7 @@ meta-ads-designer/
 | File | Purpose |
 |------|---------|
 | `core.md` | Complete general knowledge — paste into any chat/agent |
-| `visual-advertising-engine.md` | Operating standard — 41 rules (canonical source) |
+| `visual-advertising-engine.md` | Operating standard — 44 rules (canonical source) |
 | `design-rules.md` | Charter — taste |
 | `SKILL.md` | Agent manual (read by skill loaders) |
 | `INSTALL.md` | Setup per host |

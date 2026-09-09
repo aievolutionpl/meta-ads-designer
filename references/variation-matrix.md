@@ -6,6 +6,8 @@ An ad campaign is **a set built for testing**, not a single hero image. The vari
 
 ---
 
+R43 distinguishes concept exploration from a controlled test. Exploration can change headline, scene and layout together to find a direction; do not attribute a result to one variable. The one-axis discipline below applies to controlled tests, not every single-ad request.
+
 ## 1 · The idea
 
 A matrix is a grid. Rows are **locked elements** (the same in every cell). Columns are **one rotating axis** — one thing that differs between variants so that when results come back, you can name the variable that moved them.
@@ -57,7 +59,7 @@ PROMISE: "Convenience — reach your stuff without a step ladder"
  │ Visual      │ Hero: shelf in a      │ Hero: hand pulls the shelf │
  │ metaphor    │ bright minimal kitchen│ down at eye level          │
  │ (R24)       │                       │                            │
- │ Headline    │ "Within easy reach"   │ "The shelf comes to you"   │
+ │ Headline    │ "Within easy reach"   │ "Within easy reach"        │
  │ (R36)       │                       │                            │
  └─────────────┴───────────────────────┴────────────────────────────┘
 ```

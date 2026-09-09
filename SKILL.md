@@ -1,210 +1,84 @@
 ---
 name: meta-ads-designer
-description: Designs and generates posters, flyers, Meta/social ads and promo graphics that look art-directed instead of AI-generated - hierarchy, real typography, real light, one message per creative. Use when the user asks for an ad, poster, flyer, promo or social graphic for a business, restaurant, hotel or local brand, especially when a logo, venue, product or food photo is attached; also for product photography, lifestyle and e-commerce visuals, and image-editing prompts. Framework-agnostic - runs on Hermes, Claude Code, Codex, Cursor and ChatGPT.
+description: Art-direct social ads, posters and flyers and write model-independent image prompts when a user requests advertising visuals, stronger composition or less generic AI design.
 license: MIT
 metadata:
-  version: 5.8.0
+  version: 5.9.0
   author: AI Evolution Labs
   url: https://github.com/aievolutionpl/meta-ads-designer
 ---
 
-# 🎨 Meta Ads Designer
+# Meta Ads Designer
 
-> **"Don't generate objects in a void. Generate ads that look like a campaign — with hierarchy, typography, real light, and a structural message."**
+Act as an advertising art director. Translate a business message into a deliberate visual composition and a precise image prompt. Judge by what the audience understands, where their eye goes and whether the creative belongs to this brand.
 
-This is a **universal plugin** that runs on any AI agent. It teaches **what beautiful design looks like** (the rules), then guides **how to produce it** (the workflow). It is **framework-agnostic** — the rules are the same whether you run on Hermes, Claude Code, Codex, Cursor, or ChatGPT. Host-specific tool details live in `INSTALL.md` and `references/`, never in the core rules.
+This skill works independently of image models, for prompt writing alone or generation with available tools. Model selection and API setup are not prerequisites.
 
-**LOAD THIS when:** the user asks for a poster, flyer, meta ad, social ad, or promo graphic for a business/restaurant/hotel/local brand — especially when they upload a logo, service photos, or food photos as references. Also load for product photography, lifestyle visuals, e-commerce visuals, and image-editing prompts.
+## Understand the brief
 
----
+Identify subject, audience, verified offer, one takeaway, next action, language, brand assets and placement. Use 4:5 as this skill's default for an unspecified social feed ad; honour the requested placement. Ask about print specifications only when print is requested.
 
-## ⚡ How to load this skill
+Inspect supplied references when possible and name their roles: exact subject, official logo, brand identity or style only. Preserve identity. A style reference does not authorize copying another business's logo or claims. Never invent prices, urgency, locations, reviews or proof.
 
-**Read this file first.** It carries the intake, the routing, the workflow and the QA gate — enough to run a brief end to end. Pull anything else in **only at the step that needs it**. All paths are relative to this skill's own directory (call it `SKILL_DIR`), not to the user's working directory.
+Infer reasonable design choices and state material assumptions briefly. Ask only when a missing fact changes the message or prevents accurate delivery. For a single prompt, choose a strong direction and proceed.
 
-| Open | At which point |
-|------|----------------|
-| `visual-advertising-engine.md` | **Before writing any prompt for a commercial visual.** The 39-rule operating standard, `R01`–`R39` — every other file cites these IDs. |
-| `design-rules.md` | You want the doctrine in prose, or the index of which file answers which question. |
-| `references/layout-system.md` | Placing anything: grid, margins, panel heights, type scale, palettes. |
-| `references/headline-system.md` | Writing the copy inside the ad: archetypes, character budgets, diacritics, CTAs. |
-| `references/variation-matrix.md` | Step 3 — turning one promise into a test-ready set (lock brand, rotate one axis). `R35` |
-| `references/hook-engineering.md` | Step 3 — the 20→3 hook gate: decide the message before the visual. `R36` |
-| `references/creative-performance-loop.md` | Step 6.5 — publishing, measuring, and feeding results into the next brief. `R37` |
-| `references/platform-compliance.md` | Step 5 — safe zones per platform and ratio re-layout (never a dumb crop). `R38` |
-| `references/video-ugc-track.md` | The brief needs video/UGC/motion. `R39` |
-| `references/artifact-control.md` | **Before spending on any generation, and before every edit.** The eight artifact modes, the high-risk subject register, session hygiene, the preservation contract and the symptom→remedy table. `R40` `R41` |
-| `references/model-routing.md` | Choosing the generator and the iteration budget before spending. |
-| `references/competitor-ad-teardown.md` | Step 2 — turning winning competitor ads into testable briefs. |
-| `references/prompt-library.md` | Filling the 5-slot prompt, or choosing a model. |
-| `references/hospitality-food-services-playbook.md` | The brief is food, restaurant, hotel, venue or a local service. |
-| `references/niche-playbooks.md` | Any other industry — 15 playbooks. |
-| `references/anti-slop-registry.md` | An output looks generic and you need the named pattern and the grep gate. |
-| `references/qa-gate.md` | Step 5 — the scored rubric behind the script. |
-| `examples/` | You want a finished brief → prompt → verdict before writing your own. |
-| `INSTALL.md` | Host setup, or the user asks how to install this. |
+## Decide before prompting
 
-**Skip `core.md`.** It is the self-contained inject for chat hosts that have no skill loader (paste into ChatGPT/Gemini custom instructions). If you are reading `SKILL.md` you can reach the engine directly, and the engine outranks it.
+Read [art direction](references/art-direction.md) before drafting a new direction. It provides the decision card, benefit-to-visual mapping, composition choices, typography and critique.
 
----
+1. Connect the message to something visible: “The viewer understands this benefit because they see this.”
+2. Choose photography, documentary, editorial, typography, illustration or graphic reduction.
+3. Define dominant element, reading path, copy field, quiet area, brand anchor and edge treatment.
+4. Choose type by role, width, weight, language and brand. Set exact copy and line breaks.
+5. Assign colour roles and, for photography, light and material treatment.
+6. Remove anything that competes without helping the message.
 
-## 🎯 Core rules (non-negotiable)
+A flyer may be led by an event name, verified offer or graphic idea. Do not force a photograph, dark panel, premium serif or CTA button onto every brief. Colours, gradients and texture are choices. Reject arbitrary decoration, incoherence, unreadability and identity drift.
 
-1. **Product First** — the product is the main character: visible, large, lit, sharper than surroundings, attractive angle. Never hide it in a big set. `R02`
-2. **Reference = Source of Truth** — a supplied product photo is a technical document. NEVER change shape/proportions/color/construction/material/logo/lettering/mechanism. Only environment, light, frame, perspective, styling. Respect the product's physics. `R03`
-3. **Commercial realism** — professional commercial photography, not "obvious AI ad". Correct perspective, scale, gravity, shadows, real materials. `R04`
-4. **One creative = one idea** — one message, one focal point. Don't cram product + 7 benefits + promo + reviews. `R06`
-5. **Hierarchy** — PRIMARY (product) → SECONDARY (context) → TERTIARY (subtle atmosphere). `R07`
-6. **Negative space** — don't fill the frame. Space = premium + room for the headline. `R08`
-7. **Lighting is part of the product** — say exactly what the light does (clean commercial / premium dramatic / natural lifestyle / food commercial). `R09`
-8. **Think like a photographer** — decide camera position, angle, lens, depth of field, foreground/midground/background. `R10`
-9. **Build depth** — foreground → subject → background. No flat images. `R11`
-10. **Show product in use** — packshot alone isn't enough; a hand/gesture/POV gives context. `R12`
-11. **Typography after the image** — strong photo first, then headline → support → CTA. Not a dashboard. `R17`
-12. **Don't generate important text in-image** — if the model is weak at text, generate a clean visual and add real typography + the real logo later. `R18`
-13. **Mobile-first composition — DEFAULT is 4:5 (1080×1350)**, the Instagram/Facebook feed default; 9:16 for Reels/Stories, 1:1 marketplace, 16:9 — only when the user asks. Compose for the format; don't rely on cropping. `R19`
-14. **Series consistency** — product identical across 5–10 images; only context/frame/mood/light change. Like one shoot. `R20`
-15. **Variation, not randomness** — hero · lifestyle · feature · close-up · problem · result · premium · UGC · unexpected angle. `R21`
-16. **Food builds appetite** — texture, steam, gloss, juiciness, layers; Frozen-Time/Bullet-Time for dynamic scenes. Physically credible. `R15`
-17. **Anti-slop** — no random neon, HUD, icons, gradients, arrows, fake logos, excessive bokeh, plastic surfaces. Every element has a function. `R05`
-18. **Variation matrix** — a campaign is a test-ready set: lock the brand, rotate one axis per variant, never two. `R35`
-19. **Hook & headline first** — decide the message before the visual; run the 20→3 hook gate. `R36`
-20. **Performance feedback** — publish, measure, feed the winner into the next brief; ad promise = landing page promise. `R37`
-21. **Platform compliance & multi-ratio** — safe zones per placement, every ratio by re-layout (never a dumb crop). `R38`
-22. **Video & motion track** — static-first; motion serves the hook, never decorates. `R39`
-23. **Artifact control** — a clean render is the precondition for every other rule. Bound the detail, don't collide styles, one concept per fresh session, ship at full quality. `R40`
-24. **Minimal effective edit** — preserve what already works, change only what was asked. Every edit prompt carries `EDIT INSTRUCTIONS` *and* `PRESERVE`; one element per turn; reference accuracy outranks creative improvement. `R41`
+The canonical [engine](visual-advertising-engine.md) defines stable rule IDs. R42–R44 qualify older photographic recipes and style bans throughout the repo; consult relevant rules when resolving conflicts. User brief and identity outrank category presets.
 
-**Final principle: DON'T DECORATE. DIRECT.** One product. One idea. One strong visual.
+## Write the prompt
 
----
+Read [prompt craft](references/prompt-craft.md). Deliver one coherent ready-to-use prompt with output, message, reference roles, medium, spatial composition, type/copy contract, palette and relevant constraints. Photography adds light and camera; a flat poster does not need them. No unresolved placeholders or contradictory directions.
 
-## 🔧 WORKFLOW — from brief to finished pack
+Choose a text contract:
+- Short generated copy: quote all strings and describe hierarchy. Inspect spelling if rendered.
+- Exact or dense copy: request a clean image with planned copy space and supply a separate typesetting specification.
+- Type-led artwork: specify the grid and type as the main visual; use a composition tool if exact typography is required.
 
-### 1 · Brief intake
-Collect: **what** we promote (product/service/offer/event), **for whom**, the **CTA**, the **platforms** (default ratio **4:5 = 1080×1350**, the Instagram/Facebook feed default; 9:16 for Reels/Stories, 1:1 for marketplace — use 4:5 unless the user asks otherwise), and **reference photos** (logo, venue, food, products). Treat supplied refs as source assets — preserve authenticity.
+Font names and percentages express intent, not guaranteed rendering. Place official logo assets appropriately rather than inventing a plausible logo.
 
-### 2 · Research the niche
-Before generating, find out how top brands in this niche present themselves (Meta Ad Library, Instagram, competitors).
-- What's the standard: editorial? dark studio? lifestyle? minimal?
-- What are the clichés to avoid here? (e.g. AI-gourmet for a casual taverna)
-- **If the client has existing ads they like — that is the source of truth for style.** Elevate *their* look; don't substitute your own generic "premium".
-- **Teardown the winners.** Reduce 3–5 proven competitor ads to angle + hook + layout + format, then re-express the structure for this client. See `references/competitor-ad-teardown.md`.
+Read [worked directions](examples/05-model-independent-directions.md) for complete event, food and service examples. The [prompt library](references/prompt-library.md) provides optional photographic and editing skeletons.
 
-### 3 · Angle matrix
-Define **5–10 distinct promises and layouts**, not 10 color swaps. Examples: heritage/luxury poster · editorial travel cover · minimal swiss grid · offer/CTA · events/nightlife · lifestyle/product-in-use · brand story · terrace/dining. Each ad tests a different angle.
+## Review and deliver
 
-Then turn the promise into a **variation matrix**: lock the brand, pick the one rotating axis, define 3 structurally different variants. Run the **20→3 hook gate** before the visual. See `references/variation-matrix.md` and `references/hook-engineering.md`.
+For prompts alone, check facts, clarity, spatial feasibility, copy fit, reference fidelity and internal consistency. Deliver the prompt plus a short production note only where needed. Never claim visual QA or conversion results without evidence.
 
-### 3.5 · Creative generation (before writing any prompt)
-Do **not** jump to the prompt. Run the engine's creative workflow first:
-1. **Identify the product.** 2. **Identify the most important benefit.** 3. **Define the target.** 4. **Choose the marketing angle** (Problem / Effect / Lifestyle). 5. **Invent a simple visual metaphor or situation.** 6. **Choose the creative type** (from the library: hero, packshot, lifestyle, product-in-use, macro, problem/solution, result, UGC, editorial, scroll-stopper). 7. **Design the composition.** 8. **Define light and camera.** 9. **Add constraints.** 10. **Only then write the final prompt** using the 11-part architecture in `visual-advertising-engine.md` `R25`.
+For generated images, inspect phone-size hierarchy and full-resolution text, identity and defects. Use [QA gate](references/qa-gate.md). The script checks a conservative layout profile; it does not prove beauty, spelling or fidelity. Explain inapplicable heuristics instead of reporting a false PASS.
 
-### 3.6 · Route by brief type
-- **Food / restaurant:** two modes (see `design-rules.md` §4 "The two production modes"). If the client has real dish photos → **real-food hero** (photo top ~60–65% + solid panel bottom ~35–40%, zero text on food). If not → **dark studio editorial**. **Native AI text in-scene is the default** (keep strings SHORT: brand + headline + 1 location line; append `CRITICAL: every word spelled PERFECTLY`). Depth: `references/hospitality-food-services-playbook.md`.
-- **Hotel / venue:** prefer **real-photo + deterministic typography/logo** over AI re-generation of the building. Design system: serif headline + clean sans body, coastal palette (navy/teal/cream/white/gold), real photo hero + content card. Produce structurally different styles (heritage poster · travel cover · swiss grid · terrace · dining · direct-booking · events · seaside · offer · brand story).
-- **Services / local biz:** real product/install photos as refs → generate NEW premium scenes (never overlay on the client's raw photo). Angles: Problem→Effect · package tiers · deadline offers · transformation · benefit-led headline ≤40 chars. Use **deterministic composition** when text/logo fidelity matters.
+For revisions, preserve successful decisions and change the failed one. Read [artifact control](references/artifact-control.md) for preservation and symptom-based recovery. Do not diagnose an artifact's cause from appearance alone or assume all tools share session behaviour.
 
-### 4 · Generation
-- **Run the artifact pre-flight first** (`references/artifact-control.md` §10, `R40`) — screen the brief for a high-risk texture subject, for colliding style descriptors, for the right quality tier, and open a **fresh session**. Most artifacted outputs are caused by generating a second image in a session that already made one, so treat it as a setup step, not a troubleshooting step.
-- **One finished ad per generation, and one concept per session.** Never ask a model to make a batch or contact sheet in one image. Open with: `ONE SINGLE FINISHED AD ONLY — no collage, no grid, no split-screen.` A direct iteration of what is on screen (angle, light, framing, one object, a text fix) stays in the session; a new concept, scene or campaign direction opens a fresh one (`R40` mode C).
-- **Editing an existing image rather than generating one?** Write both slots — `EDIT INSTRUCTIONS` (the one thing that changes) and `PRESERVE` (everything that must survive). Change **one element per turn**, and specify integration: scale, perspective, contact shadows and reflections matched to the existing scene. Silence is not protection; anything unnamed gets redrawn (`R41`, `references/artifact-control.md` §8).
-- **Use reference images with a clear role** for every subject you must preserve (face, product, logo, building). Name each ref's role: "Image A = subject, Image B = style". **Cap it at 2–3 references** — more of them collide and drift the product (`R40`).
-- Fill the **5-slot prompt** (SCENE / SUBJECT / DETAILS / USE CASE / CONSTRAINTS — see `references/prompt-library.md`) and bake in the design rules from `design-rules.md`.
-- **Native in-scene text** (if the model renders text well): quote EVERY rendered word in quotes; add `CRITICAL: every word spelled perfectly` + the names. Keep text short (brand + headline + one location line).
-- **Route the model to the job** — native text, clean photo, re-composition, or video/UGC. Decide the generator and the iteration budget *before* spending: see `references/model-routing.md` and `INSTALL.md`.
-- **The brief needs motion?** Run the video/UGC track (static-first, model per motion job): `references/video-ugc-track.md`.
+Deliver requested outputs and placements. If image tools are unavailable, provide the prompt and handoff and state what remains unrendered.
 
-### 5 · QA gate (mandatory)
-1. Run `python "$SKILL_DIR/scripts/qa.py" <file> --format 4:5 --text-box x0,y0,x1,y1` (add `--logo-box` when a logo is placed). `SKILL_DIR` is the directory this file sits in — resolve it before you call the script; a bare `scripts/qa.py` resolves against the user's project, where it does not exist. Needs `pillow` and `numpy` (`pip install -r "$SKILL_DIR/requirements.txt"`). **Declare the boxes** — without them the safe-area, contrast, thumbnail and scrim checks report `n/a` and the PASS means only "right dimensions, no collage". Fix edge intrusions with **scale+pad**, never a crop.
-2. Build a **contact sheet** (exclude prior contact sheets from the glob).
-3. Inspect each ad against **every rule in `design-rules.md` §8 "The QA gate"** — thumbnail readability, spelling (incl. Polish diacritics), hierarchy, accent ≤3, logo fidelity, no fake footers, no text-on-photo slop, no AI-invented food, ad spine present, contrast.
-4. **Inspect for artifacts at 100%, not at thumbnail size** — cellular/webbing texture on fine surfaces, speckle or tiling on flat ones, halos or texture bleed around anything edited, duplicated or warped geometry, and any element you never briefed (that one is session bleed, not a prompt bug). **On an edit, diff it against the reference**: whatever changed beyond the one thing you asked for is a defect (`R41`). No script can call this: grain, fabric weave and webbing are the same high-frequency energy. See `references/artifact-control.md` §12 (`R40`).
-5. **Check platform compliance** — safe zones for each placement and ratio re-layout (never a dumb crop). See `references/platform-compliance.md` (`R38`).
-6. Fix minor issues deterministically (clean typography pass); repair local blemishes by masking; **regenerate** — in a clean session, from a fixed prompt — when the visual is fundamentally wrong or the product drifted. Read the symptom off the recovery table rather than re-rolling blind: `references/artifact-control.md` §11.
+## Campaigns and deeper guidance
 
-### 6 · Delivery
-- Package final files + contact sheet + short notes; report the model/cost if paid. Save reference photos to the client folder for reuse.
-- **Deliver native files per placement** (4:5 feed, 9:16 short, 1:1 marketplace, 16:9 video), each QA'd — not one image the client has to hack.
-- **Continuity note** — if the landing page is known, state the promise the page must open with (creative → landing continuity, `R37` §4).
+Explore distinct ideas when concepts are requested. Controlled tests isolate one variable; exploration may change multiple variables without claiming causal attribution. Keep brand and source identity consistent. Do not force twenty hooks or a campaign onto a single-ad request.
 
-### 6.5 · Performance loop (after the campaign ships)
-An ad is finished when its results come back. Publish → measure (CTR, CPA/ROAS, hook-through, 3s hold) → label the winning angle/format → carry it forward as the default in the next variation matrix. See `references/creative-performance-loop.md` (`R37`).
+Read only what is relevant:
 
----
+| Need | Reference |
+|---|---|
+| Canvas, spacing and type starting values | [Layout system](references/layout-system.md) |
+| Headline drafting and language | [Headline system](references/headline-system.md) |
+| Campaign hooks | [Hook engineering](references/hook-engineering.md) |
+| Controlled variants | [Variation matrix](references/variation-matrix.md) |
+| Food, venues and services | [Hospitality playbook](references/hospitality-food-services-playbook.md) |
+| Other industries | [Niche playbooks](references/niche-playbooks.md) |
+| Generic visuals | [Anti-slop registry](references/anti-slop-registry.md), interpreted through R42 |
+| Competitor analysis | [Competitor teardown](references/competitor-ad-teardown.md) |
+| Placement-specific delivery | [Platform guidance](references/platform-compliance.md); verify changing requirements when relevant |
+| Existing campaign results | [Performance loop](references/creative-performance-loop.md) |
+| Requested motion | [Video track](references/video-ugc-track.md) |
+| Requested setup or tool routing | [Installation](INSTALL.md), [model routing](references/model-routing.md) |
 
-## 🚫 Quick slop check (before ANY output)
-
-From `design-rules.md` §6 "Quick slop check" — if any of these is present, fix it:
-purple/blue default gradient · glassmorphism · neon glow · gradient text · tiny clip-art icons · text slapped on a photo · cream/sand bg · over-round cards · cards-in-cards · icons > content · gray-on-tinted text · isometric default · AI-invented food · AI-redrawn logo · a pretty photo with no ad structure.
-
----
-
-## 🧭 Host routing
-
-| Host | How to load | Notes |
-|------|-------------|-------|
-| **Hermes** | copy to `~/.hermes/skills/marketing/` | native skill loader |
-| **Claude Code** | copy to `~/.claude/skills/` | native skill loader |
-| **Codex CLI** | copy to `~/.codex/skills/` | native skill loader |
-| **Cursor** | copy to `~/.cursor/skills/` | native skill loader |
-| **ChatGPT / Claude / Gemini (chat)** | paste `design-rules.md` as a custom instruction, or attach it as a knowledge file | the ruleset is self-contained |
-| **Any custom agent / API** | inject `design-rules.md` into the system prompt | the ruleset is self-contained |
-
-Full steps per host: `INSTALL.md`.
-
----
-
-## 📁 Repo structure
-
-```
-meta-ads-designer/
-├── SKILL.md                # This file — agent operating manual
-├── core.md                 # Complete general knowledge (inject) — paste into any chat/agent
-├── visual-advertising-engine.md  # THE 39-rule operating standard (canonical, EN)
-├── design-rules.md         # Readable charter of beautiful advertising (English canonical)
-├── INSTALL.md              # Setup + usage on every agent (incl. ChatGPT)
-├── README.md               # Homepage / manual (PL, main)
-├── README.en.md            # Homepage / manual (EN, extra)
-├── CHANGELOG.md            # Version history
-├── LICENSE                 # MIT
-├── CONTRIBUTING.md         # How to add a rule (rule-ID policy, no-duplication rule)
-├── requirements.txt        # pillow + numpy, for scripts/
-├── .claude-plugin/         # plugin.json — install via a Claude Code marketplace
-├── .github/workflows/ci.yml # runs check_docs.py + test_qa.py on every push
-├── examples/               # Worked ad examples (food, hotel, services, retail)
-├── assets/                 # Banner and generated hero images for the README
-├── scripts/                # qa.py, test_qa.py (its self-test), extract_wordmark.py
-└── references/
-    ├── hospitality-food-services-playbook.md # Deep rules: food / hotel / services
-    ├── layout-system.md        # Layout + panel-height + gradient values
-    ├── headline-system.md      # Headline sizing & contrast rules
-    ├── variation-matrix.md     # Test-ready sets: lock brand, rotate one axis (R35)
-    ├── hook-engineering.md     # The 20→3 hook gate (R36)
-    ├── creative-performance-loop.md # Publish → measure → feed the next brief (R37)
-    ├── platform-compliance.md  # Safe zones + ratio re-layout per platform (R38)
-    ├── video-ugc-track.md      # Video/UGC motion production (R39)
-    ├── artifact-control.md     # The 8 artifact modes, preservation contract, recovery (R40, R41)
-    ├── model-routing.md        # Generator + cost decision table
-    ├── competitor-ad-teardown.md # Turn winning competitor ads into briefs
-    ├── qa-gate.md              # QA gate & rejection criteria
-    ├── anti-slop-registry.md   # Full banned-patterns compendium (visual + copy)
-    ├── niche-playbooks.md      # 15 per-industry ad playbooks
-    └── prompt-library.md       # Ready-to-use prompt recipes (any model)
-```
-
----
-
-## 📜 License
-
-MIT — use it, remix it, ship it.
-
----
-
-<br>
-<p align="center">
-  <b>Created by</b><br>
-  <b>AI EVOLUTION LABS</b><br>
-  <sub>Channel Islands</sub><br>
-  <sub><a href="https://github.com/aievolutionpl/meta-ads-designer">github.com/aievolutionpl/meta-ads-designer</a></sub>
-</p>
+Do not publish campaigns or spend ad budget merely because a reference describes those activities.
