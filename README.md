@@ -1,3 +1,5 @@
+![Meta Ads Designer — pomysł → prompt → reklamy](assets/showcase/hero-main.jpg)
+
 # Meta Ads Designer
 
 ### Od briefu do reklamy z wyraźnym pomysłem.

@@ -1,3 +1,5 @@
+![Meta Ads Designer — idea → prompt → ads](assets/showcase/hero-main.jpg)
+
 # Meta Ads Designer
 
 ### From a brief to an ad with a clear idea.
