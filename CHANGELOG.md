@@ -4,6 +4,18 @@ All notable changes to Meta Ads Designer. Versions follow [SemVer](https://semve
 
 ---
 
+## [6.3.0] — 2026-09-24
+
+### Added
+- **Social-service dialects, styles 13–16** in `style-atlas-2026.md`: 3D clay platform mockup, phone-in-hand with giant ghost type, script accent with frame shape, and 3D service promo (dark and light variants). Each has its DNA, fit, prompt fragment and failure mode, plus guardrails: official platform logos only and never implied endorsement, obvious mockups instead of fake tappable UI, real inner content, no uncanny faces.
+- **Format 3.16 Service promo (benefit chips)** and an agency row in format-by-vertical.
+- **`examples/prompts/skill-promo-styles.txt`**: four prompts promoting this skill, one per new style.
+
+### Changed
+- `anti-slop-registry.md` §1b marks the new styles as a deliberate R42 exception; `core.md`, `SKILL.md` step 3 and both READMEs now list sixteen languages.
+
+---
+
 ## [6.2.0] — 2026-09-24
 
 ### Added

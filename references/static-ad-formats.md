@@ -142,6 +142,13 @@ Each entry: skeleton → copy budget → where it shines → integrity rule.
 - **Shines.** Almost every physical product; beverages, cosmetics, gadgets, food to go.
 - **Integrity.** Hands must be anatomically correct (R30). Product identical to the reference.
 
+### 3.16 · Service promo (benefit chips)
+
+- **Skeleton.** Brand and contact row at the top; a benefit headline with one emphasised key word; a one-line promise pill; 2–4 benefit chips with ticks; a hero scene (person plus 3D symbol, phone plus icons, or a 3D platform mockup); a footer bar with website, location or CTA.
+- **Copy.** Headline ≤ 8 words with one key word; each chip ≤ 3 words and a different benefit; footer ≤ 40 characters.
+- **Shines.** Agencies, freelancers, courses, SaaS, B2B and local professional services, cold and warm audiences.
+- **Integrity.** Chips are services you actually deliver; results ("leads in 14 days", "2× ROAS") only with proof. Platform logos per the guardrails in style-atlas-2026.md, styles 13–16.
+
 ## 4 · Format by vertical
 
 Starting points, combining third-party 2026 format analyses with this repo's playbooks. The brief can overrule them.
@@ -157,6 +164,7 @@ Starting points, combining third-party 2026 format analyses with this repo's pla
 | Local services & trades | Documentary in-use · review card · problem → solution | Stat drop (years, jobs) · native interface |
 | Tech, tools & apps | Product + callouts · comparison | Device-in-hand · stat drop |
 | Real estate | Device-in-hand · real property hero | Stat drop (m², minutes to…) · checkerboard |
+| Agencies & social media services | Service promo (3D service or clay mockup style) · review card | Phone-in-hand portfolio · stat drop (client results with proof) |
 | Education & courses | Numbered benefits · founder / expert quote | Native interface · bold statement |
 | Events | Bold statement (type-led) | Seasonal world · stat drop (line-up size) |
 

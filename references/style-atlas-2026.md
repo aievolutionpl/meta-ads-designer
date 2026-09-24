@@ -35,7 +35,8 @@ Decide in this order and stop as soon as the choice is forced:
 | Build trust for a local service | 6 Documentary phone-real · 7 Native interface · 12 Device-in-hand |
 | Explain several benefits | 8 Performance sticker · formats in static-ad-formats.md |
 | Culture, independent brands, community | 9 Tactile zine · 1 Oversized type |
-| Real estate, apps, digital products | 12 Device-in-hand · 5 Quiet minimal |
+| Real estate, apps, digital products | 12 Device-in-hand · 14 Phone-in-hand + giant type · 5 Quiet minimal |
+| Agency, social media, course or SaaS service | 16 3D service promo · 13 3D clay platform mockup · 15 Script accent · 14 Phone-in-hand + giant type |
 
 ## 3 · The atlas
 
@@ -150,6 +151,55 @@ The dominant style on Eastern European performance boards: dense, energetic and 
 - **Avoid for.** Physical products that should be shown directly.
 - **Prompt fragment.** Generate the hand and device with a blank, evenly lit screen area, or pass the real screenshot as a reference image to be shown on the screen: "A hand holds a modern smartphone at a slight angle in front of a softly defocused apartment balcony at golden hour. The screen is a clean flat bright area facing the camera squarely for later compositing, with no reflections or UI drawn on it."
 - **Fails when.** The model invents an interface, prices or listing details. Screens must be real and composited (R18).
+
+### Social-service dialects (13–16)
+
+Four languages for ads whose product is a **service, an app or a result in the feed**: agencies, social media managers, courses, SaaS, real-estate marketing, and tools like this skill. They come from current Behance/Pinterest agency work. Their risk is the same everywhere: platform trademarks and fake interfaces. Read the guardrails at the end of this block.
+
+### 13 · 3D clay platform mockup
+
+- **DNA.** A social post card (feed frame, profile row, like/comment/share row) rendered as a soft **matte 3D clay object**, lying at a slight isometric tilt on a flat pastel field (powder blue, lilac, mint). The client's real photo or ad sits inside the post. Three or four glossy 3D reaction spheres (thumb, heart, laughing, wow) float above it. Soft studio light, long soft shadow, no text on the background or a tiny corner label.
+- **Signature device.** The post itself becomes a physical object you could pick up.
+- **Use for.** Social media management, content services, "your post could look like this", portfolio promotion, announcing a campaign.
+- **Avoid for.** Selling a physical product directly, where the product should be the hero.
+- **Prompt fragment.** "A single social media feed post rendered as a soft matte white 3D clay object, rounded corners and gentle bevels, lying at a slight isometric tilt on a flat powder-blue background. The post shows [the real photo] in its image area, a generic profile row above and a like / comment / share row below with small simple icons. Four glossy 3D reaction spheres (blue thumbs-up, red heart, yellow wow face, yellow laughing face) float in an arc above the card. Soft diffused studio light from the top left, long soft shadow to the lower right. Minimal, calm, premium toy-like finish."
+- **Fails when.** The UI is a pixel copy of a real app with its wordmark (trademark and R48), the inner photo is generic stock, or the reactions multiply into confetti.
+
+### 14 · Phone-in-hand + giant type (portfolio promo)
+
+- **DNA.** A real hand holding a current phone in the foreground at a slight angle, the screen showing the actual ad or listing. A dark or deep-colour background with an **oversized ghost word** (the category, e.g. "SOCIAL MEDIA") huge and low-contrast behind everything. A heavy condensed headline stacked at the lower right, a small light-weight category word above it ("real estate"), one tiny accent mark (red asterisk or dot), and small corner meta labels (tools, year, studio mark).
+- **Signature device.** The ghost word behind the phone, scale versus the small meta labels.
+- **Use for.** Agencies and designers promoting services, real estate, apps, case studies, course launches.
+- **Avoid for.** Local offers that need a price and a CTA to be read first.
+- **Prompt fragment.** "Dark charcoal background with the words "SOCIAL MEDIA" set extremely large in a condensed grotesk, very low contrast, cropped by the frame. In the left half, a realistic hand holds a modern smartphone tilted toward the viewer; its screen shows [the ad or listing], sharp and legible. Lower right, stacked heavy condensed white headline "[2–3 words]", with a small light-weight word "[category]" above it and one small red asterisk. Tiny white labels in the corners: "[tool / year]". Moody soft light on the hand and phone, subtle rim light."
+- **Fails when.** The screen content is invented gibberish, the phone model's logo is shown, or the ghost word competes with the headline.
+
+### 15 · Script accent + frame shape
+
+- **DNA.** A dark gradient field (wine to black, navy to black) with a **heavy geometric sans headline** and **one word in a flowing brush or script face** laid across it in the accent colour. A large simple frame shape (speech bubble, arch, rounded rectangle) holds the hero image: a phone in hand, a portrait or the product. A small brand mark in the top left.
+- **Signature device.** The script word crossing the heavy sans: two voices, one headline.
+- **Use for.** Social media showcases, beauty, events, personal brands, creators, education.
+- **Avoid for.** Finance and B2B credibility plays, or dense copy.
+- **Prompt fragment.** "Deep wine-to-black gradient background. A large rounded speech-bubble shape outlined in dark red frames [a hand holding a phone showing an Instagram-style grid of the brand's posts]. Lower left, a heavy geometric sans headline in white on two lines, "[WORD 1]" / "[WORD 2]", with the word "[accent word]" written across it in a flowing red brush script. Small brand mark "[name]" top left. Soft red rim light on the hand."
+- **Fails when.** Script is used for more than one word, it sits on a busy area and becomes unreadable, or the gradient turns into neon glow.
+
+### 16 · 3D service promo (agency style)
+
+Two common variants, one grammar: a person cut out or posed on a 3D object, a benefit headline, benefit chips, and floating 3D icons that stand for channels.
+
+- **DNA, dark variant.** Deep navy with a soft blue glow and a subtle grid or light streaks. Headline top-centre: a bold sans with **one key word** in orange or yellow at double size. 2–3 **benefit chips** (rounded outlined boxes, each with a tick). A person with a laptop sits or leans on a glossy 3D symbol (infinity loop, arrow, rising bar). A few 3D platform-style spheres float at the sides. A pill-shaped footer tagline.
+- **DNA, light variant.** White or pale grey. A person cut out mid-action (megaphone, pointing, jumping) next to an oversized phone. A handful of yellow 3D icon coins (play, like, camera, gear) orbit the phone with small plus-signs and dots. A bold two-colour headline at the top, a one-line subline under the scene, and a slim footer bar with website and location.
+- **Signature device.** The 3D symbol or icon orbit that turns an abstract service into an object.
+- **Use for.** Marketing agencies, freelancers, courses, SaaS, recruitment, B2B services, especially in South and Southeast Asian, Middle Eastern and Eastern European markets, where this direct style is common and familiar.
+- **Avoid for.** Premium, luxury or minimalist brands, where it reads as cheap.
+- **Prompt fragment (dark).** "Vertical 4:5 service ad on a deep navy background with a soft blue glow and faint diagonal light streaks. Top: small wordmark "[brand]" left, "[website]" right. Headline centred: "[Boost your business with]" in white bold sans, then "[KEY WORD]" in large orange bold sans. Below, a navy pill: "[one-line promise]". Three rounded outlined chips with orange ticks: "[benefit 1]", "[benefit 2]", "[benefit 3]". Lower half: a smiling person in casual clothes sits with a laptop on a large glossy blue 3D infinity symbol. Two glossy 3D spheres float left and right, using simple generic channel icons. Bottom pill: "[tagline]"."
+- **Fails when.** Everything glows, icons outnumber benefits, the chips repeat one idea, the person is an uncanny AI face, or the headline is a slogan with no concrete benefit (R52: "Great ads don't happen by chance" says nothing; "Pierwsze leady w 14 dni" says something, if true).
+
+**Guardrails for 13–16 (platform trademarks and interfaces)**
+- **Platform logos and names** (Facebook, Instagram, Meta, TikTok) may identify the platform the service is for, only in the owner's official, unaltered form, never as the advertiser's own brand and never implying partnership or endorsement unless it is real. When unsure, use generic icons (thumb, heart, camera, play) and say "social media" instead of the wordmark. Never generate a redrawn platform logo; supply the official asset or leave it out.
+- **Interfaces** are shown as obvious mockups (3D clay objects, a phone in hand). Never make a flat still that imitates a tappable post, button or notification in the feed (`R48-fake-ui`).
+- **The inner content is real:** the actual ad, listing, portfolio piece or photo of the client, supplied as a reference. Never invented screens (R18).
+- **People:** real team members or clearly generic models; avoid uncanny AI faces. Documentary skin texture (R40).
 
 ## 4 · Style is the skin, format is the skeleton
 

@@ -52,6 +52,8 @@ Distinct from designed slop: nobody chose these, the model produced them. They a
 
 ## 1b · 2026 tells: trend slop and the synthetic look
 
+> **Deliberate exception (R42):** the social-service dialects in [`style-atlas-2026.md`](style-atlas-2026.md) (styles 13–16) use glossy 3D icons, glow and floating elements on purpose. They are valid when there are few icons, each stands for a real channel or benefit, and one headline still sells (R52). The bans below target the same devices used as decoration without a job.
+
 Audiences now report that they spot AI-generated ads on sight and trust them less. These are the tells they react to, and the trend versions of decoration without a decision. Full style guidance: [`style-atlas-2026.md`](style-atlas-2026.md) §5.
 
 | Tell | Instead |
