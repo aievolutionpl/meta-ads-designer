@@ -12,12 +12,6 @@ Skill dla agentów AI, który pomaga dobierać **kompozycję, typografię, kolor
 ![License](https://img.shields.io/badge/license-MIT-222222)
 ![Model independent](https://img.shields.io/badge/prompts-model_independent-222222)
 
-| | | |
-|---|---|---|
-| ![PORA](assets/showcase/ad-pora.jpg) | ![NURT](assets/showcase/ad-nurt.jpg) | ![NOC BRZMI](assets/showcase/ad-noc-brzmi.jpg) |
-
-*Przykłady wygenerowane w całości przez AI z promptów skilla: bez retuszu i bez nakładek w kodzie. Marki są fikcyjne. [Prompty, analiza i runda 2](examples/08-generated-showcase.md).*
-
 ## Co robi ten skill
 
 Pomaga agentowi odpowiedzieć na pytania, które decydują o wyglądzie reklamy: co widz ma zrozumieć, na co spojrzy najpierw, jak ułożyć tekst i kiedy wybrać fotografię, ilustrację albo plakat typograficzny.
