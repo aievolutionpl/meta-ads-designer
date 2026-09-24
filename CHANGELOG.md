@@ -4,6 +4,17 @@ All notable changes to Meta Ads Designer. Versions follow [SemVer](https://semve
 
 ---
 
+## [6.5.0] — 2026-09-24
+
+### Added
+- **Styles 24–26:**
+  - geometric promo banner, the classic retail/real-estate template done well: one offer, one CTA pill, no placeholder text, the product breaking out of its colour block;
+  - tonal product launch, with everything tuned to the product's colour, two product views and ghost model letters, plus reseller trademark guardrails;
+  - screen spill, a carousel or lookbook unfolding out of an isometric phone.
+- Brief-need rows for sales, launches and carousels.
+
+---
+
 ## [6.4.0] — 2026-09-24
 
 ### Added

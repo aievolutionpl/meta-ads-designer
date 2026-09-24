@@ -39,6 +39,9 @@ Decide in this order and stop as soon as the choice is forced:
 | Agency, social media, course or SaaS service | 16 3D service promo · 13 3D clay platform mockup · 15 Script accent · 14 Phone-in-hand + giant type |
 | Show the deliverable itself ("this is what you get") | 17 Device stack · 18 Laptop hero · 21 Isometric grid · 22 Before/after phones |
 | Make a design or brand feel real | 19 Billboard in situ · 20 Printed piece · 23 Packaging / merch |
+| Sale, drop or listing for the mass market | 24 Geometric promo banner · 8 Performance sticker |
+| Launch a product with a signature colour | 25 Tonal product launch · 2 Colour-block still life |
+| Carousel, lookbook or campaign case study | 26 Screen spill · 17 Device stack |
 
 ## 3 · The atlas
 
@@ -270,6 +273,37 @@ A mockup shows the ad or product **inside a believable object or place**: a phon
 - **Use for.** Branding studios, new brands, cafés, e-commerce launches, merch drops.
 - **Prompt fragment.** "Flat lay from above on a warm beige paper background: a kraft takeaway cup, a paper bag and a small box, all printed with [the supplied logo] exactly as given, arranged with generous space, one sprig of eucalyptus, soft daylight with gentle shadows."
 - **Fails when.** The logo is redrawn or warped by the model. Pass the official logo as a reference and inspect it at 100%.
+
+### Retail and launch dialects (24–26)
+
+### 24 · Geometric promo banner (done well)
+
+The classic e-commerce and real-estate "template" banner: diagonal colour blocks, a cut-out product crossing the shapes, a big offer, a CTA pill. It is everywhere because it reads fast. It is slop when it carries lorem ipsum, three offers, four fonts and a stock face. Done well, it converts.
+
+- **DNA.** One saturated brand colour and one contrast colour cut into two or three **large diagonal or curved blocks**. The product is cut out cleanly, **crossing a block edge**, with a real shadow. A two-level headline: a small script or light word ("Stylish Shoe") over a heavy bold offer ("BIG SALE"). One offer number large ("−50%", "od 7 000 000 zł"). **One** CTA pill ("Kup teraz"). For real estate: a photo inside a rounded or angled frame, 3–4 features as a tidy two-column list with small dots.
+- **Signature device.** The product breaking out of its colour block.
+- **Use for.** E-commerce sales, product drops, real-estate listings, gadgets, local retail, and markets where this direct style is the norm.
+- **Avoid for.** Premium, fashion-forward or minimalist brands.
+- **Prompt fragment.** "Square 1:1 retail ad. A magenta background with a large white curved block sweeping across the lower-left third. The supplied sneaker, cut out cleanly with a soft contact shadow, crosses the edge between the two colours at a dynamic angle. Top left: small white script word "[Stylish Shoe]" above a heavy yellow bold "[BIG SALE]". Right side: "[do −50%]" in large white bold. One white rounded pill bottom right: "[Kup teraz]". Small brand wordmark top right. No other text, no lorem ipsum, no icons."
+- **Rules that separate good from template.** Real copy only, never placeholder text; one offer, one CTA, at most two typefaces plus one script word; every block edge leads the eye to the product or the offer; contact rows only if real.
+- **Fails when.** It has placeholder text, a fake "Click here" plus a "Shop now" plus a phone number, clip-art triangles scattered around, or a brand logo that isn't the advertiser's.
+
+### 25 · Tonal product launch
+
+- **DNA.** The whole ad is tuned to **the product's own colour** (sierra blue, sage, graphite): background, headline, even the shadows are tints of one hue. The product is huge, cropped by the frame, shown in two views (back plus front) overlapping. Giant ghost letters of the model name are faintly visible behind it. A rounded or extended geometric sans headline centred at the top, with a two-line support line beneath. A thin top bar with contact or social handles.
+- **Signature device.** Monochrome harmony: the product looks like it grew out of the background.
+- **Use for.** Launches of phones, gadgets, cosmetics, drinks, cars, any product with a signature colour; retailer and reseller ads.
+- **Prompt fragment.** "Vertical 4:5 launch ad in soft tonal blues. Pale periwinkle background with the letters "[MODEL]" extremely large and faint behind. The supplied smartphone shown twice, back with the camera module on the left and front screen on the right, overlapping, large and cropped by the bottom edge, soft studio reflections. Top centre: a rounded geometric sans headline in deep blue on two lines, "[Headline line 1]" / "[line 2]", with a two-line support line below in regular weight. A thin top row: "[website]" left, "[phone]" right."
+- **Guardrails.** Only resellers or owners authorised to advertise a branded product may name it or show its logo. The product must match the real model exactly (R03), and headlines must not promise specs the product lacks. "Speed reimagined. Power refined." is copy slop under R52; state a real spec or benefit instead.
+- **Fails when.** Invented device details (extra cameras, wrong notch), or the tonal palette hides the product's edges.
+
+### 26 · Screen spill (content breaking out of the device)
+
+- **DNA.** A phone lies flat at an isometric angle on a plain warm-grey surface. Its content, a carousel, a lookbook or a campaign, **unfolds beyond the screen edges** like a printed strip or a folded leaflet: panels extend left and right, bending in 3D, with real shadows on the surface. Minimal editorial type on the screen itself (collection name, one line).
+- **Signature device.** The feed escaping the phone: the carousel made physical.
+- **Use for.** Carousel ads, fashion lookbooks, campaign case studies, content packages, agencies showing work.
+- **Prompt fragment.** "Isometric top-down view of a white smartphone without a logo lying on a plain warm light-grey surface. The screen shows an editorial page with the title "[SS26]" and a subtitle "[collection name]". The screen's photo content extends beyond the phone on both sides as a long printed strip of [three supplied campaign photos], gently folded and curling off the surface, casting soft realistic shadows. Clean diffuse light, lots of empty space around."
+- **Fails when.** The strip's photos are invented rather than the real campaign, or the fold geometry breaks (panels floating without shadow).
 
 ## 4 · Style is the skin, format is the skeleton
 

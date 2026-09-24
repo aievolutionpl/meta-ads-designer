@@ -3,7 +3,7 @@ name: meta-ads-designer
 description: Research, question, art-direct and generate Meta/social ads, posters and flyers with AI image models (API, Codex or built-in tools), using strong prompts and post-generation analysis, when a user requests advertising visuals or less generic AI design.
 license: MIT
 metadata:
-  version: 6.4.0
+  version: 6.5.0
   author: AI Evolution Labs
   url: https://github.com/aievolutionpl/meta-ads-designer
 ---
@@ -35,7 +35,7 @@ Read [art direction](references/art-direction.md) before drafting a new directio
 
 1. Connect the message to something visible: “The viewer understands this benefit because they see this.”
 2. For a static ad, choose the format, the persuasion skeleton, from the proof you actually have and the audience's stage. Read [static ad formats](references/static-ad-formats.md). No verified number, no stat drop; no real review, no review card.
-3. Choose one visual language and commit to its type, colour, image treatment and signature device. For services, agencies, apps and courses, consider the social-service dialects 13–16 (3D clay post mockup, phone-in-hand with giant type, script accent, 3D service promo) and the mockup dialects 17–23 (device stack, laptop, billboard, print, isometric grid, before/after phones, packaging) and apply their trademark guardrails. Read [style atlas 2026](references/style-atlas-2026.md). Brand identity outranks trend; never mix two dialects in one frame.
+3. Choose one visual language and commit to its type, colour, image treatment and signature device. For services, agencies, apps and courses, consider the social-service dialects 13–16 (3D clay post mockup, phone-in-hand with giant type, script accent, 3D service promo) and the mockup dialects 17–23 (device stack, laptop, billboard, print, isometric grid, before/after phones, packaging), plus 24–26 for retail sales, tonal launches and carousel screen spills and apply their trademark guardrails. Read [style atlas 2026](references/style-atlas-2026.md). Brand identity outranks trend; never mix two dialects in one frame.
 4. Define dominant element, reading path, copy field, quiet area, brand anchor and edge treatment.
 5. Choose type by role, width, weight, language and brand. Set exact copy and line breaks. Run the sell test (R52) on every string: the headline states a concrete benefit or result for this product, the support line proves it or gives a reason to act, the CTA names the action. No mood lines, no unproven superlatives.
 6. Assign colour roles and, for photography, light and material treatment.
