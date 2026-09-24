@@ -12,14 +12,6 @@ An AI agent skill for choosing **composition, typography, colour and visual dire
 ![License](https://img.shields.io/badge/license-MIT-222222)
 ![Model independent](https://img.shields.io/badge/prompts-model_independent-222222)
 
-![Meta Ads Designer — AI-generated showcase](assets/showcase/hero.jpg)
-
-| | | |
-|---|---|---|
-| ![PORA](assets/showcase/ad-pora.jpg) | ![NURT](assets/showcase/ad-nurt.jpg) | ![NOC BRZMI](assets/showcase/ad-noc-brzmi.jpg) |
-
-*Fully AI-generated from the skill's prompts: no retouching, no code overlays. Brands are fictional. [Prompts, analysis and round 2](examples/08-generated-showcase.md).*
-
 ## What the skill does
 
 It helps an agent decide what the viewer should understand, where the eye lands first, how copy fits the frame, and whether photography, illustration or typography best serves the message.

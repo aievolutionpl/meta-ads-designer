@@ -35,9 +35,9 @@ For each image: transcribe every word and compare it with the quoted copy (watch
 
 Generated from [prompts/readme-showcase.txt](prompts/readme-showcase.txt) and the hero prompt. No retouching, no code overlays.
 
-| Hero | PORA | NURT | NOC BRZMI |
-|---|---|---|---|
-| ![hero](../assets/showcase/hero.jpg) | ![PORA](../assets/showcase/ad-pora.jpg) | ![NURT](../assets/showcase/ad-nurt.jpg) | ![NOC BRZMI](../assets/showcase/ad-noc-brzmi.jpg) |
+| PORA | NURT | NOC BRZMI |
+|---|---|---|
+| ![PORA](../assets/showcase/ad-pora.jpg) | ![NURT](../assets/showcase/ad-nurt.jpg) | ![NOC BRZMI](../assets/showcase/ad-noc-brzmi.jpg) |
 
 **Analysis (§4 of discovery-and-research):**
 
