@@ -3,7 +3,7 @@ name: meta-ads-designer
 description: Research, question, art-direct and generate Meta/social ads, posters and flyers with AI image models (API, Codex or built-in tools), using strong prompts and post-generation analysis, when a user requests advertising visuals or less generic AI design.
 license: MIT
 metadata:
-  version: 6.1.0
+  version: 6.2.0
   author: AI Evolution Labs
   url: https://github.com/aievolutionpl/meta-ads-designer
 ---
@@ -37,7 +37,7 @@ Read [art direction](references/art-direction.md) before drafting a new directio
 2. For a static ad, choose the format, the persuasion skeleton, from the proof you actually have and the audience's stage. Read [static ad formats](references/static-ad-formats.md). No verified number, no stat drop; no real review, no review card.
 3. Choose one visual language and commit to its type, colour, image treatment and signature device. Read [style atlas 2026](references/style-atlas-2026.md). Brand identity outranks trend; never mix two dialects in one frame.
 4. Define dominant element, reading path, copy field, quiet area, brand anchor and edge treatment.
-5. Choose type by role, width, weight, language and brand. Set exact copy and line breaks.
+5. Choose type by role, width, weight, language and brand. Set exact copy and line breaks. Run the sell test (R52) on every string: the headline states a concrete benefit or result for this product, the support line proves it or gives a reason to act, the CTA names the action. No mood lines, no unproven superlatives.
 6. Assign colour roles and, for photography, light and material treatment.
 7. Remove anything that competes without helping the message.
 

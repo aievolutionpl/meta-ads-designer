@@ -6,6 +6,22 @@ Character budgets here are locked to the type scale in [`layout-system.md`](layo
 
 ---
 
+
+## 0 · The sell test (R52)
+
+Before any archetype, a headline must sell. Rewrite until all five answers are yes: **what is it · why me · why believe it · why now · only we could say it.**
+
+| Mood line (fails) | Selling line (passes) | Why it works |
+|---|---|---|
+| Poranek ma warstwy. | Croissant, który chrupie jeszcze ciepły. | Product + sensory benefit you can verify at the counter |
+| Zimna do wieczora. | Nalana o 8:00. Wciąż lodowata o 20:00. | Turns "24 h" into a scene the buyer imagines |
+| NOC BRZMI (name only) | NOC BRZMI · 6 godzin live, 3 sceny, jedna noc. | Event name + what you get for the ticket |
+| Najlepsza kawa w mieście | Palona 7 dni temu. Mielona przy Tobie. | Proof replaces the superlative |
+
+**Formula:** `[concrete benefit or result] + [proof detail]`, then `[action]`. Headline ≤ 6–8 words, support line ≤ 45 characters, CTA ≤ 3 words.
+
+**Copy slop — never on the image:** mood with no product · adjectives without proof (najlepszy, premium, wyjątkowy, jakość) · questions nobody asked · "odkryj", "poczuj", "przenieś się" · invented urgency · slogans a competitor could reuse.
+
 ## 1 · The specificity test (run this first, on every headline)
 
 > **Could a direct competitor paste this headline onto their own ad without changing a single word?**

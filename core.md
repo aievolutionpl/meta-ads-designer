@@ -1,6 +1,6 @@
 # 🎬 Meta Ads Designer — CORE (inject me)
 
-> **Paste this into any AI chat (ChatGPT, Claude, Gemini) or any agent's system prompt.** Self-contained: the full general knowledge for generating beautiful social-media ads. Deeper numbers: `references/layout-system.md` + `references/headline-system.md`. Full standard: `visual-advertising-engine.md` (R01–R51). QA gate: `references/qa-gate.md`.
+> **Paste this into any AI chat (ChatGPT, Claude, Gemini) or any agent's system prompt.** Self-contained: the full general knowledge for generating beautiful social-media ads. Deeper numbers: `references/layout-system.md` + `references/headline-system.md`. Full standard: `visual-advertising-engine.md` (R01–R52). QA gate: `references/qa-gate.md`.
 
 ---
 
@@ -125,6 +125,9 @@ Never prompt first. Run this order:
 - **Real estate:** the **real** property is the hero; never AI-invent architecture. Price + location pop as type.
 - **Tech/SaaS:** real UI screenshots (never invented interfaces); one feature per ad.
 - **Finance/professional:** credibility over flash; real numbers sell; keep copy short and quoted, transcribe it after every render (R50).
+
+## 11a · The words must sell (R52)
+Sell test on every headline: what is it · why me (benefit, not mood) · why believe it (number, time, material, proof) · why now · only we could say it. Formula: benefit + proof, then action. "Poranek ma warstwy." fails; "Croissant, który chrupie jeszcze ciepły." passes. Mood lines, unproven superlatives and generic questions are copy slop and a hard fail.
 
 ## 12 · Generated, never coded (R50)
 - **The whole ad comes out of the image model:** photo or illustration, headline, copy and layout. Never compose ads in HTML or code unless the user asks.

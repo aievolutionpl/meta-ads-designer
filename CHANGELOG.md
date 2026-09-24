@@ -4,6 +4,14 @@ All notable changes to Meta Ads Designer. Versions follow [SemVer](https://semve
 
 ---
 
+## [6.2.0] — 2026-09-24
+
+### Added
+- **`R52` The words must sell.** A five-question sell test (what is it · why me · why believe it · why now · only we could say it) runs on every on-image string. Mood lines, unproven superlatives and generic questions count as copy slop and a hard fail. Added to `headline-system.md` §0 with before/after rewrites, `core.md` §11a and the `SKILL.md` decision steps.
+- **AI-generated README showcase** (`assets/showcase/`): a hero and three ads generated from the skill's prompts, analysed in `examples/08-generated-showcase.md`. The analysis covers text transcription, defects and R52 copy failures, and `prompts/readme-showcase-v2.txt` carries the round-2 selling hooks.
+
+---
+
 ## [6.1.0] — 2026-09-24
 
 ### Fixed

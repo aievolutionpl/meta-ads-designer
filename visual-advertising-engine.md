@@ -8,7 +8,7 @@
 
 | | |
 |---|---|
-| **Rules** | R01–R51 below |
+| **Rules** | R01–R52 below |
 | **Layout / type / color numbers** | [`references/layout-system.md`](references/layout-system.md) |
 | **Headline & copy generation** | [`references/headline-system.md`](references/headline-system.md) |
 | **Creative variation matrix (test-ready sets)** | [`references/variation-matrix.md`](references/variation-matrix.md) |
@@ -619,6 +619,21 @@ Make generated text reliable instead: short quoted copy with exact diacritics, "
 Before the first generation, research the brand, its Meta Ad Library presence, 2–3 competitors, reviews and the seasonal context. Then ask the user 3–6 questions in a single message, each with a recommended default, about what research could not settle: offer and proof, audience and moment, main objection, style direction, references, placements, language and model. Compress everything into a decision note (brief, insight, concepts, references, exact copy, output) and write prompts from it. After every generation, analyse the result (text transcription, fidelity, thumbnail test, idea, defects) and change one decision per regeneration. A user who asks to skip questions gets stated assumptions instead.
 
 Depth: [discovery and research](references/discovery-and-research.md).
+
+## R52 · THE WORDS MUST SELL
+
+Every string on the image has a job. The headline sells the product: a concrete benefit or result the buyer gets, in the buyer's words, specific enough that no competitor could paste it onto their ad. The support line gives the proof or the reason to act now. The CTA names the action. A pretty, poetic or clever line that does not say what is sold and why it matters fails, however good the image is.
+
+Run the **sell test** on every headline before generating:
+1. **What is it?** Can a stranger tell the product from the image plus headline in one second?
+2. **Why me?** Does the headline state a benefit, a result or a pain removed, not an adjective or a mood?
+3. **Why believe it?** Is there a concrete detail such as a number, time, place, material or real proof?
+4. **Why now?** Is there a verified reason to act (offer, season, date), or at least a clear action?
+5. **Could a competitor use it unchanged?** If yes, rewrite it.
+
+Copy slop is a hard fail: mood lines with no product ("Poranek ma warstwy."), stacked adjectives, "najlepszy/premium/wyjątkowy" without proof, generic questions, invented urgency, and the banned AI vocabulary. Facts come only from the brief (R43).
+
+Depth: [headline system](references/headline-system.md) §0.
 
 ## 🏁 FINAL PRINCIPLE — DON'T DECORATE. DIRECT.
 

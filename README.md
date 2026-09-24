@@ -6,13 +6,17 @@ Skill dla agentów AI, który pomaga dobierać **kompozycję, typografię, kolor
 
 [English](README.en.md) · [Instrukcja skilla](SKILL.md) · [Szybki start](#szybki-start) · [Przykłady](examples/README.md)
 
-![Version](https://img.shields.io/badge/version-6.1.0-222222)
+![Version](https://img.shields.io/badge/version-6.2.0-222222)
 ![License](https://img.shields.io/badge/license-MIT-222222)
 ![Model independent](https://img.shields.io/badge/prompts-model_independent-222222)
 
-![Meta Ads Designer — nowoczesna typografia i trzy wyraziste kreacje reklamowe](assets/meta-ads-designer-bold.png)
+![Meta Ads Designer — AI-generated showcase](assets/showcase/hero.jpg)
 
-*Koncepcje demonstracyjne wygenerowane z art-directed promptu: fikcyjna kawiarnia DAYBREAK, wydarzenie AFTER HOURS i marka FORM. To ilustracja kierunków projektowych, nie kampanie klientów ani dowód skuteczności reklamowej. [Prompt i opis grafiki](examples/06-readme-showcase.md).*
+| | | |
+|---|---|---|
+| ![PORA](assets/showcase/ad-pora.jpg) | ![NURT](assets/showcase/ad-nurt.jpg) | ![NOC BRZMI](assets/showcase/ad-noc-brzmi.jpg) |
+
+*Przykłady wygenerowane w całości przez AI z promptów skilla: bez retuszu i bez nakładek w kodzie. Marki są fikcyjne. [Prompty, analiza i runda 2](examples/08-generated-showcase.md).*
 
 ## Co robi ten skill
 
@@ -114,7 +118,7 @@ Cała reklama, łącznie z tekstem, powstaje w modelu AI. Skill pisze dokładne 
 | [Formaty statyczne](references/static-ad-formats.md) | Szkielety perswazji, dowód, lejek i dopasowanie do branży |
 | [Przykłady promptów](examples/05-model-independent-directions.md) | Flyer, gastronomia i usługa lokalna |
 | [Kierunki 2026](examples/07-2026-style-directions.md) | Briefy „format + styl” i zestaw kampanii pod Andromedę |
-| [Visual Advertising Engine](visual-advertising-engine.md) | Kanoniczne reguły R01–R51 |
+| [Visual Advertising Engine](visual-advertising-engine.md) | Kanoniczne reguły R01–R52 |
 | [Layout system](references/layout-system.md) | Punkty wyjścia dla siatki, marginesów i skali tekstu |
 | [Diagnostyka kreacji](references/creative-diagnostics.md) | Z eksportu Ads Managera do kolejnego briefu (`scripts/creative_diagnostics.py`) |
 | [Platformy](references/platform-compliance.md) | Strefy bezpieczne, limity tekstu, Advantage+, etykiety AI |
