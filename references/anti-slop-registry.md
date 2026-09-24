@@ -50,6 +50,24 @@ Distinct from designed slop: nobody chose these, the model produced them. They a
 
 **Density adjectives are prompt slop.** `ultra-detailed` · `hyper-detailed` · `intricate` · `rich texture everywhere` · `8k detail` — these request unbounded micro-repetition and are the direct trigger for texture dissolution. Describe the **material** instead (`R40`).
 
+## 1b · 2026 tells: trend slop and the synthetic look
+
+Audiences now report that they spot AI-generated ads on sight and trust them less. These are the tells they react to, and the trend versions of decoration without a decision. Full style guidance: [`style-atlas-2026.md`](style-atlas-2026.md) §5.
+
+| Tell | Instead |
+|--------|---------|
+| plastic, poreless skin; perfect symmetrical faces; stock-perfect smiles | real people or documentary casting, natural skin texture, asymmetry |
+| everything glossy: every surface a highlight, every colour saturated | one sharp material, the rest honestly matte or soft |
+| the teal-and-orange "cinematic" grade on every subject | a palette from the brand, the product or the real place |
+| gibberish micro-text on packaging, signs and screens | blank or real composited text (R18) |
+| grain, scratches or doodles laid over a sterile render as "authenticity" | imperfection from a real process: print, film, a phone photo, a hand mark |
+| two or three style dialects in one frame | one visual language per creative (R45) |
+| a Behance-style board of tilted ad cards shipped as one ad | extract one card's language and build one ad (R06) |
+| a sticker, an arrow and an emoji on every element | one sticker for the one key fact |
+| an invented interface, listing or app screen | a real screenshot composited in a design tool |
+| a play button, close icon or notification badge on a still | nothing that pretends to be tappable (R48) |
+| an outpainted edge that invents product or architecture | supply native ratios; keep extendable edges clean ([`platform-compliance.md`](platform-compliance.md) §6) |
+
 ---
 
 ## 2 · Ad-specific slop — never in a creative

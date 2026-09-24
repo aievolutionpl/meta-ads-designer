@@ -97,6 +97,11 @@ Return ONLY this JSON, no prose:
   "unbriefed_elements": ["any shape, object or colour cast present in the image
                           with no line in the prompt behind it — session ghosting"],
   "style_coherence": true|false,
+  "visual_language": "the ONE language this reads as (oversized type, colour-block
+                      still life, direct-flash editorial, documentary, native
+                      interface, performance sticker, tactile zine...) or \"mixed\"",
+  "fake_functional_ui": ["play buttons on a still, close icons, notification
+                         badges, tappable-looking checkboxes; [] if none"],
   "edge_halo_or_bleed": ["objects ringed by a glow, seam or smear, or texture
                           leaking across their boundary; [] if none"],
   "duplicated_or_warped": ["duplicated objects, melted geometry, impossible
@@ -115,7 +120,7 @@ Return ONLY this JSON, no prose:
   "hard_fails": ["R30-product|R30-logo|R30-text|R30-anatomy|R30-physics|
                   R30-scale|R30-chaos|R30-ui|R30-background|R30-stock|
                   R30-function|R30-overload|R40-texture|R40-ghosting|
-                  R41-drift|R41-halo"],
+                  R41-drift|R41-halo|R48-fake-ui"],
   "score": {"hierarchy":0-2, "product":0-2, "realism":0-2, "typography":0-2,
             "copy":0-2, "color":0-2, "space":0-2, "logo":0-2,
             "thumbnail":0-2, "idea":0-2},
@@ -130,6 +135,8 @@ Return ONLY this JSON, no prose:
 - `unrequested_changes` non-empty on an edit → **`R41-drift`**. The `PRESERVE` slot was missing or too thin. Re-edit with the preservation block for that subject; do not accept the drift because the result looks good ([`artifact-control.md`](artifact-control.md) §8).
 - `edge_halo_or_bleed` or `duplicated_or_warped` non-empty → **`R41-halo`**. The edit was too large to integrate. Shrink the ask, hold the original lighting, and specify contact shadows ([`artifact-control.md`](artifact-control.md) §7).
 - `style_coherence: false` → two colliding style descriptors. Pick one and regenerate; re-rolling will not resolve it ([`artifact-control.md`](artifact-control.md) §4).
+- `visual_language: "mixed"` → **R45**. Two dialects compete (for example direct flash plus riso grain plus stickers). Keep the language that serves the message, remove the other's devices, and regenerate ([`style-atlas-2026.md`](style-atlas-2026.md) §5).
+- `fake_functional_ui` non-empty → **`R48-fake-ui`**. Remove the control; a still image must not pretend to be tappable ([`platform-compliance.md`](platform-compliance.md) §6).
 - `spelling_errors` with `severity: hard` → regenerate (Mode A) or re-render the text layer (Mode B).
 - `total < 16` → fix the lowest-scoring criteria and re-run.
 - `reads_as_ai_generated: true` with `total ≥ 16` → trust the flag, not the score. Redesign.

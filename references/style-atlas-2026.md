@@ -1,0 +1,217 @@
+# Style atlas 2026: visual languages that hold up in the feed
+
+> The operating tool behind **R45**. Use it after the decision card in [art-direction.md](art-direction.md) §1–§2, when you choose the visual grammar (§3). A style is a complete language: type, colour, image treatment, layout and one signature device. Pick one, execute it fully, and let the brand outrank the trend.
+
+The grammars in `art-direction.md` §3 say *what kind* of picture carries the message. This atlas lists the specific dialects that show up in current performance and portfolio work, with the details that separate a designed version from the template version.
+
+---
+
+## 1 · What the 2026 feed rewards
+
+Research summary, September 2026. The figures are third-party benchmarks and vendor analyses, not Meta rules. Use them as direction, never as promised results. Sources are listed in §7.
+
+- **Clarity beats flash.** High-converting Meta ads use simple layouts and one clear message, and the eye travels from the main idea to the action without effort. Clever-but-slow loses.
+- **Feed-native beats ad-shaped.** When a viewer registers "this is an ad" the thumb moves. Lo-fi, creator-style and screenshot-style creatives are reported to beat polished brand creative on hook rate and CTR in large ad samples. Polish is still right for luxury, fashion and hospitality; it just has to look like photography or editorial design, not like an ad template.
+- **Human beats synthetic.** Trend reports describe 2026 as "imperfect by design": grain, hand marks, zine layouts, real texture. Audiences increasingly say they can spot AI-generated ads and trust them less. Real product photos, real people and real brand assets carry trust. AI belongs in production, not on display.
+- **Type is the hero more often.** Oversized headlines, condensed and extended widths, and weight contrast inside one headline are the dominant typographic moves.
+- **Contrast beats a single trend colour.** Pantone's 2026 colour, Cloud Dancer, is a soft white. Current palettes pair calm neutrals with one confident accent or use a saturated field colour against its complement.
+- **Distinct beats similar.** Meta's retrieval system groups near-identical creatives, so a set only earns reach when its members look and argue differently (R47).
+
+## 2 · Choosing a language
+
+Decide in this order and stop as soon as the choice is forced:
+
+1. **Brand identity.** An existing visual system wins. Borrow a technique from a style only when it fits the brand.
+2. **Message mechanism.** Choose from art-direction §2 the visible mechanism for the benefit, then the style that shows it best.
+3. **Source assets.** A real product photo, real staff, a real room or only copy? Styles 3, 4 and 6 need photography; styles 1, 7 and 9 can be built without it.
+4. **Placement and funnel.** Cold feed audiences favour native and bold styles. Retargeting can carry proof-dense formats (see [static-ad-formats.md](static-ad-formats.md)).
+5. **Trend last.** A trend is a reason to prefer one valid option over another, never a reason to override the four decisions above.
+
+| Brief need | Strong candidates |
+|---|---|
+| Announce, shout an offer, an event | 1 Oversized type · 8 Performance sticker · 11 Seasonal world |
+| Make one object desirable | 2 Colour-block still life · 4 Cinematic close-up · 5 Quiet minimal |
+| Lifestyle, fashion, eyewear, beauty | 3 Direct-flash editorial · 4 Cinematic close-up · 10 Reality warp |
+| Build trust for a local service | 6 Documentary phone-real · 7 Native interface · 12 Device-in-hand |
+| Explain several benefits | 8 Performance sticker · formats in static-ad-formats.md |
+| Culture, independent brands, community | 9 Tactile zine · 1 Oversized type |
+| Real estate, apps, digital products | 12 Device-in-hand · 5 Quiet minimal |
+
+## 3 · The atlas
+
+Each entry gives the DNA, where it fits, a model-independent prompt fragment to adapt, and the way it usually fails. Fragments describe visible properties. They are not complete prompts; compile them with [prompt-craft.md](prompt-craft.md).
+
+### 1 · Oversized type poster
+
+- **DNA.** The headline is the image and covers 40–70% of the frame. Heavy condensed grotesk (Anton, Bebas Neue, Oswald class) or wide extended sans (Druk Wide, Unbounded class), tight leading (0.85–0.95), mostly caps. One saturated field colour or one photo cropped behind the letters. Weight contrast inside the headline, one word thin and the next black, is the 2026 accent. Small secondary information in a quiet sans.
+- **Signature device.** One word breaks the pattern: a different colour, italic, outlined or cut by an image.
+- **Use for.** Events, launches, sales with a verified offer, bold brands, cold audiences.
+- **Avoid for.** Anything where the product's appearance is the selling point.
+- **Prompt fragment.** "A flat typographic poster. The words 'X' and 'Y' fill the upper two thirds in a heavy condensed grotesk, all caps, tight leading, warm white on saturated cobalt. The second word is set in a thin weight of the same family for contrast. A single small line of detail sits at the bottom left in a plain medium sans. No other graphics."
+- **Fails when.** The letters are distorted, tracking is loose, three weights compete, or practical details become too small to read.
+
+### 2 · Colour-block still life
+
+- **DNA.** Product on a monochrome set: floor, wall and props in one hue family, often the product's own colour or its complement. Hard or crisp directional light, a clean graphic shadow and geometric plinths or paper sweeps. A saturated tone anchors the frame and one complementary accent creates tension (yellow/violet, red/cyan, blue/orange).
+- **Signature device.** A single prop or shadow that echoes the product's shape.
+- **Use for.** Cosmetics, drinks, accessories, gadgets, DTC packaging.
+- **Avoid for.** Food that needs natural appetite cues, services.
+- **Prompt fragment.** "Studio still life on a seamless tomato-red sweep with matching red cylindrical plinths. The unchanged product stands on the tallest plinth, lit by a single hard light from the upper left that throws a crisp diagonal shadow. One small cobalt object provides the only contrasting colour. Large quiet red area in the upper third for a headline."
+- **Fails when.** The product's colour gets tinted by the set, or three props become clutter. Keep the product identical to the reference (R03).
+
+### 3 · Direct-flash editorial
+
+- **DNA.** On-camera flash or hard noon sun: bright subject, hard-edged shadow directly behind it, saturated colour, specular highlights. Candid, slightly off-balance crops, a gesture caught mid-movement, real locations such as a car window, a street or a kitchen. Minimal or no type: a small wordmark and one short line.
+- **Signature device.** The hard shadow halo and a "caught" moment.
+- **Use for.** Fashion, eyewear, beverages, nightlife, youth brands, lifestyle launches.
+- **Avoid for.** Wellness, healthcare, calm hospitality, luxury that relies on softness.
+- **Prompt fragment.** "Fashion editorial photograph shot with direct on-camera flash at dusk: the subject leans out of a car window mid-gesture, skin and fabric brightly lit, a crisp dark flash shadow on the door behind. Saturated greens in the foliage behind, slightly tilted candid framing. Natural skin texture with visible pores, no retouched plastic look."
+- **Fails when.** It becomes glossy and airbrushed and loses the snapshot quality, or the flash lighting looks physically inconsistent.
+
+### 4 · Cinematic close-up with coloured light
+
+- **DNA.** Low-key frame with most of it near black. One strong coloured light (magenta, red, amber, teal) models an extreme close-up of the product or of a face wearing it. Reflections carry the story. Type is small, wide-tracked caps or a single large line in a corner.
+- **Signature device.** The colour of the light is the brand accent.
+- **Use for.** Sport and tech accessories, eyewear, fragrance, premium audio, nightlife.
+- **Avoid for.** Food (coloured light kills appetite), family products, anything needing trust through clarity.
+- **Prompt fragment.** "Extreme close-up of the supplied sunglasses on a face in profile, frame and lens filling most of the image. A single saturated red light from the right rakes across the lens and reflects a thin hot highlight. Everything else falls into deep shadow. Keep the product's shape, logo placement and lens tint identical to the reference."
+- **Fails when.** Neon glow or haze gets added, because a light source is not a glow effect (R05), or the product's real colour becomes unreadable.
+
+### 5 · Quiet minimal ("Cloud Dancer")
+
+- **DNA.** Soft white or off-white field, one object or one scene fragment, 50–70% empty space. Small, precise type: a refined serif or neutral grotesk at modest size, often in a corner, sometimes with editorial index labels (01, 2026, category). Natural daylight and soft shadows.
+- **Signature device.** Scale: something small in a large calm field.
+- **Use for.** Premium skincare, ceramics, architecture, boutique hotels, jewellery, considered SaaS.
+- **Avoid for.** Discounts, urgency, cold audiences that need an explicit benefit.
+- **Prompt fragment.** "Minimal product photograph on a soft warm-white surface against a matching wall. The single object sits low and off-centre to the right, occupying about a fifth of the frame, with a long soft daylight shadow extending left. The rest of the frame is calm and empty. Subtle paper-like tonal variation, no props."
+- **Fails when.** Nothing tells the viewer what is advertised, so it reads as a mood with no ad. Pair it with a sharp headline. Cream used by default rather than by decision is still slop (R42).
+
+### 6 · Documentary phone-real (UGC-look static)
+
+- **DNA.** Looks shot on a phone by a customer or staff member: natural or mixed indoor light, slightly imperfect framing, real environment, hands or faces in the frame, visible use. Type is platform-native: a short caption in a system-like sans, sometimes in a white box or bubble, sentence case.
+- **Signature device.** A real person and a real place, specific enough to be believed.
+- **Use for.** Local services, restaurants, trades, fitness, beauty treatments, apps, lead generation.
+- **Avoid for.** Luxury positioning, products whose appeal is precise form.
+- **Prompt fragment.** "Candid smartphone photo, eye level, of a mechanic's hands tightening a bicycle brake in a small workshop, mixed daylight from a side window and warm overhead bulbs, slightly off-centre framing, real clutter softly out of focus. It looks like a photo a customer took, not a production."
+- **Fails when.** Staged stock smiles, perfect symmetry or a staged "UGC" look that no phone would produce. Use real people, get consent, and prefer the business's own photos (R03).
+
+### 7 · Native interface (notes, chat, post)
+
+- **DNA.** The ad borrows the anatomy of something people read every day: a notes-app list, a chat thread, a social post, a sticky note, a receipt. System-like sans (SF Pro or Inter class) at readable size, plain background, one emphasised line. Canva's 2026 trend report calls this "Notes App Chic".
+- **Signature device.** Content that reads as a real thought or conversation in the brand's own voice.
+- **Use for.** Objection handling, lists ("3 things we never do"), confessions, founder notes, apps, services.
+- **Avoid for.** Products that need to be seen to be wanted.
+- **Prompt fragment.** Build this deterministically (Mode B). Specify: "notes-style card, off-white background, title 'Why our espresso tastes different' in semibold, a three-item checklist in regular weight, the last item highlighted with a yellow marker stroke."
+- **Integrity.** Never fake functional UI such as a play button, a close X, notification badges or checkboxes that look tappable. Never impersonate a real person, a real platform account, a news outlet or another brand's interface. Quotes and reviews must be real (see static-ad-formats.md §3).
+
+### 8 · Performance sticker banner
+
+The dominant style on Eastern European performance boards: dense, energetic and built for fast reading at thumbnail size.
+
+- **DNA.** Cut-out product or person with a crisp edge and a real contact shadow. Heavy condensed caps headline (often two colours). One saturated background colour or a simple photo field. One or two rotated "sticker" badges with a verified offer or one key fact, hand-drawn-style arrows pointing at the product, and small pill tags. Strong hierarchy despite the density.
+- **Signature device.** The rotated sticker, used once and holding the single most important fact.
+- **Use for.** E-commerce, education/online courses, apps, promotions, retail, food delivery.
+- **Avoid for.** Luxury, premium hospitality, anything that should feel calm.
+- **Prompt fragment.** "Vertical 4:5 performance ad on a saturated sky-blue background. The supplied product sits large in the lower right, cut out cleanly with a soft contact shadow. Upper left: a two-line headline in heavy condensed caps, first line white, second line black. One circular yellow sticker rotated 8° overlaps the product's upper edge and carries only 'X'. One hand-drawn white arrow points from the headline to the product. Nothing else."
+- **Fails when.** It has three stickers, five arrows and emoji: every device used once becomes noise used five times. Invented discounts are a hard fail (R43).
+
+### 9 · Tactile zine / imperfect by design
+
+- **DNA.** Printed-matter texture: risograph grain, halftone, misregistered two-colour print, torn or cut paper, tape, stamps, handwritten notes, photocopy contrast. Asymmetric editorial layout with type set at different scales and angles. Limited palette of two or three inks, for example fluorescent pink with blue and black.
+- **Signature device.** A physical process such as print, tear or stamp that is visible in the image.
+- **Use for.** Culture, music, independent retail, cafés, community events, creative services, Gen Z brands.
+- **Avoid for.** Finance, healthcare, anything where credibility depends on precision.
+- **Prompt fragment.** "Two-colour risograph poster look, fluorescent pink and deep blue on off-white paper, with visible grain and slight misregistration. A halftone photo of the venue is torn along one edge and taped at an angle. The event name is set large in a bold grotesk and overlaps the photo, with the date stamped in a rubber-stamp style in the corner."
+- **Fails when.** Grain is sprinkled over a clean AI render as a filter. Imperfection has to come from a process choice, not from noise. Texture can also destroy letterforms, and it collides with R40 texture control if the whole frame asks for fine detail.
+
+### 10 · Reality warp (surreal scale)
+
+- **DNA.** One impossible but readable idea: the product at architectural scale, an everyday object replaced by the product, a physical metaphor made literal. Photographic realism in light and material, so the surprise stays credible. Canva's 2026 report names this "Reality Warp".
+- **Signature device.** One impossibility, never two.
+- **Use for.** Launches, beverages, fashion, tech, brand awareness with a memorable metaphor.
+- **Avoid for.** Offers, local services, anything where the surreal image could be read as a literal product claim.
+- **Prompt fragment.** "A giant version of the supplied perfume bottle stands in a quiet desert landscape like a monument, at the scale of a two-storey building. Late-afternoon sun casts a long realistic shadow across the sand. Two tiny people walk toward it for scale. The bottle's shape, cap and label layout match the reference exactly."
+- **Fails when.** Surrealism becomes AI dream soup, with several impossibilities, melting materials or no product clarity. Metaphors must not misrepresent what the product does.
+
+### 11 · Seasonal world
+
+- **DNA.** The season or occasion builds the whole set: pool water in July, watermelon in August, frost in winter, specific local festivals. The product or offer sits inside that world with matching light and colour. The headline often names the moment, and a highlighter-pill behind one word marks the date or month.
+- **Signature device.** A context cue that makes the ad feel current this week.
+- **Use for.** Retail calendars, food and beverages, travel, hospitality, promotions, content series.
+- **Avoid for.** Evergreen ads meant to run for months.
+- **Prompt fragment.** "Top-down view of sunlit swimming-pool water with caustic light patterns, clear turquoise, used as a full-bleed background. The supplied product floats on the water surface at the centre with a realistic soft reflection and small ripples around it. Upper quarter left calm for a headline."
+- **Fails when.** Clichéd seasonal clip art (snowflakes, suns, hearts) replaces a real environment, or the context outshines the product.
+
+### 12 · Device-in-hand proof
+
+- **DNA.** A real hand holding a phone or tablet that shows the actual listing, app screen, booking page or result. The screen is the proof and the hand gives scale and intimacy. Often combined with oversized condensed type beside or behind the device.
+- **Signature device.** A genuine screen, legible at feed size.
+- **Use for.** Real estate, apps, SaaS, booking, marketplaces, courses.
+- **Avoid for.** Physical products that should be shown directly.
+- **Prompt fragment.** Generate the hand and device with a blank, evenly lit screen area, then composite the real screenshot in a design tool: "A hand holds a modern smartphone at a slight angle in front of a softly defocused apartment balcony at golden hour. The screen is a clean flat bright area facing the camera squarely for later compositing, with no reflections or UI drawn on it."
+- **Fails when.** The model invents an interface, prices or listing details. Screens must be real and composited (R18).
+
+## 4 · Style is the skin, format is the skeleton
+
+A style says how the ad looks. A format in [static-ad-formats.md](static-ad-formats.md) says how it persuades: bold statement, stat drop, review card, callouts, comparison and so on. Choose both explicitly, and state them in one line of the working note: "Format: product + callouts. Style: colour-block still life."
+
+| Format | Pairs well with | Clashes with |
+|---|---|---|
+| Bold statement | 1 Oversized type, 5 Quiet minimal, 9 Tactile zine | 3 Direct flash (image fights headline) |
+| Stat drop | 1 Oversized type, 2 Colour-block | 10 Reality warp |
+| Review / quote card | 7 Native interface, 6 Documentary, 5 Quiet minimal | 4 Cinematic close-up |
+| Product + callouts | 8 Performance sticker, 2 Colour-block | 5 Quiet minimal (callouts destroy calm) |
+| Comparison / us vs them | 7 Native interface, 8 Performance sticker | 9 Tactile zine (precision lost) |
+| Offer stack | 8 Performance sticker, 11 Seasonal world | 5 Quiet minimal |
+| Founder / expert quote | 6 Documentary, 5 Quiet minimal | 10 Reality warp |
+| Problem → solution | 6 Documentary, 10 Reality warp | 4 Cinematic close-up |
+
+## 5 · Trend slop: when a style turns into a filter
+
+These are the 2026 versions of R05. The style is legitimate, but the execution is decoration without a decision.
+
+- **Fake imperfection.** Grain, scratches or a "hand-drawn" doodle added to a sterile render. Imperfection means a process choice.
+- **Two dialects in one frame.** Direct flash plus riso grain plus neon plus sticker badges. One language per creative (R45).
+- **Portfolio board as an ad.** Behance and Dribbble covers are case-study packaging: many tilted ad cards on a coloured background with category pills and huge "COLLECTION OF BANNERS" type. That is a presentation of ads, not an ad. Extract the language of one card; never ship a board-style collage as an ad (R06, `R30-overload`).
+- **Stickers everywhere.** A sticker is a stamp of the single most important fact. Two stickers halve its force; three turn the ad into a flyer from a discount bin.
+- **Trend colour without identity.** Cloud Dancer white, butter yellow or cobalt forced onto a brand that owns a different palette. The brand palette wins (R42).
+- **Borrowed identity.** Copying a specific designer's composition, a campaign's layout, or a brand's typeface-and-colour signature. Borrow the principle, not the artwork.
+- **AI tells in "real" styles.** Documentary or flash styles fail hardest when skin is plastic, hands are wrong or text is gibberish, because they promise reality. Inspect at 100% (R40).
+
+## 6 · Reading a reference board
+
+When the user supplies Behance, Dribbble, Pinterest or Ad Library references, or you research them, write one DNA line per reference before borrowing anything:
+
+```
+REF — type: [class, width, weight, case] · colour: [field / text / accent] ·
+image: [photo type, light, crop] · layout: [skeleton] · device: [signature] ·
+copy mechanism: [hook type] · borrow: [principle] · never: [identity element]
+```
+
+**Worked example: patterns on a Behance "meta advertising" search page (screenshot supplied by the maintainer, September 2026).** These are observations about the public work shown, not endorsements of performance.
+
+| Observed cover | DNA | Principle worth borrowing |
+|---|---|---|
+| Collection of ad banners on electric cobalt | Heavy condensed white caps, tilted ad cards, small pill category tags | Condensed caps plus one saturated field reads instantly; pill tags as a tiny meta layer |
+| "400+ ads a month. Most died on purpose" | Near-black, bold coral/white sans, rubber-stamp "KILLED/SCALED" stickers over a data table | A stamp as a narrative device; testing volume as a story |
+| Seasonal "100+ creatives for July / August" boards | Pool water or watermelon worlds, ad cards floating in the scene, month in a yellow highlight pill | Seasonal world as the set; highlight pill for the time cue |
+| Eyewear lifestyle campaign | Hard sunlight, car window, saturated greens, gesture, no text | Direct-light editorial, a caught moment |
+| AI fashion campaign cover | Low-key portrait, big uppercase sans at the bottom, corner index labels (#2, AI CAMPAIGN, 2026) | Editorial corner labels frame the image as a publication |
+| Sport sunglasses close-up | Red light raking over a lens, deep shadow | Colour of the light as the brand accent |
+| "May–June AD creatives" | Lifestyle photo with a thin and bold weight mix in one headline | Weight contrast inside one headline |
+| Real-estate banners | Hand holding a phone showing the listing, huge condensed type on a dark photo | Device-in-hand proof |
+
+Recurring moves across the page: condensed heavy caps, one saturated field colour, weight contrast inside a headline, corner micro-labels, stamps and stickers as a single narrative device, seasonal environments, and real hands and devices as proof. Most covers are portfolio boards, so remember §5 before borrowing their layout.
+
+## 7 · Sources
+
+Researched September 2026. Behance, Dribbble, Penji and Meta's Ads Guide could not be opened directly from the research environment; they were used through search summaries and the supplied screenshot. Verify changing platform numbers in the [Meta Ads Guide](https://www.facebook.com/business/ads-guide/update) before final delivery.
+
+- Penji, [How to design high-converting Meta ads](https://penji.co/how-to-design-high-converting-meta-ads/): simple layouts, clear message, eye path from idea to CTA, design with intention.
+- Behance, [meta advertising search](https://www.behance.net/search/projects/meta%20advertising) and Dribbble, [meta-ads tag](https://dribbble.com/tags/meta-ads): portfolio patterns summarised in §6.
+- Canva, [Imperfect by Design: 2026 design trends](https://www.canva.com/newsroom/news/design-trends-2026/): Reality Warp, Notes App Chic, Zinegeist, tactile textures, Opt-Out Era.
+- Fontfabric, [Design and typography trends 2026](https://www.fontfabric.com/blog/10-design-trends-shaping-the-visual-typographic-landscape-in-2026/): extended and condensed type, typography as the main character, visible human touch.
+- Pantone, [Colour of the Year 2026: Cloud Dancer](https://www.pantone.com/articles/press-releases/pantone-announces-color-of-the-year-2026-cloud-dancer).
+- Favoured, [Ugly ad creative 2026](https://favoured.co.uk/ugly-ad-creative-2026/), and similar analyses of lo-fi versus polished creative.
+- Photography trend roundups on direct flash, colour blocking and surreal still life, for example [Squareshot](https://www.squareshot.com/post/product-photography-trends) and [Envato](https://elements.envato.com/learn/photography-trends).
+- On audience trust in AI-generated ads: [eMarketer](https://www.emarketer.com/content/shoppers-aren-t-impressed-by-ai-generated-marketing) and [AdPulse](https://adpulse.com/ai-advertising-trends-2026-the-real-content-comeback-no-one-saw-coming/).

@@ -6,7 +6,7 @@ Skill dla agentów AI, który pomaga dobierać **kompozycję, typografię, kolor
 
 [English](README.en.md) · [Instrukcja skilla](SKILL.md) · [Szybki start](#szybki-start) · [Przykłady](examples/README.md)
 
-![Version](https://img.shields.io/badge/version-5.9.0-222222)
+![Version](https://img.shields.io/badge/version-5.10.0-222222)
 ![License](https://img.shields.io/badge/license-MIT-222222)
 ![Model independent](https://img.shields.io/badge/prompts-model_independent-222222)
 
@@ -36,6 +36,19 @@ Ten sam zestaw pomysłów można rozwinąć w spokojniejszym kierunku editorial:
 
 *Druga plansza demonstracyjna. Zmienia się charakter art direction, a nie zakres możliwości skilla.*
 
+## Nowość w 5.10: warstwa 2026
+
+![Style Atlas 2026: sześć fikcyjnych reklam, każda łączy format statyczny z jednym językiem wizualnym](assets/style-atlas-2026.png)
+
+*Sześć fikcyjnych reklam złożonych deterministycznie w HTML ([źródło](assets/generated/style-atlas.html)): bez modelu obrazu, bez materiałów klientów, bez obietnic wyników. Każda łączy format perswazji z jednym językiem wizualnym.*
+
+Skill wie teraz, jak wyglądają aktualne reklamy Meta i dlaczego pewne struktury przekonują:
+
+- **Atlas stylów 2026** — dwanaście języków wizualnych: od plakatu z wielką typografią i edytorialu z fleszem, przez natywne notatki, banery performance ze stickerem, po taktylny zin. Każdy ma typografię, kolor, sygnaturowy detal, fragment promptu i typowy błąd.
+- **Formaty statyczne** — piętnaście szkieletów perswazji (stat drop, stos recenzji, produkt z calloutami, porównanie, offer stack…). Format jest dostępny tylko wtedy, gdy istnieje jego dowód.
+- **Fakty platformy 2026** — ujednolicona strefa bezpieczna Reels/Stories (14% góra, 35% dół), eksport 4:5 w 1440×1800, rozszerzanie obrazu i generowane tła w Advantage+, etykiety „AI info” oraz grupowanie niemal identycznych reklam przez Andromedę.
+- **Cztery nowe reguły, R45–R48** — jeden język wizualny na reklamę, format wynika z dowodu, różnorodność daje zasięg, projekt pod system placementów 2026.
+
 ## Jak działa
 
 ```mermaid
@@ -48,7 +61,7 @@ flowchart LR
 
 1. **Brief** — agent ustala odbiorcę, prawdziwą ofertę, cel, format i dostępne materiały.
 2. **Pomysł** — wybiera, co pokaże korzyść: produkt, działanie, detal, sytuacja lub typografia.
-3. **Art direction** — określa dominantę, kolejność czytania, przestrzeń na tekst, fonty i paletę.
+3. **Art direction** — wybiera format, na który pozwala dowód, i jeden język wizualny, a potem określa dominantę, kolejność czytania, przestrzeń na tekst, fonty i paletę.
 4. **Prompt** — zapisuje konkretną kompozycję, dokładne treści i ograniczenia.
 5. **Ocena** — sprawdza spójność promptu; po wygenerowaniu obrazu również czytelność, pisownię i zgodność z materiałami.
 
@@ -95,9 +108,13 @@ Prompt wyraża intencję projektową. Nie gwarantuje identycznego fontu, położ
 | [core.md](core.md) | Samodzielna instrukcja do wklejenia w czacie |
 | [Art direction](references/art-direction.md) | Od celu marketingowego do kompozycji i typografii |
 | [Prompt craft](references/prompt-craft.md) | Pisanie i sprawdzanie promptów |
+| [Atlas stylów 2026](references/style-atlas-2026.md) | Dwanaście języków wizualnych, trend slop, czytanie plansz referencyjnych |
+| [Formaty statyczne](references/static-ad-formats.md) | Szkielety perswazji, dowód, lejek i dopasowanie do branży |
 | [Przykłady promptów](examples/05-model-independent-directions.md) | Flyer, gastronomia i usługa lokalna |
-| [Visual Advertising Engine](visual-advertising-engine.md) | Kanoniczne reguły R01–R44 |
+| [Kierunki 2026](examples/07-2026-style-directions.md) | Briefy „format + styl” i zestaw kampanii pod Andromedę |
+| [Visual Advertising Engine](visual-advertising-engine.md) | Kanoniczne reguły R01–R48 |
 | [Layout system](references/layout-system.md) | Punkty wyjścia dla siatki, marginesów i skali tekstu |
+| [Platformy](references/platform-compliance.md) | Strefy bezpieczne, limity tekstu, Advantage+, etykiety AI |
 | [QA gate](references/qa-gate.md) | Ocena rzeczywiście wygenerowanych obrazów |
 | [Pozostałe przykłady](examples/README.md) | Briefy, prompty i omówienie decyzji |
 

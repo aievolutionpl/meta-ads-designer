@@ -36,6 +36,8 @@ Opening mechanisms that reliably stop the scroll — pick a different one per su
 - **Belonging** — the target sees themselves. *"For people who cook every day."*
 - **Negation** — the anti-slop counter to the obvious. *"Not another gadget. A fix."*
 
+**Hooks reported to work in 2026.** Motion's 2026 benchmarks list confession, bold claim, relatability, contrast and curiosity among the tactics that large advertisers scale. BrandMov's analysis of 4,994 hand-tagged DTC ads found that nine hook templates, led by sale, in-30-seconds, ever-tried/noticed and feature breakdown, make up about 70% of the feed. Popular is not the same as right: a crowded hook needs a sharper visual to stand out. The pairing of each hook with a static format lives in [`static-ad-formats.md`](static-ad-formats.md) §5.
+
 Keep it **short and scannable** — the thumb-read of a feed or the first second of a reel. See the character budgets in [`headline-system.md`](headline-system.md).
 
 ---

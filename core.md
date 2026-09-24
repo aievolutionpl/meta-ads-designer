@@ -1,6 +1,6 @@
 # 🎬 Meta Ads Designer — CORE (inject me)
 
-> **Paste this into any AI chat (ChatGPT, Claude, Gemini) or any agent's system prompt.** Self-contained: the full general knowledge for generating beautiful social-media ads. Deeper numbers: `references/layout-system.md` + `references/headline-system.md`. Full standard: `visual-advertising-engine.md` (R01–R44). QA gate: `references/qa-gate.md`.
+> **Paste this into any AI chat (ChatGPT, Claude, Gemini) or any agent's system prompt.** Self-contained: the full general knowledge for generating beautiful social-media ads. Deeper numbers: `references/layout-system.md` + `references/headline-system.md`. Full standard: `visual-advertising-engine.md` (R01–R48). QA gate: `references/qa-gate.md`.
 
 ---
 
@@ -27,8 +27,8 @@ A great ad does ONE job: stop the scroll and deliver ONE message. Everything els
 ## 2 · Formats (compose for the format, never rely on cropping)
 | Platform / slot | Ratio | Canvas |
 |---|---|---|
-| Instagram / Facebook feed (default) | **4:5** | 1080×1350 |
-| Reels / Stories / Shorts | 9:16 | 1080×1920 |
+| Instagram / Facebook feed (default) | **4:5** | 1080×1350 (export 1440×1800) |
+| Reels / Stories / Shorts | 9:16 | 1080×1920 — copy, logo, CTA out of top 14% / bottom 35% / sides 6% |
 | Marketplace / square | 1:1 | 1080×1080 |
 | Wide / web | 16:9 | 1920×1080 |
 
@@ -176,6 +176,21 @@ product changed · logo wrong or redrawn · lettering fake or misspelled · hand
 
 ## 19 · The gate — score before you deliver
 10 criteria × 0/1/2: hierarchy · product · realism · typography · copy · colour · space · logo · thumbnail · idea. **Ship at ≥16/20 with zero hard fails.** Ask a vision model to **transcribe** every word it can read and compare it yourself — asking "is the spelling correct?" gets a yes.
+
+## 20 · The 2026 feed layer (R45–R48)
+**What the feed rewards now:** clarity over flash · feed-native over ad-shaped · real people and real products over synthetic polish · type as the hero · one confident accent against calm neutrals · distinct concepts over near-duplicates.
+
+**Pick a format by the proof you have** (full list: `references/static-ad-formats.md`):
+- Bold statement · stat drop (verified number + source) · review card / review stack (real words only) · product + callouts (3–5, product stays dominant) · comparison / us vs them (fair, checkable) · before/after (real, category permitting) · numbered benefits · founder quote (real person) · offer stack (verified terms) · native interface (notes, chat, post) · problem → solution · checkerboard · in-use.
+- Cold audiences: bold statement, native interface, problem → solution. Warm: callouts, comparison, reviews. Retargeting: offer stack, review card.
+
+**Then commit to one visual language** (full atlas: `references/style-atlas-2026.md`): oversized type poster · colour-block still life · direct-flash editorial · cinematic close-up with coloured light · quiet minimal · documentary phone-real · native interface · performance sticker banner · tactile zine · reality warp · seasonal world · device-in-hand proof. Execute its full DNA: type class, colour roles, image treatment, one signature device. Never two dialects in one frame. Brand identity outranks the trend.
+
+**Trend slop:** grain sprinkled on a sterile render · three stickers, five arrows · a Behance-style board of tilted ad cards shipped as one ad · plastic skin in a "documentary" ad · an invented app screen · a fake play button or notification badge on a still.
+
+**Campaign sets:** Meta groups near-identical ads and lets them compete as one. Vary persona, motivation, hook, format or style between concepts, never just colour or one word. Controlled tests still rotate one variable.
+
+**Placement:** Meta's text fields show ~125 characters of primary text and a 40-character headline before truncation. Keep on-image text to the hook, offer or one proof point. Advantage+ may expand images, add overlays and rewrite text: keep critical content central, leave clean extendable edges, and flag risky enhancements for product-fidelity work. AI-made ads may carry an "AI info" label; never hide it.
 
 ---
 

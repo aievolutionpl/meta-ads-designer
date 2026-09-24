@@ -26,8 +26,8 @@ These are production starting values, not universal definitions of taste. Choose
 
 | Format | Canvas | Outer margin | Extra keep-out |
 |--------|--------|--------------|----------------|
-| **4:5 feed** | 1080×1350 | 86px all sides | bottom 120px — *advisory*, some placements only |
-| **9:16 story/reel** | 1080×1920 | 86px sides | **top 250px** (profile row), **bottom 320px** (CTA + caption) |
+| **4:5 feed** | 1080×1350 (export 1440×1800) | 86px all sides | bottom 120px — *advisory*, some placements only |
+| **9:16 story/reel** | 1080×1920 | 86px sides | **top 14% ≈ 269px** (profile row), **bottom 35% ≈ 672px** (CTA, caption, actions) — Meta's unified 2026 zone |
 | **1:1** | 1080×1080 | 86px all sides | — |
 | **16:9** | 1920×1080 | 96px all sides | — |
 | **2:3 Pinterest** | 1000×1500 | 80px all sides | — |

@@ -79,3 +79,29 @@ Before you generate:
 5. **QA every variant** against the gate (R34) before it ships.
 
 If you cannot name the single rotating axis, you are not ready to generate — go back to the brief.
+
+---
+
+## 6 · Concept diversity for delivery (R47)
+
+A controlled test and a delivery portfolio are different tools. The matrix above isolates one variable so a result can be attributed. Meta's retrieval system (Andromeda) works the other way: it groups creatives it judges similar and treats them as one candidate, so near-duplicates share one chance to reach people instead of each getting their own. Practitioner guides describe a creative-similarity signal in Ads Manager that flags these clusters.
+
+What counts as similar: the same scene with a new headline colour, one word swapped, a slightly different crop, the same layout with a different background tint. What counts as distinct: a different persona on screen, a different motivation or pain point, a different hook mechanism, a different format (static, carousel, video, native screenshot) or a different visual language from the [style atlas](style-atlas-2026.md).
+
+**Plan an exploration set as a concept grid, not a colour grid:**
+
+```
+           | Persona A (busy parent) | Persona B (first-time buyer) | Persona C (expert)
+-----------+-------------------------+------------------------------+-------------------
+Problem    | Native notes, lo-fi     | Documentary in-use           | Stat drop, type-led
+Proof      | Review stack            | Founder quote                | Comparison grid
+Desire     | Seasonal world          | Colour-block still life      | Cinematic close-up
+```
+
+Each cell differs from its neighbours in at least two of persona, motivation, format and style. Brand-lock rows from §2 still apply, so the set reads as one brand.
+
+**When a concept wins**, iterate on it in ways that change who it speaks to: a new persona, a new setting, a new copy tone, the same winning angle. A recolour of the winner is not an iteration; it is the same ad.
+
+**Volume matters.** Motion's 2026 benchmark of more than 550,000 Meta ads found that only about 5% become clear winners, and stronger accounts ship more new creatives each week. A set of three is a start, not a portfolio. Scale variants only as far as the brief and budget justify, and never pad a set with cosmetic copies.
+
+Sources: [Atria on Andromeda](https://www.tryatria.com/blog/andromeda-meta-ads), [Confect](https://confect.io/tactics/meta-andromeda-2026), [303 London on creative diversity](https://www.303.london/blog/complete-guide-to-creative-diversity-for-meta-andromeda), [Motion Creative Benchmarks 2026](https://motionapp.com/library/research/creative-benchmarks-2026/).

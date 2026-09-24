@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Style Atlas 2026 — Meta Ads Designer</title>
+<!-- FONTS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wdth,wght@62..125,100..900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<!-- /FONTS -->
+<style>
+  /* Board: Cloud Dancer field, six 4:5 ads designed at 1080x1350 and scaled. */
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { width:1400px; height:1420px; }
+  body { background:#F0EEE9; color:#141414; font-family:'Inter', sans-serif; position:relative; }
+
+  .head { position:absolute; left:80px; right:80px; top:72px; display:flex; justify-content:space-between; align-items:flex-end; }
+  .head h1 { font-family:'Archivo'; font-variation-settings:'wdth' 125; font-weight:800; font-size:76px; line-height:0.95; letter-spacing:-0.01em; }
+  .head h1 span { font-weight:250; }
+  .head p { margin-top:18px; font-size:21px; line-height:1.4; color:#55514A; max-width:720px; }
+  .head .meta { font-family:'JetBrains Mono'; font-size:14px; line-height:1.9; letter-spacing:0.08em; color:#55514A; text-align:right; text-transform:uppercase; }
+  .head .meta b { color:#141414; font-weight:700; }
+
+  .grid { position:absolute; left:80px; top:292px; display:grid; grid-template-columns:repeat(3, 380px); column-gap:50px; row-gap:34px; }
+  .slot .frame { width:380px; height:475px; overflow:hidden; position:relative; border-radius:3px;
+                 box-shadow:0 1px 0 rgba(20,18,15,.05), 0 18px 40px -12px rgba(20,18,15,.22); }
+  .slot .ad { width:1080px; height:1350px; position:absolute; left:0; top:0; transform:scale(0.351852); transform-origin:0 0; overflow:hidden; }
+  .slot .cap { margin-top:16px; display:grid; grid-template-columns:34px 1fr; row-gap:3px; }
+  .slot .cap .n { font-family:'JetBrains Mono'; font-size:13px; font-weight:500; color:#8A857C; padding-top:3px; }
+  .slot .cap .s { font-size:18px; font-weight:600; color:#141414; }
+  .slot .cap .f { grid-column:2; font-size:14px; color:#6E6A62; }
+
+  /* ---------- 01 · Oversized type poster ---------- */
+  .a1 { background:#1D3BD1; color:#F4F1EA; }
+  .a1 .title { position:absolute; left:80px; top:74px; font-family:'Archivo'; font-variation-settings:'wdth' 62; text-transform:uppercase; }
+  .a1 .title div { font-size:420px; line-height:0.8; letter-spacing:-0.012em; }
+  .a1 .title .heavy { font-weight:900; }
+  .a1 .title .thin { font-weight:160; }
+  .a1 .wave { position:absolute; left:0; top:760px; width:1080px; height:230px; }
+  .a1 .info { position:absolute; left:86px; bottom:86px; }
+  .a1 .info .d { font-size:46px; font-weight:600; letter-spacing:-0.005em; }
+  .a1 .info .v { font-size:46px; font-weight:400; margin-top:6px; }
+  .a1 .info .t { font-size:30px; font-weight:500; margin-top:34px; opacity:.86; }
+
+  /* ---------- 02 · Native interface: notes ---------- */
+  .a2 { background:#F7F4EE; color:#1B1A17; }
+  .a2 .lab { position:absolute; left:86px; top:90px; font-size:30px; font-weight:500; color:#8F897F; }
+  .a2 .rule { position:absolute; left:86px; right:86px; top:150px; height:2px; background:#E3DED4; }
+  .a2 h2 { position:absolute; left:86px; top:196px; font-size:84px; font-weight:700; line-height:1.08; letter-spacing:-0.02em; }
+  .a2 .date { position:absolute; left:86px; top:404px; font-size:28px; color:#A29B90; }
+  .a2 ul { position:absolute; left:86px; right:86px; top:500px; list-style:none; }
+  .a2 li { display:flex; align-items:center; gap:32px; font-size:47px; line-height:1.18; padding:36px 0; border-bottom:2px solid #ECE7DE; }
+  .a2 li svg { flex:0 0 54px; width:54px; height:54px; }
+  .a2 li .hl { position:relative; }
+  .a2 li .hl::before { content:''; position:absolute; left:-10px; right:-12px; top:18%; bottom:8%; background:#FFE35A; border-radius:10px 4px 12px 6px; transform:rotate(-1.2deg); z-index:-1; opacity:.9; }
+  .a2 li .hl { z-index:0; isolation:isolate; }
+  .a2 .base { position:absolute; left:86px; right:86px; bottom:86px; display:flex; justify-content:space-between; align-items:baseline; }
+  .a2 .brand { font-family:'Archivo'; font-variation-settings:'wdth' 112; font-weight:800; font-size:32px; letter-spacing:0.08em; color:#1F7A74; }
+  .a2 .cta { font-size:32px; font-weight:600; color:#1F7A74; }
+
+  /* ---------- 03 · Colour-block still life × stat drop ---------- */
+  .a3 { background:linear-gradient(#F2B28C 0 71%, #E9A47E 71% 100%); color:#4A1A3C; }
+  .a3 .num { position:absolute; left:80px; top:74px; font-family:'Archivo'; font-variation-settings:'wdth' 125; font-weight:800; font-size:232px; line-height:1; letter-spacing:-0.035em; }
+  .a3 .lbl { position:absolute; left:86px; top:326px; font-size:44px; font-weight:500; line-height:1.22; letter-spacing:-0.01em; }
+  .a3 .set { position:absolute; left:0; top:0; width:1080px; height:1350px; }
+  .a3 .src { position:absolute; left:86px; bottom:86px; font-size:22px; font-weight:500; opacity:.82; }
+  .a3 .brand { position:absolute; right:86px; bottom:80px; font-family:'Archivo'; font-variation-settings:'wdth' 125; font-weight:700; font-size:34px; letter-spacing:0.22em; }
+
+  /* ---------- 04 · Performance sticker × product + callouts ---------- */
+  .a4 { background:#FF6A1C; color:#fff; }
+  .a4 .hd { position:absolute; left:84px; top:78px; font-family:'Anton'; font-size:176px; line-height:0.9; text-transform:uppercase; letter-spacing:0.004em; }
+  .a4 .hd .dark { color:#16130F; }
+  .a4 .brand { position:absolute; right:86px; top:92px; font-family:'Archivo'; font-variation-settings:'wdth' 125; font-weight:800; font-size:34px; letter-spacing:0.2em; color:#16130F; }
+  .a4 .prod { position:absolute; left:0; top:0; width:1080px; height:1350px; }
+  .a4 .co { position:absolute; left:86px; font-family:'Archivo'; font-variation-settings:'wdth' 100; font-weight:700; font-size:44px; letter-spacing:-0.005em; }
+  .a4 .sticker { position:absolute; left:716px; top:392px; width:250px; height:250px; border-radius:50%; background:#FFE03A; color:#16130F;
+                 transform:rotate(8deg); display:flex; flex-direction:column; align-items:center; justify-content:center;
+                 box-shadow:0 10px 0 rgba(0,0,0,.10); }
+  .a4 .sticker b { font-family:'Anton'; font-weight:400; font-size:96px; line-height:.95; }
+  .a4 .sticker span { font-size:32px; font-weight:700; margin-top:4px; }
+  .a4 .legal { position:absolute; left:86px; bottom:86px; font-size:22px; font-weight:500; opacity:.9; }
+
+  /* ---------- 05 · Tactile zine ---------- */
+  .a5 { background:#F1ECE2; color:#0078BF; }
+  .a5 .grain { position:absolute; inset:0; z-index:9; pointer-events:none; mix-blend-mode:multiply; opacity:.55; }
+  .a5 .photo { position:absolute; left:318px; top:300px; width:690px; height:690px; transform:rotate(3.2deg); }
+  .a5 .title { position:absolute; left:74px; top:116px; font-family:'Archivo'; font-variation-settings:'wdth' 100; font-weight:900; font-size:236px; line-height:0.84;
+               color:#FF48B0; text-transform:uppercase; mix-blend-mode:multiply; letter-spacing:-0.02em; z-index:4; }
+  .a5 .tape { position:absolute; width:210px; height:64px; background:rgba(250,246,236,.72); z-index:5; box-shadow:0 1px 2px rgba(0,0,0,.06); }
+  .a5 .stamp { position:absolute; left:92px; top:760px; transform:rotate(-7deg); border:7px solid #0078BF; border-radius:18px; padding:14px 28px 10px;
+               font-family:'Archivo'; font-variation-settings:'wdth' 75; font-weight:800; font-size:92px; line-height:1; letter-spacing:0.02em; mix-blend-mode:multiply; z-index:6; }
+  .a5 .stamp small { display:block; font-size:34px; font-weight:600; letter-spacing:0.14em; margin-bottom:6px; }
+  .a5 .info { position:absolute; left:86px; bottom:86px; font-family:'JetBrains Mono'; font-weight:500; font-size:30px; line-height:1.5; z-index:6; mix-blend-mode:multiply; }
+  .a5 .info b { color:#FF48B0; font-weight:700; }
+
+  /* ---------- 06 · Comparison × quiet minimal ---------- */
+  .a6 { background:#FBFAF7; color:#2A1B14; }
+  .a6 h2 { position:absolute; left:86px; top:96px; font-family:'Archivo'; font-variation-settings:'wdth' 88; font-weight:700; font-size:94px; line-height:1.02; letter-spacing:-0.02em; }
+  .a6 h2 i { font-style:normal; font-weight:300; }
+  .a6 table { position:absolute; left:86px; top:430px; width:908px; border-collapse:collapse; }
+  .a6 th { height:112px; font-size:34px; text-align:left; padding:0 24px; vertical-align:middle; }
+  .a6 th.us { background:#2A1B14; color:#FBFAF7; font-family:'Archivo'; font-variation-settings:'wdth' 125; font-weight:800; letter-spacing:0.16em; font-size:34px; }
+  .a6 th.them { color:#8B837B; font-weight:500; }
+  .a6 td { height:178px; padding:0 24px; border-bottom:2px solid #E7E2DA; font-size:38px; line-height:1.15; white-space:nowrap; vertical-align:middle; }
+  .a6 td.k { width:190px; padding-left:0; font-family:'JetBrains Mono'; font-size:26px; letter-spacing:0.06em; text-transform:uppercase; color:#8B837B; }
+  .a6 td.us { background:#F3EEE7; font-weight:600; }
+  .a6 td.us span { color:#C0692B; margin-right:14px; font-weight:700; }
+  .a6 td.them { color:#8B837B; }
+  .a6 .base { position:absolute; left:86px; right:86px; bottom:86px; display:flex; justify-content:space-between; align-items:baseline; }
+  .a6 .brand { font-family:'Archivo'; font-variation-settings:'wdth' 125; font-weight:800; font-size:34px; letter-spacing:0.2em; }
+  .a6 .cta { font-size:32px; font-weight:600; color:#C0692B; }
+</style>
+</head>
+<body>
+
+<div class="head">
+  <div>
+    <h1>Style Atlas <span>2026</span></h1>
+    <p>Format × visual language. Six fictional ads typeset in HTML from references/style-atlas-2026.md: no image model, no client assets.</p>
+  </div>
+  <div class="meta"><b>Meta Ads Designer 5.10</b><br>R45 · one visual language<br>R46 · format follows proof</div>
+</div>
+
+<div class="grid">
+
+  <!-- 01 -->
+  <div class="slot">
+    <div class="frame"><div class="ad a1">
+      <div class="title"><div class="heavy">Noc</div><div class="thin">brzmi</div></div>
+      <svg class="wave" viewBox="0 0 1080 230" preserveAspectRatio="none">
+        <path d="M440 115 C 500 20, 560 20, 620 115 S 740 210, 800 115 S 920 20, 980 115 S 1100 210, 1160 115" fill="none" stroke="#D6F03C" stroke-width="58" stroke-linecap="round"/>
+      </svg>
+      <div class="info">
+        <div class="d">18.10.2026 · 20:00</div>
+        <div class="v">Studio 8</div>
+        <div class="t">Bilety: nocbrzmi.example</div>
+      </div>
+    </div></div>
+    <div class="cap"><span class="n">01</span><span class="s">Oversized type poster</span><span class="f">Bold statement · weight contrast in one headline</span></div>
+  </div>
+
+  <!-- 02 -->
+  <div class="slot">
+    <div class="frame"><div class="ad a2">
+      <div class="lab">Notatki · dziś</div>
+      <div class="rule"></div>
+      <h2>Czego nigdy nie robimy<br>u klientów</h2>
+      <div class="date">24 września, 09:12</div>
+      <ul>
+        <li><svg viewBox="0 0 46 46"><circle cx="23" cy="23" r="20" fill="none" stroke="#1F7A74" stroke-width="3.5"/><path d="M14 23.5 L20.5 30 L32 17" fill="none" stroke="#1F7A74" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>nie przestawiamy rzeczy bez pytania</li>
+        <li><svg viewBox="0 0 46 46"><circle cx="23" cy="23" r="20" fill="none" stroke="#1F7A74" stroke-width="3.5"/><path d="M14 23.5 L20.5 30 L32 17" fill="none" stroke="#1F7A74" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>nie używamy Twoich ręczników</li>
+        <li><svg viewBox="0 0 46 46"><circle cx="23" cy="23" r="20" fill="none" stroke="#1F7A74" stroke-width="3.5"/><path d="M14 23.5 L20.5 30 L32 17" fill="none" stroke="#1F7A74" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hl">nie zmieniamy ekipy co tydzień</span></li>
+        <li style="border-bottom:0"><svg viewBox="0 0 46 46"><circle cx="23" cy="23" r="20" fill="none" stroke="#1F7A74" stroke-width="3.5"/><path d="M14 23.5 L20.5 30 L32 17" fill="none" stroke="#1F7A74" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>nie zostawiamy zapachu chemii</li>
+      </ul>
+      <div class="base"><span class="brand">PORZĄDEK</span><span class="cta">Umów sprzątanie →</span></div>
+    </div></div>
+    <div class="cap"><span class="n">02</span><span class="s">Native interface: notes</span><span class="f">Confession · objection handling in the owner's voice</span></div>
+  </div>
+
+  <!-- 03 -->
+  <div class="slot">
+    <div class="frame"><div class="ad a3">
+      <svg class="set" viewBox="0 0 1080 1350">
+        <defs>
+          <linearGradient id="plinth" x1="0" x2="1">
+            <stop offset="0" stop-color="#DE9670"/><stop offset=".5" stop-color="#F3BD98"/><stop offset="1" stop-color="#FBD5B8"/>
+          </linearGradient>
+          <linearGradient id="glass" x1="0" x2="1">
+            <stop offset="0" stop-color="#EFDCD1"/><stop offset=".55" stop-color="#FCF3EE"/><stop offset=".8" stop-color="#FFFFFF"/><stop offset="1" stop-color="#EBD3C6"/>
+          </linearGradient>
+          <clipPath id="floor"><rect x="0" y="958" width="1080" height="392"/></clipPath>
+          <clipPath id="tallTop"><ellipse cx="780" cy="840" rx="150" ry="26"/></clipPath>
+        </defs>
+        <!-- hard light from the upper right: crisp shadows fall to the lower left -->
+        <g clip-path="url(#floor)" fill="#CF8660" opacity=".5">
+          <path d="M630 1150 L 930 1150 L 700 1262 L 400 1262 Z"/>
+          <path d="M400 1188 L 640 1188 L 520 1262 L 280 1262 Z"/>
+        </g>
+        <!-- tall plinth -->
+        <path d="M630 840 L 630 1150 A 150 26 0 0 0 930 1150 L 930 840 Z" fill="url(#plinth)"/>
+        <ellipse cx="780" cy="840" rx="150" ry="26" fill="#FCDCC3"/>
+        <!-- bottle shadow on the plinth top -->
+        <path d="M728 846 L 836 846 L 736 872 L 620 872 Z" fill="#DE9670" opacity=".75" clip-path="url(#tallTop)"/>
+        <!-- short plinth, in front -->
+        <path d="M400 1010 L 400 1188 A 120 22 0 0 0 640 1188 L 640 1010 Z" fill="url(#plinth)"/>
+        <ellipse cx="520" cy="1010" rx="120" ry="22" fill="#FCDCC3"/>
+        <!-- bottle, scaled up so the product reads at thumbnail size -->
+        <g transform="translate(780 846) scale(1.34)">
+          <rect x="-58" y="-270" width="116" height="270" rx="28" fill="url(#glass)"/>
+          <rect x="-58" y="-270" width="116" height="270" rx="28" fill="none" stroke="#E2C2B0" stroke-width="1.6"/>
+          <rect x="-27" y="-316" width="54" height="50" rx="6" fill="#FFFFFF"/>
+          <rect x="-31" y="-329" width="62" height="18" rx="5" fill="#F3EFE9"/>
+          <path d="M-19 -329 C -23 -404, 23 -404, 19 -329 Z" fill="#FFFFFF"/>
+          <path d="M-19 -329 C -23 -404, 23 -404, 19 -329" fill="none" stroke="#E6DFD5" stroke-width="1.6"/>
+          <rect x="-43" y="-168" width="86" height="76" rx="4" fill="#FFFFFF" opacity=".94"/>
+          <text x="0" y="-124" text-anchor="middle" font-family="Archivo" font-weight="700" font-size="17" letter-spacing="3.4" fill="#4A1A3C">LUMA</text>
+          <text x="0" y="-104" text-anchor="middle" font-family="Inter" font-weight="500" font-size="8" letter-spacing="1" fill="#8A6A7E">SERUM · 30 ML</text>
+          <rect x="40" y="-254" width="7" height="236" rx="3.5" fill="#FFFFFF" opacity=".95"/>
+        </g>
+        <!-- the one contrasting colour -->
+        <circle cx="700" cy="1192" r="36" fill="#4A1A3C"/>
+        <circle cx="712" cy="1178" r="10" fill="#6E2C5B"/>
+      </svg>
+      <div class="num">47/60</div>
+      <div class="lbl">reported smoother skin<br>in 4 weeks</div>
+      <div class="src">Independent user study, 60 participants, 2026.</div>
+      <div class="brand">LUMA</div>
+    </div></div>
+    <div class="cap"><span class="n">03</span><span class="s">Colour-block still life</span><span class="f">Stat drop · verified number with its source line</span></div>
+  </div>
+
+  <!-- 04 -->
+  <div class="slot">
+    <div class="frame"><div class="ad a4">
+      <div class="hd">Zimna<br><span class="dark">do wieczora.</span></div>
+      <div class="brand">NURT</div>
+      <svg class="prod" viewBox="0 0 1080 1350">
+        <defs>
+          <linearGradient id="sage" x1="0" x2="1">
+            <stop offset="0" stop-color="#7F9A7C"/><stop offset=".22" stop-color="#B4C8AF"/><stop offset=".36" stop-color="#9DB597"/><stop offset="1" stop-color="#6F8A6C"/>
+          </linearGradient>
+          <linearGradient id="steel" x1="0" x2="1">
+            <stop offset="0" stop-color="#9EA19D"/><stop offset=".25" stop-color="#E9EAE6"/><stop offset=".6" stop-color="#C2C5C0"/><stop offset="1" stop-color="#8C8F8B"/>
+          </linearGradient>
+        </defs>
+        <ellipse cx="770" cy="1236" rx="170" ry="26" fill="#B8430A" opacity=".55"/>
+        <!-- loop -->
+        <path d="M728 468 C 728 400, 812 400, 812 468" fill="none" stroke="#2A2A28" stroke-width="18" stroke-linecap="round"/>
+        <!-- cap -->
+        <rect x="690" y="462" width="160" height="92" rx="18" fill="url(#steel)"/>
+        <rect x="690" y="540" width="160" height="16" fill="#2A2A28" opacity=".8"/>
+        <!-- neck + body -->
+        <path d="M700 556 L 840 556 L 840 590 C 900 616, 912 650, 912 700 L 912 1180 C 912 1222, 882 1240, 842 1240 L 698 1240 C 658 1240, 628 1222, 628 1180 L 628 700 C 628 650, 640 616, 700 590 Z" fill="url(#sage)"/>
+        <text x="770" y="930" text-anchor="middle" font-family="Archivo" font-weight="800" font-size="30" letter-spacing="9" fill="#D7E3D3" opacity=".9">NURT</text>
+        <!-- condensation, upper half only -->
+        <g fill="#FFFFFF" opacity=".75">
+          <circle cx="672" cy="720" r="5"/><circle cx="700" cy="760" r="3.5"/><circle cx="688" cy="812" r="6"/><circle cx="724" cy="690" r="3"/>
+          <circle cx="866" cy="742" r="4"/><circle cx="880" cy="800" r="3"/><circle cx="850" cy="690" r="5"/><circle cx="660" cy="870" r="3.5"/>
+          <circle cx="742" cy="740" r="2.5"/><circle cx="802" cy="704" r="3"/><circle cx="894" cy="860" r="4.5"/>
+        </g>
+        <!-- callout arrows, hand-drawn -->
+        <g fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M392 706 C 470 690, 540 700, 612 730"/><path d="M590 710 L 614 731 L 584 742"/>
+          <path d="M318 866 C 420 880, 520 876, 612 858"/><path d="M586 846 L 613 858 L 588 874"/>
+          <path d="M360 1026 C 450 1040, 530 1020, 612 994"/><path d="M586 986 L 613 994 L 594 1016"/>
+        </g>
+      </svg>
+      <div class="co" style="top:672px">24 h zimna</div>
+      <div class="co" style="top:834px">750 ml</div>
+      <div class="co" style="top:994px">stal 18/8</div>
+      <div class="sticker"><b>−20%</b><span>na start</span></div>
+      <div class="legal">Oferta dla pierwszego zamówienia do 30.09.2026.</div>
+    </div></div>
+    <div class="cap"><span class="n">04</span><span class="s">Performance sticker banner</span><span class="f">Product + callouts · one sticker, one verified offer</span></div>
+  </div>
+
+  <!-- 05 -->
+  <div class="slot">
+    <div class="frame"><div class="ad a5">
+      <svg class="photo" viewBox="0 0 690 690">
+        <defs>
+          <clipPath id="torn"><path d="M0 18 L 690 0 L 690 690 L 0 690 L 0 640 L 12 600 L 2 560 L 16 520 L 4 470 L 18 430 L 6 380 L 20 340 L 8 290 L 22 250 L 6 200 L 18 160 L 4 110 L 16 70 Z"/></clipPath>
+          <pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="8" cy="8" r="4.6" fill="#0078BF"/></pattern>
+          <pattern id="dotsS" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="8" cy="8" r="2.4" fill="#0078BF"/></pattern>
+          <radialGradient id="fade"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#000"/></radialGradient>
+        </defs>
+        <g clip-path="url(#torn)">
+          <rect width="690" height="690" fill="#F6F1E7"/>
+          <rect width="690" height="690" fill="url(#dotsS)"/>
+          <circle cx="345" cy="345" r="290" fill="#F6F1E7"/>
+          <circle cx="345" cy="345" r="290" fill="url(#dots)"/>
+          <g fill="none" stroke="#F6F1E7" stroke-width="3" opacity=".9">
+            <circle cx="345" cy="345" r="250"/><circle cx="345" cy="345" r="220"/><circle cx="345" cy="345" r="190"/><circle cx="345" cy="345" r="160"/>
+          </g>
+          <circle cx="345" cy="345" r="108" fill="#FF48B0"/>
+          <circle cx="345" cy="345" r="12" fill="#F6F1E7"/>
+          <path d="M150 170 C 230 110, 330 96, 420 118" stroke="#F6F1E7" stroke-width="16" fill="none" stroke-linecap="round" opacity=".85"/>
+        </g>
+      </svg>
+      <div class="tape" style="left:360px; top:282px; transform:rotate(-14deg)"></div>
+      <div class="tape" style="left:862px; top:942px; transform:rotate(-10deg)"></div>
+      <div class="title">Targ<br>winyli</div>
+      <div class="stamp"><small>SOBOTA</small>12.10</div>
+      <div class="info">Hala Targowa 3<br>10:00–17:00 · <b>wstęp wolny</b></div>
+      <svg class="grain" viewBox="0 0 1080 1350" preserveAspectRatio="none">
+        <filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7"/><feColorMatrix type="saturate" values="0"/>
+          <feComponentTransfer><feFuncA type="table" tableValues="0 .5"/></feComponentTransfer></filter>
+        <rect width="1080" height="1350" filter="url(#n)"/>
+      </svg>
+    </div></div>
+    <div class="cap"><span class="n">05</span><span class="s">Tactile zine</span><span class="f">Event flyer · two-ink overprint as the one process</span></div>
+  </div>
+
+  <!-- 06 -->
+  <div class="slot">
+    <div class="frame"><div class="ad a6">
+      <h2>Kawa, która<br><i>nie czekała na półce.</i></h2>
+      <table>
+        <tr><th></th><th class="us" style="width:348px">ZIARNO</th><th class="them">z marketu</th></tr>
+        <tr><td class="k">Palenie</td><td class="us"><span>✓</span>7 dni temu</td><td class="them">data nieznana</td></tr>
+        <tr><td class="k">Mielenie</td><td class="us"><span>✓</span>u Ciebie</td><td class="them">w fabryce</td></tr>
+        <tr><td class="k">Dostawa</td><td class="us"><span>✓</span>co 2 tygodnie</td><td class="them">wizyta w sklepie</td></tr>
+      </table>
+      <div class="base"><span class="brand">ZIARNO</span><span class="cta">Zamów pierwszą paczkę →</span></div>
+    </div></div>
+    <div class="cap"><span class="n">06</span><span class="s">Quiet minimal</span><span class="f">Comparison · a category, not a named competitor</span></div>
+  </div>
+
+</div>
+</body>
+</html>
