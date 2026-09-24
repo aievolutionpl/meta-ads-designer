@@ -4,6 +4,32 @@ All notable changes to Meta Ads Designer. Versions follow [SemVer](https://semve
 
 ---
 
+## [5.10.0] — 2026-09-24
+
+The 2026 feed layer: what current Meta ads look like, which structures persuade, and what changed on the platform. Researched from Behance and Dribbble portfolio patterns, Penji's Meta design guidance, Meta's Ads Guide and about thirty 2026 sources on creative performance, trends and placement changes. Third-party figures are labelled as such and never presented as promised results.
+
+### Added
+- **`R45` Commit to one visual language** — a style is a complete language (type, colour, image treatment, layout, one signature device). One per creative; brand identity outranks trend; imperfection is a process choice, not a filter; a portfolio board is not an ad.
+- **`R46` Format follows proof and funnel** — choose the persuasion skeleton before the style. A format exists only when its proof exists: no verified number, no stat drop; no real review, no review card.
+- **`R47` Diversity is delivery** — Meta's Andromeda retrieval groups near-identical creatives. Campaign sets vary persona, motivation, hook, format and style; controlled tests still rotate one variable.
+- **`R48` Design for the 2026 placement system** — the unified March 2026 Stories/Reels safe zone (top 14%, bottom 35%, sides 6%), 4:5 export at 1440×1800, text-field truncation, Advantage+ enhancements including image expansion and generated backgrounds, "AI info" labels, and a new hard fail, `R48-fake-ui`, for fake play buttons, close icons and notification badges.
+- **`references/style-atlas-2026.md`** — twelve visual languages (oversized type, colour-block still life, direct-flash editorial, cinematic coloured light, quiet minimal, documentary phone-real, native interface, performance sticker, tactile zine, reality warp, seasonal world, device-in-hand), each with DNA, fit, a model-independent prompt fragment and its typical failure; format pairings; trend slop; a method for reading reference boards, worked on the Behance "meta advertising" page.
+- **`references/static-ad-formats.md`** — fifteen static formats with 4:5 skeletons, copy budgets, proof requirements and integrity rules; funnel fit; format by vertical; hook-to-format pairings; carousel sequencing.
+- **`examples/07-2026-style-directions.md`** — five fictional format-plus-style briefs with prompts and typesetting handoffs, and one Andromeda-ready campaign set.
+- **`assets/style-atlas-2026.png`** and its source `assets/generated/style-atlas.html` — six deterministic, typeset demonstration ads for the README.
+
+### Changed
+- **`scripts/qa.py`** — the 9:16 keep-out now follows Meta's unified safe zone, expressed as a share of height and measured from the canvas edge (the stricter of margin and chrome wins). Previously the fixed 250px/320px values were added on top of the margin, which both over-restricted the top and let copy sit in the Reels action area at the bottom. The format check accepts Meta's recommended 1440×1800 (4:5) and 1440×2560 (9:16) exports. Three new self-tests.
+- **`references/qa-gate.md`** — the vision pass returns `visual_language` (flags `"mixed"`, R45) and `fake_functional_ui` (`R48-fake-ui`).
+- **`references/platform-compliance.md`** — new §6: text fields, text-on-image guidance, Advantage+ design consequences, AI disclosure and misleading formats, with sources.
+- **`references/variation-matrix.md`** — new §6 on concept diversity for delivery, with a persona × motivation concept grid.
+- **`references/creative-performance-loop.md`** — fatigue signals and refresh rhythm from 2026 benchmarks.
+- **`references/hook-engineering.md`**, **`references/anti-slop-registry.md`** (§1b, 2026 tells), **`references/niche-playbooks.md`**, **`references/layout-system.md`**, **`core.md`** (§20), **`design-rules.md`**, **`SKILL.md`** — the new layer wired into the workflow, the routing table and the paste-in inject.
+
+`R01`–`R44` are unchanged — additive, no renumbering.
+
+---
+
 ## [5.9.0] — 2026-09-09
 
 Model-independent art direction and prompt craft.

@@ -1,0 +1,107 @@
+# 2026 style directions: format plus visual language
+
+These are fictional teaching briefs. Every fact below is stated as supplied by the fictional client, so the prompts show how to use proof, not how to invent it. No images were generated or scored; nothing here claims measured performance.
+
+Each case names its **format** from [static-ad-formats.md](../references/static-ad-formats.md) and its **visual language** from [style-atlas-2026.md](../references/style-atlas-2026.md), then compiles both into one prompt with [prompt-craft.md](../references/prompt-craft.md).
+
+## 1 · Performance sticker × product + callouts
+
+**Brief.** Fictional steel bottle brand “NURT”. Image A is the approved packshot of the 750 ml bottle in sage green. Supplied facts: keeps drinks cold for 24 hours (manufacturer test on file), 750 ml, 18/8 steel. Verified offer: “−20% na start” for a first order until 30.09.2026. Audience: warm, people who visited the product page. Polish copy.
+
+**Decision.** Warm audiences compare, so a callout format that answers “why this bottle” fits. The performance sticker language reads at thumbnail size, and the one sticker holds the one offer. Polish diacritics and exact callouts mean the copy is typeset separately.
+
+`Format: product + callouts · Style: performance sticker banner · Text contract: image + typesetting`
+
+Image prompt:
+
+> Create one photographic background for a vertical 4:5 product ad. Image A is the exact product: preserve the bottle's shape, cap, sage-green colour, matte finish and logo placement. Place the bottle large and upright in the lower-right half, slightly rotated toward the viewer, as a clean cut-out on a flat saturated tangerine background, with a soft realistic contact shadow beneath it and a few cold condensation droplets on the upper half of the bottle only. Hard, crisp studio light from the upper left gives one clean highlight along the bottle's edge. Keep the upper-left 45% of the frame completely empty and evenly coloured for a headline, and keep clear space on the left side of the bottle for three short labels. No text, logos other than the one already on the bottle, props, ice cubes, splashes or extra bottles.
+
+Typesetting handoff: headline upper left in a heavy condensed grotesk such as Anton, two lines, “ZIMNA” in white and “DO WIECZORA.” in near-black, tight leading. Three callouts in a medium sans such as Archivo, left of the bottle: “24 h zimna”, “750 ml”, “stal 18/8”, each joined to the bottle by one thin hand-drawn white arrow. One circular yellow sticker, rotated 8°, overlapping the bottle's shoulder: “−20% na start”. Legal line bottom left, 18px: “Oferta dla pierwszego zamówienia do 30.09.2026.” Official NURT logo file top right, clear of the sticker. Check diacritics and arrow endpoints at phone size.
+
+**Would fail if** a second sticker appeared, the callouts outshouted the bottle, or the tangerine tinted the sage product colour.
+
+## 2 · Direct-flash editorial × in-use
+
+**Brief.** Fictional eyewear label “KIRA”. Image A shows the approved model: black acetate frame, green lenses. Goal: awareness for a summer drop among 20–30-year-olds in cities. Approved copy: “Summer, unfiltered.” and the wordmark. No offer.
+
+**Decision.** Cold, style-led audience: the product sells through the attitude of the moment. Direct flash gives the candid snapshot quality the feed rewards, and the copy stays tiny because the image carries the idea.
+
+`Format: in-use (worn) · Style: direct-flash editorial · Text contract: short generated copy or typeset`
+
+Finished-ad prompt:
+
+> Create one vertical 4:5 fashion advertisement photographed with direct on-camera flash at dusk. A young woman leans out of the open passenger window of a dark green vintage car, one hand lifting the frame of the sunglasses from Image A slightly off her nose mid-gesture. Preserve the exact frame shape, black acetate and green lens tint from Image A. Flash lights her face, hand and the car door brightly with a crisp dark flash shadow on the door behind her; the dusk sky behind is deep blue, and roadside foliage is saturated green. Candid, slightly tilted framing with her face in the upper-middle third. Natural skin texture with visible pores and no retouched smoothness. In the calm deep-blue sky at the upper left, set “Summer, unfiltered.” in a small, clean white grotesk, sentence case, one line. No other text, logos, props or people.
+
+Production note: if the rendered lettering is imperfect, generate without text and set the line and the official KIRA wordmark in a design tool, bottom right, within the 86px margin.
+
+**Would fail if** the skin turned glossy and poreless, the flash lighting disagreed with the shadow direction, or the frame shape drifted from the reference.
+
+## 3 · Native interface × confession
+
+**Brief.** Fictional home-cleaning service “PORZĄDEK” in Kraków. Supplied: the owner's own list of practices, the booking link text “Umów sprzątanie”, the logo file. Goal: first bookings from people who hesitate to let strangers into their home. Polish copy.
+
+**Decision.** The objection is trust, not visual desire. A notes-app list in the owner's voice reads like a real thought, not an ad, and answers the objection point by point. No image generator is needed; this is a deterministic build.
+
+`Format: native interface · Style: notes app (“Notes App Chic”) · Text contract: fully typeset`
+
+Typesetting specification (4:5, 1080×1350 design, export 1440×1800):
+
+- Background: warm off-white #F7F4EE, no paper texture.
+- Top 86px margin; small grey system-style label “Notatki · dziś” in 24px.
+- Title in 56px semibold system-like sans (Inter or SF Pro class): “Czego nigdy nie robimy” / “u klientów”.
+- Checklist, 34px regular, 1.4 line height, each with a round outline tick in the brand's teal #1F7A74:
+  - “nie przestawiamy rzeczy bez pytania”
+  - “nie używamy Twoich ręczników”
+  - “nie zmieniamy ekipy co tydzień”
+  - “nie zostawiamy zapachu chemii”
+- The third item carries a soft yellow marker stroke behind the text, the only emphasis.
+- Base: official PORZĄDEK logo file left, “Umów sprzątanie →” right, 28px semibold teal, both at least 86px from the bottom.
+
+Integrity note: the ticks are list markers, not tappable checkboxes, so keep them flat and small. Every line must be a practice the business actually keeps; the owner signs off the list before launch.
+
+**Would fail if** it imitated a specific phone brand's UI chrome, added fake notification badges, or stated a promise the team cannot keep.
+
+## 4 · Colour-block still life × stat drop
+
+**Brief.** Fictional skincare brand “LUMA”. Image A is the approved serum bottle: frosted glass, white dropper cap. Supplied proof: an independent 2026 user study in which 47 of 60 participants reported smoother skin after 4 weeks; the report is on file. Audience: warm beauty buyers. English copy.
+
+**Decision.** The number is the strongest proof the brand owns, so it leads. A colour-block set in the product's own family makes the bottle look designed rather than generic. A stat drop needs its source on the ad.
+
+`Format: stat drop · Style: colour-block still life · Text contract: image + typesetting`
+
+Image prompt:
+
+> Create one photographic background for a vertical 4:5 skincare ad. Image A is the exact product: preserve the frosted-glass bottle, white dropper cap, proportions and label layout. Set it on the taller of two pale-apricot cylindrical plinths in a seamless apricot studio set, with walls, floor and plinths in one warm apricot family. A single hard light from the upper right throws a crisp diagonal shadow of the bottle across the lower plinth. One small deep-plum sphere rests at the foot of the plinths as the only contrasting colour. The bottle sits in the lower-right third; keep the upper 50% and the left side calm and evenly lit for large numerals. No text, extra products, petals, water splashes or glow.
+
+Typesetting handoff: “47/60” in a heavy extended sans at display size, upper left, deep plum; “reported smoother skin in 4 weeks” below in 34px regular; source line in 18px at the base: “Independent user study, 60 participants, 2026.” LUMA logo file bottom right. Do not round 47/60 into “8 in 10”; 47 of 60 is 78%.
+
+**Would fail if** the number lost its source line, the apricot light shifted the bottle's frosted glass to orange, or a second statistic joined the first.
+
+## 5 · Seasonal world × offer stack
+
+**Brief.** Fictional café “PORA” (the same fictional café as in [example 05](05-model-independent-directions.md) §2). Image A is the café's own photo of its watermelon lemonade in a tall glass. Verified offer: “druga za pół ceny”, valid until 31.08.2026. Goal: August afternoon visits. Polish copy.
+
+**Decision.** August is the context, so the season builds the world. The offer is verified and short, so an offer stack in a cheerful seasonal set fits a retargeting and local audience. The drink stays the café's real drink.
+
+`Format: offer stack · Style: seasonal world · Text contract: image + typesetting`
+
+Image-edit prompt:
+
+> Using Image A as the exact drink, preserve the glass shape, the lemonade's colour, the ice, the mint sprig and the straw. Place the glass on a sunlit pale-stone café table with three fresh watermelon wedges beside it, one partly behind the glass, and a few watermelon seeds and droplets on the stone. Hard afternoon sun from the upper left casts short sharp shadows and makes the lemonade glow through the glass. Frame the glass large in the lower-middle area, fully inside the frame. Keep the upper third a calm, evenly lit stone-and-sky area for a headline. Match perspective, contact shadows and reflections to the table. No text, logos, extra glasses, straws or garnish beyond Image A.
+
+Typesetting handoff: headline upper left in Archivo Black, “Sierpień” / “smakuje arbuzem.” with a watermelon-pink highlight pill behind “Sierpień” only. Offer stack under the headline: “Druga lemoniada za pół ceny” in 34px semibold, “do 31.08.2026” in 28px regular. PORA name as an approved text cue bottom left; “Wpadnij po południu” bottom right. Check that the pill does not touch the glass.
+
+**Would fail if** clip-art suns or emoji watermelons replaced the real set, or the offer's end date was dropped.
+
+## 6 · One brand, one campaign set (R47)
+
+A cosmetic set for NURT would be the case 1 image in four background colours. Meta would treat those as near-duplicates and let them compete as one. A concept set differs in persona, motivation, format and style:
+
+| # | Persona and moment | Hook | Format | Style |
+|---|---|---|---|---|
+| A | Office worker comparing bottles | Feature breakdown | Product + callouts | Performance sticker (case 1) |
+| B | Commuter who keeps buying plastic bottles | Confession in the founder's own, true words: “Przestałam kupować wodę w butelkach.” | Native interface | Notes app |
+| C | Cyclist on a hot route | Result: “Po 6 godzinach wciąż zimna.” (verified 24 h claim covers it) | In-use | Documentary phone-real, frost on the bottle on a handlebar |
+| D | Summer beachgoer | Seasonal | Offer stack | Seasonal world, pool-water set |
+
+Brand-lock across all four: the exact bottle from Image A, the official logo, the brand palette used in the typeset elements, and the 24-hour claim wording. When one concept wins, iterate by persona and setting (for example C for runners, C for hikers), not by recolouring.

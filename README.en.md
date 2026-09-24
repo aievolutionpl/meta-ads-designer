@@ -6,7 +6,7 @@ An AI agent skill for choosing **composition, typography, colour and visual dire
 
 [Polski](README.md) · [Agent instructions](SKILL.md) · [Quick start](#quick-start) · [Examples](examples/README.md)
 
-![Version](https://img.shields.io/badge/version-5.9.0-222222)
+![Version](https://img.shields.io/badge/version-5.10.0-222222)
 ![License](https://img.shields.io/badge/license-MIT-222222)
 ![Model independent](https://img.shields.io/badge/prompts-model_independent-222222)
 
@@ -36,6 +36,19 @@ The same concepts can also take a quieter editorial direction:
 
 *A second demonstration board. The art direction changes; the skill is not restricted to either style.*
 
+## New in 5.10: the 2026 feed layer
+
+![Style Atlas 2026: six fictional ads, each pairing a static format with one visual language](assets/style-atlas-2026.png)
+
+*Six fictional ads typeset deterministically in HTML ([source](assets/generated/style-atlas.html)): no image model, no client assets, no performance claims. Each pairs a persuasion format with one visual language.*
+
+The skill now knows what current Meta ads look like and why some structures persuade:
+
+- **Style atlas 2026** — twelve visual languages, from oversized type posters and direct-flash editorial to notes-app natives, performance stickers and tactile zines, each with its type, colour, signature device, a prompt fragment and the way it fails.
+- **Static formats** — fifteen persuasion skeletons (stat drop, review stack, product + callouts, comparison, offer stack…), each available only when its proof exists.
+- **2026 platform facts** — Meta's unified Reels/Stories safe zone (14% top, 35% bottom), 4:5 export at 1440×1800, Advantage+ image expansion and generated backgrounds, "AI info" labels, and Andromeda's grouping of near-identical ads.
+- **Four new rules, R45–R48** — one visual language per ad, format follows proof, diversity is delivery, design for the 2026 placement system.
+
 ## How it works
 
 ```mermaid
@@ -48,7 +61,7 @@ flowchart LR
 
 1. **Brief** — establish audience, verified offer, goal, format and available assets.
 2. **Idea** — choose what makes the benefit visible: product, action, detail, situation or type.
-3. **Art direction** — define the focal element, reading order, copy space, fonts and palette.
+3. **Art direction** — pick a format the proof supports and one visual language, then define the focal element, reading order, copy space, fonts and palette.
 4. **Prompt** — write the composition, exact copy and relevant constraints.
 5. **Review** — check prompt consistency; once rendered, inspect readability, spelling and reference fidelity.
 
@@ -95,9 +108,13 @@ A prompt communicates intent. It cannot guarantee identical fonts, pixel coordin
 | [core.md](core.md) | Self-contained chat instruction |
 | [Art direction](references/art-direction.md) | Marketing goal to composition and typography |
 | [Prompt craft](references/prompt-craft.md) | Writing and reviewing prompts |
+| [Style atlas 2026](references/style-atlas-2026.md) | Twelve visual languages, trend slop, reading reference boards |
+| [Static ad formats](references/static-ad-formats.md) | Persuasion skeletons, proof, funnel and vertical fit |
 | [Worked prompts](examples/05-model-independent-directions.md) | Flyer, food and local service |
-| [Visual Advertising Engine](visual-advertising-engine.md) | Canonical rules R01–R44 |
+| [2026 style directions](examples/07-2026-style-directions.md) | Format plus style briefs and an Andromeda-ready campaign set |
+| [Visual Advertising Engine](visual-advertising-engine.md) | Canonical rules R01–R48 |
 | [Layout system](references/layout-system.md) | Starting values for grids, margins and type |
+| [Platform guidance](references/platform-compliance.md) | Safe zones, text limits, Advantage+, AI labels |
 | [QA gate](references/qa-gate.md) | Reviewing actual rendered images |
 | [More examples](examples/README.md) | Briefs, prompts and design decisions |
 

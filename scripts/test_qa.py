@@ -124,6 +124,28 @@ def _(tmp: Path):
     assert "safe_area" in r["failed"], r
 
 
+@case("a CTA in the 9:16 bottom 35% (Reels actions/caption) fails safe_area")
+def _(tmp: Path):
+    photo_panel_ad().resize((1080, 1920)).save(tmp / "story.png")
+    # y 1300-1420 cleared the old 320px keep-out; the unified 35% zone starts at 1248.
+    r = qa.audit(tmp / "story.png", "9:16", (86, 1300, 994, 1420))
+    assert "safe_area" in r["failed"], r
+
+
+@case("copy inside the 9:16 central band passes safe_area")
+def _(tmp: Path):
+    photo_panel_ad().resize((1080, 1920)).save(tmp / "story.png")
+    r = qa.audit(tmp / "story.png", "9:16", (86, 300, 994, 1200))
+    assert "safe_area" not in r["failed"], r
+
+
+@case("Meta's recommended 1440x1800 feed export passes the 4:5 format check")
+def _(tmp: Path):
+    photo_panel_ad().resize((1440, 1800)).save(tmp / "feed_hi.png")
+    r = qa.audit(tmp / "feed_hi.png", "4:5", None)
+    assert "dimensions" not in r["failed"], r
+
+
 @case("the canonical 4:5 panel layout is not failed by advisory chrome")
 def _(tmp: Path):
     photo_panel_ad().save(tmp / "good.png")

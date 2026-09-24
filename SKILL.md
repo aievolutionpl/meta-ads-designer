@@ -3,7 +3,7 @@ name: meta-ads-designer
 description: Art-direct social ads, posters and flyers and write model-independent image prompts when a user requests advertising visuals, stronger composition or less generic AI design.
 license: MIT
 metadata:
-  version: 5.9.0
+  version: 5.10.0
   author: AI Evolution Labs
   url: https://github.com/aievolutionpl/meta-ads-designer
 ---
@@ -16,7 +16,7 @@ This skill works independently of image models, for prompt writing alone or gene
 
 ## Understand the brief
 
-Identify subject, audience, verified offer, one takeaway, next action, language, brand assets and placement. Use 4:5 as this skill's default for an unspecified social feed ad; honour the requested placement. Ask about print specifications only when print is requested.
+Identify subject, audience, verified offer, one takeaway, next action, language, brand assets and placement. Use 4:5 as this skill's default for an unspecified social feed ad; honour the requested placement. For 9:16, keep copy, logo and CTA out of the top 14%, bottom 35% and 6% sides. Ask about print specifications only when print is requested.
 
 Inspect supplied references when possible and name their roles: exact subject, official logo, brand identity or style only. Preserve identity. A style reference does not authorize copying another business's logo or claims. Never invent prices, urgency, locations, reviews or proof.
 
@@ -27,15 +27,18 @@ Infer reasonable design choices and state material assumptions briefly. Ask only
 Read [art direction](references/art-direction.md) before drafting a new direction. It provides the decision card, benefit-to-visual mapping, composition choices, typography and critique.
 
 1. Connect the message to something visible: “The viewer understands this benefit because they see this.”
-2. Choose photography, documentary, editorial, typography, illustration or graphic reduction.
-3. Define dominant element, reading path, copy field, quiet area, brand anchor and edge treatment.
-4. Choose type by role, width, weight, language and brand. Set exact copy and line breaks.
-5. Assign colour roles and, for photography, light and material treatment.
-6. Remove anything that competes without helping the message.
+2. For a static ad, choose the format, the persuasion skeleton, from the proof you actually have and the audience's stage. Read [static ad formats](references/static-ad-formats.md). No verified number, no stat drop; no real review, no review card.
+3. Choose one visual language and commit to its type, colour, image treatment and signature device. Read [style atlas 2026](references/style-atlas-2026.md). Brand identity outranks trend; never mix two dialects in one frame.
+4. Define dominant element, reading path, copy field, quiet area, brand anchor and edge treatment.
+5. Choose type by role, width, weight, language and brand. Set exact copy and line breaks.
+6. Assign colour roles and, for photography, light and material treatment.
+7. Remove anything that competes without helping the message.
+
+State the choice in one line of the working note, for example “Format: product + callouts · Style: colour-block still life”.
 
 A flyer may be led by an event name, verified offer or graphic idea. Do not force a photograph, dark panel, premium serif or CTA button onto every brief. Colours, gradients and texture are choices. Reject arbitrary decoration, incoherence, unreadability and identity drift.
 
-The canonical [engine](visual-advertising-engine.md) defines stable rule IDs. R42–R44 qualify older photographic recipes and style bans throughout the repo; consult relevant rules when resolving conflicts. User brief and identity outrank category presets.
+The canonical [engine](visual-advertising-engine.md) defines stable rule IDs. R42–R44 qualify older photographic recipes and style bans throughout the repo; R45–R48 add the 2026 layer: one visual language, format by proof and funnel, concept diversity and the current placement system. Consult relevant rules when resolving conflicts. User brief and identity outrank category presets and trends.
 
 ## Write the prompt
 
@@ -48,7 +51,7 @@ Choose a text contract:
 
 Font names and percentages express intent, not guaranteed rendering. Place official logo assets appropriately rather than inventing a plausible logo.
 
-Read [worked directions](examples/05-model-independent-directions.md) for complete event, food and service examples. The [prompt library](references/prompt-library.md) provides optional photographic and editing skeletons.
+Read [worked directions](examples/05-model-independent-directions.md) for complete event, food and service examples, and [2026 style directions](examples/07-2026-style-directions.md) for format-plus-style examples. The [prompt library](references/prompt-library.md) provides optional photographic and editing skeletons.
 
 ## Review and deliver
 
@@ -62,12 +65,14 @@ Deliver requested outputs and placements. If image tools are unavailable, provid
 
 ## Campaigns and deeper guidance
 
-Explore distinct ideas when concepts are requested. Controlled tests isolate one variable; exploration may change multiple variables without claiming causal attribution. Keep brand and source identity consistent. Do not force twenty hooks or a campaign onto a single-ad request.
+Explore distinct ideas when concepts are requested. Meta groups near-identical ads, so a campaign set should differ in persona, motivation, hook, format or visual language, not in colour or a single word (R47). Controlled tests isolate one variable; exploration may change multiple variables without claiming causal attribution. Keep brand and source identity consistent. Do not force twenty hooks or a campaign onto a single-ad request.
 
 Read only what is relevant:
 
 | Need | Reference |
 |---|---|
+| Visual languages, trend reading, reference boards | [Style atlas 2026](references/style-atlas-2026.md) |
+| Static formats, proof and funnel fit | [Static ad formats](references/static-ad-formats.md) |
 | Canvas, spacing and type starting values | [Layout system](references/layout-system.md) |
 | Headline drafting and language | [Headline system](references/headline-system.md) |
 | Campaign hooks | [Hook engineering](references/hook-engineering.md) |
@@ -76,7 +81,7 @@ Read only what is relevant:
 | Other industries | [Niche playbooks](references/niche-playbooks.md) |
 | Generic visuals | [Anti-slop registry](references/anti-slop-registry.md), interpreted through R42 |
 | Competitor analysis | [Competitor teardown](references/competitor-ad-teardown.md) |
-| Placement-specific delivery | [Platform guidance](references/platform-compliance.md); verify changing requirements when relevant |
+| Placement-specific delivery, Advantage+, AI labels | [Platform guidance](references/platform-compliance.md); verify changing requirements when relevant |
 | Existing campaign results | [Performance loop](references/creative-performance-loop.md) |
 | Requested motion | [Video track](references/video-ugc-track.md) |
 | Requested setup or tool routing | [Installation](INSTALL.md), [model routing](references/model-routing.md) |

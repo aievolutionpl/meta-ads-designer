@@ -18,6 +18,8 @@ For generated visual demonstrations, see the [README showcase](06-readme-showcas
 
 Additional prompt-only teaching cases: [model-independent directions](05-model-independent-directions.md) covers a typographic flyer, food ad and service ad. These are fictional briefs without rendered results or invented QA scores.
 
+[2026 style directions](07-2026-style-directions.md) pairs a static format with a visual language from the style atlas: performance sticker callouts, direct-flash editorial, a notes-app confession, a colour-block stat drop and a seasonal offer, plus one Andromeda-ready campaign set. Also fictional, prompt-only and unscored.
+
 ## How each case is structured
 
 ```

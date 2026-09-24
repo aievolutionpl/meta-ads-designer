@@ -30,11 +30,13 @@ Use [art direction](references/art-direction.md) and [prompt craft](references/p
 
 | Your question | Open |
 |---------------|------|
-| What are the rules? | [`visual-advertising-engine.md`](visual-advertising-engine.md) — R01–R44, authoritative |
+| What are the rules? | [`visual-advertising-engine.md`](visual-advertising-engine.md) — R01–R48, authoritative |
 | I need one page to paste into a chat | [`core.md`](core.md) |
 | How big is the headline? What grid? What colors? | [`references/layout-system.md`](references/layout-system.md) |
 | What should the headline actually *say*? | [`references/headline-system.md`](references/headline-system.md) |
 | Is this output good enough to ship? | [`references/qa-gate.md`](references/qa-gate.md) |
+| Which visual language fits, and what does 2026 look like? | [`references/style-atlas-2026.md`](references/style-atlas-2026.md) |
+| Which static format persuades with the proof I have? | [`references/static-ad-formats.md`](references/static-ad-formats.md) |
 | What does a finished prompt look like? | [`examples/`](examples/) — full briefs → prompts → verdicts |
 | Restaurant / hotel / services brief | [`references/hospitality-food-services-playbook.md`](references/hospitality-food-services-playbook.md) |
 | Other industries | [`references/niche-playbooks.md`](references/niche-playbooks.md) |
@@ -46,7 +48,7 @@ Use [art direction](references/art-direction.md) and [prompt craft](references/p
 
 ---
 
-## 2 · The doctrine in seven sentences
+## 2 · The doctrine in eight sentences
 
 1. **Product first** (R02) — the product is the main character, not the set.
 2. **The reference is a technical document** (R03) — never redraw what the client sent you.
@@ -55,6 +57,7 @@ Use [art direction](references/art-direction.md) and [prompt craft](references/p
 5. **Negative space is luxury** (R08) — a good ad has fewer elements than a weak one.
 6. **Message first, scene second** (R24) — decide what the ad says, then build the picture that says it.
 7. **A pretty photo is not an ad** (R17) — headline → subline → CTA → brand cue, or it's wallpaper.
+8. **One language, one skeleton** (R45, R46) — commit to one visual style and a format the proof can support; vary concepts, not colours (R47).
 
 ---
 
@@ -122,6 +125,8 @@ Full compendium with fixes: [`references/anti-slop-registry.md`](references/anti
                (Meta Ad Library, Instagram, competitors). If the client has
                existing ads they like — THAT is the style source of truth.
 3. ANGLES    — define 5–10 distinct promises/layouts, not 10 color swaps.
+               Per concept: format (by proof + funnel) and ONE visual
+               language (style atlas). Near-duplicates count as one ad.
 4. CREATIVE  — product → benefit → target → angle → metaphor → type →
                headline → composition → light/camera → constraints  (R28)
 5. GENERATE  — artifact pre-flight first (texture risk, style collision,
@@ -149,8 +154,8 @@ Every output is scored: **10 criteria × 0/1/2, ship at ≥16/20 with zero hard 
 
 | Platform | Aspect | Resolution |
 |----------|--------|-----------|
-| Instagram Feed | 4:5 | 1080×1350 |
-| Instagram Story / Reels / TikTok | 9:16 | 1080×1920 |
+| Instagram Feed | 4:5 | 1080×1350 (export 1440×1800) |
+| Instagram Story / Reels / TikTok | 9:16 | 1080×1920 (Meta: keep top 14%, bottom 35% clear) |
 | Instagram Square / Facebook | 1:1 | 1080×1080 |
 | Facebook / LinkedIn / YouTube | 16:9 | 1920×1080 |
 | Pinterest | 2:3 | 1000×1500 |

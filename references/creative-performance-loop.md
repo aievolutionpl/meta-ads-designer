@@ -53,7 +53,24 @@ This is part of the deliverable, not an afterthought — a broken promise betwee
 
 ---
 
-## 5 · When not to over-fit
+## 5 · Fatigue signals and refresh rhythm
+
+Third-party 2026 benchmarks, not Meta rules. Read them against a 7-day rolling baseline so a single bad day does not trigger a refresh.
+
+| Signal | Watch line | What to do |
+|---|---|---|
+| Frequency (cold prospecting) | Brief a replacement around 2.5; ship it by 3.5 | Prepare the next concept, not a recolour (R47) |
+| CTR | Down 15% or more against the baseline | Test a new hook or format on the same promise |
+| CPM | Up 10% or more with no audience or placement change | The creative is losing relevance; refresh the concept |
+| Hook rate (video) | Down 20% or more | Replace the first second or the opening frame |
+
+Cold creative typically decays faster than retargeting creative, and peak seasons shorten every cycle. Keep three to five approved variants ready so a refresh is an operational step, not an emergency. The fix is usually a genuinely new concept, not slower delivery of the old one.
+
+Sources: [AdLibrary on ad fatigue](https://adlibrary.com/posts/ad-fatigue), [GoodMorning on frequency thresholds](https://goodmorningco.com/blog/what-is-creative-fatigue-meta-ads-frequency-thresholds).
+
+---
+
+## 6 · When not to over-fit
 
 - **Small samples are noise.** One win on a tiny spend is a hint, not a new rule — require a meaningful sample before you crown a winner.
 - **Creative fatigue ≠ creative failure.** A creative that wore out after scale did its job; refresh it, don't abandon the angle.

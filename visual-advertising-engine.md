@@ -8,7 +8,7 @@
 
 | | |
 |---|---|
-| **Rules** | R01–R44 below |
+| **Rules** | R01–R48 below |
 | **Layout / type / color numbers** | [`references/layout-system.md`](references/layout-system.md) |
 | **Headline & copy generation** | [`references/headline-system.md`](references/headline-system.md) |
 | **Creative variation matrix (test-ready sets)** | [`references/variation-matrix.md`](references/variation-matrix.md) |
@@ -18,6 +18,8 @@
 | **Video / UGC motion track** | [`references/video-ugc-track.md`](references/video-ugc-track.md) |
 | **Model routing & cost discipline** | [`references/model-routing.md`](references/model-routing.md) |
 | **Competitor ad teardown** | [`references/competitor-ad-teardown.md`](references/competitor-ad-teardown.md) |
+| **2026 visual languages (style atlas)** | [`references/style-atlas-2026.md`](references/style-atlas-2026.md) |
+| **Static ad formats (persuasion skeletons)** | [`references/static-ad-formats.md`](references/static-ad-formats.md) |
 | **QA gate (scored, machine-checkable)** | [`references/qa-gate.md`](references/qa-gate.md) |
 | **Worked end-to-end examples** | [`examples/`](examples/) |
 
@@ -25,7 +27,7 @@
 
 ## Scope and precedence
 
-This standard teaches model-independent advertising judgment and prompt writing. R42–R44 qualify older recipes: choose the medium for the message, and distinguish a style preference from a fidelity requirement. Photography-specific rules apply only to photography. Numerical layouts are starting points. User brief and supplied identity outrank category defaults. Tool setup is optional production guidance, never a prerequisite for writing a prompt.
+This standard teaches model-independent advertising judgment and prompt writing. R45–R48 add the 2026 layer: one committed visual language, a format chosen by proof and funnel, concept diversity and the current placement system. R42–R44 qualify older recipes: choose the medium for the message, and distinguish a style preference from a fidelity requirement. Photography-specific rules apply only to photography. Numerical layouts are starting points. User brief and supplied identity outrank category defaults. Tool setup is optional production guidance, never a prerequisite for writing a prompt.
 
 ## R01 · MAIN GOAL
 
@@ -262,8 +264,8 @@ Either way: **never let the model invent** logos · prices · product names · s
 
 Design for the phone first.
 
-- **META FEED — 4:5 (1080×1350).** **The default for static ads.** Use 4:5 unless the user explicitly asks otherwise.
-- **REELS / STORIES — 9:16 (1080×1920).** Keep key elements out of the top 250px / bottom 320px UI zones.
+- **META FEED — 4:5 (1080×1350).** **The default for static ads.** Use 4:5 unless the user explicitly asks otherwise. Design on 1080×1350; export 1440×1800 where the placement recommends it (R48).
+- **REELS / STORIES — 9:16 (1080×1920).** Keep key elements out of the top 14% and bottom 35% UI zones and 6% from the sides (Meta's unified 2026 safe zone, R48).
 - **MARKETPLACE / E-COMMERCE — 1:1 (1080×1080)**, or whatever the marketplace requires.
 
 > Don't generate one image and hope random cropping solves every placement. Compose for the specific format. When text or a logo sits near an edge, resize with **scale+pad**, never a hard crop.
@@ -566,6 +568,38 @@ A prompt specifies one output, one direction, exact copy or a separate typesetti
 Prompting cannot guarantee exact fonts, pixels, spelling or preservation. For prompt-only work, deliver the complete prompt without claiming a rendered result. For an actual image, inspect small-size hierarchy, text and source fidelity before scoring it.
 
 Depth: [prompt craft](references/prompt-craft.md) and [worked directions](examples/05-model-independent-directions.md).
+
+## R45 · COMMIT TO ONE VISUAL LANGUAGE
+
+A style is a complete language: type class and weight, colour roles, image treatment, layout skeleton and one signature device. Choose one per creative, name it in the working note and execute all of its parts. Mixing two dialects in one frame, such as direct flash with riso grain and sticker badges, reads as noise, not richness.
+
+Choose in this order: brand identity → message mechanism → available source assets → placement and funnel → trend. A trend can tip the choice between valid options; it never overrides identity or message. Imperfection, grain and hand marks are process decisions, never filters sprinkled over a clean render. A portfolio presentation board (several tilted ads on one background) is packaging for designers, not an ad.
+
+Depth: [style atlas 2026](references/style-atlas-2026.md).
+
+## R46 · FORMAT FOLLOWS PROOF AND FUNNEL
+
+Before styling a static ad, choose its persuasion skeleton: bold statement, stat drop, review card or stack, product + callouts, comparison, before/after, numbered benefits, founder quote, offer stack, native interface, problem → solution, checkerboard, advertorial, or in-use. The style is the skin; the format is the skeleton. State both.
+
+A format is available only when its proof exists: a verified number for a stat drop, real customer words for a review card, a real person for a founder quote, fair and checkable differences for a comparison, real terms for an offer. Never manufacture proof to fit a template. Match the format to the audience's stage: positioning and native formats for cold audiences, proof-dense formats for warm ones, verified offers for retargeting.
+
+Depth: [static ad formats](references/static-ad-formats.md).
+
+## R47 · DIVERSITY IS DELIVERY
+
+Meta's retrieval system (Andromeda) groups creatives it judges similar and lets them compete as one. Ten ads that differ only in headline colour, a word or a crop behave like one ad. A campaign set earns reach when its members differ in concept: persona, motivation, hook, format and visual language.
+
+Plan exploration as distinct concepts; plan a controlled test as one rotated variable (R35). They answer different questions, so do not present a cosmetic variant as a new concept. When a concept wins, iterate on it for new personas or contexts rather than recolouring it.
+
+Depth: [variation matrix](references/variation-matrix.md) §6.
+
+## R48 · DESIGN FOR THE 2026 PLACEMENT SYSTEM
+
+Meta unified the Stories and Reels safe zone in March 2026: keep text, logos and CTAs out of the top 14%, the bottom 35% and 6% at each side of a 9:16 canvas. Feed statics are 4:5; design on 1080×1350 and export 1440×1800 where the placement recommends it. Meta's text fields show roughly 125 characters of primary text, a 40-character headline (fewer on small phones) and a 30-character description before truncation; put the essential message in the image and the first line.
+
+Advantage+ creative enhancements can expand images, add overlays, rewrite text and generate backgrounds, and Meta's in-house image model is rolling into those tools. Keep brand-critical content inside the central area, leave clean extendable edges, and tell the user which enhancements to switch off when identity or product fidelity matters. Ads created or substantially edited with generative AI may carry an "AI info" label; never hide it. Never draw fake functional UI such as play buttons, close icons or notification badges; one on a still is a hard fail, `R48-fake-ui`. Platform numbers change: verify them in Meta's Ads Guide before final delivery.
+
+Depth: [platform guidance](references/platform-compliance.md).
 
 ## 🏁 FINAL PRINCIPLE — DON'T DECORATE. DIRECT.
 

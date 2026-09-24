@@ -43,6 +43,13 @@ FORMATS = {
     "4:1": (2048, 512),
 }
 
+# Larger exports a placement also accepts. Meta's feed guidance recommends
+# uploading 4:5 at 1440x1800; the design math in layout-system stays on 1080.
+ALT_SIZES = {
+    "4:5": [(1440, 1800)],
+    "9:16": [(1440, 2560)],
+}
+
 MARGIN_RATIO = 0.08          # R08 / layout-system §1a
 MIN_CONTRAST = 4.5           # layout-system §4a
 MIN_THUMBNAIL_RETENTION = 0.40
@@ -50,14 +57,16 @@ MAX_FOCAL_REGIONS = 2        # R07
 MIN_SCRIM_UNIFORMITY = 0.85  # layout-system §3b
 
 # Placement chrome that actually sits *on top of* the creative (layout-system
-# §1b), in px on the canonical canvas, scaled by the short edge.
+# §1b), as a share of canvas height measured from the edge — the way Meta
+# states the unified Stories/Reels safe zone (March 2026: top 14%, bottom 35%,
+# sides 6%). The 6% sides sit inside the 8% margin, so only top/bottom are listed.
 #
 # Only 9:16 is gated. The 120px bottom zone listed for 4:5 is placement-dependent
 # advice, not chrome — the canonical photo+panel layout (§3a) deliberately runs
 # its CTA/logo row at 64px from the bottom, and gating on 120px would fail the
 # repo's own reference layout.
 KEEPOUTS = {
-    "9:16": {"top": 250, "bottom": 320},    # profile row / CTA + caption
+    "9:16": {"top": 0.14, "bottom": 0.35},  # profile row / CTA, caption, actions
 }
 
 
@@ -106,8 +115,10 @@ def check_dimensions(img: Image.Image, fmt: str | None) -> tuple[str, bool]:
     want = FORMATS.get(fmt)
     if want is None:
         return f"{got} (unknown format {fmt})", True
-    ok = (img.width, img.height) == want
-    return f"{got} {'ok' if ok else f'expected {want[0]}x{want[1]}'}", ok
+    accepted = [want, *ALT_SIZES.get(fmt, [])]
+    ok = (img.width, img.height) in accepted
+    expected = " or ".join(f"{w}x{h}" for w, h in accepted)
+    return f"{got} {'ok' if ok else f'expected {expected}'}", ok
 
 
 def check_safe_area(size: tuple[int, int], boxes: dict[str, tuple[int, int, int, int]],
@@ -124,9 +135,9 @@ def check_safe_area(size: tuple[int, int], boxes: dict[str, tuple[int, int, int,
     w, h = size
     m = int(round(min(h, w) * MARGIN_RATIO))
     keep = KEEPOUTS.get(fmt or "", {})
-    scale = min(h, w) / 1080
-    top = m + int(round(keep.get("top", 0) * scale))
-    bottom = h - m - int(round(keep.get("bottom", 0) * scale))
+    # Chrome and margin are both measured from the canvas edge: the stricter wins.
+    top = max(m, int(round(keep.get("top", 0) * h)))
+    bottom = h - max(m, int(round(keep.get("bottom", 0) * h)))
     problems = []
     for name, (x0, y0, x1, y1) in boxes.items():
         over = []

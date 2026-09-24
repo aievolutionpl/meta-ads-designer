@@ -6,6 +6,8 @@
 
 Headline archetypes and character budgets referenced below: [`headline-system.md`](headline-system.md). Layout numbers: [`layout-system.md`](layout-system.md).
 
+> 🧭 **2026 layer:** which static format leads per vertical (stat drop, review stack, callouts, comparison…) is in [`static-ad-formats.md`](static-ad-formats.md) §4; which visual language fits the brief is in [`style-atlas-2026.md`](style-atlas-2026.md) §2. The playbooks below say what the niche needs; those files say how to shape and dress it.
+
 ---
 
 ## 🍽️ Restaurant / food / café
@@ -17,6 +19,7 @@ Headline archetypes and character budgets referenced below: [`headline-system.md
 - **Native in-scene text** when the model spells reliably: small serif brand at the top, big bold headline, one short location line.
 - **"Food in use"** — the dish on a table, natural light, bokeh — beats a flat overhead on white.
 - **Café/coffee specifically:** steam, natural window light, the cup in a hand or on a counter — sensory warmth, not a stock "cappuccino on marble".
+- **Lead with the food, not the room.** 2026 restaurant ad analyses report weaker hooks when an ad opens on the exterior or the interior. Texture close-ups (crust, glaze, foam, a cross-section) and a preparation or plating moment carry appetite; the room can come second.
 
 ### What to avoid
 - ❌ **Text-on-photo Canva template** — the #1 rejection.
@@ -57,6 +60,7 @@ OBJECTION (the portal-is-cheaper belief) · NUMBER (the direct-booking gap) · P
 ## 🏪 Local business / services / home improvement
 
 ### What works
+- **Faces build trust.** Show the real people the customer will meet (the technician, the stylist, the trainer) in documentary light; 2026 lead-generation guides consistently put real staff and real jobs ahead of stock imagery.
 - **Real product/install photos as references** → generate **new** premium scenes (different light, time of day, lifestyle). Never overlay on the client's raw photo.
 - **Angles that sell services:** Problem → Effect (before/after when it proves value instantly) · package tiers ("Installation included", "£0 deposit") · genuine deadline offers ("Fitted before October 31") · transformation (chaos → order, dark → light).
 - **Benefit-led headline ≤40 characters**, body ≤125.
