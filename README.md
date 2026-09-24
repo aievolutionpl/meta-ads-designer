@@ -6,7 +6,7 @@ Skill dla agentów AI, który pomaga dobierać **kompozycję, typografię, kolor
 
 [English](README.en.md) · [Instrukcja skilla](SKILL.md) · [Szybki start](#szybki-start) · [Przykłady](examples/README.md)
 
-![Version](https://img.shields.io/badge/version-6.3.0-222222)
+![Version](https://img.shields.io/badge/version-6.4.0-222222)
 ![License](https://img.shields.io/badge/license-MIT-222222)
 ![Model independent](https://img.shields.io/badge/prompts-model_independent-222222)
 
@@ -50,7 +50,7 @@ Ten sam zestaw pomysłów można rozwinąć w spokojniejszym kierunku editorial:
 
 Skill wie teraz, jak wyglądają aktualne reklamy Meta i dlaczego pewne struktury przekonują:
 
-- **Atlas stylów 2026** — szesnaście języków wizualnych: od plakatu z wielką typografią i edytorialu z fleszem, przez natywne notatki, banery performance ze stickerem, po taktylny zin. Każdy ma typografię, kolor, sygnaturowy detal, fragment promptu i typowy błąd.
+- **Atlas stylów 2026** — dwadzieścia trzy języki wizualnych: od plakatu z wielką typografią i edytorialu z fleszem, przez natywne notatki, banery performance ze stickerem, po taktylny zin. Każdy ma typografię, kolor, sygnaturowy detal, fragment promptu i typowy błąd.
 - **Formaty statyczne** — piętnaście szkieletów perswazji (stat drop, stos recenzji, produkt z calloutami, porównanie, offer stack…). Format jest dostępny tylko wtedy, gdy istnieje jego dowód.
 - **Fakty platformy 2026** — ujednolicona strefa bezpieczna Reels/Stories (14% góra, 35% dół), eksport 4:5 w 1440×1800, rozszerzanie obrazu i generowane tła w Advantage+, etykiety „AI info” oraz grupowanie niemal identycznych reklam przez Andromedę.
 - **Cztery nowe reguły, R45–R48** — jeden język wizualny na reklamę, format wynika z dowodu, różnorodność daje zasięg, projekt pod system placementów 2026.
@@ -114,7 +114,7 @@ Cała reklama, łącznie z tekstem, powstaje w modelu AI. Skill pisze dokładne 
 | [Art direction](references/art-direction.md) | Od celu marketingowego do kompozycji i typografii |
 | [Prompt craft](references/prompt-craft.md) | Pisanie i sprawdzanie promptów |
 | [Research i pytania](references/discovery-and-research.md) | Research, pytania przed generacją, notatka decyzyjna, analiza wyników |
-| [Atlas stylów 2026](references/style-atlas-2026.md) | Szesnaście języków wizualnych, trend slop, czytanie plansz referencyjnych |
+| [Atlas stylów 2026](references/style-atlas-2026.md) | Dwadzieścia trzy języki wizualnych, trend slop, czytanie plansz referencyjnych |
 | [Formaty statyczne](references/static-ad-formats.md) | Szkielety perswazji, dowód, lejek i dopasowanie do branży |
 | [Przykłady promptów](examples/05-model-independent-directions.md) | Flyer, gastronomia i usługa lokalna |
 | [Kierunki 2026](examples/07-2026-style-directions.md) | Briefy „format + styl” i zestaw kampanii pod Andromedę |
