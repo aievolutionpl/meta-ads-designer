@@ -36,7 +36,7 @@
 
 **Landscape photos:** don't force-crop a landscape table-spread to 4:5 (cuts ~50% width and clips plates). Use the "photo top + solid panel" layout instead of full-bleed cover-crop.
 
-### 1c · AI stylized food (Mode B) — dark studio recipe
+### 1c · AI stylized food — dark studio recipe
 
 ```
 Dark studio editorial food photography. Black charcoal background.
@@ -80,7 +80,7 @@ After the first pass **always** vision-QA the contact sheet for mid-word truncat
 ## 2 · HOTELS / VENUES — premium but authentic
 
 ### 2a · Core principle
-Prefer **real-photo + deterministic typography/layout** over AI re-generation of the building/facade. Preserves authenticity and avoids AI-slop interiors or redrawn signage.
+Prefer **the real photo as a reference image, with the ad generated around it and the building preserved (R41)** over AI re-generation of the facade from text. Preserves authenticity and avoids AI-slop interiors or redrawn signage.
 
 ### 2b · Design system (premium/traditional)
 - Default feed: **1080×1350 / 4:5**.
@@ -138,7 +138,7 @@ Don't start with "make a beautiful kitchen". Start with "what should this ad say
 
 ### 4a · Two-layer workflow
 1. **Generate fresh AI backgrounds first** from the reference photos (as style refs), never text-on-photo. `ONE SINGLE ... BACKGROUND ONLY — no text, no logos, no words, no signage, no collage, no grid` + leave negative space for typography.
-2. **Compose the final ad deterministically** (PIL / HTML / Figma): official logo file + exact headline/subline/CTA + brand panels + safe margins + real fonts.
+2. **Generate the final ad with the model (R50)**, passing the official logo and photos as references, with official logo file + exact headline/subline/CTA + brand panels + safe margins + real fonts.
 
 ### 4b · Deterministic typography checklist
 - Official logo only; never AI-redrawn logo.

@@ -101,7 +101,7 @@ Each entry gives the DNA, where it fits, a model-independent prompt fragment to 
 - **Signature device.** Content that reads as a real thought or conversation in the brand's own voice.
 - **Use for.** Objection handling, lists ("3 things we never do"), confessions, founder notes, apps, services.
 - **Avoid for.** Products that need to be seen to be wanted.
-- **Prompt fragment.** Build this deterministically (Mode B). Specify: "notes-style card, off-white background, title 'Why our espresso tastes different' in semibold, a three-item checklist in regular weight, the last item highlighted with a yellow marker stroke."
+- **Prompt fragment.** Generate it with the copy quoted exactly. Specify: "notes-style card, off-white background, title 'Why our espresso tastes different' in semibold, a three-item checklist in regular weight, the last item highlighted with a yellow marker stroke."
 - **Integrity.** Never fake functional UI such as a play button, a close X, notification badges or checkboxes that look tappable. Never impersonate a real person, a real platform account, a news outlet or another brand's interface. Quotes and reviews must be real (see static-ad-formats.md §3).
 
 ### 8 · Performance sticker banner
@@ -148,7 +148,7 @@ The dominant style on Eastern European performance boards: dense, energetic and 
 - **Signature device.** A genuine screen, legible at feed size.
 - **Use for.** Real estate, apps, SaaS, booking, marketplaces, courses.
 - **Avoid for.** Physical products that should be shown directly.
-- **Prompt fragment.** Generate the hand and device with a blank, evenly lit screen area, then composite the real screenshot in a design tool: "A hand holds a modern smartphone at a slight angle in front of a softly defocused apartment balcony at golden hour. The screen is a clean flat bright area facing the camera squarely for later compositing, with no reflections or UI drawn on it."
+- **Prompt fragment.** Generate the hand and device with a blank, evenly lit screen area, or pass the real screenshot as a reference image to be shown on the screen: "A hand holds a modern smartphone at a slight angle in front of a softly defocused apartment balcony at golden hour. The screen is a clean flat bright area facing the camera squarely for later compositing, with no reflections or UI drawn on it."
 - **Fails when.** The model invents an interface, prices or listing details. Screens must be real and composited (R18).
 
 ## 4 · Style is the skin, format is the skeleton

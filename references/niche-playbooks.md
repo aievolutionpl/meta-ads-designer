@@ -45,7 +45,7 @@ CONCRETE (name the dish) · SENSORY · PLACE · DEADLINE (midweek offers)
 - **The editorial split** (photo as a placed block on a flat brand field) is the fastest way out of generic hospitality.
 
 ### What to avoid
-- ❌ AI drawing the logo onto the building — place the original file deterministically.
+- ❌ AI drawing the logo onto the building — pass the original file as a reference image and require it unchanged.
 - ❌ Re-generating a listed or distinctive facade — it invents balconies and windows.
 - ❌ Too many small text rows in the footer — it has to read from a thumbnail.
 
@@ -64,7 +64,7 @@ OBJECTION (the portal-is-cheaper belief) · NUMBER (the direct-booking gap) · P
 - **Real product/install photos as references** → generate **new** premium scenes (different light, time of day, lifestyle). Never overlay on the client's raw photo.
 - **Angles that sell services:** Problem → Effect (before/after when it proves value instantly) · package tiers ("Installation included", "£0 deposit") · genuine deadline offers ("Fitted before October 31") · transformation (chaos → order, dark → light).
 - **Benefit-led headline ≤40 characters**, body ≤125.
-- Readable CTA + logo fidelity + location/phone — all deterministic, never AI-rendered.
+- Readable CTA + logo fidelity + location/phone — quoted exactly in the prompt, logo as a reference, verified by transcription.
 
 ### What to avoid
 - ❌ Pasting frames or gradients onto the client's raw photos.
@@ -191,7 +191,7 @@ NUMBER · PLACE · AUDIENCE · DEADLINE (open houses)
 - **The real vehicle as hero** — clean studio or dramatic location, correct proportions.
 - Motion/aspiration: on the road, golden hour, cinematic — but the car stays recognisable and true to colour.
 - Spec highlights as clean type (year, mileage, price) — not on the car.
-- Dealer identity + contact deterministic, never AI-rendered onto the paint.
+- Dealer identity from the supplied logo reference; contact details in Meta's text fields, not painted on the car.
 
 ### What to avoid
 - ❌ Wrong body proportions, extra doors, fake badging, misdrawn wheels.
@@ -211,7 +211,7 @@ NUMBER · AUDIENCE · DEADLINE · CONTRAST
 ### What works
 - **The outcome, not the classroom** — a graduate working, a certificate held, a skill in use.
 - Clean, trustworthy, no gimmick: real people, real results, clear next step.
-- Structure aids: roadmap visuals, "module 1→5" as clean graphics (deterministic).
+- Structure aids: roadmap visuals, "module 1→5" as clean generated graphics with quoted labels.
 - Proof: placement, results, reviews — stated, never invented.
 
 ### What to avoid
@@ -231,7 +231,7 @@ AUDIENCE · PROOF · NUMBER · OBJECTION
 ### What works
 - **Trust and calm** — clean, clinical-but-warm; real facilities or real products.
 - One clear benefit per ad (not a list of 10 claims).
-- Real dosage/label details deterministic — a supplement label is never AI-rendered.
+- Real dosage/label from the product photo as a reference, preserved exactly — never invented.
 - Proof (clinics, certifications, results) stated responsibly.
 
 ### What to avoid
@@ -253,7 +253,7 @@ OBJECTION · PROOF · AUDIENCE · NUMBER
 - **Credibility over flash** — clean layouts, strong typography, a calm brand field.
 - The human/professional + a concrete promise (tax saved, claim won, coverage found).
 - Numbers do the selling: "£X saved", "N clients", "response in 24h" — real, verifiable.
-- Deterministic composition (Mode B) — precision and legal-safety of text matter.
+- Keep legal and numeric copy minimal and quoted, verify by transcription; long disclaimers go in the text fields.
 
 ### What to avoid
 - ❌ Generic stock "handshake + skyscraper" imagery.
@@ -279,7 +279,7 @@ NUMBER · OBJECTION · PROOF · AUDIENCE
 ### What to avoid
 - ❌ Fake/fictional UI screens — inventing screens is a hard fail (user will never see that interface).
 - ❌ HUD/cyberpunk clichés, neon grids, or "futuristic" noise.
-- ❌ Text/UI re-drawn by the model — use real screenshots (Mode B).
+- ❌ Text/UI re-drawn by the model — pass real screenshots as reference images.
 
 ### Headline archetypes that work here
 NUMBER · AUDIENCE · CONTRAST · OBJECTION

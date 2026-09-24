@@ -6,6 +6,22 @@ Character budgets here are locked to the type scale in [`layout-system.md`](layo
 
 ---
 
+
+## 0 · The sell test (R52)
+
+Before any archetype, a headline must sell. Rewrite until all five answers are yes: **what is it · why me · why believe it · why now · only we could say it.**
+
+| Mood line (fails) | Selling line (passes) | Why it works |
+|---|---|---|
+| Poranek ma warstwy. | Croissant, który chrupie jeszcze ciepły. | Product + sensory benefit you can verify at the counter |
+| Zimna do wieczora. | Nalana o 8:00. Wciąż lodowata o 20:00. | Turns "24 h" into a scene the buyer imagines |
+| NOC BRZMI (name only) | NOC BRZMI · 6 godzin live, 3 sceny, jedna noc. | Event name + what you get for the ticket |
+| Najlepsza kawa w mieście | Palona 7 dni temu. Mielona przy Tobie. | Proof replaces the superlative |
+
+**Formula:** `[concrete benefit or result] + [proof detail]`, then `[action]`. Headline ≤ 6–8 words, support line ≤ 45 characters, CTA ≤ 3 words.
+
+**Copy slop — never on the image:** mood with no product · adjectives without proof (najlepszy, premium, wyjątkowy, jakość) · questions nobody asked · "odkryj", "poczuj", "przenieś się" · invented urgency · slogans a competitor could reuse.
+
 ## 1 · The specificity test (run this first, on every headline)
 
 > **Could a direct competitor paste this headline onto their own ad without changing a single word?**
@@ -116,9 +132,9 @@ Polish diacritics `ą ć ę ł ń ó ś ź ż` are the single most common in-ren
 
 | Situation | Do this |
 |-----------|---------|
-| Polish copy, any length | **Mode B (deterministic).** Default. Render the text yourself with a font verified to carry Polish glyphs. |
+| Polish copy, any length | **Generate it (R50).** Quote the exact string with every diacritic, add "no other text", keep the headline ≤ 6 words, then transcribe the render letter by letter. On an error, regenerate or edit only that word with the model. |
 | Polish copy, client insists on a fully generated image | Write the headline **using only diacritic-free words** (§5a), keep it ≤ 3 words, and vision-QA every variant |
-| Polish copy, long or containing a proper noun with diacritics | Mode B. No exceptions. |
+| Polish copy, long or containing a proper noun with diacritics | Shorten it; move the rest to Meta's text fields. Deterministic typesetting only on explicit user request. |
 | Latin-script copy without diacritics (EN, most brand names) | Mode A is fine |
 
 ### 5a · Diacritic-free Polish headlines that still sound native
@@ -127,10 +143,10 @@ Polish has plenty of strong words with no diacritics. Build the headline from th
 
 > `PROSTO Z GRILLA` · `OTWARTE DO PIERWSZEJ` · `DWA DANIA, 49 ZL` · `REZERWUJ STOLIK` · `TYLKO W SOBOTY` · `DOWOZIMY NA MIEJSCE` · `PIERWSZY RAZ OD LAT` · `BEZ ZALICZKI`
 
-Watch: `zł` → write `ZL` only if the brand accepts it, otherwise Mode B. Never fake a diacritic with an apostrophe.
+Watch: `zł` → write `ZL` only if the brand accepts it, otherwise quote `zł` exactly and verify the render. Never fake a diacritic with an apostrophe.
 
 ### 5b · Font check
-Before rendering Polish deterministically, confirm the family ships the glyphs. Verified safe: Montserrat, Inter, Lato, Source Sans 3, Oswald, Playfair Display, Archivo. Verify anything else — a missing glyph is silently substituted and the line ends up in two typefaces.
+When the user explicitly asks for deterministic typesetting, confirm the family ships the glyphs. Verified safe: Montserrat, Inter, Lato, Source Sans 3, Oswald, Playfair Display, Archivo. Verify anything else — a missing glyph is silently substituted and the line ends up in two typefaces.
 
 ```python
 from fontTools.ttLib import TTFont
@@ -155,7 +171,7 @@ print("MISSING:", missing or "none")
 - Ellipses trailing into nothing
 - ALL CAPS on anything longer than 4 words
 
-**Punctuation rules:** a headline ends without a full stop unless it's two sentences (CONTRAST archetype). Apostrophes must be typographic `’` in Mode B; in Mode A, name them explicitly in the prompt — a missing apostrophe in a brand name is a verified failure mode.
+**Punctuation rules:** a headline ends without a full stop unless it's two sentences (CONTRAST archetype). Apostrophes must be typographic `’`; name them explicitly in the prompt — a missing apostrophe in a brand name is a verified failure mode.
 
 ---
 
@@ -195,7 +211,7 @@ archetypes  concrete · place · number · contrast · command
 budgets     headline ≤22 (1 line) / ≤40 (2 lines) · subline ≤45
             CTA ≤18 · detail row ≤60 · caption ≤125
 mode A cap  ≤12 rendered words total on the image
-polish      diacritics → Mode B, always (or diacritic-free words only)
+polish      diacritics → quoted exactly, short, transcribed after render (R50)
 banned      elevate · seamless · your perfect X · rhetorical questions
 routine     one owned fact → archetype → 5 drafts → kill 3 → shortest wins
 ```
