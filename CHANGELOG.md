@@ -4,6 +4,14 @@ All notable changes to Meta Ads Designer. Versions follow [SemVer](https://semve
 
 ---
 
+## [6.4.0] — 2026-09-24
+
+### Added
+- **Mockup dialects, styles 17–23** in `style-atlas-2026.md`: floating device stack, laptop/desktop hero, billboard in situ, printed piece, isometric feed grid, before/after phone pair, packaging/merch. They come with **mockup craft rules**: real inner content, one hero object, tilt plus one light plus a contact shadow, readable at thumbnail size, no device logos, headline outside the device. Integrity notes cover billboard visualisations and fair before/after comparisons.
+- Three more skill-promo prompts (device stack, before/after, billboard) in `examples/prompts/skill-promo-styles.txt`.
+
+---
+
 ## [6.3.0] — 2026-09-24
 
 ### Added

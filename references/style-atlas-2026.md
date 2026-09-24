@@ -37,6 +37,8 @@ Decide in this order and stop as soon as the choice is forced:
 | Culture, independent brands, community | 9 Tactile zine · 1 Oversized type |
 | Real estate, apps, digital products | 12 Device-in-hand · 14 Phone-in-hand + giant type · 5 Quiet minimal |
 | Agency, social media, course or SaaS service | 16 3D service promo · 13 3D clay platform mockup · 15 Script accent · 14 Phone-in-hand + giant type |
+| Show the deliverable itself ("this is what you get") | 17 Device stack · 18 Laptop hero · 21 Isometric grid · 22 Before/after phones |
+| Make a design or brand feel real | 19 Billboard in situ · 20 Printed piece · 23 Packaging / merch |
 
 ## 3 · The atlas
 
@@ -200,6 +202,74 @@ Two common variants, one grammar: a person cut out or posed on a 3D object, a be
 - **Interfaces** are shown as obvious mockups (3D clay objects, a phone in hand). Never make a flat still that imitates a tappable post, button or notification in the feed (`R48-fake-ui`).
 - **The inner content is real:** the actual ad, listing, portfolio piece or photo of the client, supplied as a reference. Never invented screens (R18).
 - **People:** real team members or clearly generic models; avoid uncanny AI faces. Documentary skin texture (R40).
+
+### Mockup dialects (17–23)
+
+A mockup shows the ad or product **inside a believable object or place**: a phone, a laptop, a billboard, a printed poster, a package. It answers the buyer's question "what will I get?" before they read a word. Mockups sell services (design, social media, apps, courses) and make a digital product feel physical.
+
+**Mockup craft, for all of 13–23:**
+1. **Real inner content.** The screen, poster or package shows the actual ad, app or design, passed as a reference image and preserved. Never invented UI or gibberish text (R18).
+2. **One hero object.** One device or surface dominates; a second or third only as a smaller supporting echo.
+3. **Perspective sells realism.** A slight tilt (10–25°) or isometric view, one light source, a contact shadow, subtle screen reflection. Straight-on flat screens look like templates.
+4. **Legible at thumbnail size.** The content on the screen must still read when the whole ad is 300 px wide. If it can't, crop closer.
+5. **Neutral hardware.** No manufacturer logos on devices, no platform wordmarks unless official and justified (guardrails above).
+6. **Headline outside the mockup.** The selling line (R52) sits on the background, not inside the device, where it would read as UI.
+
+### 17 · Floating device stack
+
+- **DNA.** Three phones floating in a staggered diagonal or fan, slightly rotated, each screen showing a different real ad from the same campaign, with soft shadows between them. Pastel or deep single-colour background, headline on one side.
+- **Signature device.** A series shown at once; the campaign reads as a system.
+- **Use for.** Campaign or content packages, social media retainers, app feature tours, carousel previews.
+- **Prompt fragment.** "Three modern smartphones without brand logos float in a staggered diagonal fan on a flat [lilac] background, each tilted about 15°, soft drop shadows between them. Each screen shows a different ad from [the supplied set], sharp and legible. Clean studio light from the top left, subtle glass reflections."
+- **Fails when.** More than three devices, identical screens, or screens too small to read.
+
+### 18 · Laptop / desktop hero
+
+- **DNA.** A laptop at three-quarter view on a real desk (wood, stone, a coffee cup at the edge, soft window light), the screen showing the dashboard, landing page or course. Warm, credible, "someone works here".
+- **Signature device.** An environment that matches the buyer's working life.
+- **Use for.** SaaS, online courses, B2B tools, web design, agencies.
+- **Prompt fragment.** "A modern silver laptop without a logo at a three-quarter angle on a light oak desk, soft morning window light from the left, a ceramic coffee cup and a notebook at the edge of the frame, shallow depth of field. The screen shows [the supplied landing page], sharp and legible, with a faint natural reflection."
+- **Fails when.** The desk is a stock cliché (glowing keyboard, neon), or the screen is unreadable.
+
+### 19 · Billboard / out-of-home in situ
+
+- **DNA.** The ad placed on a real city surface: a billboard above a street, a bus shelter light box, a metro wall poster. People and light make the location believable. Implies scale and ambition.
+- **Signature device.** The context: "this brand is big enough for the street".
+- **Use for.** Brand launches, portfolio promotion ("your ad could be here"), events, local businesses with an outdoor presence.
+- **Prompt fragment.** "A street-level photo at dusk of a large bus-shelter light box on a Kraków street, warm streetlights and a few blurred passers-by. The light box displays [the supplied ad] evenly lit, correct perspective and slight glass reflection. Documentary photo realism."
+- **Fails when.** It implies a real placement that did not happen. Label it as a visualisation when it is one.
+
+### 20 · Printed piece in the hand or on the wall
+
+- **DNA.** The ad as a physical print: a poster taped to a concrete wall, a flyer in a hand, a stack of printed cards on a table, with paper texture, slight curl and real shadows.
+- **Signature device.** Tactility: the ad becomes an object you could keep.
+- **Use for.** Events, print-and-digital services, cafés and shops, design studios, "Imperfect by design" brands.
+- **Prompt fragment.** "A printed A3 poster showing [the supplied design] taped with two strips of masking tape to a rough pale concrete wall, the paper slightly curled at one corner, soft afternoon side light casting a gentle shadow of the curl."
+- **Fails when.** The print looks digitally pasted: no curl, no shadow, no paper grain.
+
+### 21 · Isometric feed grid
+
+- **DNA.** A tilted, isometric 3×3 or 3×4 grid of the brand's posts floating in space with small gaps between tiles, sometimes one tile lifted forward. Clean single-colour background.
+- **Signature device.** One tile popping out of the grid, which is the hero post or the offer.
+- **Use for.** Social media management, content creators, brand refresh, "your feed after 30 days".
+- **Prompt fragment.** "An isometric floating grid of nine square social posts from [the supplied brand feed], small gaps between tiles, on a flat [mint] background. The centre tile lifts forward toward the viewer with a soft shadow beneath it. Clean, bright studio light."
+- **Fails when.** The tiles are random AI images with no shared brand look; the grid must prove consistency.
+
+### 22 · Before / after phone pair
+
+- **DNA.** Two phones side by side, slightly angled toward each other: the left screen a weak, cluttered "before" post (greyed or desaturated), the right a strong "after", with a small arrow or label between them.
+- **Signature device.** Visible improvement in one glance.
+- **Use for.** Redesign services, ad agencies, photo and retouch services, AI tools like this skill.
+- **Prompt fragment.** "Two identical modern smartphones without logos stand side by side on a pale grey surface, angled slightly toward each other. The left screen shows [the real before ad], slightly desaturated. The right screen shows [the real after ad], vivid. A small hand-drawn arrow points from left to right. Soft top light, gentle reflections."
+- **Integrity.** Both screens are real work. Never fake a bad "before" to exaggerate the improvement.
+
+### 23 · Packaging / merch mockup
+
+- **DNA.** The brand or design applied to physical goods: a coffee cup, a paper bag, a box, a T-shirt, a tote, in a styled flat lay or held in a hand. Colour-blocked or natural set.
+- **Signature device.** The brand living in the real world.
+- **Use for.** Branding studios, new brands, cafés, e-commerce launches, merch drops.
+- **Prompt fragment.** "Flat lay from above on a warm beige paper background: a kraft takeaway cup, a paper bag and a small box, all printed with [the supplied logo] exactly as given, arranged with generous space, one sprig of eucalyptus, soft daylight with gentle shadows."
+- **Fails when.** The logo is redrawn or warped by the model. Pass the official logo as a reference and inspect it at 100%.
 
 ## 4 · Style is the skin, format is the skeleton
 
