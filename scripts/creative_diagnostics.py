@@ -178,9 +178,10 @@ def main() -> int:
     if args.json:
         print(json.dumps({"medians": med, "ads": report}, indent=2))
         return 0
-    fmt = lambda v, d=2: "n/a" if v is None else f"{v:.{d}f}"
-    print(f"{len(ads)} ads · medians: CTR {fmt(med['ctr'])}% · CPM {fmt(med['cpm'])} · "
-          f"CPA {fmt(med['cpa'])} · hook {fmt(med['hook'], 1)}% · hold {fmt(med['hold'], 1)}%\n")
+    def fmt(v, d=2, unit=""):
+        return "n/a" if v is None else f"{v:.{d}f}{unit}"
+    print(f"{len(ads)} ads · medians: CTR {fmt(med['ctr'], 2, '%')} · CPM {fmt(med['cpm'])} · "
+          f"CPA {fmt(med['cpa'])} · hook {fmt(med['hook'], 1, '%')} · hold {fmt(med['hold'], 1, '%')}\n")
     for r in report:
         print(f"■ {r['ad']}  ({r['impressions']:,} impr.)")
         for f, act in zip(r["flags"], r["next_brief"]):
