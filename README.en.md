@@ -6,7 +6,7 @@ An AI agent skill for choosing **composition, typography, colour and visual dire
 
 [Polski](README.md) · [Agent instructions](SKILL.md) · [Quick start](#quick-start) · [Examples](examples/README.md)
 
-![Version](https://img.shields.io/badge/version-5.10.0-222222)
+![Version](https://img.shields.io/badge/version-5.11.0-222222)
 ![License](https://img.shields.io/badge/license-MIT-222222)
 ![Model independent](https://img.shields.io/badge/prompts-model_independent-222222)
 
@@ -112,8 +112,9 @@ A prompt communicates intent. It cannot guarantee identical fonts, pixel coordin
 | [Static ad formats](references/static-ad-formats.md) | Persuasion skeletons, proof, funnel and vertical fit |
 | [Worked prompts](examples/05-model-independent-directions.md) | Flyer, food and local service |
 | [2026 style directions](examples/07-2026-style-directions.md) | Format plus style briefs and an Andromeda-ready campaign set |
-| [Visual Advertising Engine](visual-advertising-engine.md) | Canonical rules R01–R48 |
+| [Visual Advertising Engine](visual-advertising-engine.md) | Canonical rules R01–R49 |
 | [Layout system](references/layout-system.md) | Starting values for grids, margins and type |
+| [Creative diagnostics](references/creative-diagnostics.md) | From an Ads Manager export to the next brief (`scripts/creative_diagnostics.py`) |
 | [Platform guidance](references/platform-compliance.md) | Safe zones, text limits, Advantage+, AI labels |
 | [QA gate](references/qa-gate.md) | Reviewing actual rendered images |
 | [More examples](examples/README.md) | Briefs, prompts and design decisions |
@@ -124,6 +125,7 @@ A prompt communicates intent. It cannot guarantee identical fonts, pixel coordin
 pip install -r requirements.txt
 python scripts/check_docs.py
 python scripts/test_qa.py
+python scripts/test_diagnostics.py
 ```
 
 Documentation checks validate links, rule references and versions. Image QA measures selected technical properties; composition, credibility and brief fidelity need separate review. Campaign performance requires measurement after publication.

@@ -8,7 +8,7 @@
 
 | | |
 |---|---|
-| **Rules** | R01–R48 below |
+| **Rules** | R01–R49 below |
 | **Layout / type / color numbers** | [`references/layout-system.md`](references/layout-system.md) |
 | **Headline & copy generation** | [`references/headline-system.md`](references/headline-system.md) |
 | **Creative variation matrix (test-ready sets)** | [`references/variation-matrix.md`](references/variation-matrix.md) |
@@ -20,6 +20,7 @@
 | **Competitor ad teardown** | [`references/competitor-ad-teardown.md`](references/competitor-ad-teardown.md) |
 | **2026 visual languages (style atlas)** | [`references/style-atlas-2026.md`](references/style-atlas-2026.md) |
 | **Static ad formats (persuasion skeletons)** | [`references/static-ad-formats.md`](references/static-ad-formats.md) |
+| **Creative diagnostics (results → next brief)** | [`references/creative-diagnostics.md`](references/creative-diagnostics.md) |
 | **QA gate (scored, machine-checkable)** | [`references/qa-gate.md`](references/qa-gate.md) |
 | **Worked end-to-end examples** | [`examples/`](examples/) |
 
@@ -600,6 +601,12 @@ Meta unified the Stories and Reels safe zone in March 2026: keep text, logos and
 Advantage+ creative enhancements can expand images, add overlays, rewrite text and generate backgrounds, and Meta's in-house image model is rolling into those tools. Keep brand-critical content inside the central area, leave clean extendable edges, and tell the user which enhancements to switch off when identity or product fidelity matters. Ads created or substantially edited with generative AI may carry an "AI info" label; never hide it. Never draw fake functional UI such as play buttons, close icons or notification badges; one on a still is a hard fail, `R48-fake-ui`. Platform numbers change: verify them in Meta's Ads Guide before final delivery.
 
 Depth: [platform guidance](references/platform-compliance.md).
+
+## R49 · DIAGNOSE BEFORE YOU REDESIGN
+
+When results exist, read them before touching the creative. Find the first broken step of the funnel: stopping power (hook), holding power, click, conversion. Change the creative decision that step points to, and only that one. Fatigue asks for a new concept, a weak hook for a new first frame, a good CTR with a bad CPA for a continuity check on the landing page. Metrics diagnose; they never excuse invented proof, and a correlation is not a controlled test.
+
+Depth: [creative diagnostics](references/creative-diagnostics.md).
 
 ## 🏁 FINAL PRINCIPLE — DON'T DECORATE. DIRECT.
 

@@ -4,6 +4,21 @@ All notable changes to Meta Ads Designer. Versions follow [SemVer](https://semve
 
 ---
 
+## [5.11.0] — 2026-09-24
+
+Skills as repeatable jobs, following Metaflow's overview of Claude skills for Meta ads (CPA diagnostics, creative fatigue detection, competitor creative analysis).
+
+### Added
+- **`R49` Diagnose before you redesign**: read results first, stop at the first broken funnel step, and change only the creative decision it points to.
+- **`references/creative-diagnostics.md`**: input and output contracts, a symptom → cause → change table, and guardrails against claiming causation.
+- **`scripts/creative_diagnostics.py`**: reads an Ads Manager CSV export (comma, semicolon or tab; Polish decimal commas), compares each ad with the account median, flags fatigue, weak hook, weak hold, low CTR, high CPM, high CPA and winners, and prints the next-brief action for each. Standard library only; `scripts/test_diagnostics.py` in CI.
+
+### Changed
+- **`SKILL.md`**: campaign requests deliver a package (working note, prompt, typesetting handoff, per-placement output, landing continuity line); results route to diagnostics first.
+- **`core.md`** §19a, the engine, both READMEs, the charter and CI.
+
+---
+
 ## [5.10.0] — 2026-09-24
 
 The 2026 feed layer: what current Meta ads look like, which structures persuade, and what changed on the platform. Researched from Behance and Dribbble portfolio patterns, Penji's Meta design guidance, Meta's Ads Guide and about thirty 2026 sources on creative performance, trends and placement changes. Third-party figures are labelled as such and never presented as promised results.

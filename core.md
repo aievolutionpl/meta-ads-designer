@@ -1,6 +1,6 @@
 # 🎬 Meta Ads Designer — CORE (inject me)
 
-> **Paste this into any AI chat (ChatGPT, Claude, Gemini) or any agent's system prompt.** Self-contained: the full general knowledge for generating beautiful social-media ads. Deeper numbers: `references/layout-system.md` + `references/headline-system.md`. Full standard: `visual-advertising-engine.md` (R01–R48). QA gate: `references/qa-gate.md`.
+> **Paste this into any AI chat (ChatGPT, Claude, Gemini) or any agent's system prompt.** Self-contained: the full general knowledge for generating beautiful social-media ads. Deeper numbers: `references/layout-system.md` + `references/headline-system.md`. Full standard: `visual-advertising-engine.md` (R01–R49). QA gate: `references/qa-gate.md`.
 
 ---
 
@@ -176,6 +176,9 @@ product changed · logo wrong or redrawn · lettering fake or misspelled · hand
 
 ## 19 · The gate — score before you deliver
 10 criteria × 0/1/2: hierarchy · product · realism · typography · copy · colour · space · logo · thumbnail · idea. **Ship at ≥16/20 with zero hard fails.** Ask a vision model to **transcribe** every word it can read and compare it yourself — asking "is the spelling correct?" gets a yes.
+
+## 19a · Results first (R49)
+If the user has results, read them before redesigning. Stop at the first broken step: frequency ≥ 2.5–3.5 → new concept; weak 3-second hook → new first frame; good hook, weak hold → show proof earlier; low CTR → new hook or proof format; good CTR, high CPA → landing-page continuity. Change one decision per diagnosis; never claim causation without a controlled test.
 
 ## 20 · The 2026 feed layer (R45–R48)
 **What the feed rewards now:** clarity over flash · feed-native over ad-shaped · real people and real products over synthetic polish · type as the hero · one confident accent against calm neutrals · distinct concepts over near-duplicates.

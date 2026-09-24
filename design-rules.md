@@ -30,7 +30,7 @@ Use [art direction](references/art-direction.md) and [prompt craft](references/p
 
 | Your question | Open |
 |---------------|------|
-| What are the rules? | [`visual-advertising-engine.md`](visual-advertising-engine.md) — R01–R48, authoritative |
+| What are the rules? | [`visual-advertising-engine.md`](visual-advertising-engine.md) — R01–R49, authoritative |
 | I need one page to paste into a chat | [`core.md`](core.md) |
 | How big is the headline? What grid? What colors? | [`references/layout-system.md`](references/layout-system.md) |
 | What should the headline actually *say*? | [`references/headline-system.md`](references/headline-system.md) |

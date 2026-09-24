@@ -3,7 +3,7 @@ name: meta-ads-designer
 description: Art-direct social ads, posters and flyers and write model-independent image prompts when a user requests advertising visuals, stronger composition or less generic AI design.
 license: MIT
 metadata:
-  version: 5.10.0
+  version: 5.11.0
   author: AI Evolution Labs
   url: https://github.com/aievolutionpl/meta-ads-designer
 ---
@@ -61,6 +61,8 @@ For generated images, inspect phone-size hierarchy and full-resolution text, ide
 
 For revisions, preserve successful decisions and change the failed one. Read [artifact control](references/artifact-control.md) for preservation and symptom-based recovery. Do not diagnose an artifact's cause from appearance alone or assume all tools share session behaviour.
 
+When the user asks for a campaign or a new creative, deliver a package, not a loose prompt: the working note (format, style, persona, hook), the prompt, the typesetting handoff where needed, one native file or prompt per requested placement, and a continuity line for the landing page. If results already exist, diagnose them first (R49).
+
 Deliver requested outputs and placements. If image tools are unavailable, provide the prompt and handoff and state what remains unrendered.
 
 ## Campaigns and deeper guidance
@@ -82,7 +84,7 @@ Read only what is relevant:
 | Generic visuals | [Anti-slop registry](references/anti-slop-registry.md), interpreted through R42 |
 | Competitor analysis | [Competitor teardown](references/competitor-ad-teardown.md) |
 | Placement-specific delivery, Advantage+, AI labels | [Platform guidance](references/platform-compliance.md); verify changing requirements when relevant |
-| Existing campaign results | [Performance loop](references/creative-performance-loop.md) |
+| Existing campaign results, fatigue, CPA spikes | [Creative diagnostics](references/creative-diagnostics.md) (run `scripts/creative_diagnostics.py` on a CSV export), [performance loop](references/creative-performance-loop.md) |
 | Requested motion | [Video track](references/video-ugc-track.md) |
 | Requested setup or tool routing | [Installation](INSTALL.md), [model routing](references/model-routing.md) |
 

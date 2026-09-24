@@ -19,3 +19,5 @@ jobs:
         run: python scripts/check_docs.py
       - name: QA gate self-test
         run: python scripts/test_qa.py
+      - name: Creative diagnostics self-test
+        run: python scripts/test_diagnostics.py

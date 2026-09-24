@@ -6,7 +6,7 @@ Skill dla agentów AI, który pomaga dobierać **kompozycję, typografię, kolor
 
 [English](README.en.md) · [Instrukcja skilla](SKILL.md) · [Szybki start](#szybki-start) · [Przykłady](examples/README.md)
 
-![Version](https://img.shields.io/badge/version-5.10.0-222222)
+![Version](https://img.shields.io/badge/version-5.11.0-222222)
 ![License](https://img.shields.io/badge/license-MIT-222222)
 ![Model independent](https://img.shields.io/badge/prompts-model_independent-222222)
 
@@ -112,8 +112,9 @@ Prompt wyraża intencję projektową. Nie gwarantuje identycznego fontu, położ
 | [Formaty statyczne](references/static-ad-formats.md) | Szkielety perswazji, dowód, lejek i dopasowanie do branży |
 | [Przykłady promptów](examples/05-model-independent-directions.md) | Flyer, gastronomia i usługa lokalna |
 | [Kierunki 2026](examples/07-2026-style-directions.md) | Briefy „format + styl” i zestaw kampanii pod Andromedę |
-| [Visual Advertising Engine](visual-advertising-engine.md) | Kanoniczne reguły R01–R48 |
+| [Visual Advertising Engine](visual-advertising-engine.md) | Kanoniczne reguły R01–R49 |
 | [Layout system](references/layout-system.md) | Punkty wyjścia dla siatki, marginesów i skali tekstu |
+| [Diagnostyka kreacji](references/creative-diagnostics.md) | Z eksportu Ads Managera do kolejnego briefu (`scripts/creative_diagnostics.py`) |
 | [Platformy](references/platform-compliance.md) | Strefy bezpieczne, limity tekstu, Advantage+, etykiety AI |
 | [QA gate](references/qa-gate.md) | Ocena rzeczywiście wygenerowanych obrazów |
 | [Pozostałe przykłady](examples/README.md) | Briefy, prompty i omówienie decyzji |
@@ -124,6 +125,7 @@ Prompt wyraża intencję projektową. Nie gwarantuje identycznego fontu, położ
 pip install -r requirements.txt
 python scripts/check_docs.py
 python scripts/test_qa.py
+python scripts/test_diagnostics.py
 ```
 
 Kontrole dokumentacji sprawdzają linki, odwołania do reguł i wersje. Skrypt QA bada wybrane cechy techniczne obrazu; ocenę kompozycji, wiarygodności i zgodności z briefem trzeba wykonać osobno. Wyniki kampanii wymagają pomiaru po publikacji.
