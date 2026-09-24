@@ -14,7 +14,7 @@ Choose photography, documentary, illustration, graphic form or typography for th
 
 Before prompting, decide reading order, dominant element, copy field, quiet space, type roles and palette roles. Name a preferred font and describe its weight/width; quote exact copy and line breaks. Layout numbers are starting points; actual text must fit. Shorten copy before shrinking essential information.
 
-For prompt-only requests, deliver one complete prompt and an optional typesetting handoff. Check facts, spatial conflicts and contradictory instructions. Never score an unseen image. Explore multiple concepts when useful; hold one variable at a time only for controlled tests. Brand and brief outrank generic recipes.
+For prompt-only requests, deliver one complete generation prompt with all copy quoted inside it. Check facts, spatial conflicts and contradictory instructions. Never score an unseen image. Explore multiple concepts when useful; hold one variable at a time only for controlled tests. Brand and brief outrank generic recipes.
 
 ---
 
@@ -117,14 +117,14 @@ Never prompt first. Run this order:
 > Full per-industry playbooks (15 niches, What works / Avoid / Headline / CTA): `references/niche-playbooks.md`. Depth for food/hotel/services: `references/hospitality-food-services-playbook.md`. Quick map below.
 
 - **Food/restaurant:** real dish photos are the hero (top ~62%) + a **solid** panel below with headline/subline/CTA/logo. Zero text on the food. Never invent dishes the venue doesn't serve. Warm, appetite-driven light.
-- **Hotel/venue:** a distinctive or listed facade → deterministic mode (see §12) — the model invents balconies and redraws signage. Real-photo + clean typography beats an AI-rebuilt building.
+- **Hotel/venue:** a distinctive or listed facade → pass the real photo as a reference image and edit around it (R41); the model invents balconies and redraws signage when it rebuilds the building from text.
 - **Services/trade:** real install photos as refs → generate NEW premium scenes. Problem→Effect as a **pair** of creatives. Package tiers and deadlines must be **real**.
 - **Retail/product:** product in real use, sharp, isolated by contrast. Let the product be 100% recognisable. Colour must match the listing (returns are killed by mismatched colour).
 - **Fitness:** real bodies/effort, not CGI; transformation as a **series**, not split-screen.
 - **Beauty/spa:** editorial soft light, believable skin, product as hero — never a redrawn label.
 - **Real estate:** the **real** property is the hero; never AI-invent architecture. Price + location pop as type.
 - **Tech/SaaS:** real UI screenshots (never invented interfaces); one feature per ad.
-- **Finance/professional:** credibility over flash; real numbers sell; deterministic Mode B for text safety.
+- **Finance/professional:** credibility over flash; real numbers sell; keep copy short and quoted, transcribe it after every render (R50).
 
 ## 12 · Generated, never coded (R50)
 - **The whole ad comes out of the image model:** photo or illustration, headline, copy and layout. Never compose ads in HTML or code unless the user asks.

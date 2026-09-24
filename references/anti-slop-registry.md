@@ -64,7 +64,7 @@ Audiences now report that they spot AI-generated ads on sight and trust them les
 | two or three style dialects in one frame | one visual language per creative (R45) |
 | a Behance-style board of tilted ad cards shipped as one ad | extract one card's language and build one ad (R06) |
 | a sticker, an arrow and an emoji on every element | one sticker for the one key fact |
-| an invented interface, listing or app screen | a real screenshot composited in a design tool |
+| an invented interface, listing or app screen | the real screenshot passed as a reference image and preserved exactly |
 | a play button, close icon or notification badge on a still | nothing that pretends to be tappable (R48) |
 | an outpainted edge that invents product or architecture | supply native ratios; keep extendable edges clean ([`platform-compliance.md`](platform-compliance.md) §6) |
 

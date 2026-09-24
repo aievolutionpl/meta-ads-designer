@@ -109,7 +109,7 @@ Each entry: skeleton → copy budget → where it shines → integrity rule.
 
 ### 3.11 · Native interface (notes, chat, post)
 
-- **Skeleton.** The anatomy of a familiar screen (notes list, chat thread, post, sticky note) filling the frame, one highlighted line, product or brand cue small in a corner. Build deterministically (Mode B).
+- **Skeleton.** The anatomy of a familiar screen (notes list, chat thread, post, sticky note) filling the frame, one highlighted line, product or brand cue small in a corner. Generate it with every line quoted exactly (R50).
 - **Copy.** As long as it takes to read in 3 seconds: a title plus 3–5 short lines.
 - **Shines.** Confessions ("things I wish I knew…"), objection handling, founder notes, services, apps.
 - **Integrity.** Brand's own voice, clearly the brand's own content. No fake tappable UI (play buttons, close X, notification badges), no impersonation of a real person, platform account or news outlet.

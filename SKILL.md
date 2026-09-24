@@ -3,7 +3,7 @@ name: meta-ads-designer
 description: Research, question, art-direct and generate Meta/social ads, posters and flyers with AI image models (API, Codex or built-in tools), using strong prompts and post-generation analysis, when a user requests advertising visuals or less generic AI design.
 license: MIT
 metadata:
-  version: 6.0.0
+  version: 6.1.0
   author: AI Evolution Labs
   url: https://github.com/aievolutionpl/meta-ads-designer
 ---
@@ -71,7 +71,7 @@ For generated images, analyse every result before showing it as done, following 
 
 For revisions, preserve successful decisions and change the failed one. Read [artifact control](references/artifact-control.md) for preservation and symptom-based recovery. Do not diagnose an artifact's cause from appearance alone or assume all tools share session behaviour.
 
-When the user asks for a campaign or a new creative, deliver a package, not a loose prompt: the working note (format, style, persona, hook), the prompt, the typesetting handoff where needed, one native file or prompt per requested placement, and a continuity line for the landing page. If results already exist, diagnose them first (R49).
+When the user asks for a campaign or a new creative, deliver a package, not a loose prompt: the working note (format, style, persona, hook), the generation prompt with every string quoted, one native file or prompt per requested placement, and a continuity line for the landing page. If results already exist, diagnose them first (R49).
 
 Deliver requested outputs and placements. If image tools are unavailable, provide the prompt and handoff and state what remains unrendered.
 
@@ -97,6 +97,7 @@ Read only what is relevant:
 | Placement-specific delivery, Advantage+, AI labels | [Platform guidance](references/platform-compliance.md); verify changing requirements when relevant |
 | Existing campaign results, fatigue, CPA spikes | [Creative diagnostics](references/creative-diagnostics.md) (run `scripts/creative_diagnostics.py` on a CSV export), [performance loop](references/creative-performance-loop.md) |
 | Requested motion | [Video track](references/video-ugc-track.md) |
+| Generating through fal.ai | `scripts/generate_fal.py` (needs `FAL_KEY`); see [generated showcase](examples/08-generated-showcase.md) |
 | Requested setup or tool routing | [Installation](INSTALL.md), [model routing](references/model-routing.md) |
 
 Do not publish campaigns or spend ad budget merely because a reference describes those activities.

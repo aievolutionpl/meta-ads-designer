@@ -255,7 +255,7 @@ Type scale, pairings, tracking: [`references/layout-system.md`](references/layou
 Two production modes — decide **before** generating (see [`references/layout-system.md`](references/layout-system.md) §5):
 
 - **Mode A · Native in-render text** — the copy is baked into the AI render. Only when the model spells reliably. Quote every rendered word, keep strings short, append the spelling directive, vision-QA every variant.
-- **Mode B · Deterministic composition** — generate a clean background (`no text, no logos, no signage`), then compose typography and the official logo file with code/design tool.
+- **Mode B · Deterministic composition** (only on explicit user request, R50) — generate a clean background (`no text, no logos, no signage`), then compose typography and the official logo file with code/design tool.
 
 Either way: **never let the model invent** logos · prices · product names · slogans · labels · contact details. A "plausible" logo is a FAIL (R30).
 
@@ -564,7 +564,7 @@ Specify medium, dominant element, reading path, copy field, quiet space, type ro
 
 R25 is a semantic checklist, not mandatory headings. Combine it into concise prose. Add exact copy, type roles and reading order for finished ads; replace camera/light fields with graphic form when appropriate. The five-slot skeleton is an alternative packaging of those decisions, not a second required prompt.
 
-A prompt specifies one output, one direction, exact copy or a separate typesetting contract, composition and relevant constraints. Omit model names, unsupported parameter syntax and irrelevant rules. Check factual support, spatial feasibility, copy length and contradictions before delivery.
+A prompt specifies one output, one direction, exact quoted copy, composition and relevant constraints. Omit model names, unsupported parameter syntax and irrelevant rules. Check factual support, spatial feasibility, copy length and contradictions before delivery.
 
 Prompting cannot guarantee exact fonts, pixels, spelling or preservation. For prompt-only work, deliver the complete prompt without claiming a rendered result. For an actual image, inspect small-size hierarchy, text and source fidelity before scoring it.
 

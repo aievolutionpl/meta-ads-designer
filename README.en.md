@@ -6,7 +6,7 @@ An AI agent skill for choosing **composition, typography, colour and visual dire
 
 [Polski](README.md) · [Agent instructions](SKILL.md) · [Quick start](#quick-start) · [Examples](examples/README.md)
 
-![Version](https://img.shields.io/badge/version-6.0.0-222222)
+![Version](https://img.shields.io/badge/version-6.1.0-222222)
 ![License](https://img.shields.io/badge/license-MIT-222222)
 ![Model independent](https://img.shields.io/badge/prompts-model_independent-222222)
 

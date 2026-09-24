@@ -85,9 +85,9 @@ Decide **before** you generate (full spec: [`layout-system.md`](references/layou
 | Mode | What it is | When |
 |------|-----------|------|
 | **A · Native in-render text** | Copy baked into the AI render, in-scene, end-to-end. Keep strings SHORT (brand + headline + one location line); quote every rendered word; append the spelling directive. | The user wants a fully-generated visual, the model spells reliably, and the copy is short and Latin-script. |
-| **B · Deterministic composition** | Generate a clean background only (`no text, no logo, no signage, no collage`), then compose the ad in code/Figma: official logo file, exact copy, brand panels, safe margins. | Logo fidelity or exact copy matters; long copy; Polish diacritics; legal/price lines; anything that must be pixel-correct. |
+| **B · Deterministic composition** (explicit request only, R50) | Generate a clean background only (`no text, no logo, no signage, no collage`), then compose the ad in code/Figma: official logo file, exact copy, brand panels, safe margins. | Logo fidelity or exact copy matters; long copy; Polish diacritics; legal/price lines; anything that must be pixel-correct. |
 
-**Both can coexist in one batch** (e.g. 5 native + 5 deterministic). Deliver a combined contact sheet. QA text spelling either way.
+Default to A with the generation techniques in R50. Deliver a contact sheet and QA spelling by transcription.
 
 ---
 

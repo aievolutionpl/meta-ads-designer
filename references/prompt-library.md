@@ -81,7 +81,7 @@ Finished version: [`../examples/01-restaurant-real-food.md`](../examples/01-rest
 
 ---
 
-## 🏨 Hotel / venue — editorial background (Mode B)
+## 🏨 Hotel / venue — editorial scene
 
 ```
 ONE SINGLE PHOTOGRAPHIC BACKGROUND ONLY — no text, no words, no signage,
@@ -130,7 +130,7 @@ Finished version: [`../examples/03-services-problem-effect.md`](../examples/03-s
 
 ---
 
-## 🎨 Mode B — clean photo + deterministic typography
+## 🎨 Mode B — clean photo + deterministic typography (explicit user request only, R50)
 
 1. Generate a **clean photograph** with zero text in the prompt, and an explicitly **planned empty area** for the copy. A background generated without that instruction produces the pasted-on look no matter how good the typography is.
 2. Compose typography + the official logo file deterministically (design tool, PIL, HTML).
@@ -215,7 +215,7 @@ Three rules that go with it:
 2. **Keep it short** — brand + headline + one detail line. ≤12 rendered words total.
 3. Add `CRITICAL: every word spelled perfectly` and name the proper nouns.
 4. **Never render punctuation-heavy brand names** (apostrophes, ampersands, accents, inch marks). Leave the space, place the file.
-5. **Diacritics → Mode B.** Polish `ą ć ę ł ń ó ś ź ż` is the highest-failure case (headline-system §5).
+5. **Diacritics → quote exactly and verify (R50).** Polish `ą ć ę ł ń ó ś ź ż` is the highest-failure case (headline-system §5).
 6. **Vision-QA every variant** — and ask the model to *transcribe* what it reads, not to confirm that the spelling is right.
 
 ---
@@ -230,4 +230,4 @@ Model capability changes faster than this repo. Verify on your host rather than 
 | Clean lifestyle / product photography | any strong photographic model |
 | Real dishes / product / building preserved | a reference-capable model, fed the real refs with labelled roles |
 | Deterministic typography + logo | any clean-photo model + a composition step (Mode B) |
-| Diacritics of any kind in-image | none — use Mode B |
+| Diacritics of any kind in-image | the strongest text-rendering model available; quote exactly, transcribe, targeted edit on errors |

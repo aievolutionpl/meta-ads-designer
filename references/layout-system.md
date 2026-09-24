@@ -72,7 +72,7 @@ Multiply every px value in this file by `canvas_short_edge / 1080`. For 9:16 (sh
 | 56–88px | single-word headers, big display | high crop risk — vision-QA required |
 | 24–28px | body / subtitle | safe with a shadow |
 
-This table applies to **Mode A (native in-render text)**, where the model chooses the actual rasterized size and mid-word truncation is the #1 failure. In Mode B you control the raster — use §2a instead.
+This table applies to **Mode A (native in-render text)**, where the model chooses the actual rasterized size and mid-word truncation is the #1 failure. In the rare explicitly requested Mode B you control the raster — use §2a instead.
 
 ### 2c · Font pairings (name real typefaces — R17)
 
@@ -207,7 +207,7 @@ Type occupies the top 35–40%, the photo is a **placed rectangle** with margin 
 
 **Both modes can ship in one batch.** Deliver a combined contact sheet.
 
-**Mode B's non-negotiable:** the background prompt must **plan the negative space** ("clean negative space in the lower third for typography"). A background generated without that instruction produces the Canva look no matter how good the typography is.
+**Mode B (explicit request only, R50) — its non-negotiable:** the background prompt must **plan the negative space** ("clean negative space in the lower third for typography"). A background generated without that instruction produces the Canva look no matter how good the typography is.
 
 ---
 

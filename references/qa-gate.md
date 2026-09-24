@@ -137,7 +137,7 @@ Return ONLY this JSON, no prose:
 - `style_coherence: false` → two colliding style descriptors. Pick one and regenerate; re-rolling will not resolve it ([`artifact-control.md`](artifact-control.md) §4).
 - `visual_language: "mixed"` → **R45**. Two dialects compete (for example direct flash plus riso grain plus stickers). Keep the language that serves the message, remove the other's devices, and regenerate ([`style-atlas-2026.md`](style-atlas-2026.md) §5).
 - `fake_functional_ui` non-empty → **`R48-fake-ui`**. Remove the control; a still image must not pretend to be tappable ([`platform-compliance.md`](platform-compliance.md) §6).
-- `spelling_errors` with `severity: hard` → regenerate (Mode A) or re-render the text layer (Mode B).
+- `spelling_errors` with `severity: hard` → regenerate, or run a targeted model edit on the misspelled word (R50).
 - `total < 16` → fix the lowest-scoring criteria and re-run.
 - `reads_as_ai_generated: true` with `total ≥ 16` → trust the flag, not the score. Redesign.
 
@@ -162,7 +162,7 @@ Ten criteria, 0/1/2 each. This is what `score` in the vision JSON refers to, and
 
 **Thresholds**
 - **≥ 18** — ship.
-- **16–17** — ship if the deductions are on criteria 7–9 (fixable in a deterministic pass); otherwise fix.
+- **16–17** — ship if the deductions are on criteria 7–9 (fixable in one more generation or targeted edit); otherwise fix.
 - **12–15** — fix and re-score. Usually typography or copy.
 - **< 12** — regenerate from a new prompt. Don't patch.
 - **Any hard fail at any score** — regenerate.

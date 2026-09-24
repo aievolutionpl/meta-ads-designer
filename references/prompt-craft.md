@@ -51,7 +51,7 @@ If facts are missing, omit them or request them; do not put plausible invented f
 | Attractive but generic | Replace the generic setting with a specific use moment or brand device |
 | Unclear offer | Resolve the takeaway and headline before changing the lighting |
 | Busy hierarchy | Remove a secondary idea; enlarge one focal element; consolidate details |
-| Copy unreadable | Shorten copy or reserve a larger calm field; typeset separately if needed |
+| Copy unreadable | Shorten copy or reserve a larger calm field; regenerate with the shorter copy |
 | Looks pasted together | Align image direction, type edges, colour roles and spacing |
 | Product drift | Reassert source identity and narrow the edit; consider source compositing |
 | Wrong style | Describe visible formal properties, not more mood adjectives |

@@ -24,7 +24,7 @@ If the brief is new or uncertain, **generate small first**: one finished ad (R34
 | Job | Route to |
 |-----|----------|
 | **Native in-scene text** (Mode A, R18) | The model best at reliable spelling — keep strings short, QA every variant |
-| **Clean product / commercial photo** (Mode B) | A strong photorealism model; compose typography/logo deterministically after |
+| **Clean product / commercial photo** | A strong photorealism model with the product and logo as references; copy quoted in the prompt (R50) |
 | **Recomposition / editing** | An editing-capable model working from the reference (R03) |
 | **Series consistency** (R20) | One model for the whole set so the product stays identical |
 
@@ -52,13 +52,13 @@ Route per the motion track: [`video-ugc-track.md`](video-ugc-track.md) §5.
 - **Name the cost.** If the platform charges per generation, report the model and the number of generations in the delivery (SKILL.md step 6).
 - **Draft cheap, ship high.** Validate the angle at a draft quality tier, then re-render the winner at full quality. Draft tiers are for iteration; a final product shot or a transparent-background packshot needs medium/high or it ships soft and dirty (R40 mode D).
 - **At scale, prefer API calls to a chat thread.** Each call is an independent request with context you control, so cross-image ghosting is meaningfully lower — which matters most on exactly the sets where consistency is the deliverable (R20, R35).
-- **Prefer the free/deterministic path when fidelity matters** (Mode B, R18): compose real typography and the official logo deterministically instead of paying for a model to guess at it.
+- **Fidelity comes from references, not code** (R18, R50): pass the official logo and product photos as reference images with named roles, and choose a model that follows references and renders text well.
 
 ---
 
 ## 5 · Fallback when a model under-delivers
 
-- **Spelling fails** → switch to Mode B (deterministic composition) rather than re-rolling a model that can't spell.
+- **Spelling fails** → shorten the copy, run a targeted text edit, or switch to a model with stronger text rendering. Never overlay the text in code unless the user asks.
 - **Product drifts** → strengthen the reference role (R03) or switch to an editing model; do not accept a changed product.
 - **Motion is weak** → go back to a strong static hero rather than ship a weak video (R39: static-first).
 - **Output is artifacted** → do not re-roll blind. Diagnose the mode first (R40): high-risk texture subject, colliding styles, session bleed, or draft-tier settings. Re-rolling clears none of them.
