@@ -12,8 +12,6 @@ An AI agent skill for choosing **composition, typography, colour and visual dire
 ![License](https://img.shields.io/badge/license-MIT-222222)
 ![Model independent](https://img.shields.io/badge/prompts-model_independent-222222)
 
-![Meta Ads Designer — AI-generated showcase](assets/showcase/hero.jpg)
-
 | | | |
 |---|---|---|
 | ![PORA](assets/showcase/ad-pora.jpg) | ![NURT](assets/showcase/ad-nurt.jpg) | ![NOC BRZMI](assets/showcase/ad-noc-brzmi.jpg) |
