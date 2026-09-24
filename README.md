@@ -6,7 +6,7 @@ Skill dla agentów AI, który pomaga dobierać **kompozycję, typografię, kolor
 
 [English](README.en.md) · [Instrukcja skilla](SKILL.md) · [Szybki start](#szybki-start) · [Przykłady](examples/README.md)
 
-![Version](https://img.shields.io/badge/version-5.10.0-222222)
+![Version](https://img.shields.io/badge/version-6.0.0-222222)
 ![License](https://img.shields.io/badge/license-MIT-222222)
 ![Model independent](https://img.shields.io/badge/prompts-model_independent-222222)
 
@@ -36,11 +36,13 @@ Ten sam zestaw pomysłów można rozwinąć w spokojniejszym kierunku editorial:
 
 *Druga plansza demonstracyjna. Zmienia się charakter art direction, a nie zakres możliwości skilla.*
 
-## Nowość w 5.10: warstwa 2026
+## Nowość w 6.0: research, pytania i generacja AI
 
-![Style Atlas 2026: sześć fikcyjnych reklam, każda łączy format statyczny z jednym językiem wizualnym](assets/style-atlas-2026.png)
+- **Zawsze generacja AI od zera.** Każda finalna reklama powstaje w modelu obrazu (API, Codex albo narzędzie hosta), razem z nagłówkiem i układem. Żadnego składania grafik w HTML czy kodzie (R50).
+- **Najpierw research, potem pytania.** Agent sprawdza stronę marki, Meta Ad Library, konkurencję i opinie, a potem zadaje 3–6 trafnych pytań naraz, z domyślną odpowiedzią przy każdym. Dopiero z notatki decyzyjnej pisze prompty (R51).
+- **Analiza po generacji.** Agent przepisuje każde słowo z obrazu, sprawdza wierność produktu i logo, robi test miniatury i zmienia jedną decyzję na iterację.
 
-*Sześć fikcyjnych reklam złożonych deterministycznie w HTML ([źródło](assets/generated/style-atlas.html)): bez modelu obrazu, bez materiałów klientów, bez obietnic wyników. Każda łączy format perswazji z jednym językiem wizualnym.*
+### Warstwa 2026
 
 Skill wie teraz, jak wyglądają aktualne reklamy Meta i dlaczego pewne struktury przekonują:
 
@@ -59,6 +61,7 @@ flowchart LR
     D --> E["Obraz i ocena wizualna"]
 ```
 
+1. **Research i pytania** — agent bada markę, Ad Library i konkurencję, zadaje 3–6 pytań i spisuje notatkę decyzyjną.
 1. **Brief** — agent ustala odbiorcę, prawdziwą ofertę, cel, format i dostępne materiały.
 2. **Pomysł** — wybiera, co pokaże korzyść: produkt, działanie, detal, sytuacja lub typografia.
 3. **Art direction** — wybiera format, na który pozwala dowód, i jeden język wizualny, a potem określa dominantę, kolejność czytania, przestrzeń na tekst, fonty i paletę.
@@ -96,9 +99,7 @@ Instrukcją wejściową jest [SKILL.md](SKILL.md). Szczegóły dla poszczególny
 
 ## Tekst i logo w reklamie
 
-Dla krótkich treści można poprosić generator o gotową reklamę i sprawdzić jej pisownię. Gdy liczą się dokładny font, polskie znaki, cena lub oficjalne logo, skill przewiduje osobny skład: obraz z zaplanowanym miejscem na tekst oraz specyfikację typografii.
-
-Prompt wyraża intencję projektową. Nie gwarantuje identycznego fontu, położenia co do piksela ani bezbłędnej pisowni w każdym narzędziu.
+Cała reklama, łącznie z tekstem, powstaje w modelu AI. Skill pisze dokładne cytaty tekstu z polskimi znakami, podaje hierarchię i położenie, a logo i produkt przekazuje jako obrazy referencyjne. Po generacji agent przepisuje każde słowo z obrazu. Przy błędzie generuje ponownie albo robi celowaną edycję tym samym modelem, zamiast nakładać tekst kodem.
 
 ## Materiały w repozytorium
 
@@ -108,12 +109,14 @@ Prompt wyraża intencję projektową. Nie gwarantuje identycznego fontu, położ
 | [core.md](core.md) | Samodzielna instrukcja do wklejenia w czacie |
 | [Art direction](references/art-direction.md) | Od celu marketingowego do kompozycji i typografii |
 | [Prompt craft](references/prompt-craft.md) | Pisanie i sprawdzanie promptów |
+| [Research i pytania](references/discovery-and-research.md) | Research, pytania przed generacją, notatka decyzyjna, analiza wyników |
 | [Atlas stylów 2026](references/style-atlas-2026.md) | Dwanaście języków wizualnych, trend slop, czytanie plansz referencyjnych |
 | [Formaty statyczne](references/static-ad-formats.md) | Szkielety perswazji, dowód, lejek i dopasowanie do branży |
 | [Przykłady promptów](examples/05-model-independent-directions.md) | Flyer, gastronomia i usługa lokalna |
 | [Kierunki 2026](examples/07-2026-style-directions.md) | Briefy „format + styl” i zestaw kampanii pod Andromedę |
-| [Visual Advertising Engine](visual-advertising-engine.md) | Kanoniczne reguły R01–R48 |
+| [Visual Advertising Engine](visual-advertising-engine.md) | Kanoniczne reguły R01–R51 |
 | [Layout system](references/layout-system.md) | Punkty wyjścia dla siatki, marginesów i skali tekstu |
+| [Diagnostyka kreacji](references/creative-diagnostics.md) | Z eksportu Ads Managera do kolejnego briefu (`scripts/creative_diagnostics.py`) |
 | [Platformy](references/platform-compliance.md) | Strefy bezpieczne, limity tekstu, Advantage+, etykiety AI |
 | [QA gate](references/qa-gate.md) | Ocena rzeczywiście wygenerowanych obrazów |
 | [Pozostałe przykłady](examples/README.md) | Briefy, prompty i omówienie decyzji |
@@ -124,6 +127,7 @@ Prompt wyraża intencję projektową. Nie gwarantuje identycznego fontu, położ
 pip install -r requirements.txt
 python scripts/check_docs.py
 python scripts/test_qa.py
+python scripts/test_diagnostics.py
 ```
 
 Kontrole dokumentacji sprawdzają linki, odwołania do reguł i wersje. Skrypt QA bada wybrane cechy techniczne obrazu; ocenę kompozycji, wiarygodności i zgodności z briefem trzeba wykonać osobno. Wyniki kampanii wymagają pomiaru po publikacji.

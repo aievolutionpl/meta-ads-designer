@@ -34,10 +34,3 @@ undefined
 [Bold README cover](../assets/meta-ads-designer-bold.png)
 
 
-## Style Atlas 2026 board
-
-[Style Atlas 2026](../assets/style-atlas-2026.png) is not an AI-generated image. It is typeset deterministically in HTML and CSS from [its source](../assets/generated/style-atlas.html) and rendered with a headless browser, which is the Mode B route the skill recommends when copy, diacritics and layout must be exact. The product drawings are flat vector illustrations, not photographs.
-
-Every brand on it is fictional: NOC BRZMI and its reserved `.example` domain come from [example 05](05-model-independent-directions.md); NURT, PORZĄDEK and LUMA from [example 07](07-2026-style-directions.md); TARG WINYLI and ZIARNO exist only on the board. The number 47/60, the offer and the comparison rows are teaching content, not claims about any real product. The board demonstrates format and style decisions; it is not evidence of advertising performance.
-
-To re-render after editing the HTML, open it in a Chromium-based browser at a 1400×1420 viewport and capture at 1.5× device scale.

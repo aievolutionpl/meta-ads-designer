@@ -24,9 +24,11 @@ If the request is prompt-only, return the ready-to-paste prompt with a short pro
 
 **Finished ad with generated text:** quote every intended string, declare no other copy, specify hierarchy and line breaks. Use for short copy when the available renderer can handle it. Inspect the actual lettering afterwards.
 
-**Image plus separate typesetting:** request a text-free image with a planned copy field. Provide an adjacent typesetting specification containing exact copy, preferred fonts, alignment, palette and official logo placement. The image prompt alone is not the complete ad. Use this for precision-sensitive or information-heavy work.
+**This is the default (R50):** the model renders the complete ad, text included. Describe type by class, weight, width, case and position ("heavy condensed grotesk, all caps, upper left, two lines"). Font names state intent only.
 
-**Graphic/type-led composition:** the hero may be the headline itself. Specify the overall grid and supporting device. If exact type is required, compose the final artwork with a design tool instead of pretending a text-free background already contains the design.
+**Graphic/type-led composition:** the headline itself may be the hero. Specify the grid, the words, the weight contrast and the one supporting device, and let the model render the whole poster.
+
+**Text-free image plus separate typesetting** exists only when the user explicitly asks for it. Otherwise fix text errors with a regeneration or a targeted model edit.
 
 ## 3 · Prompt preflight
 
