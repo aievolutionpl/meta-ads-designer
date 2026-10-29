@@ -22,6 +22,8 @@ Additional prompt-only teaching cases: [model-independent directions](05-model-i
 
 [2026 style directions](07-2026-style-directions.md) pairs a static format with a visual language from the style atlas: performance sticker callouts, direct-flash editorial, a notes-app confession, a colour-block stat drop and a seasonal offer, plus one Andromeda-ready campaign set. Also fictional, prompt-only and unscored.
 
+[October 2026 craft styles](09-october-2026-craft-styles.md) works the 6.6.0 refresh: proof of process for a bakery, cut-paper collage for a drink and a contact sheet for a sock range, each with its decayed-cue check (R53), remix note (R54) and what must come from real material (R55). Prompts in [`prompts/craft-collage-styles.txt`](prompts/craft-collage-styles.txt), linted.
+
 ## How each case is structured
 
 ```

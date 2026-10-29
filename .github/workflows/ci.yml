@@ -21,3 +21,7 @@ jobs:
         run: python scripts/test_qa.py
       - name: Creative diagnostics self-test
         run: python scripts/test_diagnostics.py
+      - name: Prompt lint self-test
+        run: python scripts/test_prompt_lint.py
+      - name: Prompt lint — the repo's own example prompts
+        run: python scripts/prompt_lint.py examples/prompts/*.txt

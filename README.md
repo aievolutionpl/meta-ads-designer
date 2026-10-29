@@ -8,7 +8,7 @@ Skill dla agentów AI, który pomaga dobierać **kompozycję, typografię, kolor
 
 [English](README.en.md) · [Instrukcja skilla](SKILL.md) · [Szybki start](#szybki-start) · [Przykłady](examples/README.md)
 
-![Version](https://img.shields.io/badge/version-6.5.0-222222)
+![Version](https://img.shields.io/badge/version-6.6.0-222222)
 ![License](https://img.shields.io/badge/license-MIT-222222)
 ![Model independent](https://img.shields.io/badge/prompts-model_independent-222222)
 
@@ -44,10 +44,19 @@ Ten sam zestaw pomysłów można rozwinąć w spokojniejszym kierunku editorial:
 
 Skill wie teraz, jak wyglądają aktualne reklamy Meta i dlaczego pewne struktury przekonują:
 
-- **Atlas stylów 2026** — dwadzieścia sześć języków wizualnych: od plakatu z wielką typografią i edytorialu z fleszem, przez natywne notatki, banery performance ze stickerem, po taktylny zin. Każdy ma typografię, kolor, sygnaturowy detal, fragment promptu i typowy błąd.
+- **Atlas stylów 2026** — dwadzieścia dziewięć języków wizualnych: od plakatu z wielką typografią i edytorialu z fleszem, przez natywne notatki, banery performance ze stickerem, po taktylny zin. Każdy ma typografię, kolor, sygnaturowy detal, fragment promptu i typowy błąd.
 - **Formaty statyczne** — piętnaście szkieletów perswazji (stat drop, stos recenzji, produkt z calloutami, porównanie, offer stack…). Format jest dostępny tylko wtedy, gdy istnieje jego dowód.
 - **Fakty platformy 2026** — ujednolicona strefa bezpieczna Reels/Stories (14% góra, 35% dół), eksport 4:5 w 1440×1800, rozszerzanie obrazu i generowane tła w Advantage+, etykiety „AI info” oraz grupowanie niemal identycznych reklam przez Andromedę.
 - **Cztery nowe reguły, R45–R48** — jeden język wizualny na reklamę, format wynika z dowodu, różnorodność daje zasięg, projekt pod system placementów 2026.
+
+### Nowość w 6.6: odświeżenie październik 2026
+
+- **Co jest teraz trendy** — dowód procesu zamiast gładkiego połysku, kolor „baza + jeden akcent”, typografia dotykająca dwóch krawędzi kadru, skanowana (nie symulowana) tekstura, powrót kolażu i surrealistycznego humoru.
+- **Trzy nowe style, 27–29** — dowód procesu (z paskiem pochodzenia), kolaż z wycinanek, stykówka z zaznaczeniem. Budowane tylko z prawdziwych materiałów marki.
+- **R53 · Sprawdź sygnał, zanim go pożyczysz** — jeśli trzech konkurentów w Ad Library używa danego motywu, motyw jest zużyty. Na październik 2026: szeryf na kremowym tle (styl firm AI), dithering, ASCII, piksele, scanlines, nakładki ziarna i rastra.
+- **R54 · Projektuj pod remiks maszynowy** — Advantage+ rozszerza kadr, przepisuje tekst i robi wideo ze statyki. Warstwy, ważne elementy w centrum, pierwsza klatka, która działa bez ruchu.
+- **R55 · Wygenerowany obraz nie udaje dowodu** — żadnych wygenerowanych klientów, pracowników, „zza kulis” czy przed/po jako prawdy. Oznaczanie zgodnie z art. 50 AI Act (od 2 sierpnia 2026) i log generacji przy każdej reklamie.
+- **Linter promptów** — `scripts/prompt_lint.py` łapie placeholdery, brak „no other text”, copy slop, fałszywe UI i zużyte trendy, zanim wydasz kredyty na generację.
 
 ## Jak działa
 
@@ -74,7 +83,7 @@ Jeśli prosisz tylko o prompt, praca kończy się na jego sprawdzeniu. Agent nie
 
 Wklej [core.md](core.md) jako instrukcję lub dodaj go jako materiał do rozmowy. Potem podaj krótki brief:
 
-> Przygotuj prompt do reklamy 4:5 mojej kawiarni. Odbiorcy: osoby szukające śniadania w okolicy. Załączam zdjęcie croissanta i logo. Cel: zachęcić do wizyty. Nagłówek: „Poranek ma warstwy.” Dobierz kompozycję, typografię i kolor. Zachowaj wygląd produktu i logo. Nie dodawaj niepotwierdzonych cen ani promocji.
+> Przygotuj prompt do reklamy 4:5 mojej kawiarni. Odbiorcy: osoby szukające śniadania w okolicy. Załączam zdjęcie croissanta i logo. Cel: zachęcić do wizyty. Nagłówek: „Croissant, który chrupie jeszcze ciepły.” Dobierz kompozycję, typografię i kolor. Zachowaj wygląd produktu i logo. Nie dodawaj niepotwierdzonych cen ani promocji.
 
 ### Jako skill dla agenta
 
@@ -108,15 +117,15 @@ Cała reklama, łącznie z tekstem, powstaje w modelu AI. Skill pisze dokładne 
 | [Art direction](references/art-direction.md) | Od celu marketingowego do kompozycji i typografii |
 | [Prompt craft](references/prompt-craft.md) | Pisanie i sprawdzanie promptów |
 | [Research i pytania](references/discovery-and-research.md) | Research, pytania przed generacją, notatka decyzyjna, analiza wyników |
-| [Atlas stylów 2026](references/style-atlas-2026.md) | Dwadzieścia sześć języków wizualnych, trend slop, czytanie plansz referencyjnych |
+| [Atlas stylów 2026](references/style-atlas-2026.md) | Dwadzieścia dziewięć języków wizualnych, odświeżenie październik 2026, zużyte trendy, czytanie plansz referencyjnych |
 | [Formaty statyczne](references/static-ad-formats.md) | Szkielety perswazji, dowód, lejek i dopasowanie do branży |
 | [Przykłady promptów](examples/05-model-independent-directions.md) | Flyer, gastronomia i usługa lokalna |
 | [Kierunki 2026](examples/07-2026-style-directions.md) | Briefy „format + styl” i zestaw kampanii pod Andromedę |
-| [Visual Advertising Engine](visual-advertising-engine.md) | Kanoniczne reguły R01–R52 |
+| [Visual Advertising Engine](visual-advertising-engine.md) | Kanoniczne reguły R01–R55 |
 | [Layout system](references/layout-system.md) | Punkty wyjścia dla siatki, marginesów i skali tekstu |
 | [Diagnostyka kreacji](references/creative-diagnostics.md) | Z eksportu Ads Managera do kolejnego briefu (`scripts/creative_diagnostics.py`) |
-| [Platformy](references/platform-compliance.md) | Strefy bezpieczne, limity tekstu, Advantage+, etykiety AI |
-| [QA gate](references/qa-gate.md) | Ocena rzeczywiście wygenerowanych obrazów |
+| [Platformy](references/platform-compliance.md) | Strefy bezpieczne, limity tekstu, remiks Advantage+, etykiety AI, AI Act |
+| [QA gate](references/qa-gate.md) | Linter promptów (`scripts/prompt_lint.py`) i ocena rzeczywiście wygenerowanych obrazów |
 | [Pozostałe przykłady](examples/README.md) | Briefy, prompty i omówienie decyzji |
 
 ## Weryfikacja i rozwój
@@ -126,6 +135,8 @@ pip install -r requirements.txt
 python scripts/check_docs.py
 python scripts/test_qa.py
 python scripts/test_diagnostics.py
+python scripts/test_prompt_lint.py
+python scripts/prompt_lint.py examples/prompts/*.txt
 ```
 
 Kontrole dokumentacji sprawdzają linki, odwołania do reguł i wersje. Skrypt QA bada wybrane cechy techniczne obrazu; ocenę kompozycji, wiarygodności i zgodności z briefem trzeba wykonać osobno. Wyniki kampanii wymagają pomiaru po publikacji.

@@ -18,15 +18,15 @@ Production note: .example is an illustrative reserved domain, not a real ticket 
 
 ## 2 · A food ad with an honest source image
 
-Brief: fictional cafe “PORA”; a croissant photograph is supplied as image A. Goal: breakfast visits. Approved copy: “Poranek ma warstwy.” and “Wpadnij na śniadanie”. No approved price or opening hours.
+Brief: fictional cafe “PORA”; a croissant photograph is supplied as image A. Goal: breakfast visits. Approved copy: “Croissant, który chrupie jeszcze ciepły.” and “Wpadnij na śniadanie”. No approved price or opening hours.
 
-Decision: visible pastry layers support the headline. Warm colour comes from the actual pastry, not invented luxury decor. Exact Polish copy will be typeset separately.
+Decision: visible pastry layers prove the headline. (The earlier mood line “Poranek ma warstwy.” failed the R52 sell test; see [example 08](08-generated-showcase.md).) Warm colour comes from the actual pastry, not invented luxury decor. Exact Polish copy will be typeset separately.
 
 Image prompt:
 
 > Create one photographic background for a vertical 4:5 breakfast advertisement. Image A is the exact pastry reference: preserve its shape, visible layers, colour and serving presentation. Place that croissant large in the lower-right area on a simple off-white table, with the entire pastry inside the frame. Photograph from a close three-quarter angle so the flaky side faces the viewer. Soft morning light from the upper left reveals the layers, with a gentle contact shadow extending right. Keep the upper-left third calm and almost empty for a headline. Use warm natural pastry tones against a quiet neutral setting; focus on the front layers and let the far table soften. Do not add other food, packaging, signage, text, logos or props that imply an unconfirmed breakfast bundle.
 
-Typesetting handoff: preferred Archivo Bold headline at upper left, “Poranek ma” / “warstwy.” on two lines; Source Sans 3 for “Wpadnij na śniadanie” below. Charcoal type. Set “PORA” as an approved brand-name text cue, not a fabricated official logo. Check the real crop and font support before export.
+Typesetting handoff: preferred Archivo Bold headline at upper left, “Croissant, który chrupie” / “jeszcze ciepły.” on two lines; Source Sans 3 for “Wpadnij na śniadanie” below. Charcoal type. Set “PORA” as an approved brand-name text cue, not a fabricated official logo. Check the real crop and font support before export.
 
 ## 3 · A local service with credible proof
 

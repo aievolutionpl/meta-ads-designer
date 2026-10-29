@@ -1,6 +1,6 @@
 # 🎬 Meta Ads Designer — CORE (inject me)
 
-> **Paste this into any AI chat (ChatGPT, Claude, Gemini) or any agent's system prompt.** Self-contained: the full general knowledge for generating beautiful social-media ads. Deeper numbers: `references/layout-system.md` + `references/headline-system.md`. Full standard: `visual-advertising-engine.md` (R01–R52). QA gate: `references/qa-gate.md`.
+> **Paste this into any AI chat (ChatGPT, Claude, Gemini) or any agent's system prompt.** Self-contained: the full general knowledge for generating beautiful social-media ads. Deeper numbers: `references/layout-system.md` + `references/headline-system.md`. Full standard: `visual-advertising-engine.md` (R01–R55). QA gate: `references/qa-gate.md`.
 
 ---
 
@@ -199,6 +199,8 @@ If the user has results, read them before redesigning. Stop at the first broken 
 **Trend slop:** grain sprinkled on a sterile render · three stickers, five arrows · a Behance-style board of tilted ad cards shipped as one ad · plastic skin in a "documentary" ad · an invented app screen · a fake play button or notification badge on a still.
 
 **Campaign sets:** Meta groups near-identical ads and lets them compete as one. Vary persona, motivation, hook, format or style between concepts, never just colour or one word. Controlled tests still rotate one variable.
+
+**October 2026 refresh (R53–R55):** proof of process over polish · base-and-spike colour (quiet warm base, one saturated spike on the one thing to find) · headlines that touch two edges · scanned, not simulated, texture · cut-paper collage and surreal humour. New dialects: proof of process (with a provenance strip: maker · place · one verified number) · cut-paper collage · contact sheet with one frame circled. **Decayed cues** (check the Ad Library; three competitors using it = decayed): serif on warm paper (the AI-company look), dithering, ASCII, pixel grids, scanlines, grain and halftone overlays. **Machine remix:** Advantage+ expands, re-texts and animates statics, so keep headline, logo and offer central, never run copy across the product or a face, leave extendable edges and make the still work as a video's first frame; ship a native 9:16 per concept. **No generated evidence:** never present a generated customer, employee, event, place, before/after or making-of as real; build them from real photos or make the staging obvious; disclose AI in the ad when a photoreal scene could pass as authentic (EU AI Act Art. 50, from 2 Aug 2026); keep the generation log.
 
 **Placement:** Meta's text fields show ~125 characters of primary text and a 40-character headline before truncation. Keep on-image text to the hook, offer or one proof point. Advantage+ may expand images, add overlays and rewrite text: keep critical content central, leave clean extendable edges, and flag risky enhancements for product-fidelity work. AI-made ads may carry an "AI info" label; never hide it.
 

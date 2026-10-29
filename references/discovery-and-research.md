@@ -18,6 +18,8 @@ Do this before asking anything, with whatever tools the host has (web search, fe
 | Reviews (Google, Booking, marketplace) | The customer's own words: real benefits, objections and proof you may quote with permission |
 | Seasonal and local context | Dates, weather, holidays and local events that make the ad current |
 | Current style references (Behance, Dribbble, Pinterest) | A visual language to borrow in principle ([style-atlas-2026.md](style-atlas-2026.md) §6) |
+| The trend cue you plan to use, in the Ad Library | Whether three competitors already run it; if so it has decayed (R53) |
+| The business's own process, staff and customer photos | Whether proof-of-process or documentary styles can be built from real references (R55) |
 
 Write the findings as a short **research note**: 5–8 bullets, each ending with its implication for the ad. Example: "Every competitor shows a plated dish on dark wood → our gap: hands and preparation in daylight."
 
