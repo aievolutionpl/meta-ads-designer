@@ -111,7 +111,7 @@ Audiences now report that they spot AI-generated ads on sight and trust them les
 
 ## 4 · Programmatic gate
 
-Text deliverables (prompts, captions, prose) — run before publishing:
+Prompts — run the linter before spending credits (`python scripts/prompt_lint.py prompts.txt`; [`qa-gate.md`](qa-gate.md) §5). Captions and prose — run before publishing:
 
 ```bash
 # 1. Visual-slop vocabulary leaking into prompts

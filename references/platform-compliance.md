@@ -63,7 +63,7 @@ If a placement can't be produced without breaking hierarchy, say so and propose 
 
 ## 6 · The 2026 Meta placement system (R48)
 
-Research summary, September 2026. Platform numbers change; verify them in the [Meta Ads Guide](https://www.facebook.com/business/ads-guide/update) before final delivery.
+Research summary, September 2026, refreshed October 2026. Platform numbers change; verify them in the [Meta Ads Guide](https://www.facebook.com/business/ads-guide/update) before final delivery.
 
 ### 6a · Text fields around the image
 
@@ -81,6 +81,13 @@ The old 20% text rule was retired in 2020, so text-heavy images are no longer re
 
 Advantage+ can adjust brightness and contrast, add template overlays and text bars, rephrase and move text, expand images to fill other placements, animate stills and generate new backgrounds. Several enhancements have been on by default. Meta's in-house image model (Muse Image, announced 7 July 2026) is rolling into these tools during Q3 2026.
 
+**October 2026 status** (secondhand, from trade coverage; confirm in Ads Manager before relying on it):
+- **Static-to-video** is reported generally available in Advantage+ Creative from 6 October 2026, with wider access to Ads Creative Studio, where hooks, audio, captions and end scenes can be swapped. A catalog product-video beta turns product images into video at scale.
+- **Generated image variants** from Muse Image are entering Advantage+ Creative, so the system can create new versions of your image without a new upload. Advertisers can preview generated creative, switch off individual enhancement types and set **Restricted Words** that generated text must never use.
+- **Ranking** reportedly moved to an LLM-based Generative Recommender from late July 2026, which weighs creative and user preferences together. Distinct, information-rich creative matters more, not less (R47).
+- **Creator content.** The Creator Marketing Hub lets opted-in creators pre-permission posts, so organic creator posts can become partnership ads without per-post approval. Real creator content beats a generated imitation of it (R55).
+- **Reels inventory is growing.** Ship a native 9:16 version for every concept instead of letting the system expand a 4:5.
+
 Design consequences:
 - **Keep critical content central.** Expansion adds pixels around the frame; anything at the edge may be recomposed.
 - **Leave clean, extendable edges.** Plain backgrounds, sky, walls and soft-focus areas expand believably; a product cut off at the edge invites invented product.
@@ -89,15 +96,32 @@ Design consequences:
 
 ### 6d · AI disclosure and misleading formats
 
+- **EU AI Act, Article 50 (R55).** From 2 August 2026, deployers who publish AI-generated or AI-manipulated images, audio or video that resemble real people, objects, places or events and could falsely appear authentic (deepfakes) must disclose it. The Commission's icons read "AI GENERATED" for fully synthetic and "AI MODIFIED" for partly manipulated content, and the disclosure has to be visible at first exposure. Providers' machine-readable marking (watermarks, provenance metadata) is reported to follow on 2 December 2026. A stylised graphic, an obvious mockup or a product on a designed set usually falls outside the deepfake definition; a photorealistic "customer", "employee", "event" or "place" usually does not. When unsure, disclose and suggest a legal check. Sources are trade summaries, not the Official Journal, so verify for regulated briefs.
 - Ads created or significantly edited with generative AI can carry an "AI info" label in the ad's details and in the Ad Library. Meta applies it for its own tools and when it detects provenance signals such as C2PA metadata. It is a transparency notice, not a penalty. Never strip provenance data or disguise AI use to avoid it.
 - Never draw fake functional UI: play buttons on a still, close icons, notification badges, fake checkboxes or system alerts.
 - Never imitate a real person, news outlet, platform account or another brand's interface.
 - Before/after imagery and some health, weight-loss, finance and personal-attribute claims are restricted. Check the current advertising standards for the category before choosing those formats ([static-ad-formats.md](static-ad-formats.md) §3).
 
-### 6e · Sources
+### 6e · Machine remix checklist (R54)
+
+Run it on every static before delivery:
+
+| Check | Pass when |
+|---|---|
+| Layers | Subject, background plane and copy area are separable; no headline crosses the product or a face |
+| Centre | Headline, logo, offer and identifying product details sit in the central area of the frame |
+| Edges | Edges are plain or soft enough to extend without inventing product, architecture or people |
+| Native ratios | A 9:16 and a 4:5 version exist for each concept that matters; expansion is a fallback |
+| First frame | The still works as the first frame of a generated video: the idea reads before anything moves |
+| Controls | The note names enhancements to switch off and lists Restricted Words for regulated or brand-sensitive work |
+| Provenance | The generation log is saved; nothing strips C2PA or other provenance metadata |
+
+### 6f · Sources
 
 - [Meta Ads Guide](https://www.facebook.com/business/ads-guide/update), the source of truth for current specs.
 - Safe-zone summaries of the March 2026 unified update, for example [Aperture](https://aperture.london/blog/meta-ad-safe-zones-2026) and [AdNabu](https://blog.adnabu.com/meta-ads/meta-safe-zones/).
 - Character-limit references such as [SocialRails](https://socialrails.com/blog/facebook-ad-character-limits).
 - Advantage+ enhancement guides, for example [Flighted](https://www.flighted.co/blog/metas-advantage-plus-ai-creative-enhancements-each-one-explained), and coverage of Muse Image ([Forbes](https://www.forbes.com/sites/gabrielalinzainescu/2026/07/08/metas-new-image-model-is-competing-for-ad-budgets/)).
 - Meta, [Expanding GenAI transparency for ads](https://about.fb.com/news/2025/02/gen-ai-transparency-metas-ads-products/), and Meta Help, [How AI-generated images are labeled in ads](https://www.meta.com/help/artificial-intelligence/355108217670024/).
+- October 2026 updates, secondhand: [Common Thread Collective, every Meta ads change in 2026](https://commonthreadco.com/blogs/coachs-corner/meta-ads-changes-2026), [GoodMorning, Meta ads update October 2026](https://goodmorningco.com/blog/meta-ads-update-october-2026), [AdsUploader, Meta ads updates](https://adsuploader.com/blog/meta-ads-updates), [Benly, Advantage+ 2026 updates](https://benly.ai/learn/meta-ads/advantage-plus-updates-2026).
+- EU AI Act Article 50, practitioner summaries: [Billo](https://billo.app/blog/eu-ai-act/), [Makeinfluence](https://www.makeinfluence.com/en/academy/eu-ai-act-article-50-labeling-duty-for-ai-generated-marketing-content), [Fanpage Karma](https://www.fanpagekarma.com/insights/?p=16910). Check the regulation text and the Commission's guidance for binding wording.

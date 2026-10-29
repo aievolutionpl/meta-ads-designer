@@ -104,4 +104,6 @@ Each cell differs from its neighbours in at least two of persona, motivation, fo
 
 **Volume matters.** Motion's 2026 benchmark of more than 550,000 Meta ads found that only about 5% become clear winners, and stronger accounts ship more new creatives each week. A set of three is a start, not a portfolio. Scale variants only as far as the brief and budget justify, and never pad a set with cosmetic copies.
 
+**October 2026 practice notes** (secondhand, unverified by Meta): guides report a Creative Similarity indicator in Ads Manager and recommend 8–15 genuinely different ads per ad set, each with its own angle, format or message, rather than more ad sets. Carousels count as a distinct format and reportedly held up better than single images after Andromeda. Treat thresholds quoted online as folklore and judge similarity by concept, not by a score. Advantage+ now also generates variants from your inputs (R54): the more distinct the inputs, the more distinct its output.
+
 Sources: [Atria on Andromeda](https://www.tryatria.com/blog/andromeda-meta-ads), [Confect](https://confect.io/tactics/meta-andromeda-2026), [303 London on creative diversity](https://www.303.london/blog/complete-guide-to-creative-diversity-for-meta-andromeda), [Motion Creative Benchmarks 2026](https://motionapp.com/library/research/creative-benchmarks-2026/).

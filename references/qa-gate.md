@@ -194,6 +194,15 @@ batch: 3 ship, 1 fixed, 1 regenerated · archetypes used: concrete, place, numbe
 
 For the written deliverables around the image. This does **not** check images — see layer 1 for those.
 
+**Prompts: run the linter before every generation.** It fails on unresolved placeholders, quoted copy without "no other text", copy slop (R52) and fake functional UI (`R48-fake-ui`), and warns on long headlines, density adjectives (R40), decayed trend cues (R53), visual slop vocabulary (R05), evidence words (R55) and a missing aspect ratio. Negated mentions ("no neon glow") pass.
+
+```bash
+python scripts/prompt_lint.py prompts.txt            # prompts separated by a line with ---
+python scripts/prompt_lint.py prompts.txt --strict   # WARN also fails
+```
+
+The greps below remain a quick check for captions and prose:
+
 ```bash
 # Visual-slop vocabulary leaking into prompts
 grep -Eiq "purple gradient|glassmorphism|neon glow|glowing orbs|floating particles|isometric" "$f" \

@@ -4,6 +4,31 @@ All notable changes to Meta Ads Designer. Versions follow [SemVer](https://semve
 
 ---
 
+## [6.6.0] — 2026-10-29
+
+The October 2026 refresh: what changed in the feed, in Meta's machinery and in EU law since September, and a linter that catches failed prompts before they cost a render. Researched from October 2026 trade coverage of Meta's ad updates, 2027 design-trend forecasts and practitioner summaries of the EU AI Act. Secondhand facts are labelled as such.
+
+### Added
+- **`R53` Check the signal before you borrow it.** A trend cue that three competitors already run in the Ad Library has decayed. The October 2026 list: serif on warm paper (the AI-company look), dithering, ASCII, pixel grids, scanlines, grain and halftone overlays.
+- **`R54` Design for machine remix.** Advantage+ expands, re-texts, generates variants and turns statics into video (static-to-video reported GA on 6 October 2026). Layers, central critical content, extendable edges, a still that works as a first frame, named enhancement controls and Restricted Words.
+- **`R55` Never let a generated image pass as a record.** No generated customers, staff, events, places, before/afters or making-of presented as real. Visible disclosure when a photoreal scene could pass as authentic (EU AI Act Article 50, from 2 August 2026), and a generation log with every ad.
+- **Styles 27–29** in `style-atlas-2026.md`: proof of process (with a provenance strip), cut-paper collage, contact sheet with mark-up. New §1a, the October 2026 refresh: proof of process, base-and-spike colour, poster-scale type touching two edges, scanned texture, collage and surreal humour.
+- **`scripts/prompt_lint.py`**: lints prompt files before generation. FAIL on placeholders, quoted copy without "no other text", copy slop and fake functional UI; WARN on long headlines, questions, em dashes, density adjectives, decayed cues, visual slop, evidence words and a missing ratio. Negated mentions pass. Self-test `scripts/test_prompt_lint.py`; CI lints the repo's own example prompts.
+- **`examples/09-october-2026-craft-styles.md`** and `examples/prompts/craft-collage-styles.txt`: three worked briefs for the new styles.
+
+### Changed
+- `platform-compliance.md` §6: October 2026 status (static-to-video, Muse Image variants, Generative Recommender, Creator Marketing Hub, Reels inventory), the EU AI Act disclosure, and a machine remix checklist (§6e). Sources move to §6f.
+- `variation-matrix.md` §6: practice notes on similarity indicators, ads per ad set and carousels as a distinct format.
+- `discovery-and-research.md`: research now checks the planned trend cue and the availability of real process photos.
+- `SKILL.md`, `core.md` §20, both READMEs, `qa-gate.md` §5, `anti-slop-registry.md` §4, `CONTRIBUTING.md`, CI.
+
+### Fixed
+- The quick-start headline in both READMEs and example 05 used a mood line that fails the R52 sell test. They now use the sell-test rewrite.
+
+`R01`–`R52` are unchanged — additive, no renumbering.
+
+---
+
 ## [6.5.0] — 2026-09-24
 
 ### Added

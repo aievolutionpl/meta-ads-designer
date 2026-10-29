@@ -17,6 +17,18 @@ Research summary, September 2026. The figures are third-party benchmarks and ven
 - **Contrast beats a single trend colour.** Pantone's 2026 colour, Cloud Dancer, is a soft white. Current palettes pair calm neutrals with one confident accent or use a saturated field colour against its complement.
 - **Distinct beats similar.** Meta's retrieval system groups near-identical creatives, so a set only earns reach when its members look and argue differently (R47).
 
+### 1a · October 2026 refresh
+
+The second half of 2026 sharpened the same direction. Generation is now cheap for everyone, Meta generates its own variants and videos from your statics, and design commentary for 2027 splits work into "cheap polish" and "provable craft". What changed for the feed:
+
+- **Proof of process beats polish.** The strongest signal is evidence that a person made something: hands, tools, workbenches, test prints, the steps. Use the business's real process photos as references; a generated "handmade" story is a false record (R55).
+- **Base and spike.** A quiet, warm base (off-white, stone, oat) carrying exactly one saturated spike colour, rather than a full trend palette. The spike goes on the one thing the eye must find: the offer, the CTA or one word. WGSN and Coloro named Luminous Blue their 2027 colour, a candidate spike when the brand palette allows it.
+- **Poster-scale type, pushed further.** Headlines that touch two edges of the frame and flex weight or width within one family. It is the cheapest way to own a feed when every competitor has a pretty picture.
+- **Scanned, not simulated, texture.** Texture that records a real event (scanner dust, toner streaks, riso overprint, paper tooth) instead of a generic grain or halftone overlay.
+- **Collage and surreal humour return.** Cut-paper photomontage with visible edges, odd crops and one joke, after years of clean system layouts.
+- **Signals decay fast.** Cues copied by many brands stop signalling anything. Check before you borrow (R53, §5).
+- **Machine remix is the default.** Advantage+ expands, re-texts and animates statics. Design layered, centred compositions that survive it (R54).
+
 ## 2 · Choosing a language
 
 Decide in this order and stop as soon as the choice is forced:
@@ -41,7 +53,10 @@ Decide in this order and stop as soon as the choice is forced:
 | Make a design or brand feel real | 19 Billboard in situ · 20 Printed piece · 23 Packaging / merch |
 | Sale, drop or listing for the mass market | 24 Geometric promo banner · 8 Performance sticker |
 | Launch a product with a signature colour | 25 Tonal product launch · 2 Colour-block still life |
-| Carousel, lookbook or campaign case study | 26 Screen spill · 17 Device stack |
+| Carousel, lookbook or campaign case study | 26 Screen spill · 17 Device stack · 29 Contact sheet |
+| Craft, food, trades, small makers: "a person made this" | 27 Proof of process · 6 Documentary phone-real |
+| Brand awareness with humour, culture, launches | 28 Cut-paper collage · 10 Reality warp |
+| A range, colourways, menu or portfolio with one pick | 29 Contact sheet with mark-up · 21 Isometric grid |
 
 ## 3 · The atlas
 
@@ -91,6 +106,7 @@ Each entry gives the DNA, where it fits, a model-independent prompt fragment to 
 - **Avoid for.** Discounts, urgency, cold audiences that need an explicit benefit.
 - **Prompt fragment.** "Minimal product photograph on a soft warm-white surface against a matching wall. The single object sits low and off-centre to the right, occupying about a fifth of the frame, with a long soft daylight shadow extending left. The rest of the frame is calm and empty. Subtle paper-like tonal variation, no props."
 - **Fails when.** Nothing tells the viewer what is advertised, so it reads as a mood with no ad. Pair it with a sharp headline. Cream used by default rather than by decision is still slop (R42).
+- **October 2026 note.** A refined serif on a warm off-white page is now widely read as the AI-company look (R53). Prefer a neutral grotesk or a true white unless the brand already owns that serif.
 
 ### 6 · Documentary phone-real (UGC-look static)
 
@@ -128,6 +144,7 @@ The dominant style on Eastern European performance boards: dense, energetic and 
 - **Use for.** Culture, music, independent retail, cafés, community events, creative services, Gen Z brands.
 - **Avoid for.** Finance, healthcare, anything where credibility depends on precision.
 - **Prompt fragment.** "Two-colour risograph poster look, fluorescent pink and deep blue on off-white paper, with visible grain and slight misregistration. A halftone photo of the venue is torn along one edge and taped at an angle. The event name is set large in a bold grotesk and overlaps the photo, with the date stamped in a rubber-stamp style in the corner."
+- **October 2026 note.** Plain halftone and grain overlays have decayed (R53). Name the specific process: real riso registration, a scanned paper texture, a photocopy of a real photo.
 - **Fails when.** Grain is sprinkled over a clean AI render as a filter. Imperfection has to come from a process choice, not from noise. Texture can also destroy letterforms, and it collides with R40 texture control if the whole frame asks for fine detail.
 
 ### 10 · Reality warp (surreal scale)
@@ -305,6 +322,37 @@ The classic e-commerce and real-estate "template" banner: diagonal colour blocks
 - **Prompt fragment.** "Isometric top-down view of a white smartphone without a logo lying on a plain warm light-grey surface. The screen shows an editorial page with the title "[SS26]" and a subtitle "[collection name]". The screen's photo content extends beyond the phone on both sides as a long printed strip of [three supplied campaign photos], gently folded and curling off the surface, casting soft realistic shadows. Clean diffuse light, lots of empty space around."
 - **Fails when.** The strip's photos are invented rather than the real campaign, or the fold geometry breaks (panels floating without shadow).
 
+### Craft and collage dialects (27–29)
+
+Added in the October 2026 refresh (§1a). All three depend on real material: a real process, real photographs, a real range. Generate the composition; never generate the evidence (R55).
+
+### 27 · Proof of process
+
+- **DNA.** The making is the message. Real hands at a real workbench, counter or desk mid-step: dough being folded, a seam being stitched, a layout being marked up, a test print beside the final. Documentary light from the actual workspace, shallow but honest depth, visible tools and leftovers. Type is small and factual: what step, how long, how many. An optional **provenance strip**, a thin band at the bottom listing maker, place, date and one number ("Hand-folded · Kraków · 48 h of proofing"), works like an ingredients label.
+- **Signature device.** One unfinished thing next to one finished thing.
+- **Use for.** Bakeries, restaurants, craft and DTC makers, tailoring, trades, design studios, courses that teach a skill.
+- **Avoid for.** Brands with no real process to show, and anything where the process is unappetising or a trade secret.
+- **Prompt fragment.** "Documentary photograph from the supplied reference photos of the bakery: the baker's floured hands fold laminated dough on a worn wooden bench, a tray of finished croissants softly out of focus behind. Window light from the left, real flour dust in the air, natural skin texture. Along the bottom edge a thin cream band with small dark sans text: "Laminowane ręcznie · Kraków · 48 h". No other text."
+- **Fails when.** The process is generated instead of referenced, so it shows steps the business does not do (R55), or the provenance strip states numbers nobody verified (R43).
+
+### 28 · Cut-paper collage
+
+- **DNA.** Photomontage from a few real photographs cut out with visible scissor or torn edges, small paper shadows and slight misalignment, on a flat coloured or kraft-paper ground. Scale is playful: a product next to a person half its size, a hand reaching in from a different photo. One clear joke or metaphor. Type is cut-out letters or one bold grotesk line.
+- **Signature device.** A visible cut edge with a real paper shadow.
+- **Use for.** Brand awareness, culture and events, beverages, fashion drops, youth brands, creative agencies.
+- **Avoid for.** Precision products, finance, healthcare, anything where the collage could read as a literal claim.
+- **Prompt fragment.** "Cut-paper collage on a flat tomato-red background: the supplied product photo cut out with a slightly rough white paper border and a small soft shadow, standing at giant scale beside a cut-out black-and-white photo of a person looking up at it. One torn strip of yellow paper carries the headline "X" in a heavy black grotesk. Visible paper fibres on the torn edges, real overlap shadows, nothing else."
+- **Fails when.** It becomes a sticker sheet of ten elements, the cut edges look digital and shadowless, or two dialects mix (R45).
+
+### 29 · Contact sheet with mark-up
+
+- **DNA.** A grid of real product shots, colourways, dishes or portfolio pieces laid out like a photographer's contact sheet or a range sheet, with one frame circled or ticked in grease pencil. Thin frame numbers, slight paper texture, neutral background. The headline names the choice or the range ("12 kolorów. Ten wraca jutro.").
+- **Signature device.** The hand-drawn circle around one frame.
+- **Use for.** Fashion and accessories ranges, restaurants with a signature dish, paint and interiors, photographers and agencies, carousels where the first card shows the whole range.
+- **Avoid for.** A single product with no range, or ranges too large to read at thumbnail size (keep the grid at 6–12 frames).
+- **Prompt fragment.** "Overhead photo of a printed photographer's contact sheet on a light grey desk: a 3×4 grid of the supplied product photos in twelve colourways, each frame with a small number underneath. A red grease-pencil circle is drawn around frame 7, and a short handwritten tick sits beside it. Soft daylight, slight paper curl at one corner. Headline above the sheet in a heavy black sans: "X". No other text."
+- **Fails when.** Frames are invented products or colourways the brand does not sell, or the grid is too dense to read on a phone.
+
 ## 4 · Style is the skin, format is the skeleton
 
 A style says how the ad looks. A format in [static-ad-formats.md](static-ad-formats.md) says how it persuades: bold statement, stat drop, review card, callouts, comparison and so on. Choose both explicitly, and state them in one line of the working note: "Format: product + callouts. Style: colour-block still life."
@@ -330,6 +378,9 @@ These are the 2026 versions of R05. The style is legitimate, but the execution i
 - **Stickers everywhere.** A sticker is a stamp of the single most important fact. Two stickers halve its force; three turn the ad into a flyer from a discount bin.
 - **Trend colour without identity.** Cloud Dancer white, butter yellow or cobalt forced onto a brand that owns a different palette. The brand palette wins (R42).
 - **Borrowed identity.** Copying a specific designer's composition, a campaign's layout, or a brand's typeface-and-colour signature. Borrow the principle, not the artwork.
+- **Decayed signals (October 2026, R53).** Serif headlines on warm paper-coloured pages (the AI-company look), dithering, ASCII art, pixel grids, scanlines, plain grain overlays and halftone backgrounds have been copied until they read as templates. Before borrowing any cue, check whether three competitors in the Ad Library already use it.
+- **Same motion as everyone.** Meta's static-to-video gives every advertiser similar pans and pacing. The first frame and the idea have to carry the difference (R54).
+- **Generated evidence.** A generated "making-of", "customer" or "before/after" presented as real is not a style choice; it is a false record (R55).
 - **AI tells in "real" styles.** Documentary or flash styles fail hardest when skin is plastic, hands are wrong or text is gibberish, because they promise reality. Inspect at 100% (R40).
 
 ## 6 · Reading a reference board
@@ -359,7 +410,7 @@ Recurring moves across the page: condensed heavy caps, one saturated field colou
 
 ## 7 · Sources
 
-Researched September 2026. Behance, Dribbble, Penji and Meta's Ads Guide could not be opened directly from the research environment; they were used through search summaries and the supplied screenshot. Verify changing platform numbers in the [Meta Ads Guide](https://www.facebook.com/business/ads-guide/update) before final delivery.
+Researched September 2026, refreshed in October 2026 (§1a). Behance, Dribbble, Penji and Meta's Ads Guide could not be opened directly from the research environment; they were used through search summaries and the supplied screenshot. Verify changing platform numbers in the [Meta Ads Guide](https://www.facebook.com/business/ads-guide/update) before final delivery.
 
 - Penji, [How to design high-converting Meta ads](https://penji.co/how-to-design-high-converting-meta-ads/): simple layouts, clear message, eye path from idea to CTA, design with intention.
 - Behance, [meta advertising search](https://www.behance.net/search/projects/meta%20advertising) and Dribbble, [meta-ads tag](https://dribbble.com/tags/meta-ads): portfolio patterns summarised in §6.
@@ -369,3 +420,4 @@ Researched September 2026. Behance, Dribbble, Penji and Meta's Ads Guide could n
 - Favoured, [Ugly ad creative 2026](https://favoured.co.uk/ugly-ad-creative-2026/), and similar analyses of lo-fi versus polished creative.
 - Photography trend roundups on direct flash, colour blocking and surreal still life, for example [Squareshot](https://www.squareshot.com/post/product-photography-trends) and [Envato](https://elements.envato.com/learn/photography-trends).
 - On audience trust in AI-generated ads: [eMarketer](https://www.emarketer.com/content/shoppers-aren-t-impressed-by-ai-generated-marketing) and [AdPulse](https://adpulse.com/ai-advertising-trends-2026-the-real-content-comeback-no-one-saw-coming/).
+- October 2026 refresh: WE AND THE COLOR, [Graphic design trends for 2027: led by proof of process, not AI](https://weandthecolor.com/the-top-10-graphic-design-trends-for-2027-are-about-process-not-ai/212398) (proof of process, provenance strip, base-and-spike colour, scanned texture, poster-scale type, planned imperfection, signal decay); trend roundups such as [Lovart](https://www.lovart.ai/blog/design-trends-2027) and [Creato](https://creato.com.au/blog/2027-graphic-design-trends) on collage, surrealism and modular brand systems; WGSN and Coloro's Luminous Blue as colour of the year 2027, reported in those roundups. Trade blogs, not research: treat them as signals.
