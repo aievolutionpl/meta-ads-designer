@@ -8,7 +8,7 @@ Skill dla agentów AI, który pomaga dobierać **kompozycję, typografię, kolor
 
 [English](README.en.md) · [Instrukcja skilla](SKILL.md) · [Szybki start](#szybki-start) · [Przykłady](examples/README.md)
 
-![Version](https://img.shields.io/badge/version-6.6.0-222222)
+![Version](https://img.shields.io/badge/version-6.7.0-222222)
 ![License](https://img.shields.io/badge/license-MIT-222222)
 ![Model independent](https://img.shields.io/badge/prompts-model_independent-222222)
 
@@ -44,7 +44,7 @@ Ten sam zestaw pomysłów można rozwinąć w spokojniejszym kierunku editorial:
 
 Skill wie teraz, jak wyglądają aktualne reklamy Meta i dlaczego pewne struktury przekonują:
 
-- **Atlas stylów 2026** — dwadzieścia dziewięć języków wizualnych: od plakatu z wielką typografią i edytorialu z fleszem, przez natywne notatki, banery performance ze stickerem, po taktylny zin. Każdy ma typografię, kolor, sygnaturowy detal, fragment promptu i typowy błąd.
+- **Atlas stylów 2026** — 36 języków wizualnych: od plakatu z wielką typografią i edytorialu z fleszem, przez natywne notatki, banery performance ze stickerem, po taktylny zin. Każdy ma typografię, kolor, sygnaturowy detal, fragment promptu i typowy błąd.
 - **Formaty statyczne** — piętnaście szkieletów perswazji (stat drop, stos recenzji, produkt z calloutami, porównanie, offer stack…). Format jest dostępny tylko wtedy, gdy istnieje jego dowód.
 - **Fakty platformy 2026** — ujednolicona strefa bezpieczna Reels/Stories (14% góra, 35% dół), eksport 4:5 w 1440×1800, rozszerzanie obrazu i generowane tła w Advantage+, etykiety „AI info” oraz grupowanie niemal identycznych reklam przez Andromedę.
 - **Cztery nowe reguły, R45–R48** — jeden język wizualny na reklamę, format wynika z dowodu, różnorodność daje zasięg, projekt pod system placementów 2026.
@@ -57,6 +57,12 @@ Skill wie teraz, jak wyglądają aktualne reklamy Meta i dlaczego pewne struktur
 - **R54 · Projektuj pod remiks maszynowy** — Advantage+ rozszerza kadr, przepisuje tekst i robi wideo ze statyki. Warstwy, ważne elementy w centrum, pierwsza klatka, która działa bez ruchu.
 - **R55 · Wygenerowany obraz nie udaje dowodu** — żadnych wygenerowanych klientów, pracowników, „zza kulis” czy przed/po jako prawdy. Oznaczanie zgodnie z art. 50 AI Act (od 2 sierpnia 2026) i log generacji przy każdej reklamie.
 - **Linter promptów** — `scripts/prompt_lint.py` łapie placeholdery, brak „no other text”, copy slop, fałszywe UI i zużyte trendy, zanim wydasz kredyty na generację.
+
+### Nowość w 6.7: meble, lifestyle i kreacje 3D
+
+[Style 30–36](references/style-atlas-2026.md) obejmują zdjęcie wnętrza z panelem i CTA, jasny kadr architektoniczny, falujący nagłówek z człowiekiem, ciemne wnętrze z odręcznym akcentem, packshot z etykietami cech, produkt wychodzący z ramki posta i usługę pokazaną przez obrys urządzenia. Agent dobiera styl do celu, np. panel do przejścia na kartę produktu, a etykiety do pokazania konkretnych detali. Zdjęcie produktu określa jego wygląd, a inspiracja kieruje układem reklamy.
+
+[Gotowe przykłady promptów](examples/prompts/retail-lifestyle-and-social.txt).
 
 ## Jak działa
 
@@ -117,7 +123,7 @@ Cała reklama, łącznie z tekstem, powstaje w modelu AI. Skill pisze dokładne 
 | [Art direction](references/art-direction.md) | Od celu marketingowego do kompozycji i typografii |
 | [Prompt craft](references/prompt-craft.md) | Pisanie i sprawdzanie promptów |
 | [Research i pytania](references/discovery-and-research.md) | Research, pytania przed generacją, notatka decyzyjna, analiza wyników |
-| [Atlas stylów 2026](references/style-atlas-2026.md) | Dwadzieścia dziewięć języków wizualnych, odświeżenie październik 2026, zużyte trendy, czytanie plansz referencyjnych |
+| [Atlas stylów 2026](references/style-atlas-2026.md) | 36 języków wizualnych, odświeżenie październik 2026, zużyte trendy, czytanie plansz referencyjnych |
 | [Formaty statyczne](references/static-ad-formats.md) | Szkielety perswazji, dowód, lejek i dopasowanie do branży |
 | [Przykłady promptów](examples/05-model-independent-directions.md) | Flyer, gastronomia i usługa lokalna |
 | [Kierunki 2026](examples/07-2026-style-directions.md) | Briefy „format + styl” i zestaw kampanii pod Andromedę |

@@ -187,6 +187,10 @@ product changed · logo wrong or redrawn · lettering fake or misspelled · hand
 ## 19a · Results first (R49)
 If the user has results, read them before redesigning. Stop at the first broken step: frequency ≥ 2.5–3.5 → new concept; weak 3-second hook → new first frame; good hook, weak hold → show proof earlier; low CTR → new hook or proof format; good CTR, high CPA → landing-page continuity. Change one decision per diagnosis; never claim causation without a controlled test.
 
+## 19b · Product and social poster styles
+
+Choose one based on what the viewer needs to see. For a product-page visit, put a room photo above a quiet retail panel with one CTA (30). For scale and context, use architectural daylight with a fully readable product (31). For lifestyle, bend one short headline behind a person using the product, keeping every letter legible (32). For atmosphere, key the product neutrally in a dark room and add one restrained script line (33). For visible features, place two or three verified labels around a studio packshot (34). For a graphic reveal, let one physical product cross a poster frame (35), or let a person or a verified deliverable cross an unbranded device outline (36). Treat frames as props. Leave out invented engagement, controls and borrowed branding. Preserve product geometry, colour and construction from the product source. Full recipes in `references/style-atlas-2026.md`.
+
 ## 20 · The 2026 feed layer (R45–R48)
 **What the feed rewards now:** clarity over flash · feed-native over ad-shaped · real people and real products over synthetic polish · type as the hero · one confident accent against calm neutrals · distinct concepts over near-duplicates.
 
