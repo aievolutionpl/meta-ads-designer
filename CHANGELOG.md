@@ -4,6 +4,13 @@ All notable changes to Meta Ads Designer. Versions follow [SemVer](https://semve
 
 ---
 
+## [6.7.0] · 2026-11-10
+
+### Added
+
+- Seven reference-led styles, 30–36, for furniture, physical retail and social service ads. Each includes a selection cue, composition, prompt fragment and failure mode.
+- Style routing for both the agent skill and the standalone core, plus ready-to-lint examples for retail, lifestyle and single-frame social compositions.
+
 ## [6.6.0] — 2026-10-29
 
 The October 2026 refresh: what changed in the feed, in Meta's machinery and in EU law since September, and a linter that catches failed prompts before they cost a render. Researched from October 2026 trade coverage of Meta's ad updates, 2027 design-trend forecasts and practitioner summaries of the EU AI Act. Secondhand facts are labelled as such.

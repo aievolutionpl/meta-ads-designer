@@ -57,6 +57,9 @@ Decide in this order and stop as soon as the choice is forced:
 | Craft, food, trades, small makers: "a person made this" | 27 Proof of process · 6 Documentary phone-real |
 | Brand awareness with humour, culture, launches | 28 Cut-paper collage · 10 Reality warp |
 | A range, colourways, menu or portfolio with one pick | 29 Contact sheet with mark-up · 21 Isometric grid |
+| Furniture, interiors and homeware | 30 Room-to-retail panel · 31 Architectural daylight · 33 Low-key interiors · 34 Feature chips |
+| A person using a product with a bold lifestyle hook | 32 Wavy headline lifestyle |
+| One product or service crossing a graphic frame | 35 Single post frame · 36 Service through a device frame |
 
 ## 3 · The atlas
 
@@ -353,6 +356,66 @@ Added in the October 2026 refresh (§1a). All three depend on real material: a r
 - **Prompt fragment.** "Overhead photo of a printed photographer's contact sheet on a light grey desk: a 3×4 grid of the supplied product photos in twelve colourways, each frame with a small number underneath. A red grease-pencil circle is drawn around frame 7, and a short handwritten tick sits beside it. Soft daylight, slight paper curl at one corner. Headline above the sheet in a heavy black sans: "X". No other text."
 - **Fails when.** Frames are invented products or colourways the brand does not sell, or the grid is too dense to read on a phone.
 
+### Product and social poster dialects (30–36)
+
+Choose the technique the supplied reference demonstrates. Rebuild it with the advertiser's own assets, palette and copy. Read [layout system](layout-system.md) for placement, [static ad formats](static-ad-formats.md) for proof, and [prompt craft](prompt-craft.md) for the final text contract.
+
+### 30 · Room-to-retail panel
+
+- **DNA.** Give a contextual product photograph the upper 55–60% of a 4:5 canvas. Use a solid warm-neutral lower panel or a short fade through empty floor. Keep the fade below the product outline. Set a large left-aligned grotesk headline, one support line and one clearly styled CTA. Reserve the accent colour for the CTA and, optionally, a small rule.
+- **Signature device.** One uninterrupted reading path from the product to the action.
+- **Use for.** Consideration and product-page visits for furniture, décor and physical retail.
+- **Prompt fragment.** “Show the referenced sofa in a daylight living room across the upper 58%. Blend only the foreground floor into an ivory panel. Below, use black Archivo Bold for ‘Sofa SOAVE’, with ‘Zobacz model’ in white on one vermilion block.”
+- **Fails when.** The fade eats the legs, a table blocks the product, or the footer fills with inherited offer badges. Dates, discounts, guarantees and financing require evidence from the advertiser.
+
+### 31 · Architectural daylight product hero
+
+- **DNA.** Use full-bleed environmental photography. Keep the exact product dominant and fully readable against a quiet plane of plaster, wood or stone. Let a tall side window, straight verticals, one grounded foreground object and directional light establish scale and depth. Start with a natural 35–50 mm perspective at product height. Use little or no on-image copy.
+- **Signature device.** Architecture frames the product with a real line or shadow.
+- **Use for.** Furniture, lighting, appliances and décor when fit in a room is the message.
+- **Prompt fragment.** “Frame the supplied sofa between the light oak wall and a tall side window. Natural 50 mm perspective, sunlight grazing the floor, one low table offset beyond the sofa silhouette. Preserve the exact upholstery colour under neutral light.”
+- **Fails when.** A wide lens stretches the arms, décor competes with the subject, or the reference room's different product slips into the render. Use a confirmed view and keep furniture proportions fixed.
+
+### 32 · Wavy headline lifestyle
+
+- **DNA.** Place two short lines of heavy display sans above and partly behind a product-in-use scene. Bend the baselines in one shallow wave. Keep glyphs and word spacing legible. Use one high-contrast accent for the type and preserve the product colour. Frame one person in a natural pose that leaves the product recognisable.
+- **Signature device.** A single typographic wave behind the human silhouette.
+- **Use for.** Lifestyle brands, leisure products and furniture when the activity shows the intended use.
+- **Prompt fragment.** “An adult listens to music at the right end of the supplied sofa. Across the light wall, warm ochre Archivo Black spells ‘CZAS DLA SIEBIE’ in two gently bowed lines. Keep all letters legible and the sofa's left arm and seat split clear.”
+- **Fails when.** Type deformation destroys letters, the scene hides the product or a staged model is presented as a customer (R55). Use licensed talent or a clearly illustrative scene.
+
+### 33 · Low-key interiors with a script accent
+
+- **DNA.** Use a full-bleed room photograph with deep wood or graphite behind the subject. Light the real product with a soft neutral key and use a warm practical lamp in the room. Keep a clean quiet area above the sofa or object. Pair a crisp headline with one shorter, legible script line for the model or collection.
+- **Signature device.** A single handwritten line against a dark plane above the softly lit product.
+- **Use for.** Premium interiors, lighting, hospitality and homeware where atmosphere drives interest.
+- **Prompt fragment.** “Seat the exact referenced sofa against dark walnut panelling. Key from camera-left, a warm lamp behind, warm-white text ‘Salon po zmroku’ above the silhouette and ‘Sofa SOAVE’ below it in one open handwritten line.”
+- **Fails when.** The grade changes the upholstery, the image crushes into black at phone size or the script becomes the only readable copy.
+
+### 34 · Studio packshot with feature chips
+
+- **DNA.** Place one large product on a quiet neutral sweep with soft contact shadows. Use a short display headline and two or three matching opaque chips outside the product outline. Where needed, use fine leaders that terminate exactly on the verified detail. Use a readable sans at one consistent label size.
+- **Signature device.** A small set of labels that directs attention to visible construction.
+- **Use for.** Consideration ads for furniture, gadgets and tools where the buyer wants to inspect features.
+- **Prompt fragment.** “Keep the exact sofa large against warm grey. Place ‘SOAVE w detalach’ above, then two graphite labels in clear space: ‘Dwa siedziska’ and ‘Proste boki’. Point each label at the correct visible part.”
+- **Fails when.** Chips cover the product, float as decoration, or label unverified features. Use fewer labels when proof is limited. Prefer factual descriptions over generic quality claims.
+
+### 35 · Product through a single post frame
+
+- **DNA.** Build a single upright graphic frame with a modest tilt. Let the exact physical product cross one edge, with a believable occlusion and a shared shadow. Use one vivid brand accent and at most two secondary decorative shapes. Keep the headline and CTA on a clean plane outside the frame. The frame represents a graphic poster or prop.
+- **Signature device.** One product breaks the boundary of one frame.
+- **Use for.** Quick-service food, FMCG, small product launches and visually simple offers. For a sequence of panels unfolding out of a phone, choose style 26 instead.
+- **Prompt fragment.** “A supplied burger projects through one ivory poster frame on a deep tomato ground. Keep the burger stack intact and light the frame and food from upper left. Below the frame, set ‘Burger z grilla’ and ‘Zobacz menu’.”
+- **Fails when.** The frame imitates a functioning feed, badges suggest invented engagement, or effects hide product details. Leave out copied platform branding, counters, controls and screenshots of fictional posts.
+
+### 36 · Service in action through a device frame
+
+- **DNA.** Stand one oversized unbranded device frame at a mild angle. Let a person performing the service or interacting with a verified deliverable overlap the rim. Ground person, device and prop with one perspective, key light and shadow. Allocate a separate, high-contrast zone for a bold service headline and one CTA. An optional service line names only an actual offer.
+- **Signature device.** A person or their work crosses the device boundary.
+- **Use for.** Agencies, SaaS and training when a visible action explains the service. For a device-only hero or a floating set of screens, use styles 14 or 17.
+- **Prompt fragment.** “A staged creator works at a laptop in front of a large empty smartphone outline on a deep cobalt set. Keep the screen graphic empty. On the right, set ‘Kampanie Meta dla sklepów’ and ‘Zobacz zakres’.”
+- **Fails when.** The scene reads as an endorsed platform ad or an authentic staff portrait without a source. Keep the frame clearly illustrative, omit system controls and fabricated results, and use actual identity references for named people (R55).
+
 ## 4 · Style is the skin, format is the skeleton
 
 A style says how the ad looks. A format in [static-ad-formats.md](static-ad-formats.md) says how it persuades: bold statement, stat drop, review card, callouts, comparison and so on. Choose both explicitly, and state them in one line of the working note: "Format: product + callouts. Style: colour-block still life."
@@ -362,9 +425,9 @@ A style says how the ad looks. A format in [static-ad-formats.md](static-ad-form
 | Bold statement | 1 Oversized type, 5 Quiet minimal, 9 Tactile zine | 3 Direct flash (image fights headline) |
 | Stat drop | 1 Oversized type, 2 Colour-block | 10 Reality warp |
 | Review / quote card | 7 Native interface, 6 Documentary, 5 Quiet minimal | 4 Cinematic close-up |
-| Product + callouts | 8 Performance sticker, 2 Colour-block | 5 Quiet minimal (callouts destroy calm) |
+| Product + callouts | 34 Studio packshot with feature chips, 8 Performance sticker, 2 Colour-block | 5 Quiet minimal (callouts destroy calm) |
 | Comparison / us vs them | 7 Native interface, 8 Performance sticker | 9 Tactile zine (precision lost) |
-| Offer stack | 8 Performance sticker, 11 Seasonal world | 5 Quiet minimal |
+| Offer stack | 30 Room-to-retail panel, 8 Performance sticker, 11 Seasonal world | 5 Quiet minimal |
 | Founder / expert quote | 6 Documentary, 5 Quiet minimal | 10 Reality warp |
 | Problem → solution | 6 Documentary, 10 Reality warp | 4 Cinematic close-up |
 
