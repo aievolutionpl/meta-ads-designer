@@ -11,6 +11,7 @@ Skill dla agentów AI, który pomaga dobierać **kompozycję, typografię, kolor
 ![Version](https://img.shields.io/badge/version-6.7.0-222222)
 ![License](https://img.shields.io/badge/license-MIT-222222)
 ![Model independent](https://img.shields.io/badge/prompts-model_independent-222222)
+[![CI](https://github.com/aievolutionpl/meta-ads-designer/actions/workflows/ci.yml/badge.svg)](https://github.com/aievolutionpl/meta-ads-designer/actions/workflows/ci.yml)
 
 ## Co robi ten skill
 
@@ -33,6 +34,15 @@ Ten sam zestaw pomysłów można rozwinąć w spokojniejszym kierunku editorial:
 ![Wariant editorial: naturalne światło, spokojniejsze kolory i czytelna hierarchia](assets/meta-ads-designer-editorial.png)
 
 *Druga plansza demonstracyjna. Zmienia się charakter art direction, a nie zakres możliwości skilla.*
+
+### Anti-slop w praktyce: przed vs po
+
+| Wymiar | Domyślny prompt AI (przed) | Meta Ads Designer (po) |
+|---|---|---|
+| **Copy i dowód** | „Najlepsza kawa w mieście! 🔥 Sprawdź [BRAND] — rewolucja smaku!” *(copy slop, placeholder — blokowane przez `prompt_lint.py`)* | Dokładny, krótki nagłówek w cudzysłowie: „Croissant, który chrupie jeszcze ciepły.” + jawny zakaz `no other text` |
+| **Kompozycja i format** | Brak proporcji kadru, przeładowane tło, nakładające się elementy UI | 4:5 (1440×1800), jeden punkt centralny, czysta przestrzeń pod tekst i marginesy bezpieczne 8% |
+| **Wierność produktu** | Model wymyśla generyczny kubek i losowe logo | Referencja produktu prowadzi jego formę, światło i materiał; zero zmyślonych cen i promocji |
+| **Walidacja** | „Wygląda nieźle” na oko | `scripts/prompt_lint.py` przed generacją + `scripts/qa.py` (kontrast, strefy bezpieczne, test miniatury) po renderze |
 
 ## Nowość w 6.0: research, pytania i generacja AI
 
@@ -75,11 +85,11 @@ flowchart LR
 ```
 
 1. **Research i pytania** — agent bada markę, Ad Library i konkurencję, zadaje 3–6 pytań i spisuje notatkę decyzyjną.
-1. **Brief** — agent ustala odbiorcę, prawdziwą ofertę, cel, format i dostępne materiały.
-2. **Pomysł** — wybiera, co pokaże korzyść: produkt, działanie, detal, sytuacja lub typografia.
-3. **Art direction** — wybiera format, na który pozwala dowód, i jeden język wizualny, a potem określa dominantę, kolejność czytania, przestrzeń na tekst, fonty i paletę.
-4. **Prompt** — zapisuje konkretną kompozycję, dokładne treści i ograniczenia.
-5. **Ocena** — sprawdza spójność promptu; po wygenerowaniu obrazu również czytelność, pisownię i zgodność z materiałami.
+2. **Brief** — agent ustala odbiorcę, prawdziwą ofertę, cel, format i dostępne materiały.
+3. **Pomysł** — wybiera, co pokaże korzyść: produkt, działanie, detal, sytuacja lub typografia.
+4. **Art direction** — wybiera format, na który pozwala dowód, i jeden język wizualny, a potem określa dominantę, kolejność czytania, przestrzeń na tekst, fonty i paletę.
+5. **Prompt** — zapisuje konkretną kompozycję, dokładne treści i ograniczenia.
+6. **Ocena** — sprawdza spójność promptu; po wygenerowaniu obrazu również czytelność, pisownię i zgodność z materiałami.
 
 Jeśli prosisz tylko o prompt, praca kończy się na jego sprawdzeniu. Agent nie ocenia obrazu, którego nie widział.
 

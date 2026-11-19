@@ -143,7 +143,7 @@ def check_version(root: Path, fm: dict[str, str], fails: list[str]) -> None:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--root", default=".", type=Path)
+    parser.add_argument("--root", default=Path(__file__).resolve().parent.parent, type=Path)
     args = parser.parse_args()
     root = args.root.resolve()
 
