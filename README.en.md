@@ -11,6 +11,7 @@ An AI agent skill for choosing **composition, typography, colour and visual dire
 ![Version](https://img.shields.io/badge/version-6.7.0-222222)
 ![License](https://img.shields.io/badge/license-MIT-222222)
 ![Model independent](https://img.shields.io/badge/prompts-model_independent-222222)
+[![CI](https://github.com/aievolutionpl/meta-ads-designer/actions/workflows/ci.yml/badge.svg)](https://github.com/aievolutionpl/meta-ads-designer/actions/workflows/ci.yml)
 
 ## What the skill does
 
@@ -33,6 +34,15 @@ The same concepts can also take a quieter editorial direction:
 ![Editorial variation with natural light, quieter colours and clear hierarchy](assets/meta-ads-designer-editorial.png)
 
 *A second demonstration board. The art direction changes; the skill is not restricted to either style.*
+
+### Anti-slop in practice: before vs after
+
+| Dimension | Default AI prompt (before) | Meta Ads Designer (after) |
+|---|---|---|
+| **Copy & proof** | “Best coffee in town! 🔥 Discover [BRAND] — game-changing taste!” *(copy slop & placeholder — blocked by `prompt_lint.py`)* | Exact short quoted headline: “A croissant that is still warm and crisp.” + explicit `no other text` constraint |
+| **Composition & format** | Missing aspect ratio, cluttered background, fake UI overlays | 4:5 (1440×1800), single focal anchor, deliberate copy space, and 8% safe margins |
+| **Product fidelity** | Model hallucinates a generic cup and mangled logo | Product reference drives shape, lighting and material; zero invented prices or promos |
+| **Verification** | Eyeballed “looks good” | `scripts/prompt_lint.py` before generation + `scripts/qa.py` (contrast, safe areas, thumbnail test) after render |
 
 ## New in 6.0: research, questions, AI generation
 
@@ -75,11 +85,11 @@ flowchart LR
 ```
 
 1. **Research and questions** — study the brand, Ad Library and competitors, ask 3–6 questions, write a decision note.
-1. **Brief** — establish audience, verified offer, goal, format and available assets.
-2. **Idea** — choose what makes the benefit visible: product, action, detail, situation or type.
-3. **Art direction** — pick a format the proof supports and one visual language, then define the focal element, reading order, copy space, fonts and palette.
-4. **Prompt** — write the composition, exact copy and relevant constraints.
-5. **Review** — check prompt consistency; once rendered, inspect readability, spelling and reference fidelity.
+2. **Brief** — establish audience, verified offer, goal, format and available assets.
+3. **Idea** — choose what makes the benefit visible: product, action, detail, situation or type.
+4. **Art direction** — pick a format the proof supports and one visual language, then define the focal element, reading order, copy space, fonts and palette.
+5. **Prompt** — write the composition, exact copy and relevant constraints.
+6. **Review** — check prompt consistency; once rendered, inspect readability, spelling and reference fidelity.
 
 Prompt-only requests stop at prompt review. The agent does not score an image it has not seen.
 
